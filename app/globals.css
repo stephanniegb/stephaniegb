@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Roboto&family=Sacramento&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,10 +20,40 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #041c32;
+  font-family: "Poppins", sans-serif;
+  /* cursor: grab; */
+}
+.star-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Sacramento', cursive; */
+/* CURSOR STYLES */
+#cursor {
+  display: none;
+  height: 25px;
+  width: 25px;
+  background-color: plum;
+  border-radius: 50px;
+  position: absolute;
+  border: 1px solid black;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+  box-shadow: 0 0 20px #d77bd7, 0 0 60px #d77bd7, 0 0 120px #d77bd7;
+}
+.intro {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  margin-top: 70vh;
+  height: 100vh;
 }
