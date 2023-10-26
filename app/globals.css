@@ -8,6 +8,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --large-h2-fs: 1.5em;
+  --small-p-fs: 0.8em;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +19,21 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: #041c32;
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
   /* cursor: grab; */
 }
 .star-canvas {
@@ -43,6 +55,7 @@ font-family: 'Sacramento', cursive; */
   background-color: plum;
   border-radius: 50px;
   position: absolute;
+  z-index: 2;
   border: 1px solid black;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
@@ -51,9 +64,28 @@ font-family: 'Sacramento', cursive; */
 }
 .intro {
   position: relative;
-  z-index: 2;
+  /* z-index: 2; */
   display: grid;
-  place-content: center;
-  margin-top: 70vh;
+  align-items: center;
+  padding: 2rem;
   height: 100vh;
+}
+.intro-div {
+  text-align: start;
+  width: 50vw;
+}
+.intro-heading {
+  font-size: 2.5em;
+  color: plum;
+}
+#typewriter-cursor {
+  animation: blink 1s linear infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
 }

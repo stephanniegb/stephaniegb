@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
+import Link from "next/link";
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -12,16 +13,21 @@ const Navbar = () => {
     return () => clearTimeout(timer);
   }, []);
   return (
-    // className={`navbar ${isVisible ? 'visible' : 'hidden'}`}
     <header className={isVisible ? styles.header : styles.hidden}>
-      <span className={styles.logo}>stephani.egb</span>
+      <Link href={"/"}>
+        <span className={styles.logo}>stephani.egb</span>
+      </Link>
       <nav className={styles.navContainer}>
         <ul className={styles.navLinksContainer}>
-          <a href="http://google.com">
-            <li>About</li>
-          </a>
-          <li>Work</li>
-          <li>Resume</li>
+          <li>
+            <Link href={"/about"}>About</Link>
+          </li>
+          <li>
+            <Link href={"/work"}>Work</Link>
+          </li>
+          <li>
+            <a href="#">Resume</a>
+          </li>
         </ul>
       </nav>
     </header>

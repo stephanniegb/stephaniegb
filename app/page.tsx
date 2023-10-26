@@ -1,37 +1,23 @@
+"use client";
+import { usePathname } from "next/navigation";
+import { motion as m, useScroll } from "framer-motion";
 import StarCanvas from "./components/StarCanvas";
+import { AnimatePresence } from "framer-motion";
+import Hero from "./components/Hero";
+import Projects from "./components/projects/Projects";
+import MosaicProjects from "./components/projects/MosaicProjects";
 
 export default function Home() {
+  const pathname = usePathname();
+  const { scrollYProgress } = useScroll();
   return (
-    <main className="h-screen">
-      <StarCanvas />
-      <section className="intro">
-        "Unleashing Creativity in Code: A Woman's Journey in Frontend
-        Development" "Crafting the Digital Canvas: Frontend Developer's
-        Showcase" "Elevating Web Experiences: Frontend Developer's Odyssey"
-        "Code Artist's Playground: Explore My Frontend Universe" "Forging Beauty
-        in Bytes: Dive into My Frontend World"
-      </section>
-      <section className="intro">
-        "Unleashing Creativity in Code: A Woman's Journey in Frontend
-        Development" "Crafting the Digital Canvas: Frontend Developer's
-        Showcase" "Elevating Web Experiences: Frontend Developer's Odyssey"
-        "Code Artist's Playground: Explore My Frontend Universe" "Forging Beauty
-        in Bytes: Dive into My Frontend World"
-      </section>
-      <section className="intro">
-        "Unleashing Creativity in Code: A Woman's Journey in Frontend
-        Development" "Crafting the Digital Canvas: Frontend Developer's
-        Showcase" "Elevating Web Experiences: Frontend Developer's Odyssey"
-        "Code Artist's Playground: Explore My Frontend Universe" "Forging Beauty
-        in Bytes: Dive into My Frontend World"
-      </section>
-      <section className="intro">
-        "Unleashing Creativity in Code: A Woman's Journey in Frontend
-        Development" "Crafting the Digital Canvas: Frontend Developer's
-        Showcase" "Elevating Web Experiences: Frontend Developer's Odyssey"
-        "Code Artist's Playground: Explore My Frontend Universe" "Forging Beauty
-        in Bytes: Dive into My Frontend World"
-      </section>
-    </main>
+    <AnimatePresence initial={false} mode="wait">
+      <m.main key={pathname}>
+        <StarCanvas />
+        <Hero />
+        <MosaicProjects />
+        {/* <Projects /> */}
+      </m.main>
+    </AnimatePresence>
   );
 }
