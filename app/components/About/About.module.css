@@ -1,0 +1,9 @@
+.aboutContainer {
+  background-color: var(--darkGreen);
+  height: 100vh;
+}
+.header {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}

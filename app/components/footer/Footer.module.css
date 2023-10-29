@@ -1,0 +1,16 @@
+.footerContainer {
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--pink);
+  z-index: -99;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+.contactContainer {
+  background-color: var(--darkGreen);
+  width: 100vh;
+  height: 50vh;
+}

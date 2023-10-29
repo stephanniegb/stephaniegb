@@ -20,10 +20,10 @@ const Navbar = () => {
       <nav className={styles.navContainer}>
         <ul className={styles.navLinksContainer}>
           <li>
-            <Link href={"/about"}>About</Link>
+            <a href={"#about"}>About</a>
           </li>
           <li>
-            <Link href={"/work"}>Work</Link>
+            <Link href={"#work"}>Work</Link>
           </li>
           <li>
             <a href="#">Resume</a>

@@ -1,156 +1,66 @@
-import Reveal from "../Reveal";
-import styles from "./Projects.module.css";
-const Projects = () => {
-  return (
-    <section>
-      <h2 className={styles.heading}>SOME ThINGS IVE BUILT</h2>
+import Carousel from "../projects/Carousel";
+interface ProjectsProps {
+  description: string;
+  url: string;
+  techs: string[];
+}
+const carouselItems = [
+  { content: "Item 1", heading: "Heading 1" },
+  { content: "Item 2", heading: "Heading 2" },
+  { content: "Item 3", heading: "Heading 3" },
+  // Add more items as needed
+];
+const Project = ({ description, url, techs }: ProjectsProps) => {
+  const handleIntersection = () => {
+    console.log("chep!");
 
-      <div className={styles.projectsContainer}>
-        <Reveal>
-          <figure className={styles.project}>
-            <div className={styles.projectImageWrapper}>
-              <div className={styles.overlay}>
-                <img
-                  className={styles.revealImg}
-                  src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-                  alt=""
-                />
-              </div>
-              <img
-                src="https://colorlib.com/wp/wp-content/uploads/sites/2/14_awesome-websites.jpg"
-                alt=""
-                className={styles.projectImage}
-              />
-            </div>
-            <figcaption className={styles.projectCaption}>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem ducimus numquam vel facere neque nihil saepe
-                harum eveniet earum quae, sapiente a odio delectus alias
-                asperiores voluptates porro dolor labore?
-              </p>
-              <ul className={styles.techWrapper}>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-              </ul>
-              <div className={styles.linksWrapper}>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/github.svg" alt="" className={styles.icon} />
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/openInNew.svg" alt="" className={styles.icon} />
-                </a>
-              </div>
-            </figcaption>
-          </figure>
-        </Reveal>
-        <Reveal>
-          <figure className={styles.project}>
-            <figcaption className={styles.projectCaption}>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem ducimus numquam vel facere neque nihil saepe
-                harum eveniet earum quae, sapiente a odio delectus alias
-                asperiores voluptates porro dolor labore?
-              </p>
-              <ul className={styles.techWrapper}>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-              </ul>
-              <div className={styles.linksWrapper}>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/github.svg" alt="" className={styles.icon} />
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/openInNew.svg" alt="" className={styles.icon} />
-                </a>
-              </div>
-            </figcaption>
-            <div className={styles.projectImageWrapper}>
-              <div className={styles.overlay}></div>
-              <img
-                src="https://colorlib.com/wp/wp-content/uploads/sites/2/14_awesome-websites.jpg"
-                alt=""
-                className={styles.projectImage}
-              />
-            </div>
-          </figure>
-        </Reveal>
-        <Reveal>
-          <figure className={styles.project}>
-            <div className={styles.projectImageWrapper}>
-              <div className={styles.overlay}></div>
-              <img
-                src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-                alt=""
-                className={styles.projectImage}
-              />
-            </div>
-            <figcaption className={styles.projectCaption}>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem ducimus numquam vel facere neque nihil saepe
-                harum eveniet earum quae, sapiente a odio delectus alias
-                asperiores voluptates porro dolor labore?
-              </p>
-              <ul className={styles.techWrapper}>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-              </ul>
-              <div className={styles.linksWrapper}>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/github.svg" alt="" className={styles.icon} />
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/openInNew.svg" alt="" className={styles.icon} />
-                </a>
-              </div>
-            </figcaption>
-          </figure>
-        </Reveal>
-        <Reveal>
-          <figure className={styles.project}>
-            <figcaption className={styles.projectCaption}>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Exercitationem ducimus numquam vel facere neque nihil saepe
-                harum eveniet earum quae, sapiente a odio delectus alias
-                asperiores voluptates porro dolor labore?
-              </p>
-              <ul className={styles.techWrapper}>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-                <li className={styles.tech}>React</li>
-                <li className={styles.tech}>Typescript</li>
-              </ul>
-              <div className={styles.linksWrapper}>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/github.svg" alt="" className={styles.icon} />
-                </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">
-                  <img src="/openInNew.svg" alt="" className={styles.icon} />
-                </a>
-              </div>
-            </figcaption>
-            <div className={styles.projectImageWrapper}>
-              <div className={styles.overlay}></div>
-              <img
-                src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-                alt=""
-                className={styles.projectImage}
-              />
-            </div>
-          </figure>
-        </Reveal>
-      </div>
-    </section>
+    // const otherElement = document.getElementById("otherElementId");
+    // if (otherElement) {
+    //   otherElement.classList.add("yourClassName");
+    // }
+  };
+  return (
+    <Carousel onIntersection={handleIntersection}>
+      <figure id="pro1" className="project">
+        <img src={url} alt="" className="projectImg" />
+        <figcaption>
+          <p className="projectDescription">{description}</p>
+          <div className="captionBottom">
+            <ul className="techWrapper">
+              {techs.map((tech, key) => {
+                return (
+                  <li key={key} className="tech">
+                    {tech}
+                  </li>
+                );
+              })}
+            </ul>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="LearnMoreLink"
+              href="#"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                aria-hidden="true"
+                viewBox="0 0 20 20"
+                focusable="false"
+                className="icon"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </figcaption>
+      </figure>
+    </Carousel>
   );
 };
 
-export default Projects;
+export default Project;

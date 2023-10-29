@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
 import Cursor from "./components/Cursor";
+import Footer from "./components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
         {/* <Cursor /> */}
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -10,13 +10,7 @@ const MosaicProjects = () => {
         // onMouseEnter={handleMouseEnter}
         // onMouseLeave={handleMouseLeave}
       >
-        <figcaption
-          //   initial={{ left: "100%" }}
-          //   animate={isOpen ? "visible" : "hidden"}
-          //   variants={variants}
-          //   transition={{ duration: 0.3, ease: "easeIn" }}
-          className="projectReveal"
-        >
+        <figcaption className="projectReveal">
           <h2 className="projectTitle">Project name</h2>
           <p className="projectDescription">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
