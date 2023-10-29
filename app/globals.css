@@ -149,9 +149,14 @@ font-family: 'Sacramento', cursive; */
   width: 500vw;
   will-change: transform;
   display: flex;
+
   justify-content: space-between;
   align-items: center;
+  padding: 2rem;
 }
 img {
   width: 400px;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
 }

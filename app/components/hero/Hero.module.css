@@ -9,7 +9,7 @@
   height: 100vh;
 }
 .left {
-  background-color: var(--darkGreen);
+  background-color: var(--lightbeige);
   grid-column: span 2;
 }
 .right {
@@ -25,7 +25,7 @@
 }
 .hiText {
   font-family: "Lobster", sans-serif;
-  /* transform: rotate(320deg); */
+  transform: rotate(320deg);
   display: inline-block;
   font-size: 1.5rem;
 }
