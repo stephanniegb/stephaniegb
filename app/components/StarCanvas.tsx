@@ -35,7 +35,8 @@ function MyStar() {
 const StarCanvas = () => {
   return (
     <div className="star-canvas">
-      <Canvas camera={{ position: [0, 0, 700] }}>
+      <Canvas>
+        {/* camera={{ position: [0, 0, 700] }} */}
         <perspectiveCamera fov={75} />
         <OrbitControls
           enableDamping={true}

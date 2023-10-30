@@ -1,12 +1,4 @@
 import styles from "./About.module.css";
-
-// import { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "About | Stephanie Egbuonu",
-//   description: "About Stephanie Egbuonu",
-// };
-
 const About = () => {
   return (
     <section id="about" className={styles.aboutContainer}>
@@ -27,7 +19,14 @@ const About = () => {
         </svg>
       </h2>
       <div>
-        <article></article>
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            exercitationem quod quaerat magni rerum? Blanditiis fugit nihil nemo
+            officia libero! At quasi molestiae repellat ratione, doloremque cum
+            quam enim est?
+          </p>
+        </article>
         <div>
           <img src="" alt="Stephanie working" />
         </div>

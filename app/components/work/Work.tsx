@@ -17,14 +17,6 @@ const Work = () => {
   useEffect(() => {
     const stickySection = document.querySelectorAll(".sticky");
 
-    // images.forEach((img) => {
-    //   stickySection.forEach((section) => {
-    //     let Image = document.createElement("img");
-    //     Image.src = img;
-    //     section.querySelector(".scroll_section")?.appendChild(Image);
-    //   });
-    // });
-
     const transform = (section: Element) => {
       const parent = section.parentElement;
       if (parent) {
@@ -50,7 +42,7 @@ const Work = () => {
   }, []);
 
   return (
-    <section className={styles.workContainer}>
+    <section id="work" className={styles.workContainer}>
       <h2 className={styles.header}>
         My works?...
         <svg
@@ -71,18 +63,19 @@ const Work = () => {
         <div className="sticky">
           <div className="scroll_section">
             {images.map((img, index) => (
-              <img key={index} src={img} alt="" />
+              <Project
+                key={index}
+                projectUrl=""
+                description={
+                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Reiciendis optio dicta est nostrum rem necessitatibus fugit"
+                }
+                imgUrl={"/Screenshot 2023-10-22 at 8.43.49 PM.png"}
+                techs={["React", "typescript"]}
+              />
             ))}
           </div>
         </div>
       </div>
-      {/* <div className="sticky_parent">
-        <div className="sticky">
-          <div className="scroll_section">
-            <img src="/Screenshot 2023-10-22 at 8.43.49 PM.png" alt="" />
-          </div>
-        </div>
-      </div> */}
     </section>
   );
 };

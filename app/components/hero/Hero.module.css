@@ -9,11 +9,11 @@
   height: 100vh;
 }
 .left {
-  background-color: var(--lightbeige);
+  /* background-color: var(--lightbeige); */
   grid-column: span 2;
 }
 .right {
-  background-color: var(--DOlive);
+  /* background-color: var(--DOlive); */
 }
 .intro {
   position: absolute;
@@ -24,10 +24,11 @@
   place-content: center;
 }
 .hiText {
-  font-family: "Lobster", sans-serif;
+  font-family: "Sacramento", cursive;
   transform: rotate(320deg);
   display: inline-block;
   font-size: 1.5rem;
+  font-weight: 700;
 }
 .introName {
   font-size: 4rem;
@@ -37,7 +38,7 @@
 .nameBase {
   height: 20vh;
   width: 100vh;
-  background-color: var(--pink);
+  /* background-color: var(--pink); */
   display: grid;
   place-content: center;
 }

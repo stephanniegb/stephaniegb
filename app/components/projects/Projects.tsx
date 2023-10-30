@@ -1,29 +1,25 @@
-import Carousel from "../projects/Carousel";
+import NewTab from "@/svg/NewTab";
+import Reveal from "../Reveal";
 interface ProjectsProps {
   description: string;
-  url: string;
+  imgUrl: string;
   techs: string[];
+  projectUrl: string;
 }
-const carouselItems = [
-  { content: "Item 1", heading: "Heading 1" },
-  { content: "Item 2", heading: "Heading 2" },
-  { content: "Item 3", heading: "Heading 3" },
-  // Add more items as needed
-];
-const Project = ({ description, url, techs }: ProjectsProps) => {
-  const handleIntersection = () => {
-    console.log("chep!");
 
-    // const otherElement = document.getElementById("otherElementId");
-    // if (otherElement) {
-    //   otherElement.classList.add("yourClassName");
-    // }
-  };
+const Project = ({ description, imgUrl, techs, projectUrl }: ProjectsProps) => {
   return (
-    <Carousel onIntersection={handleIntersection}>
-      <figure id="pro1" className="project">
-        <img src={url} alt="" className="projectImg" />
-        <figcaption>
+    <Reveal>
+      <figure className="project">
+        <figcaption className="figCaption">
+          <a href={projectUrl} target="_blank" rel="noopener noreferrer">
+            <h2 className="projectTitle">
+              Project Title{" "}
+              <span>
+                <NewTab />
+              </span>
+            </h2>
+          </a>
           <p className="projectDescription">{description}</p>
           <div className="captionBottom">
             <ul className="techWrapper">
@@ -40,26 +36,13 @@ const Project = ({ description, url, techs }: ProjectsProps) => {
               rel="noopener noreferrer"
               className="LearnMoreLink"
               href="#"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                focusable="false"
-                className="icon"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
+            ></a>
           </div>
         </figcaption>
+
+        <img src={imgUrl} alt="" className="projectImg" />
       </figure>
-    </Carousel>
+    </Reveal>
   );
 };
 
