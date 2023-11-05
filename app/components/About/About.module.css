@@ -1,9 +1,29 @@
 .aboutContainer {
   background-color: var(--lightbeige);
-  height: 100vh;
+
+  padding: 3rem;
 }
 .header {
   display: grid;
   justify-content: center;
   text-align: center;
+}
+.mainAbout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.aboutArticleContainer {
+  align-self: center;
+}
+.aboutArticle {
+  font-size: 23px;
+}
+.stephImgDiv {
+  display: grid;
+  place-content: center;
+}
+.stephImg {
+  border-radius: 8px;
+  width: 200px;
+  height: auto;
 }

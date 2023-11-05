@@ -6,7 +6,6 @@ import styles from "./Hero.module.css";
 const Hero = () => {
   return (
     <>
-      <StarCanvas />
       <section className={styles.heroContainer}>
         <div className={styles.left}></div>
         <div className={styles.right}></div>

@@ -9,9 +9,6 @@ const images = [
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
 ];
 const Work = () => {
   useEffect(() => {

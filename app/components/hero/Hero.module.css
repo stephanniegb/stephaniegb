@@ -1,6 +1,7 @@
 .heroContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--lightbeige);
 }
 
 .left,
@@ -9,11 +10,10 @@
   height: 100vh;
 }
 .left {
-  /* background-color: var(--lightbeige); */
-  grid-column: span 2;
+  /* grid-column: span 2; */
 }
 .right {
-  /* background-color: var(--DOlive); */
+  /* background-color: white; */
 }
 .intro {
   position: absolute;
@@ -31,7 +31,7 @@
   font-weight: 700;
 }
 .introName {
-  font-size: 4rem;
+  font-size: 6em;
   font-family: "Playfair Display", serif;
   font-family: "Cinzel Decorative", serif;
 }

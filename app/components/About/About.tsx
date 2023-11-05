@@ -13,22 +13,23 @@ const About = () => {
           <path
             d="M0 30 C 20 20, 40 40, 60 30 S 100 20, 120 30 S 160 20, 200 30"
             fill="none"
-            stroke="#f2e9ce"
+            stroke="#000000"
             stroke-width="3"
           />
         </svg>
       </h2>
-      <div>
-        <article>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            exercitationem quod quaerat magni rerum? Blanditiis fugit nihil nemo
-            officia libero! At quasi molestiae repellat ratione, doloremque cum
-            quam enim est?
-          </p>
+      <div className={styles.mainAbout}>
+        <article className={styles.aboutArticleContainer}>
+          <h2 className={styles.aboutArticle}>
+            I am stephanie Egbuonu i build beautiful things
+          </h2>
         </article>
-        <div>
-          <img src="" alt="Stephanie working" />
+        <div className={styles.stephImgDiv}>
+          <img
+            className={styles.stephImg}
+            src="/IMG_6522 Background Removed.png"
+            alt="Stephanie working"
+          />
         </div>
       </div>
     </section>
