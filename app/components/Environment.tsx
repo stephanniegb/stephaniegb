@@ -1,6 +1,7 @@
+import { useGLTF } from "@react-three/drei";
 import { BackSide } from "three";
 
-const Environment = () => {
+const Environment = ({ ...props }) => {
   return (
     <mesh>
       <sphereGeometry args={[60, 50, 50]} />
