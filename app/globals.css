@@ -140,21 +140,23 @@ font-family: 'Sacramento', cursive; */
 
 .sticky_parent {
   /* this area will be tranformed to horizontal scroll */
-  height: 500vh;
-  background-color: var(--lightbeige);
+  height: 300vh;
+
+  /* background-color: var(--lightbeige); */
 }
 .sticky {
   overflow: hidden;
   position: sticky;
   top: 0;
   height: 100vh;
+  /* padding: 4rem; */
 }
 .scroll_section {
   position: absolute;
   top: 0;
   height: 100%;
   /* has to be the same as the height */
-  width: 500vw;
+  width: 300vw;
   will-change: transform;
   display: flex;
   justify-content: space-between;
@@ -170,21 +172,30 @@ font-family: 'Sacramento', cursive; */
   transition: all 0.3s ease-in-out;
 }
 .project {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-
-  padding: 2rem;
-
   height: 80%;
+  padding: 5vw;
+}
+.figCaption {
+  margin-top: 1rem;
+}
+.projectImgContainer {
+  /* padding: 4rem; */
+}
+.projectImg {
+  filter: grayscale(70%);
+  transition: filter 0.3s;
+}
+.projectImg:hover {
+  filter: grayscale(0%);
 }
 .project:hover {
   /* background-color: rgba(255, 0, 0, 0.2); */
 }
-.figCaption:hover .projectTitle {
-  color: red;
+.project:hover .projectTitle {
+  color: plum;
 }
-.figCaption:hover .icon {
+.project:hover .icon {
   transform: translateY(-0.25rem);
 }
 .techWrapper {

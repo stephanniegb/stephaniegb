@@ -1,6 +1,6 @@
 .heroContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background-color: var(--lightbeige);
 }
 
@@ -10,10 +10,11 @@
   height: 100vh;
 }
 .left {
-  /* grid-column: span 2; */
+  grid-column: span 3;
 }
 .right {
   /* background-color: white; */
+  background-color: rgb(147, 152, 146);
 }
 .intro {
   position: absolute;
@@ -50,12 +51,12 @@
 }
 .topDash {
   display: inline-block;
-  border-top: 1px solid var(--beige);
+  border-top: 1px solid black;
   padding-top: 0.3rem;
 }
 .btmDash {
   display: inline-block;
-  border-bottom: 1px solid var(--beige);
+  border-bottom: 1px solid black;
   padding-bottom: 0.3rem;
 }
 /* .intro {

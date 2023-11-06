@@ -1,6 +1,6 @@
 .aboutContainer {
   background-color: var(--lightbeige);
-
+  min-height: 100vh;
   padding: 3rem;
 }
 .header {
@@ -11,19 +11,35 @@
 .mainAbout {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  place-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 .aboutArticleContainer {
   align-self: center;
 }
 .aboutArticle {
-  font-size: 23px;
+  font-size: 3rem;
+}
+.coloredText {
+  color: rgb(237, 113, 98);
+}
+.stephImgContainer {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  margin: 0 auto;
 }
 .stephImgDiv {
   display: grid;
   place-content: center;
+  width: 25vw;
+  height: 30vw;
+  background-color: rgb(84, 113, 126);
+  border-top-right-radius: 48%;
+  border-top-left-radius: 48%;
 }
 .stephImg {
-  border-radius: 8px;
   width: 200px;
   height: auto;
 }

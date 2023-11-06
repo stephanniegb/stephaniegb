@@ -5,7 +5,9 @@
 }
 
 .workContainer {
+  /* background-color: rgb(183, 195, 203); */
   background-color: var(--lightbeige);
+  /* background-color: #807f7e; */
   min-height: 100vh;
 }
 .projectsSection {

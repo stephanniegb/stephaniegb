@@ -11,6 +11,9 @@ const Project = ({ description, imgUrl, techs, projectUrl }: ProjectsProps) => {
   return (
     <Reveal>
       <figure className="project">
+        <div className="projectImgContainer">
+          <img src={imgUrl} alt="" className="projectImg" />
+        </div>
         <figcaption className="figCaption">
           <a href={projectUrl} target="_blank" rel="noopener noreferrer">
             <h2 className="projectTitle">
@@ -20,7 +23,7 @@ const Project = ({ description, imgUrl, techs, projectUrl }: ProjectsProps) => {
               </span>
             </h2>
           </a>
-          <p className="projectDescription">{description}</p>
+          {/* <p className="projectDescription">{description}</p> */}
           <div className="captionBottom">
             <ul className="techWrapper">
               {techs.map((tech, key) => {
@@ -39,8 +42,6 @@ const Project = ({ description, imgUrl, techs, projectUrl }: ProjectsProps) => {
             ></a>
           </div>
         </figcaption>
-
-        <img src={imgUrl} alt="" className="projectImg" />
       </figure>
     </Reveal>
   );
