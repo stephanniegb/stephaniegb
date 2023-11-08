@@ -1,11 +1,8 @@
 "use client";
 import styles from "./Work.module.css";
-import Carousel from "../projects/Carousel";
 import Project from "../projects/Projects";
 import { useEffect } from "react";
-import NewTab from "@/svg/NewTab";
-import Cursor from "../Cursor";
-import Projects from "@/app/projects/page";
+
 const images = [
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
@@ -14,35 +11,40 @@ const images = [
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
 ];
 const Work = () => {
-  useEffect(() => {
-    const stickySection = document.querySelectorAll(".sticky");
+  // useEffect(() => {
+  //   const stickySection = document.querySelectorAll(".sticky");
 
-    const transform = (section: Element) => {
-      const parent = section.parentElement;
-      if (parent) {
-        const offSetTop = parent.offsetTop;
-        const scrollSection = section.querySelector(
-          ".scroll_section"
-        ) as HTMLElement;
-        let percentage =
-          ((window.scrollY - offSetTop) / window.innerHeight) * 100;
-        percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
-        scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
-      }
-    };
-    const handleScroll = () => {
-      for (let i = 0; i < stickySection.length; i++) {
-        transform(stickySection[i]);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   const transform = (section: Element) => {
+  //     const parent = section.parentElement;
+  //     if (parent) {
+  //       const offSetTop = parent.offsetTop;
+  //       const scrollSection = section.querySelector(
+  //         ".scroll_section"
+  //       ) as HTMLElement;
+  //       let percentage =
+  //         ((window.scrollY - offSetTop) / window.innerHeight) * 100;
+  //       percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
+  //       scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
+  //     }
+  //   };
+  //   const handleScroll = () => {
+  //     for (let i = 0; i < stickySection.length; i++) {
+  //       transform(stickySection[i]);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
-    <section data-scroll-section id="work" className={styles.workContainer}>
+    <section
+      // data-scroll-section
+      // data-scroll-speed="1"
+      id="work"
+      className={styles.workContainer}
+    >
       <h2 className={styles.header}>
         My works?...
         <svg
@@ -60,39 +62,45 @@ const Work = () => {
         </svg>
       </h2>
       <section className={styles.ProjectsWrapper}>
-        <div></div>
         <div className={styles.AllProjects}>
           <Project
             id="project1"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
+            projTitle="Scissors"
+            imgUrl="/Screenshot 2023-10-22 at 8.43.49 PM.png"
           />
           <Project
             id="project2"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
+            projTitle="timely"
           />
-          <div></div>
+
           <Project
             id="project3"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
+            projTitle="timely"
           />
-          <div></div>
+
           <Project
             id="project4"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
+            projTitle="timely"
           />
           <Project
             id="project5"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
+            projTitle="timely"
           />
           <Project
             id="project6"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
+            projTitle="timely"
           />
         </div>
       </section>

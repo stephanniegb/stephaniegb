@@ -93,21 +93,6 @@ img {
 font-family: 'Roboto', sans-serif;
 font-family: 'Sacramento', cursive; */
 /* CURSOR STYLES */
-#cursor {
-  display: none;
-  height: 40px;
-  width: 40px;
-  /* width: 500px; */
-  background-color: transparent;
-  border-radius: 50px;
-  position: absolute;
-  z-index: 2;
-  border: 2px solid black;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
-  pointer-events: none;
-  /* box-shadow: 0 0 20px #d77bd7, 0 0 60px #d77bd7, 0 0 120px #d77bd7; */
-}
 
 .Reveal {
   opacity: 0;
@@ -204,92 +189,9 @@ font-family: 'Sacramento', cursive; */
   width: 2rem;
   transition: all 0.3s ease-in-out;
 }
-.project {
-  gap: 2rem;
-  height: 80%;
-  padding: 5vw;
-}
-.figCaption {
-  margin-top: 1rem;
-}
-.projectImgContainer {
-  /* padding: 4rem; */
-}
-.projectImg {
-  filter: grayscale(70%);
-  transition: filter 0.3s;
-}
-.projectImg:hover {
-  filter: grayscale(0%);
-}
-.project:hover {
-  /* background-color: rgba(255, 0, 0, 0.2); */
-}
-.project:hover .projectTitle {
-  color: plum;
-}
-.project:hover .icon {
-  transform: translateY(-0.25rem);
-}
-.techWrapper {
-  display: flex;
-  gap: 0.5rem;
-}
-.tech {
-  border: 1px solid var(--pink);
-  padding: 0.3rem;
-  border-radius: 5px;
-  font-size: var(--small-p-fs);
-}
-.projectTitle {
-  text-transform: uppercase;
-  font-size: var(--large-h2-fs);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-/* today */
-.proj {
-  border: 0.5px solid rgb(84, 113, 126);
-  padding: 1rem;
-  border-radius: 10px;
-  position: relative;
-  height: 100%;
 
-  /* background-color: rgb(84, 113, 126); */
-}
-.test:nth-child(odd) {
-}
-.proj:hover {
-  filter: grayscale(70%);
-}
-.projImg {
-  border-radius: 10px;
-}
-.projBtm {
-  display: flex;
-  justify-content: space-between;
-}
-.projPreview {
-  /* display: none; */
-  position: absolute;
-  z-index: 100;
-  width: 400px;
-  padding: 1.5rem;
-  background-color: rgba(84, 113, 126, 0.3);
-  border-radius: 10px;
-  margin: 2rem;
-}
-.arrow {
-  display: inline-block;
-  background-color: rgb(237, 113, 98);
-  /* padding: 1rem; */
-  border-radius: 50%;
-  color: white;
-}
-.test:hover .projPreview {
-  display: block;
-}
+/* today */
+
 .heroContainer {
   display: grid;
   place-content: center;

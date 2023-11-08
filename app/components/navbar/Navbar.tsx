@@ -17,7 +17,7 @@ const Navbar = () => {
       data-scroll-section
       className={isVisible ? styles.header : styles.hidden}
     >
-      {/* <Link href={"/"}>
+      <Link href={"/"}>
         <span className={styles.logo}>stephani.egb</span>
       </Link>
       <nav className={styles.navContainer}>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <Link href={"/resume"}>Resume</Link>
           </li>
         </ul>
-      </nav> */}
+      </nav>
     </header>
   );
 };

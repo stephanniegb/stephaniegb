@@ -1,13 +1,12 @@
 import NewTab from "@/svg/NewTab";
-import Reveal from "../Reveal";
-import { useState } from "react";
-import Cursor from "../Cursor";
+import Cursor from "../cursor/Cursor";
+import "./projects.css";
 interface ProjectStyles {
   [key: string]: string;
 }
-
 interface ProjectsProps {
   id: string;
+  projTitle: string;
   description?: string;
   imgUrl?: string;
   techs: string[];
@@ -15,63 +14,59 @@ interface ProjectsProps {
   styles: ProjectStyles;
 }
 
-const Project = ({
-  description,
-  imgUrl,
-  techs,
-  projectUrl,
-  styles,
-  id,
-}: ProjectsProps) => {
+const Project = ({ techs, id, projTitle, imgUrl }: ProjectsProps) => {
   return (
-    <>
-      <div
-        id={id}
-        // className={styles.test}
-        className="test"
+    <div className="project">
+      <a
+        href="http://"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="projLink"
       >
-        <a href="http://" target="_blank" rel="noopener noreferrer">
-          <div className="proj">
-            {/* <div className={styles.proj}> */}
-            <img
-              src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-              alt=""
-              className="projImg"
-              // className={styles.projImg}
-            />
-            {/* <div className={styles.projBtm}>
-            <ul className={styles.techWrapper}> */}
-            <div className="projBtm">
-              <ul className="techWrapper"></ul>
-            </div>
+        <div className="projText">
+          <div className="projectTitleContainer">
+            <h3 className="projectTitle">{projTitle}</h3>
+            <span className="arrow">
+              <NewTab />
+            </span>
           </div>
-        </a>
-        <Cursor id={id}>
-          <div className="projPreview">
-            <img
-              src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-              alt=""
-              className="projImg"
-            />
-            <div>
-              <ul>
-                {techs.map((tech, key) => {
-                  return (
-                    <li key={key} className="tech">
-                      {tech}
-                    </li>
-                  );
-                })}
-              </ul>
-              <span className="arrow">
-                <NewTab />
-              </span>
-            </div>
-          </div>
-        </Cursor>
-      </div>
-    </>
+
+          <ul className="techWrapper">
+            {techs.map((tech, key) => {
+              return (
+                <li key={key} className="tech">
+                  {tech}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </a>
+    </div>
   );
 };
 
 export default Project;
+{
+  /* <Cursor id={id}> */
+}
+{
+  /* <div className="projPreview">
+          <img
+            src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
+            alt=""
+            className="projImg"
+          /> */
+}
+{
+  /* <div>
+            
+
+          </div> */
+}
+{
+  /* </div> */
+}
+{
+  /* // </Cursor> */
+}

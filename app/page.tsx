@@ -16,24 +16,24 @@ import useLocoScroll from "@/hooks/useLocoScroll";
 import { BackgroundColorProvider } from "@/context/BackgroundContext";
 
 export default function Home() {
-  const [preLoader, setPreLoader] = useState(true);
-  const [timer, setTimer] = useState(4);
-  const pageRef = useRef(null);
+  const [preLoader, setPreLoader] = useState(false); // change this to true for it to work
+  // const [timer, setTimer] = useState(4);
+  // const pageRef = useRef(null);
 
-  const clear = () => {
-    clearInterval(pageRef.current);
-    setPreLoader(false);
-  };
-  useEffect(() => {
-    pageRef.current = setInterval(() => {
-      setTimer((timer) => timer - 1);
-    }, 1000);
-  }, []);
-  useEffect(() => {
-    if (timer === 0) {
-      clear();
-    }
-  }, [timer]);
+  // const clear = () => {
+  //   clearInterval(pageRef.current);
+  //   setPreLoader(false);
+  // };
+  // useEffect(() => {
+  //   pageRef.current = setInterval(() => {
+  //     setTimer((timer) => timer - 1);
+  //   }, 1000);
+  // }, []);
+  // useEffect(() => {
+  //   if (timer === 0) {
+  //     clear();
+  //   }
+  // }, [timer]);
 
   useLocoScroll(!preLoader);
 
@@ -44,16 +44,21 @@ export default function Home() {
           <h1>Loading</h1>
         </div>
       ) : (
-        <main data-scroll-container id="main-container">
+        <>
           <Navbar />
-          <BackgroundColorProvider>
-            <Hero />
-            <About />
-          </BackgroundColorProvider>
-          <Work />
-          <Write />
+          <main
+          // data-scroll-container
+          // id="main-container"
+          >
+            <BackgroundColorProvider>
+              <Hero />
+              <About />
+            </BackgroundColorProvider>
+            <Work />
+            <Write />
+          </main>
           <Footer />
-        </main>
+        </>
       )}
     </>
   );

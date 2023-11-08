@@ -5,9 +5,9 @@
 }
 
 .workContainer {
-  /* background-color: rgb(183, 195, 203); */
+  padding: 2rem;
   background-color: var(--lightbeige);
-  /* background-color: #807f7e; */
+
   min-height: 100vh;
 }
 .projectsSection {
@@ -73,25 +73,7 @@
   display: flex;
   gap: 0.5rem;
 }
-.tech {
-  /* border: 1px solid var(--pink); */
-  /* padding: 0.3rem; */
-  /* border-radius: 5px; */
-  font-size: var(--small-p-fs);
-  /* background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.3rem;
-  border-radius: 10px;
-  font-size: var(--small-p-fs); */
-}
-/* .halfCircle {
-  width: 50vh;
-  height: 50vh;
-  border-right: 1px solid var(--beige);
-  border-left: none;
-  border-bottom: none;
-  border-top: none;
-  border-radius: 50%;
-} */
+
 .right {
   height: 90vh;
   overflow: auto;
@@ -101,70 +83,11 @@
   border-right: 1px solid var(--darkGreen);
   padding: 2rem;
 }
-.project {
-  height: 90vh;
+
+.AllProjects {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  /* display: grid; */
-  /* grid-template-columns: 1fr 1fr; */
+  gap: 0.5rem;
+  width: 80%;
+  margin: 0 auto;
 }
-/* today */
-.ProjectsWrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 2rem;
-}
-.AllProjects {
-  grid-column: span 3;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 4rem;
-}
-
-.proj {
-  border: 0.5px solid rgb(84, 113, 126);
-  padding: 1rem;
-  border-radius: 10px;
-  position: relative;
-  height: 100%;
-}
-
-.proj:hover {
-  filter: grayscale(70%);
-}
-.projImg {
-  border-radius: 10px;
-}
-.projBtm {
-  display: flex;
-  justify-content: space-between;
-}
-.projPreview {
-  display: none;
-  position: absolute;
-  z-index: 100;
-  max-width: 400px;
-  padding: 1.5rem;
-  background-color: rgba(84, 113, 126, 0.3);
-  border-radius: 10px;
-  margin: 1rem;
-}
-.arrow {
-  display: inline-block;
-  background-color: rgb(237, 113, 98);
-  padding: 1rem;
-  border-radius: 50%;
-  color: white;
-}
-
-.test:hover .projPreview {
-  display: block;
-}
-
-/* .proj:nth-child(2) {
-  grid-row: 2/3;
-  background-color: red;
-  padding: 1rem; */
-/* } */

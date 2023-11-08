@@ -1,0 +1,46 @@
+.project {
+  position: relative;
+}
+.projLink {
+  border-bottom: 0.5px solid black;
+  padding: 3rem;
+  display: block;
+}
+.projLink:first-child {
+  /* border-top: 0.5px solid black; */
+}
+.projLink:hover .arrow {
+  transform: translateY(-0.25rem);
+}
+.projectTitleContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.projText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arrow {
+  transform: translateY(0rem);
+  transition: transform 0.3s ease-in-out;
+}
+.projectTitle {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.techWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+.tech {
+  padding: 0.3rem;
+  border-radius: 5px;
+  font-size: var(--small-p-fs);
+}
+.projPreview {
+  position: absolute;
+  z-index: 100;
+  width: 500px;
+}

@@ -1,0 +1,16 @@
+#cursor {
+  display: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  border: 2px solid black;
+  /* position: absolute; */
+  z-index: 2;
+  top: 0;
+  /*
+  background-color: transparent;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  pointer-events: none; */
+  /* box-shadow: 0 0 20px #d77bd7, 0 0 60px #d77bd7, 0 0 120px #d77bd7; */
+}
