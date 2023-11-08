@@ -1,12 +1,13 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface Props {
-  children: React.ReactNode;
   altClassname?: string;
+  imgUrl: string;
+  imgAltText: string;
 }
 
-const Reveal = ({ children, altClassname }: Props) => {
+const ImageReveal = ({ imgAltText, imgUrl, altClassname }: Props) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -30,10 +31,13 @@ const Reveal = ({ children, altClassname }: Props) => {
   }, []);
 
   return (
-    <div className={`${altClassname} Reveal`} ref={ref}>
-      {children}
-    </div>
+    <img
+      src={imgUrl}
+      alt={imgAltText}
+      className={`${altClassname} RevealImg`}
+      ref={ref}
+    />
   );
 };
 
-export default Reveal;
+export default ImageReveal;

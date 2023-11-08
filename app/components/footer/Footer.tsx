@@ -7,7 +7,7 @@ import Envelope from "@/svg/Envelope";
 
 const Footer = () => {
   return (
-    <footer className={Styles.footerContainer}>
+    <footer data-scroll-section className={Styles.footerContainer}>
       <div className={Styles.mainFooter}>
         <div className={Styles.headingsContainer}>
           <h2>Lets talk about what we can build together</h2>

@@ -1,7 +1,14 @@
+import { useContext } from "react";
+import ImageReveal from "../RevealAnimations/ImageReveal";
+import RevealBgColor from "../RevealAnimations/RevealBgColor";
 import styles from "./About.module.css";
+import { BackgroundColorcontext } from "@/context/BackgroundContext";
+
 const About = () => {
+  const BgColor = useContext(BackgroundColorcontext);
   return (
-    <section id="about" className={styles.aboutContainer}>
+    // <RevealBgColor>
+    <section className={`RevealBgColor ${BgColor?.isBgWhite ? "show" : ""}`}>
       <h3 className={styles.header}>About me...</h3>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -26,15 +33,15 @@ const About = () => {
         </article>
         <div className={styles.stephImgContainer}>
           <div className={styles.stephImgDiv}>
-            <img
-              className={styles.stephImg}
-              src="/IMG_6522 Background Removed.png"
-              alt="Stephanie working"
+            <ImageReveal
+              imgUrl="/IMG_6522 Background Removed.png"
+              imgAltText="Stephanie working"
             />
           </div>
         </div>
       </div>
     </section>
+    // </RevealBgColor>
   );
 };
 

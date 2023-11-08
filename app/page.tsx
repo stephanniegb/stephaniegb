@@ -5,32 +5,56 @@ import StarCanvas from "./components/StarCanvas";
 import { AnimatePresence } from "framer-motion";
 
 import Projects from "./components/projects/Projects";
-import MosaicProjects from "./components/projects/MosaicProjects";
 import About from "./components/About/About";
 import Hero from "./components/hero/Hero";
 import Work from "./components/work/Work";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import Write from "./components/write/Write";
+import { useEffect, useRef, useState } from "react";
+import useLocoScroll from "@/hooks/useLocoScroll";
+import { BackgroundColorProvider } from "@/context/BackgroundContext";
 
 export default function Home() {
-  const pathname = usePathname();
-  const { scrollYProgress } = useScroll();
+  const [preLoader, setPreLoader] = useState(true);
+  const [timer, setTimer] = useState(4);
+  const pageRef = useRef(null);
+
+  const clear = () => {
+    clearInterval(pageRef.current);
+    setPreLoader(false);
+  };
+  useEffect(() => {
+    pageRef.current = setInterval(() => {
+      setTimer((timer) => timer - 1);
+    }, 1000);
+  }, []);
+  useEffect(() => {
+    if (timer === 0) {
+      clear();
+    }
+  }, [timer]);
+
+  useLocoScroll(!preLoader);
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Work />
-      <About />
-      <Footer />
+      {preLoader ? (
+        <div className="loader-container">
+          <h1>Loading</h1>
+        </div>
+      ) : (
+        <main data-scroll-container id="main-container">
+          <Navbar />
+          <BackgroundColorProvider>
+            <Hero />
+            <About />
+          </BackgroundColorProvider>
+          <Work />
+          <Write />
+          <Footer />
+        </main>
+      )}
     </>
-    // <AnimatePresence initial={false} mode="wait">
-    //   <m.main key={pathname}>
-    //     <Hero />
-    //     <About />
-    //
-    //     {/* <Projects /> */}
-    //   </m.main>
-    // </AnimatePresence>
   );
 }

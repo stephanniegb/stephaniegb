@@ -69,6 +69,17 @@ body {
 img {
   max-width: 100%;
 }
+
+.loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--lightbeige);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
 .star-canvas {
   position: absolute;
   top: 0;
@@ -84,24 +95,25 @@ font-family: 'Sacramento', cursive; */
 /* CURSOR STYLES */
 #cursor {
   display: none;
-  height: 25px;
-  width: 25px;
-  background-color: plum;
+  height: 40px;
+  width: 40px;
+  /* width: 500px; */
+  background-color: transparent;
   border-radius: 50px;
   position: absolute;
   z-index: 2;
-  border: 1px solid black;
+  border: 2px solid black;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
   pointer-events: none;
-  box-shadow: 0 0 20px #d77bd7, 0 0 60px #d77bd7, 0 0 120px #d77bd7;
+  /* box-shadow: 0 0 20px #d77bd7, 0 0 60px #d77bd7, 0 0 120px #d77bd7; */
 }
 
 .Reveal {
   opacity: 0;
   filter: blur(5px);
-  transform: translateY(20px);
-  transition: opacity 2s ease, transform 5s ease;
+  transform: translateY(100px);
+  transition: opacity 2s ease, transform 1s ease;
 }
 
 .Reveal.show {
@@ -109,7 +121,30 @@ font-family: 'Sacramento', cursive; */
   filter: blur(0);
   transform: translateY(0);
 }
+.RevealImg {
+  clip-path: inset(1000px 0px 0px 0px);
 
+  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.RevealImg.show {
+  clip-path: inset(0px 0px 0px 0px);
+}
+.RevealSection {
+  height: 0px;
+  transition: height 2s ease;
+}
+.RevealSection.show {
+  height: 100vh;
+  background-color: #000000;
+}
+.RevealBgColor {
+  background-color: #000000;
+  transition: background-color 1.5s ease;
+  min-height: 100vh;
+}
+.RevealBgColor.show {
+  background-color: var(--lightbeige);
+}
 .SlideIn {
   opacity: 0;
   filter: blur(5px);
@@ -141,8 +176,6 @@ font-family: 'Sacramento', cursive; */
 .sticky_parent {
   /* this area will be tranformed to horizontal scroll */
   height: 300vh;
-
-  /* background-color: var(--lightbeige); */
 }
 .sticky {
   overflow: hidden;
@@ -168,7 +201,7 @@ font-family: 'Sacramento', cursive; */
   align-self: center;
 }
 .icon {
-  width: 1.5rem;
+  width: 2rem;
   transition: all 0.3s ease-in-out;
 }
 .project {
@@ -214,4 +247,58 @@ font-family: 'Sacramento', cursive; */
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+/* today */
+.proj {
+  border: 0.5px solid rgb(84, 113, 126);
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  height: 100%;
+
+  /* background-color: rgb(84, 113, 126); */
+}
+.test:nth-child(odd) {
+}
+.proj:hover {
+  filter: grayscale(70%);
+}
+.projImg {
+  border-radius: 10px;
+}
+.projBtm {
+  display: flex;
+  justify-content: space-between;
+}
+.projPreview {
+  /* display: none; */
+  position: absolute;
+  z-index: 100;
+  width: 400px;
+  padding: 1.5rem;
+  background-color: rgba(84, 113, 126, 0.3);
+  border-radius: 10px;
+  margin: 2rem;
+}
+.arrow {
+  display: inline-block;
+  background-color: rgb(237, 113, 98);
+  /* padding: 1rem; */
+  border-radius: 50%;
+  color: white;
+}
+.test:hover .projPreview {
+  display: block;
+}
+.heroContainer {
+  display: grid;
+  place-content: center;
+
+  height: 100vh;
+  background-color: #000000;
+  transition: background-color 1.5s ease;
+  color: white;
+}
+.heroContainer.show {
+  background-color: var(--lightbeige);
 }

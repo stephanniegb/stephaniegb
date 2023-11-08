@@ -1,12 +1,10 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
-
+import { useEffect, useRef } from "react";
 interface Props {
   children: React.ReactNode;
   altClassname?: string;
 }
-
-const Reveal = ({ children, altClassname }: Props) => {
+const RevealSection = ({ children, altClassname }: Props) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -14,8 +12,6 @@ const Reveal = ({ children, altClassname }: Props) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
         }
       });
     });
@@ -28,12 +24,11 @@ const Reveal = ({ children, altClassname }: Props) => {
       }
     };
   }, []);
-
   return (
-    <div className={`${altClassname} Reveal`} ref={ref}>
+    <section className={`${altClassname} RevealSection`} ref={ref}>
       {children}
-    </div>
+    </section>
   );
 };
 
-export default Reveal;
+export default RevealSection;

@@ -1,6 +1,6 @@
 .aboutContainer {
-  background-color: var(--lightbeige);
-  min-height: 100vh;
+  /* background-color: var(--lightbeige); */
+  height: 100vh;
   padding: 3rem;
 }
 .header {

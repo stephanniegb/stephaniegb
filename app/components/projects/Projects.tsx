@@ -1,49 +1,76 @@
 import NewTab from "@/svg/NewTab";
 import Reveal from "../Reveal";
-interface ProjectsProps {
-  description: string;
-  imgUrl: string;
-  techs: string[];
-  projectUrl: string;
+import { useState } from "react";
+import Cursor from "../Cursor";
+interface ProjectStyles {
+  [key: string]: string;
 }
 
-const Project = ({ description, imgUrl, techs, projectUrl }: ProjectsProps) => {
+interface ProjectsProps {
+  id: string;
+  description?: string;
+  imgUrl?: string;
+  techs: string[];
+  projectUrl?: string;
+  styles: ProjectStyles;
+}
+
+const Project = ({
+  description,
+  imgUrl,
+  techs,
+  projectUrl,
+  styles,
+  id,
+}: ProjectsProps) => {
   return (
-    <Reveal>
-      <figure className="project">
-        <div className="projectImgContainer">
-          <img src={imgUrl} alt="" className="projectImg" />
-        </div>
-        <figcaption className="figCaption">
-          <a href={projectUrl} target="_blank" rel="noopener noreferrer">
-            <h2 className="projectTitle">
-              Project Title{" "}
-              <span>
+    <>
+      <div
+        id={id}
+        // className={styles.test}
+        className="test"
+      >
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+          <div className="proj">
+            {/* <div className={styles.proj}> */}
+            <img
+              src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
+              alt=""
+              className="projImg"
+              // className={styles.projImg}
+            />
+            {/* <div className={styles.projBtm}>
+            <ul className={styles.techWrapper}> */}
+            <div className="projBtm">
+              <ul className="techWrapper"></ul>
+            </div>
+          </div>
+        </a>
+        <Cursor id={id}>
+          <div className="projPreview">
+            <img
+              src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
+              alt=""
+              className="projImg"
+            />
+            <div>
+              <ul>
+                {techs.map((tech, key) => {
+                  return (
+                    <li key={key} className="tech">
+                      {tech}
+                    </li>
+                  );
+                })}
+              </ul>
+              <span className="arrow">
                 <NewTab />
               </span>
-            </h2>
-          </a>
-          {/* <p className="projectDescription">{description}</p> */}
-          <div className="captionBottom">
-            <ul className="techWrapper">
-              {techs.map((tech, key) => {
-                return (
-                  <li key={key} className="tech">
-                    {tech}
-                  </li>
-                );
-              })}
-            </ul>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="LearnMoreLink"
-              href="#"
-            ></a>
+            </div>
           </div>
-        </figcaption>
-      </figure>
-    </Reveal>
+        </Cursor>
+      </div>
+    </>
   );
 };
 

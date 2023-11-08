@@ -3,6 +3,9 @@ import styles from "./Work.module.css";
 import Carousel from "../projects/Carousel";
 import Project from "../projects/Projects";
 import { useEffect } from "react";
+import NewTab from "@/svg/NewTab";
+import Cursor from "../Cursor";
+import Projects from "@/app/projects/page";
 const images = [
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
   "/Screenshot 2023-10-22 at 8.43.49 PM.png",
@@ -39,7 +42,7 @@ const Work = () => {
   }, []);
 
   return (
-    <section id="work" className={styles.workContainer}>
+    <section data-scroll-section id="work" className={styles.workContainer}>
       <h2 className={styles.header}>
         My works?...
         <svg
@@ -56,23 +59,43 @@ const Work = () => {
           />
         </svg>
       </h2>
-      <div className="sticky_parent">
-        <div className="sticky">
-          <div className="scroll_section">
-            {images.map((img, index) => (
-              <Project
-                key={index}
-                projectUrl=""
-                description={
-                  "Lorem ipsum dolor sit, amet consectetur adipisicing elit.Reiciendis optio dicta est nostrum rem necessitatibus fugit"
-                }
-                imgUrl={"/Screenshot 2023-10-22 at 8.43.49 PM.png"}
-                techs={["React", "typescript"]}
-              />
-            ))}
-          </div>
+      <section className={styles.ProjectsWrapper}>
+        <div></div>
+        <div className={styles.AllProjects}>
+          <Project
+            id="project1"
+            styles={styles}
+            techs={["Tech1", "Tech2", "Tech3"]}
+          />
+          <Project
+            id="project2"
+            styles={styles}
+            techs={["Tech1", "Tech2", "Tech3"]}
+          />
+          <div></div>
+          <Project
+            id="project3"
+            styles={styles}
+            techs={["Tech1", "Tech2", "Tech3"]}
+          />
+          <div></div>
+          <Project
+            id="project4"
+            styles={styles}
+            techs={["Tech1", "Tech2", "Tech3"]}
+          />
+          <Project
+            id="project5"
+            styles={styles}
+            techs={["Tech1", "Tech2", "Tech3"]}
+          />
+          <Project
+            id="project6"
+            styles={styles}
+            techs={["Tech1", "Tech2", "Tech3"]}
+          />
         </div>
-      </div>
+      </section>
     </section>
   );
 };
