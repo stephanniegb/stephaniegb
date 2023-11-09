@@ -75,6 +75,7 @@ const Work = () => {
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
             projTitle="timely"
+            imgUrl="/IMG_6522 Background Removed.png"
           />
 
           <Project

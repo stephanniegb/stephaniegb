@@ -3,14 +3,14 @@
 }
 .projLink {
   border-bottom: 0.5px solid black;
-  padding: 3rem;
+  padding: 2rem;
   display: block;
 }
 .projLink:first-child {
   /* border-top: 0.5px solid black; */
 }
 .projLink:hover .arrow {
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.35rem);
 }
 .projectTitleContainer {
   display: flex;

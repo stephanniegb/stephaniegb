@@ -42,21 +42,18 @@ const Project = ({ techs, id, projTitle, imgUrl }: ProjectsProps) => {
           </ul>
         </div>
       </a>
+      <Cursor id={id}>j</Cursor>
     </div>
   );
 };
 
 export default Project;
 {
-  /* <Cursor id={id}> */
+  /*  */
 }
 {
-  /* <div className="projPreview">
-          <img
-            src="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-            alt=""
-            className="projImg"
-          /> */
+  /*
+   */
 }
 {
   /* <div>
