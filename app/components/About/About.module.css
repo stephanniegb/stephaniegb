@@ -1,5 +1,4 @@
-.aboutContainer {
-  /* background-color: var(--lightbeige); */
+#aboutContainer {
   min-height: 100vh;
   padding: 3rem;
 }

@@ -1,0 +1,8 @@
+.SlideinBorder {
+  width: 0px;
+  transition: width 1s ease-in;
+}
+.SlideinBorder.show {
+  width: 100%;
+  background-color: black;
+}

@@ -1,6 +1,8 @@
 import NewTab from "@/svg/NewTab";
-import Cursor from "../cursor/Cursor";
 import "./projects.css";
+import { useState } from "react";
+import ProjectPreview from "./ProjectPreview";
+import SlideinBorder from "../RevealAnimations/SlideinBorder";
 interface ProjectStyles {
   [key: string]: string;
 }
@@ -13,10 +15,35 @@ interface ProjectsProps {
   projectUrl?: string;
   styles: ProjectStyles;
 }
-
+const images = [
+  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+  "/IMG_6522 Background Removed.png",
+  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+  "/IMG_6522 Background Removed.png",
+  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+];
 const Project = ({ techs, id, projTitle, imgUrl }: ProjectsProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    setMousePosition({ x: e.clientX - 100, y: e.clientY });
+  };
   return (
-    <div className="project">
+    <div
+      className="project"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseMove={handleMouseMove}
+    >
+      <SlideinBorder height=".5px" />
       <a
         href="http://"
         target="_blank"
@@ -42,28 +69,15 @@ const Project = ({ techs, id, projTitle, imgUrl }: ProjectsProps) => {
           </ul>
         </div>
       </a>
-      <Cursor id={id}>j</Cursor>
+
+      <div
+        className={isHovered ? "projPreview" : "noPreview"}
+        style={{ top: 40, left: mousePosition.x }}
+      >
+        {/* <ProjectPreview images={images} /> */}
+      </div>
     </div>
   );
 };
 
 export default Project;
-{
-  /*  */
-}
-{
-  /*
-   */
-}
-{
-  /* <div>
-            
-
-          </div> */
-}
-{
-  /* </div> */
-}
-{
-  /* // </Cursor> */
-}

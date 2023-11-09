@@ -190,8 +190,6 @@ font-family: 'Sacramento', cursive; */
   transition: all 0.3s ease-in-out;
 }
 
-/* today */
-
 .heroContainer {
   display: grid;
   place-content: center;

@@ -12,30 +12,29 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Write from "./components/write/Write";
 import { useEffect, useRef, useState } from "react";
-import useLocoScroll from "@/hooks/useLocoScroll";
 import { BackgroundColorProvider } from "@/context/BackgroundContext";
 
 export default function Home() {
-  const [preLoader, setPreLoader] = useState(false); // change this to true for it to work
-  // const [timer, setTimer] = useState(4);
-  // const pageRef = useRef(null);
+  const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
+  const [timer, setTimer] = useState(4);
+  const pageRef = useRef(null);
 
-  // const clear = () => {
-  //   clearInterval(pageRef.current);
-  //   setPreLoader(false);
-  // };
-  // useEffect(() => {
-  //   pageRef.current = setInterval(() => {
-  //     setTimer((timer) => timer - 1);
-  //   }, 1000);
-  // }, []);
-  // useEffect(() => {
-  //   if (timer === 0) {
-  //     clear();
-  //   }
-  // }, [timer]);
+  const clear = () => {
+    clearInterval(pageRef.current);
+    setPreLoader(false);
+  };
+  useEffect(() => {
+    pageRef.current = setInterval(() => {
+      setTimer((timer) => timer - 1);
+    }, 1000);
+  }, []);
+  useEffect(() => {
+    if (timer === 0) {
+      clear();
+    }
+  }, [timer]);
 
-  useLocoScroll(!preLoader);
+  // useLocoScroll(!preLoader);
 
   return (
     <>
@@ -46,10 +45,7 @@ export default function Home() {
       ) : (
         <>
           <Navbar />
-          <main
-          // data-scroll-container
-          // id="main-container"
-          >
+          <main id="main-container">
             <BackgroundColorProvider>
               <Hero />
               <About />

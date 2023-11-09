@@ -35,7 +35,6 @@ const Footer = () => {
           </div>
         </div>
         <form action="" className={Styles.form}>
-          {/* <div> */}
           <input
             type="text"
             placeholder="name"
@@ -46,7 +45,7 @@ const Footer = () => {
             placeholder="email"
             className={Styles.footerInput}
           />
-          {/* </div> */}
+
           <textarea
             name=""
             id=""
@@ -65,6 +64,7 @@ const Footer = () => {
           <button className={Styles.creditsBtn}>Credits</button>
         </p>
       </div>
+      <div className={Styles.rights}></div>
     </footer>
   );
 };

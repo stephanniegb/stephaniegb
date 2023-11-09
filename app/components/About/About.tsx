@@ -1,16 +1,33 @@
-import { useContext } from "react";
+"use client";
+import { useContext, useEffect } from "react";
 import ImageReveal from "../RevealAnimations/ImageReveal";
 import RevealBgColor from "../RevealAnimations/RevealBgColor";
 import styles from "./About.module.css";
 import { BackgroundColorcontext } from "@/context/BackgroundContext";
+import SplitText from "../../../util/SplitText.min";
+import gsap from "gsap";
 
 const About = () => {
   const BgColor = useContext(BackgroundColorcontext);
+  // useEffect(() => {
+  //   const split = new SplitText("#yourElementID", {
+  //     type: "lines",
+  //     lineClass: "lineChildren",
+  //   });
+  //   gsap.to(split.lines, {
+  //     duration: 1,
+  //     y: 0,
+  //     opacity: 1,
+  //     stagger: 0.1,
+  //     ease: "power2",
+  //   });
+  //   return () => {};
+  // }, []);
+
   return (
     <RevealBgColor>
       <section
-        // data-scroll-section
-        // data-scroll-speed="2"
+        id={styles.aboutContainer}
         className={`RevealBgColor ${BgColor?.isBgWhite ? "show" : ""}`}
       >
         <h3 className={styles.header}>About me...</h3>
@@ -28,7 +45,7 @@ const About = () => {
           />
         </svg>
         <div className={styles.mainAbout}>
-          <article className={styles.aboutArticleContainer}>
+          <article id="yourElementID" className={styles.aboutArticleContainer}>
             <h2 className={styles.aboutArticle}>
               I am stephanie Egbuonu <br />a{" "}
               <span className={styles.coloredText}>software enginer</span>. I
@@ -38,9 +55,13 @@ const About = () => {
           <div className={styles.stephImgContainer}>
             <div className={styles.stephImgDiv}>
               <ImageReveal
-                imgUrl="/IMG_6522 Background Removed.png"
+                imgUrl="/plant-4006379_1280 Background Removed.png"
                 imgAltText="Stephanie working"
               />
+              {/* <ImageReveal
+                imgUrl="/flowers-8340270_1280 Background Removed.png"
+                imgAltText="Stephanie working"
+              /> */}
             </div>
           </div>
         </div>
