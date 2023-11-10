@@ -14,15 +14,10 @@ interface ProjectsProps {
   techs: string[];
   projectUrl?: string;
   styles: ProjectStyles;
+  images: string[];
 }
-const images = [
-  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-  "/IMG_6522 Background Removed.png",
-  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-  "/IMG_6522 Background Removed.png",
-  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-];
-const Project = ({ techs, id, projTitle, imgUrl }: ProjectsProps) => {
+
+const Project = ({ techs, id, projTitle, imgUrl, images }: ProjectsProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const handleMouseEnter = () => {
@@ -74,7 +69,7 @@ const Project = ({ techs, id, projTitle, imgUrl }: ProjectsProps) => {
         className={isHovered ? "projPreview" : "noPreview"}
         style={{ top: 40, left: mousePosition.x }}
       >
-        {/* <ProjectPreview images={images} /> */}
+        <ProjectPreview images={images} />
       </div>
     </div>
   );

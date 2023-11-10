@@ -1,12 +1,12 @@
 .header {
-  display: grid;
+  /* display: grid;
   justify-content: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .workContainer {
-  padding: 2rem;
-  background-color: var(--lightbeige);
+  padding: 4rem;
+  background-color: rgb(20, 18, 18);
 
   min-height: 100vh;
 }
@@ -43,6 +43,8 @@
 }
 .ProjectsWrapper {
   display: grid;
+
+  margin-top: 4rem;
 }
 
 .icon {
@@ -52,7 +54,7 @@
 .AllProjects {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  /* gap: 4rem; */
   width: 80%;
   margin: 0 auto;
 }

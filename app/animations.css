@@ -4,5 +4,32 @@
 }
 .SlideinBorder.show {
   width: 100%;
-  background-color: black;
+  background-color: #ffffff;
+}
+
+.aboutContainerBg {
+  background-color: #021937;
+  transition: background-color 1.5s ease-in;
+}
+.aboutContainerBg.show {
+  background-color: rgb(20, 18, 18);
+}
+/* .RevealBgColor {
+
+  background-color: #021937;
+
+  transition: background-color 1.5s ease-in;
+  min-height: 100vh;
+}
+.RevealBgColor.show {
+
+} */
+.writeContainer {
+  padding: 4rem;
+  min-height: 100vh;
+  background-color: #021937;
+  transition: background-color 1.5s ease-in;
+}
+.writeContainer.show {
+  background-color: rgb(20, 18, 18);
 }

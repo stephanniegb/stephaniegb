@@ -13,6 +13,7 @@ import Footer from "./components/footer/Footer";
 import Write from "./components/write/Write";
 import { useEffect, useRef, useState } from "react";
 import { BackgroundColorProvider } from "@/context/BackgroundContext";
+import Loader from "./components/loader/loader";
 
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
@@ -40,18 +41,19 @@ export default function Home() {
     <>
       {preLoader ? (
         <div className="loader-container">
-          <h1>Loading</h1>
+          <Loader />
         </div>
       ) : (
         <>
           <Navbar />
           <main id="main-container">
+            <StarCanvas />
+            <Hero />
             <BackgroundColorProvider>
-              <Hero />
               <About />
+              <Write />
             </BackgroundColorProvider>
             <Work />
-            <Write />
           </main>
           <Footer />
         </>

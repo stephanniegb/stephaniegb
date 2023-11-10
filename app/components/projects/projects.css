@@ -2,14 +2,13 @@
   position: relative;
 }
 .projLink {
-  padding: 2rem;
+  padding: 4rem;
   display: block;
 }
-.projLink:first-child {
-  /* border-top: 0.5px solid black; */
-}
+
 .projLink:hover .arrow {
   transform: translateY(-0.35rem);
+  color: rgb(95, 203, 151);
 }
 .projectTitleContainer {
   display: flex;
@@ -34,9 +33,11 @@
   gap: 0.5rem;
 }
 .tech {
-  padding: 0.3rem;
-  border-radius: 5px;
+  padding: 0.5rem;
+  border-radius: 25px;
   font-size: var(--small-p-fs);
+  /* background-color: rgba(95, 203, 151, 0.4); */
+  color: rgb(95, 203, 151);
 }
 .noPreview {
   height: 0px;
@@ -48,14 +49,15 @@
   opacity: 1;
   position: absolute;
   z-index: 100;
-  background-color: chocolate;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
   padding: 0.5rem;
-  width: 25rem;
+  max-width: 25rem;
   transition: visibility 0.3s, opacity 0.3s;
 }
 .slideshow-image {
   width: 100%;
   height: auto;
   transition: opacity 0.5s ease-in-out;
+  border-radius: 5px;
 }

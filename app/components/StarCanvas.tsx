@@ -50,8 +50,6 @@ const StarCanvas = () => {
           position={[10, 10, 10]}
         />
         <MyStar />
-        {/* <Sphere /> */}
-        {/* <MyScene /> */}
       </Canvas>
     </div>
   );

@@ -4,8 +4,10 @@ import ImageReveal from "../RevealAnimations/ImageReveal";
 import RevealBgColor from "../RevealAnimations/RevealBgColor";
 import styles from "./About.module.css";
 import { BackgroundColorcontext } from "@/context/BackgroundContext";
-import SplitText from "../../../util/SplitText.min";
+
 import gsap from "gsap";
+import StarCanvas from "../StarCanvas";
+import ReverseBgColor from "../RevealAnimations/ReverseBgColor";
 
 const About = () => {
   const BgColor = useContext(BackgroundColorcontext);
@@ -25,12 +27,13 @@ const About = () => {
   // }, []);
 
   return (
-    <RevealBgColor>
+    <ReverseBgColor>
       <section
         id={styles.aboutContainer}
-        className={`RevealBgColor ${BgColor?.isBgWhite ? "show" : ""}`}
+        className={`aboutContainerBg ${BgColor?.isBgWhite ? "show" : ""}`}
       >
-        <h3 className={styles.header}>About me...</h3>
+        {/* className={styles.header} */}
+        <h2>About me...</h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="200"
@@ -45,7 +48,7 @@ const About = () => {
           />
         </svg>
         <div className={styles.mainAbout}>
-          <article id="yourElementID" className={styles.aboutArticleContainer}>
+          <article className={styles.aboutArticleContainer}>
             <h2 className={styles.aboutArticle}>
               I am stephanie Egbuonu <br />a{" "}
               <span className={styles.coloredText}>software enginer</span>. I
@@ -58,15 +61,13 @@ const About = () => {
                 imgUrl="/plant-4006379_1280 Background Removed.png"
                 imgAltText="Stephanie working"
               />
-              {/* <ImageReveal
-                imgUrl="/flowers-8340270_1280 Background Removed.png"
-                imgAltText="Stephanie working"
-              /> */}
             </div>
           </div>
         </div>
       </section>
-    </RevealBgColor>
+    </ReverseBgColor>
+    // <RevealBgColor>
+    // </RevealBgColor>
   );
 };
 

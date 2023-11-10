@@ -49,7 +49,7 @@ const Work = () => {
           <path
             d="M0 30 C 20 20, 40 40, 60 30 S 100 20, 120 30 S 160 20, 200 30"
             fill="none"
-            stroke="#000000"
+            stroke="#ffffff"
             stroke-width="3"
           />
         </svg>
@@ -59,16 +59,26 @@ const Work = () => {
           <Project
             id="project1"
             styles={styles}
-            techs={["Tech1", "Tech2", "Tech3"]}
+            techs={["React", "TypeScript", "Nodejs", "Express"]}
             projTitle="Scissors"
             imgUrl="/Screenshot 2023-10-22 at 8.43.49 PM.png"
+            images={[
+              "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+              "/Screenshot 2023-11-10 at 4.13.47 PM.png",
+              "/Screenshot 2023-11-10 at 4.14.13 PM.png",
+            ]}
           />
           <Project
             id="project2"
             styles={styles}
-            techs={["Tech1", "Tech2", "Tech3"]}
-            projTitle="timely"
+            techs={["VueJs", "Javascript", "Sass"]}
+            projTitle="goShop"
             imgUrl="/IMG_6522 Background Removed.png"
+            images={[
+              "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+              "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+              "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+            ]}
           />
 
           <Project
@@ -76,6 +86,7 @@ const Work = () => {
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
             projTitle="timely"
+            images={[]}
           />
 
           <Project
@@ -83,18 +94,21 @@ const Work = () => {
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
             projTitle="timely"
+            images={[]}
           />
           <Project
             id="project5"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
             projTitle="timely"
+            images={[]}
           />
           <Project
             id="project6"
             styles={styles}
             techs={["Tech1", "Tech2", "Tech3"]}
             projTitle="timely"
+            images={[]}
           />
         </div>
       </section>
