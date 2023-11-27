@@ -1,11 +1,17 @@
 "use client";
-
-import { useContext, useEffect, useRef } from "react";
+import {
+  Dispatch,
+  MutableRefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+} from "react";
 interface Props {
   children: React.ReactNode;
-  altClassname?: string;
+  intersectionRoot: MutableRefObject<null>;
+  setState: Dispatch<SetStateAction<number>>;
 }
-const RevealBgColor = ({ children }: Props) => {
+const ReavealBlueBg = ({ children, intersectionRoot, setState }: Props) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -13,16 +19,13 @@ const RevealBgColor = ({ children }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // entry.target.classList.add("show");
-          } else {
-            // BgColor?.setIsBgWhite(false);
-            // entry.target.classList.remove("show");
+            setState(1);
           }
         });
       },
       {
+        root: intersectionRoot.current,
         threshold: 0.5,
-        rootMargin: "0px",
       }
     );
     if (ref.current) {
@@ -34,6 +37,7 @@ const RevealBgColor = ({ children }: Props) => {
       }
     };
   }, []);
+
   return (
     <section className={`RevealBgColor`} ref={ref}>
       {children}
@@ -41,4 +45,4 @@ const RevealBgColor = ({ children }: Props) => {
   );
 };
 
-export default RevealBgColor;
+export default ReavealBlueBg;

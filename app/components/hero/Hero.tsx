@@ -1,18 +1,17 @@
 "use client";
+import { useContext, useRef } from "react";
 import Reveal from "../Reveal";
-import styles from "./Hero.module.css";
-
 
 const Hero = () => {
+  const rootRef = useRef(null);
+
   return (
-    <section className={styles.heroContainer}>
-      <div>
-        <Reveal>
-          <h1 className={styles.introName}>Stephanie Egbuonu</h1>
-        </Reveal>
-        <p>Succkish Front End Software Engineer </p>
-      </div>
-    </section>
+    <div className="h-screen w-screen  grid place-content-center relative">
+      <Reveal intersectionRoot={rootRef}>
+        <h1 className="text-[6em] font-serif">Stephanie Egbuonu</h1>
+      </Reveal>
+      <p>Front End Software Engineer </p>
+    </div>
   );
 };
 

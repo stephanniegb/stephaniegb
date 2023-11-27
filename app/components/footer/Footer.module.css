@@ -1,10 +1,12 @@
 .footerContainer {
-  position: sticky;
+  /* position: fixed; */
   width: 100%;
+
   bottom: 0;
-  left: 0;
+
   background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-  z-index: -99;
+  background: transparent;
+  /* z-index: 1; */
   height: 100vh;
   display: grid;
   place-content: center;

@@ -1,24 +1,29 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, MutableRefObject } from "react";
 
 interface Props {
   children: React.ReactNode;
-  altClassname?: string;
+  intersectionRoot: MutableRefObject<null>;
 }
 
-const Reveal = ({ children, altClassname }: Props) => {
+const Reveal = ({ children, intersectionRoot }: Props) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show");
-        }
-      });
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      {
+        root: intersectionRoot.current,
+      }
+    );
     if (ref.current) {
       observer.observe(ref.current);
     }
@@ -30,7 +35,7 @@ const Reveal = ({ children, altClassname }: Props) => {
   }, []);
 
   return (
-    <div className={`${altClassname} Reveal`} ref={ref}>
+    <div className={`Reveal`} ref={ref}>
       {children}
     </div>
   );

@@ -3,6 +3,7 @@ import "./animations.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Cursor from "./components/cursor/Cursor";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,10 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black">
-        {/* <Cursor /> */}
-        {children}
-      </body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }

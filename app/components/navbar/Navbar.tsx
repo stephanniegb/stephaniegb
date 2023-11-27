@@ -14,7 +14,7 @@ const Navbar = () => {
   }, []);
   return (
     <header
-      data-scroll-section
+      // data-scroll-section
       className={isVisible ? styles.header : styles.hidden}
     >
       <Link href={"/"}>

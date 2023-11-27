@@ -1,17 +1,27 @@
-import { useContext } from "react";
-import RevealBgColor from "../RevealAnimations/RevealBgColor";
-import RevealSection from "../RevealAnimations/RevealSection";
-import "./write.css";
-import { BackgroundColorcontext } from "@/context/BackgroundContext";
+import { Dispatch, SetStateAction, useRef } from "react";
 
-const Write = () => {
-  const BgColor = useContext(BackgroundColorcontext);
+import "./write.css";
+
+import ReavealBlackBg from "../RevealAnimations/ReavealBlackBg";
+
+const Write = ({
+  setState,
+}: {
+  setState: Dispatch<SetStateAction<number>>;
+}) => {
+  const rootRef = useRef(null);
+
   return (
-    <RevealBgColor>
-      <section className={`writeContainer ${BgColor?.isBgWhite ? "show" : ""}`}>
-        <h3>Somtimes I write....</h3>
-      </section>
-    </RevealBgColor>
+    <section className="h-screen">
+      <ReavealBlackBg setState={setState} intersectionRoot={rootRef}>
+        <section>
+          <h3>Somtimes I write....</h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident eum
+          illum eaque in explicabo. Nemo expedita et quia ullam similique porro
+          dolores obcaecati vitae distinctio, corporis non a aspernatur vel.
+        </section>
+      </ReavealBlackBg>
+    </section>
   );
 };
 

@@ -1,16 +1,16 @@
 "use client";
-import { useContext, useEffect } from "react";
+import { Dispatch, SetStateAction, useRef } from "react";
 import ImageReveal from "../RevealAnimations/ImageReveal";
-import RevealBgColor from "../RevealAnimations/RevealBgColor";
 import styles from "./About.module.css";
-import { BackgroundColorcontext } from "@/context/BackgroundContext";
+import ReavealBlueBg from "../RevealAnimations/ReavealBlueBg";
 
-import gsap from "gsap";
-import StarCanvas from "../StarCanvas";
-import ReverseBgColor from "../RevealAnimations/ReverseBgColor";
+const About = ({
+  setState,
+}: {
+  setState: Dispatch<SetStateAction<number>>;
+}) => {
+  const rootRef = useRef(null);
 
-const About = () => {
-  const BgColor = useContext(BackgroundColorcontext);
   // useEffect(() => {
   //   const split = new SplitText("#yourElementID", {
   //     type: "lines",
@@ -27,12 +27,8 @@ const About = () => {
   // }, []);
 
   return (
-    <ReverseBgColor>
-      <section
-        id={styles.aboutContainer}
-        className={`aboutContainerBg ${BgColor?.isBgWhite ? "show" : ""}`}
-      >
-        {/* className={styles.header} */}
+    <section>
+      <section id={styles.aboutContainer}>
         <h2>About me...</h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,27 +43,27 @@ const About = () => {
             stroke-width="3"
           />
         </svg>
-        <div className={styles.mainAbout}>
-          <article className={styles.aboutArticleContainer}>
-            <h2 className={styles.aboutArticle}>
-              I am stephanie Egbuonu <br />a{" "}
-              <span className={styles.coloredText}>software enginer</span>. I
-              build accessible and inclusive web experince
-            </h2>
-          </article>
-          <div className={styles.stephImgContainer}>
-            <div className={styles.stephImgDiv}>
-              <ImageReveal
-                imgUrl="/plant-4006379_1280 Background Removed.png"
-                imgAltText="Stephanie working"
-              />
+        <ReavealBlueBg setState={setState} intersectionRoot={rootRef}>
+          <div className={styles.mainAbout}>
+            <article className={styles.aboutArticleContainer}>
+              <h2 className={styles.aboutArticle}>
+                I am stephanie Egbuonu <br />a{" "}
+                <span className={styles.coloredText}>software enginer</span>. I
+                build accessible and inclusive web experince
+              </h2>
+            </article>
+            <div className={styles.stephImgContainer}>
+              <div className={styles.stephImgDiv}>
+                <ImageReveal
+                  imgUrl="/plant-4006379_1280 Background Removed.png"
+                  imgAltText="Stephanie working"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </ReavealBlueBg>
       </section>
-    </ReverseBgColor>
-    // <RevealBgColor>
-    // </RevealBgColor>
+    </section>
   );
 };
 

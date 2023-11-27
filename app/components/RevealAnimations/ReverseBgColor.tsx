@@ -7,7 +7,6 @@ interface Props {
 }
 const ReverseBgColor = ({ children }: Props) => {
   const BgColor = useContext(BackgroundColorcontext);
-
   const ref = useRef(null);
 
   useEffect(() => {

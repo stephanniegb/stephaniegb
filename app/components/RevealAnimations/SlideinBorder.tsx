@@ -5,6 +5,7 @@ type PropTypes = {
 };
 const SlideinBorder = ({ height }: PropTypes) => {
   const ref = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

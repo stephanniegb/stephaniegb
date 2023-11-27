@@ -1,23 +1,15 @@
 "use client";
-import { usePathname } from "next/navigation";
-import { motion as m, useScroll } from "framer-motion";
-import StarCanvas from "./components/StarCanvas";
-import { AnimatePresence } from "framer-motion";
 
-import Projects from "./components/projects/Projects";
-import About from "./components/About/About";
-import Hero from "./components/hero/Hero";
-import Work from "./components/work/Work";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
-import Write from "./components/write/Write";
 import { useEffect, useRef, useState } from "react";
-import { BackgroundColorProvider } from "@/context/BackgroundContext";
-import Loader from "./components/loader/loader";
+
+import Loader from "./components/loader/Loader";
+import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
+import SceneCanvas from "./components/scene/SceneCanvas";
 
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
-  const [timer, setTimer] = useState(4);
+  const [timer, setTimer] = useState(2);
   const pageRef = useRef(null);
 
   const clear = () => {
@@ -35,27 +27,16 @@ export default function Home() {
     }
   }, [timer]);
 
-  // useLocoScroll(!preLoader);
-
   return (
     <>
       {preLoader ? (
-        <div className="loader-container">
-          <Loader />
-        </div>
+        <Loader />
       ) : (
         <>
-          <Navbar />
-          <main id="main-container">
-            <StarCanvas />
-            <Hero />
-            <BackgroundColorProvider>
-              <About />
-              <Write />
-            </BackgroundColorProvider>
-            <Work />
-          </main>
-          <Footer />
+          <section className="grid place-content-center min-h-screen relative">
+            <Navbar />
+            <SceneCanvas />
+          </section>
         </>
       )}
     </>
