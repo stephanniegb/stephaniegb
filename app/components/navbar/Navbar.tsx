@@ -1,33 +1,29 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
+import { gsap } from "gsap";
+
 const Navbar = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    if (navRef.current) {
+      gsap.to(navRef.current, {
+        y: 0,
+        duration: 0.5,
+        delay: 0.5,
+      });
+    }
   }, []);
+
   return (
-    <header
-      // data-scroll-section
-      className={isVisible ? styles.header : styles.hidden}
-    >
+    <header ref={navRef} className={styles.header}>
       <Link href={"/"}>
-        <span className={styles.logo}>stephani.egb</span>
+        <span className="font-cursive text-[2.8rem]">stephani.egb</span>
       </Link>
-      <nav className={styles.navContainer}>
-        <ul className={styles.navLinksContainer}>
-          <li>
-            <a href={"#about"}>About</a>
-          </li>
-          <li>
-            <a href={"#work"}>Work</a>
-          </li>
+      <nav>
+        <ul>
           <li>
             <Link href={"/resume"}>Resume</Link>
           </li>

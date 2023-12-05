@@ -37,7 +37,7 @@
   border-radius: 25px;
   font-size: var(--small-p-fs);
   /* background-color: rgba(95, 203, 151, 0.4); */
-  color: rgb(95, 203, 151);
+  color: #5dcb96;
 }
 .noPreview {
   height: 0px;

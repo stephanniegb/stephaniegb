@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import Reveal from "../Reveal";
 
 const Hero = () => {

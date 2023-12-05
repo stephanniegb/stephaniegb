@@ -1,5 +1,5 @@
 "use client";
-import { Scroll, ScrollControls, Stars } from "@react-three/drei";
+import { Scroll, ScrollControls, Stars, Environment } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import Html from "../Html";
@@ -38,7 +38,7 @@ function Scene({
   return (
     <ScrollControls pages={5}>
       <Scroll>
-        <Objects />
+        {/* <Objects /> */}
         <Stars />
       </Scroll>
       <Scroll html>

@@ -1,12 +1,14 @@
 "use client";
-import { OrbitControls } from "@react-three/drei";
+import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import { Scene } from "./Scene";
 
 const styles = [
   {
-    backgroundImage: "linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)",
+    backgroundImage:
+      "radial-gradient(ellipse at bottom, #2b5876 0%, #4e4376 70%, #4e4376 100%)",
+    // backgroundImage: "linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)",
     transition: "background-image 1.5s ease",
     color: "white",
   },
@@ -30,6 +32,7 @@ const SceneCanvas = () => {
   return (
     <div style={styles[backgroundStyles]} className="star-canvas">
       <Canvas camera={{ position: [0, 0, 700] }}>
+        {/*   */}
         <perspectiveCamera fov={75} />
         <OrbitControls
           enableDamping={true}
@@ -43,6 +46,7 @@ const SceneCanvas = () => {
           position={[10, 10, 10]}
         />
         <Suspense fallback={null}>
+          {/* <Environment preset="warehouse" /> */}
           <Scene setBackgroundStyles={setBackgroundStyles} />
         </Suspense>
       </Canvas>
