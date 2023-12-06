@@ -33,11 +33,11 @@ const SceneCanvas = () => {
     <div style={styles[backgroundStyles]} className="star-canvas">
       <Canvas camera={{ position: [0, 0, 700] }}>
         <perspectiveCamera fov={75} />
-        <OrbitControls
-          enableDamping={true}
+        {/* <OrbitControls
+          enableDamping={false}
           enablePan={false}
           enableZoom={false}
-        />
+        /> */}
         <directionalLight
           color={"white"}
           position={[10, -5, -2]}
