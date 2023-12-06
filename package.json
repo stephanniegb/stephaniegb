@@ -9,15 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.88.2",
     "@react-three/fiber": "^8.14.5",
-    "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-spring": "^9.7.3",
+    "split-type": "^0.3.4",
     "three": "^0.157.0"
   },
   "devDependencies": {

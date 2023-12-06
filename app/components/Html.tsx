@@ -5,6 +5,7 @@ import Write from "./write/Write";
 import Work from "./work/Work";
 
 import { Dispatch, SetStateAction, useContext } from "react";
+import Footer from "./footer/Footer";
 
 const Html = ({
   setBackgroundStyles,
@@ -12,11 +13,12 @@ const Html = ({
   setBackgroundStyles: Dispatch<SetStateAction<number>>;
 }) => {
   return (
-    <section className="absolute h-[600vh] w-screen">
+    <section className="absolute h-[600vh] w-screen ">
       <Hero />
       <About setState={setBackgroundStyles} />
       <Write setState={setBackgroundStyles} />
       <Work />
+      <Footer />
     </section>
   );
 };

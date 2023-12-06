@@ -32,13 +32,17 @@ const SceneCanvas = () => {
   return (
     <div style={styles[backgroundStyles]} className="star-canvas">
       <Canvas camera={{ position: [0, 0, 700] }}>
-        {/*   */}
         <perspectiveCamera fov={75} />
         <OrbitControls
           enableDamping={true}
           enablePan={false}
           enableZoom={false}
         />
+        <directionalLight
+          color={"white"}
+          position={[10, -5, -2]}
+          intensity={4}
+        ></directionalLight>
         <ambientLight intensity={1} />
         <pointLight
           color={"0xffffff"}
@@ -46,7 +50,7 @@ const SceneCanvas = () => {
           position={[10, 10, 10]}
         />
         <Suspense fallback={null}>
-          {/* <Environment preset="warehouse" /> */}
+          <Environment preset="night" />
           <Scene setBackgroundStyles={setBackgroundStyles} />
         </Suspense>
       </Canvas>

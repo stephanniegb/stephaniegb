@@ -38,7 +38,7 @@ function Scene({
   return (
     <ScrollControls pages={5}>
       <Scroll>
-        {/* <Objects /> */}
+        <Objects />
         <Stars />
       </Scroll>
       <Scroll html>

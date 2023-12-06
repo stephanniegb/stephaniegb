@@ -71,25 +71,33 @@ const Write = ({
         <SwigglyStroke />
         <div>
           <div>
-            <h3>Some technologies I've worked with:</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+              consectetur quae, nam mollitia dolorum omnis modi cumque est ex
+              officiis provident amet praesentium qui id cum repudiandae ratione
+              nemo veritatis.
+            </p>
           </div>
 
-          <StaggeredReveal
-            styles="flex flex-wrap gap-2"
-            intersectionRoot={rootRef}
-          >
-            {IMAGES.map((image, index) => {
-              const { altText, url } = image;
-              return (
-                <div
-                  className="bg-[#2e302b] grid  place-content-center p-4 rounded-[8px] techExp"
-                  key={index}
-                >
-                  <Image alt={altText} src={url} width={70} height={70} />
-                </div>
-              );
-            })}
-          </StaggeredReveal>
+          <div className="grid grid-cols-2 items-center">
+            <h3>Some technologies I've worked with:</h3>
+            <StaggeredReveal
+              styles="flex flex-wrap gap-2 p-16"
+              intersectionRoot={rootRef}
+            >
+              {IMAGES.map((image, index) => {
+                const { altText, url } = image;
+                return (
+                  <div
+                    className="bg-[#2e302b] grid  place-content-center p-4 rounded-[8px] techExp"
+                    key={index}
+                  >
+                    <Image alt={altText} src={url} width={70} height={70} />
+                  </div>
+                );
+              })}
+            </StaggeredReveal>
+          </div>
         </div>
       </ReavealBlackBg>
     </section>

@@ -1,5 +1,5 @@
 "use client";
-import { OrbitControls, useIntersect } from "@react-three/drei";
+import { useIntersect, useScroll } from "@react-three/drei";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import React, { useMemo, useRef } from "react";
@@ -7,40 +7,18 @@ import * as THREE from "three";
 
 function Objects() {
   const { height, width } = useThree((state) => state.viewport);
-  const { scene } = useLoader(GLTFLoader, "./bubbles.glb");
+  const { scene } = useLoader(GLTFLoader, "./moon.glb");
 
   return (
     <>
-      <Item color="green" position={[0, 2, -10]}>
+      <Item position={[0, 2, -10]}>
         <primitive object={scene} children-0-castShadow />
       </Item>
-      {/* <pointLight color="blue" position={[8, -25, 5]} intensity={20} /> */}
-      {/* <pointLight
-        color="red"
-        position={[0, -height * 2.25, 5]}
-        intensity={10}
-      />
-      <Item color="green" position={[0, 1, 0]}>
-      <primitive object={scene} position={[0, 1, 0]} children-0-castShadow />
-        <sphereGeometry args={[0.25, 64, 64]} />
-      </Item>
-      <Item color="blue" position={[width / 6, -height * 1, 0]}>
-        <dodecahedronGeometry />
-      </Item>
-      <Item color="gray" position={[-width / 5, -height * 1.8, -2]}>
-        <coneGeometry args={[1, 1, 6]} />
-      </Item>
-      <Item color="purple" position={[width / 4, -height * 2, 0]}>
-        <coneGeometry args={[1.5, 2, 3]} />
-      </Item>
-      <Item color="orange" position={[-width / 12, -height * 2.25, 0.5]}>
-        <coneGeometry args={[0.75, 2.5, 12]} />
-      </Item> */}
     </>
   );
 }
 
-function Item({ color, position, children }) {
+function Item({ position, children }) {
   const visible = useRef();
   const ref = useIntersect((isVisible) => (visible.current = isVisible));
   const [xRandomFactor, yRandomFactor] = useMemo(
@@ -48,25 +26,29 @@ function Item({ color, position, children }) {
     []
   );
 
-  // useFrame(({ clock }, delta) => {
-  // const elapsedTime = clock.getElapsedTime();
+  const scroll = useScroll();
+  console.log(scroll);
 
-  //   ref.current.rotation.x = elapsedTime * xRandomFactor;
-  //   ref.current.rotation.y = elapsedTime * yRandomFactor;
+  useFrame(({ clock }, delta) => {
+    const elapsedTime = clock.getElapsedTime();
 
-  //   const scale = THREE.MathUtils.damp(
-  //     ref.current.scale.x,
-  //     visible.current ? 1.5 : 0.2,
-  //     5,
-  //     delta
-  //   );
-  //   ref.current.scale.set(scale, scale, scale);
-  // });
+    ref.current.rotation.x = elapsedTime * xRandomFactor;
+    ref.current.rotation.y = elapsedTime * yRandomFactor;
+    // ref.current.position.y = -10;
+    // ref.current.position.x = 5;
+
+    const scale = THREE.MathUtils.damp(
+      ref.current.scale.x,
+      visible.current ? 1.5 : 0.2,
+      5,
+      delta
+    );
+    ref.current.scale.set(scale, scale, scale);
+  });
 
   return (
     <mesh ref={ref} position={position}>
       {children}
-      <meshPhysicalMaterial transparent color={color} />
     </mesh>
   );
 }

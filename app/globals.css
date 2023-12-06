@@ -13,7 +13,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --large-h2-fs: 1.5em;
-  --small-p-fs: 0.8em;
+  --p-fs: 1.125em;
   --darkGreen: #072026;
   --lightbeige: #071952;
   /* --lightbeige: #fcfaf8; */
@@ -49,6 +49,7 @@ body {
 
 p {
   margin: 0;
+  font-size: var(--p-fs);
 }
 h2 {
   font-size: 3rem;
@@ -153,7 +154,7 @@ font-family: 'Sacramento', cursive; */
 .sticky {
   overflow: hidden;
   position: sticky;
-  top: 0;
+  /* top: 0; */
   height: 100vh;
   /* padding: 4rem; */
 }
@@ -184,4 +185,8 @@ font-family: 'Sacramento', cursive; */
   height: 100vh;
   transition: background-image 1.5s ease;
   color: white;
+}
+.translate-y {
+  transform: translateY(100px);
+  opacity: 0;
 }

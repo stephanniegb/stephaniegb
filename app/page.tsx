@@ -6,6 +6,7 @@ import Loader from "./components/loader/Loader";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import SceneCanvas from "./components/scene/SceneCanvas";
+import Html from "./components/Html";
 
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
