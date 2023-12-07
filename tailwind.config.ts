@@ -13,6 +13,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontSize: {
+        pFS: "1.125em",
+      },
       fontFamily: {
         cursive: ["Sacramento", "cursive"],
         serif: ["Cinzel Decorative", "serif"],

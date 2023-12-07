@@ -1,11 +1,11 @@
 "use client";
 import Hero from "./hero/Hero";
 import About from "./About/About";
-import Write from "./write/Write";
 import Work from "./work/Work";
 
 import { Dispatch, SetStateAction, useContext } from "react";
 import Footer from "./footer/Footer";
+import Experience from "./experience/Experience";
 
 const Html = ({
   setBackgroundStyles,
@@ -16,7 +16,7 @@ const Html = ({
     <section className="absolute h-[600vh] w-screen ">
       <Hero />
       <About setState={setBackgroundStyles} />
-      <Write setState={setBackgroundStyles} />
+      <Experience setState={setBackgroundStyles} />
       <Work />
       <Footer />
     </section>

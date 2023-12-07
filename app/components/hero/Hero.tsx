@@ -1,34 +1,9 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Reveal from "../Reveal";
-import SplitType from "split-type";
-import { gsap } from "gsap";
 
 const Hero = () => {
   const rootRef = useRef(null);
-  // useEffect(() => {
-  //   const text = new SplitType("#target");
-  //   const characters = document.querySelectorAll(".char");
-
-  //   const characterArray = Array.from(characters);
-
-  //   characterArray.map((char) => {
-  //     char.classList.add("translate-y");
-  //   });
-
-  //   characterArray.map((char, index) => {
-  //     gsap.to(char, {
-  //       opacity: 1,
-  //       y: 0,
-  //       stagger: 0.05,
-
-  //       duration: 2,
-  //       ease: "expo",
-  //       delay: index * 0.1,
-  //     });
-  //   });
-  // }, []);
-
   return (
     <div className="h-screen w-screen  grid place-content-center relative">
       <Reveal intersectionRoot={rootRef}>

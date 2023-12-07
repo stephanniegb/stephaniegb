@@ -7,7 +7,6 @@ import * as THREE from "three";
 
 function Objects() {
   const { height, width } = useThree((state) => state.viewport);
-  // console.log(height);
 
   const { scene } = useLoader(GLTFLoader, "./moon.glb");
 
@@ -29,19 +28,18 @@ function Item({ position, children }) {
   );
 
   const scroll = useScroll();
-  const scrollY = scroll.scroll.current;
-  console.log(scroll);
-  // console.log(innerWidth);
+  // const scrollY = scroll.scroll.current;
+  // console.log(scroll.offset);
 
   useFrame(({ mouse, camera, clock }, delta) => {
     const elapsedTime = clock.getElapsedTime();
 
     ref.current.rotation.x = elapsedTime * xRandomFactor;
     ref.current.rotation.y = elapsedTime * yRandomFactor;
-    // console.log(yRandomFactor);
 
     ref.current.position.y = -25 * scroll.offset;
-    // console.log(yRandomFactor);
+
+    const damp = THREE.MathUtils.damp(0, innerWidth, 1, scroll.offset) / 20;
 
     // ref.current.position.x = 4.5;
 

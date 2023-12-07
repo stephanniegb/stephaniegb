@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <header ref={navRef} className={`backdrop-blur ${styles.header}`}>
       <Link href={"/"}>
-        <span className="font-cursive text-[2.8rem]">stephani.egb</span>
+        <span className="font-cursive text-[2em]">stephani.egb</span>
       </Link>
       <nav>
         <ul>

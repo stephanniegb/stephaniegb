@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction, useRef } from "react";
-import "./write.css";
+import SwigglyStroke from "@/svg/SwigglyStroke";
 import ReavealBlackBg from "../RevealAnimations/ReavealBlackBg";
-import Image from "next/image";
 import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
-import SwigglyStroke from "@/svg/swigglyStroke";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import Image from "next/image";
+import { gsap } from "gsap";
 
 const IMAGES = [
   {
@@ -56,21 +56,36 @@ const IMAGES = [
     altText: "HTML",
   },
 ];
-
-const Write = ({
+const Experience = ({
   setState,
 }: {
   setState: Dispatch<SetStateAction<number>>;
 }) => {
   const rootRef = useRef(null);
+  const test = useRef(null);
+
+  useEffect(() => {
+    const el = test.current;
+    gsap.fromTo(
+      el,
+      {
+        rotation: 0,
+        duration: 3,
+      },
+      {
+        rotation: 180,
+        duration: 3,
+      }
+    );
+  }, []);
 
   return (
     <section className="h-screen p-12">
       <ReavealBlackBg setState={setState} intersectionRoot={rootRef}>
-        <h2>Experience</h2>
+        <h2 ref={test}>Experience</h2>
         <SwigglyStroke />
         <div>
-          <div>
+          <div className="text-center">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
               consectetur quae, nam mollitia dolorum omnis modi cumque est ex
@@ -79,7 +94,7 @@ const Write = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-2 items-center">
+          <div className="grid grid-cols-2 items-center text-[29px]">
             <h3>Some technologies I've worked with:</h3>
             <StaggeredReveal
               styles="flex flex-wrap gap-2 p-16"
@@ -104,4 +119,4 @@ const Write = ({
   );
 };
 
-export default Write;
+export default Experience;
