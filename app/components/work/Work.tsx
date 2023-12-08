@@ -35,7 +35,7 @@ const Work = () => {
     <section>
       <section id="work" className={styles.workContainer}>
         <h2 className={styles.header}>
-          My works?...
+          Work
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="200"

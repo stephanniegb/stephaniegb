@@ -4,6 +4,8 @@ import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const IMAGES = [
   {
@@ -69,11 +71,11 @@ const Experience = ({
     gsap.fromTo(
       el,
       {
-        rotation: 0,
+        // scale: 0,
         duration: 3,
       },
       {
-        rotation: 180,
+        // scale: 2.5,
         duration: 3,
       }
     );
@@ -82,15 +84,17 @@ const Experience = ({
   return (
     <section className="h-screen p-12">
       <ReavealBlackBg setState={setState} intersectionRoot={rootRef}>
-        <h2 ref={test}>Experience</h2>
+        <h2 className="" ref={test}>
+          Experience
+        </h2>
         <SwigglyStroke />
         <div>
           <div className="text-center">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
-              consectetur quae, nam mollitia dolorum omnis modi cumque est ex
-              officiis provident amet praesentium qui id cum repudiandae ratione
-              nemo veritatis.
+              I have two years of experience in web development, I remain
+              steadfast in my commitment to continuous learning in this dynamic
+              and fast-paced industry.Web development is not just a profession
+              for me; it's a continuous journey of growth and exploration.
             </p>
           </div>
 

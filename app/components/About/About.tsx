@@ -19,13 +19,15 @@ const About = ({
         <ReavealBlueBg setState={setState} intersectionRoot={rootRef}>
           <div className={styles.mainAbout}>
             <article className={styles.aboutArticleContainer}>
-              <TextReveal intersectionRoot={rootRef}>
-                <h2 className={styles.aboutArticle} id="target">
-                  I am stephanie Egbuonu <br />a{" "}
-                  <span className={styles.coloredText}>software enginer</span>.
-                  I build accessible and inclusive web experince
-                </h2>
-              </TextReveal>
+              {/* <TextReveal intersectionRoot={rootRef}> */}
+              <h2 className={styles.aboutArticle} id="target">
+                I'm Stephanie Egbuonu,
+                <br /> a{" "}
+                <span className={styles.coloredText}>software engineer </span>
+                with a keen focus on creating accessible and inclusive web
+                experiences.
+              </h2>
+              {/* </TextReveal> */}
             </article>
             <div className={styles.stephImgContainer}>
               <div className={styles.stephImgDiv}>

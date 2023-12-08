@@ -7,7 +7,7 @@ import Envelope from "@/svg/Envelope";
 
 const Footer = () => {
   return (
-    <footer className="">
+    <footer className="flex justify-between items-center p-4">
       <p>
         &#169; 2023 Stephanie Egbuonu. All rights reserved.{" "}
         <button className="">Credits</button>

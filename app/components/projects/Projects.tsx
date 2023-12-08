@@ -69,7 +69,7 @@ const Project = ({ techs, id, projTitle, imgUrl, images }: ProjectsProps) => {
         className={isHovered ? "projPreview" : "noPreview"}
         style={{ top: 40, left: mousePosition.x }}
       >
-        <ProjectPreview images={images} />
+        {/* <ProjectPreview images={images} /> */}
       </div>
     </div>
   );
