@@ -7,6 +7,8 @@ import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import SceneCanvas from "./components/scene/SceneCanvas";
 import Html from "./components/Html";
+import Hero from "./components/hero/Hero";
+import About from "./components/About/About";
 
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
@@ -29,17 +31,9 @@ export default function Home() {
   }, [timer]);
 
   return (
-    <>
-      {preLoader ? (
-        <Loader />
-      ) : (
-        <>
-          <section className="grid place-content-center min-h-screen relative">
-            <Navbar />
-            <SceneCanvas />
-          </section>
-        </>
-      )}
-    </>
+    <main className="">
+      <Hero />
+      <About />
+    </main>
   );
 }
