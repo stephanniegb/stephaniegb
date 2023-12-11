@@ -18,31 +18,6 @@ const About = () => {
     // offset: ["start start", "center start"],
   });
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-
-  //           setIsSticky(true);
-  //         } else {
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: 0,
-  //     }
-  //   );
-  //   if (targetRef.current) {
-  //     observer.observe(targetRef.current);
-  //   }
-  //   return () => {
-  //     if (targetRef.current) {
-  //       observer.unobserve(targetRef.current);
-  //     }
-  //   };
-  // }, []);
-
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const borderRadiusProgress = useTransform(
     scrollYProgress,
@@ -58,17 +33,16 @@ const About = () => {
     [0, 1, 0]
   );
   const text3Animation = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-  // const text1Animation = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
-  // const text2Animation = useTransform(
-  //   scrollYProgress,
-  //   [0.2, 0.4, 0.6],
-  //   [10, 0, -1000]
-  // );
-  // const text3Animation = useTransform(
-  //   scrollYProgress,
-  //   [0.4, 0.6, 0.8],
-  //   [20, 0, -1000]
-  // );
+  const textTranslate2Animation = useTransform(
+    scrollYProgress,
+    [0.2, 0.6],
+    [100, 0]
+  );
+  const textTranslate3Animation = useTransform(
+    scrollYProgress,
+    [0.6, 0.8],
+    [100, 0]
+  );
 
   return (
     <div ref={containerRef} className="h-[300vh] bg-white relative ">
@@ -98,6 +72,7 @@ const About = () => {
           <m.div
             style={{
               opacity: text2Animation,
+              y: textTranslate2Animation,
             }}
             className="absolute "
           >
@@ -118,6 +93,7 @@ const About = () => {
           <m.div
             style={{
               opacity: text3Animation,
+              y: textTranslate3Animation,
             }}
             className="absolute "
           >
@@ -130,50 +106,6 @@ const About = () => {
             </p>
           </m.div>
         </m.div>
-        {/*  <m.div className="relative">
-          <m.h2
-            style={{
-              opacity: text1Animation,
-            }}
-            className="absolute"
-          >
-            Hello There!
-          </m.h2>
-          <m.div
-            style={{
-              opacity: text2Animation,
-            }}
-            className="absolute "
-          >
-            <h2>Stephanie Egbuonu</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio eos labore aliquam laborum doloribus atque quod harum,
-              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-              earum aliquid commodi atque!
-            </p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio eos labore aliquam laborum doloribus atque quod harum,
-              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-              earum aliquid commodi atque!
-            </p>
-          </m.div>
-          <m.div
-            style={{
-              opacity: text3Animation,
-            }}
-            className="absolute "
-          >
-            <h2>I Also</h2>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio eos labore aliquam laborum doloribus atque quod harum,
-              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-              earum aliquid commodi atque!
-            </p>
-          </m.div>
-        </m.div> */}
       </m.div>
     </div>
   );
