@@ -49,18 +49,26 @@ const About = () => {
     [0, 1],
     ["0px", "50px"]
   );
-  const topProgress = useTransform(scrollYProgress, [0, 5], ["1px", "20px"]);
-  const text1Animation = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
+  const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
+
+  const text1Animation = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const text2Animation = useTransform(
     scrollYProgress,
-    [0.2, 0.4, 0.6],
-    [10, 0, -1000]
+    [0.2, 0.6, 0.8],
+    [0, 1, 0]
   );
-  const text3Animation = useTransform(
-    scrollYProgress,
-    [0.4, 0.6, 0.8],
-    [20, 0, -1000]
-  );
+  const text3Animation = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
+  // const text1Animation = useTransform(scrollYProgress, [0, 0.2], [0, -200]);
+  // const text2Animation = useTransform(
+  //   scrollYProgress,
+  //   [0.2, 0.4, 0.6],
+  //   [10, 0, -1000]
+  // );
+  // const text3Animation = useTransform(
+  //   scrollYProgress,
+  //   [0.4, 0.6, 0.8],
+  //   [20, 0, -1000]
+  // );
 
   return (
     <div ref={containerRef} className="h-[300vh] bg-white relative ">
@@ -74,30 +82,26 @@ const About = () => {
         variants={{
           nonSticky: { position: "relative" },
         }}
-        // animate={isSticky ? "sticky" : "nonSticky"}
         ref={targetRef}
-        className="h-[100vh] w-full bg-red-500 grid grid-cols-2 place-content-center"
+        className="h-[100vh] w-full bg-black grid grid-cols-2 "
       >
         <div className=""></div>
-        <m.div className="leading-[0]">
-          <h2>Stephanie Egbuonu</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            eos labore aliquam laborum doloribus atque quod harum, delectus in
-            quisquam, animi temporibus exercitationem ut! Nemo a earum aliquid
-            commodi atque!
-          </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            eos labore aliquam laborum doloribus atque quod harum, delectus in
-            quisquam, animi temporibus exercitationem ut! Nemo a earum aliquid
-            commodi atque!
-          </p>
-          {/* <m.h2 style={{ y: text1Animation }}>Hello There! </m.h2> */}
-
-          {/* <m.div style={{ y: text2Animation }}>
+        <m.div className="relative mt-60">
+          <m.h2
+            style={{
+              opacity: text1Animation,
+            }}
+            className="absolute"
+          >
+            Hello There!
+          </m.h2>
+          <m.div
+            style={{
+              opacity: text2Animation,
+            }}
+            className="absolute "
+          >
             <h2>Stephanie Egbuonu</h2>
-
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Distinctio eos labore aliquam laborum doloribus atque quod harum,
@@ -111,7 +115,12 @@ const About = () => {
               earum aliquid commodi atque!
             </p>
           </m.div>
-          <m.div style={{ y: text3Animation }}>
+          <m.div
+            style={{
+              opacity: text3Animation,
+            }}
+            className="absolute "
+          >
             <h2>I Also</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -119,8 +128,52 @@ const About = () => {
               delectus in quisquam, animi temporibus exercitationem ut! Nemo a
               earum aliquid commodi atque!
             </p>
-          </m.div> */}
+          </m.div>
         </m.div>
+        {/*  <m.div className="relative">
+          <m.h2
+            style={{
+              opacity: text1Animation,
+            }}
+            className="absolute"
+          >
+            Hello There!
+          </m.h2>
+          <m.div
+            style={{
+              opacity: text2Animation,
+            }}
+            className="absolute "
+          >
+            <h2>Stephanie Egbuonu</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio eos labore aliquam laborum doloribus atque quod harum,
+              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
+              earum aliquid commodi atque!
+            </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio eos labore aliquam laborum doloribus atque quod harum,
+              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
+              earum aliquid commodi atque!
+            </p>
+          </m.div>
+          <m.div
+            style={{
+              opacity: text3Animation,
+            }}
+            className="absolute "
+          >
+            <h2>I Also</h2>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio eos labore aliquam laborum doloribus atque quod harum,
+              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
+              earum aliquid commodi atque!
+            </p>
+          </m.div>
+        </m.div> */}
       </m.div>
     </div>
   );

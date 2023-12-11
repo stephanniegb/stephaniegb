@@ -84,8 +84,8 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="h-screen">
-      <h2 className="text-center" ref={test}>
+    <section className="h-screen bg-black">
+      <h2 className="text-center " ref={test}>
         Experience
       </h2>
       <div className="text-center">
