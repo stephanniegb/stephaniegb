@@ -1,55 +1,12 @@
 "use client";
 import styles from "./Work.module.css";
 import Project from "../projects/Projects";
-import { useEffect } from "react";
 
 const Work = () => {
-  // useEffect(() => {
-  //   const stickySection = document.querySelectorAll(".sticky");
-
-  //   const transform = (section: Element) => {
-  //     const parent = section.parentElement;
-  //     if (parent) {
-  //       const offSetTop = parent.offsetTop;
-  //       const scrollSection = section.querySelector(
-  //         ".scroll_section"
-  //       ) as HTMLElement;
-  //       let percentage =
-  //         ((window.scrollY - offSetTop) / window.innerHeight) * 100;
-  //       percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage;
-  //       scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
-  //     }
-  //   };
-  //   const handleScroll = () => {
-  //     for (let i = 0; i < stickySection.length; i++) {
-  //       transform(stickySection[i]);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
-    <section>
-      <section id="work" className={styles.workContainer}>
-        <h2 className={styles.header}>
-          Work
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="200"
-            height="50"
-            viewBox="0 0 200 50"
-          >
-            <path
-              d="M0 30 C 20 20, 40 40, 60 30 S 100 20, 120 30 S 160 20, 200 30"
-              fill="none"
-              stroke="#ffffff"
-              stroke-width="3"
-            />
-          </svg>
-        </h2>
+    <section className="overflow-hidden ">
+      <section id="work" className="bg-black">
+        <h2 className="text-6xl py-12">Projects</h2>
         <section className={styles.ProjectsWrapper}>
           <div className={styles.AllProjects}>
             <Project
@@ -141,6 +98,48 @@ const Work = () => {
           </div>
         </section>
       </section>
+      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#273036"
+          fill-opacity="1"
+          d="M0,256L80,250.7C160,245,320,235,480,213.3C640,192,800,160,960,170.7C1120,181,1280,235,1360,261.3L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg> */}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#273036"
+          fill-opacity="1"
+          d="M0,224L80,234.7C160,245,320,267,480,282.7C640,299,800,309,960,309.3C1120,309,1280,299,1360,293.3L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+      {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#273036"
+          fill-opacity="1"
+          d="M0,128L80,138.7C160,149,320,171,480,186.7C640,203,800,213,960,192C1120,171,1280,117,1360,90.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg> */}
+      {/* <svg
+        className="w-full"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="white"
+          fill-opacity="1"
+          d="M0,128L80,122.7C160,117,320,107,480,117.3C640,128,800,160,960,181.3C1120,203,1280,213,1360,218.7L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg> */}
+
+      {/* <svg
+        className="w-full"
+        width="500"
+        height="80"
+        viewBox="0 0 500 80"
+        preserveAspectRatio="none"
+      >
+        <path d="M0,0 L0,40 Q250,100 500,40 L500,0 Z" fill="white" />
+      </svg> */}
     </section>
   );
 };

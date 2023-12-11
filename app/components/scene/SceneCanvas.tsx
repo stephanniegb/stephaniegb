@@ -50,7 +50,7 @@ const SceneCanvas = () => {
           position={[10, 10, 10]}
         />
         <Suspense fallback={null}>
-          {/* <Environment preset="night" /> */}
+
           <Scene setBackgroundStyles={setBackgroundStyles} />
         </Suspense>
       </Canvas>

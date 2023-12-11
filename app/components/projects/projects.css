@@ -1,11 +1,3 @@
-.project {
-  position: relative;
-}
-.projLink {
-  padding: 4rem;
-  display: block;
-}
-
 .projLink:hover .arrow {
   transform: translateY(-0.35rem);
   color: rgb(95, 203, 151);
@@ -20,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .arrow {
   transform: translateY(0rem);
   transition: transform 0.3s ease-in-out;
@@ -40,20 +33,25 @@
   color: #5dcb96;
 }
 .noPreview {
-  height: 0px;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
+  /* height: 0px; */
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  /* transform: scale(0); */
 }
 .projPreview {
-  visibility: visible;
-  opacity: 1;
+  display: block;
+  /* visibility: visible; */
+  /* opacity: 1; */
   position: absolute;
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 3px;
+  z-index: 3;
+  cursor: pointer;
+  /* background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
   padding: 0.5rem;
-  max-width: 25rem;
-  transition: visibility 0.3s, opacity 0.3s;
+  max-width: 25rem; */
+  /* transform: scale(1); */
+  /* transition: all 0.3; */
 }
 .slideshow-image {
   width: 100%;

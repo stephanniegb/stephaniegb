@@ -9,6 +9,8 @@ import SceneCanvas from "./components/scene/SceneCanvas";
 import Html from "./components/Html";
 import Hero from "./components/hero/Hero";
 import About from "./components/About/About";
+import Experience from "./components/experience/Experience";
+import Work from "./components/work/Work";
 
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
@@ -34,6 +36,9 @@ export default function Home() {
     <main className="">
       <Hero />
       <About />
+      <Experience />
+      <Work />
+      <Footer />
     </main>
   );
 }

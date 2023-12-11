@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-
 interface ProjectsPreviewProps {
   images: string[];
 }
@@ -10,19 +9,20 @@ const ProjectPreview = ({ images }: ProjectsPreviewProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      //% images.length ensures that the index wraps around to 0 when it reaches the length of the images array.
-      //if currentIndex is 2 and images.length is 3, (2 + 1) % 3 equals 0,
-    }, 800);
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
   }, [images.length]);
   return (
-    <figure className="slideshow-container">
+    <figure className="relative">
       <img
         className="slideshow-image"
         src={images[currentIndex]}
         alt={`Slide ${currentIndex}`}
       />
+      {/* <div className="absolute top-[50px] left-[180px] w-[35px] h-[35px] p-10 grid place-content-center rounded-[50%] bg-green-400">
+        <p>view </p>
+      </div> */}
     </figure>
   );
 };

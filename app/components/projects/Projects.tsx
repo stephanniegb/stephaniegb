@@ -1,4 +1,3 @@
-import NewTab from "@/svg/NewTab";
 import "./projects.css";
 import { useState } from "react";
 import ProjectPreview from "./ProjectPreview";
@@ -16,8 +15,16 @@ interface ProjectsProps {
   styles: ProjectStyles;
   images: string[];
 }
+import { motion as m } from "framer-motion";
 
-const Project = ({ techs, id, projTitle, imgUrl, images }: ProjectsProps) => {
+const variants = {
+  open: { opacity: 1, scale: 1 },
+  closed: { opacity: 0, scale: 0.7 },
+};
+const transition = {
+  duration: 0.5,
+};
+const Project = ({ techs, projTitle, images }: ProjectsProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const handleMouseEnter = () => {
@@ -29,11 +36,11 @@ const Project = ({ techs, id, projTitle, imgUrl, images }: ProjectsProps) => {
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    setMousePosition({ x: e.clientX - 100, y: e.clientY });
+    setMousePosition({ x: e.clientX, y: e.clientY });
   };
   return (
     <div
-      className="project"
+      className="transition duration-300 ease-out  hover:text-red-300  hover:ease-in relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
@@ -43,13 +50,23 @@ const Project = ({ techs, id, projTitle, imgUrl, images }: ProjectsProps) => {
         href="http://"
         target="_blank"
         rel="noopener noreferrer"
-        className="projLink"
+        className="p-20 block hover:-translate-x-10 transition duration-300 ease-out hover:ease-in  projLink"
       >
         <div className="projText">
           <div className="projectTitleContainer">
             <h3 className="projectTitle">{projTitle}</h3>
             <span className="arrow">
-              <NewTab />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8.5 4a.5.5 0 1 1 0-1h8a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4.707L3.854 16.854a.5.5 0 0 1-.708-.708L15.293 4H8.5Z"
+                />
+              </svg>
             </span>
           </div>
 
@@ -65,12 +82,15 @@ const Project = ({ techs, id, projTitle, imgUrl, images }: ProjectsProps) => {
         </div>
       </a>
 
-      <div
-        className={isHovered ? "projPreview" : "noPreview"}
-        style={{ top: 40, left: mousePosition.x }}
+      <m.div
+        className={isHovered ? "w-[400px] projPreview " : "noPreview"}
+        variants={variants}
+        animate={isHovered ? "open" : "closed"}
+        transition={transition}
+        style={{ top: 20, left: mousePosition.x }}
       >
-        {/* <ProjectPreview images={images} /> */}
-      </div>
+        <ProjectPreview images={images} />
+      </m.div>
     </div>
   );
 };
