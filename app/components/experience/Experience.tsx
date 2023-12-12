@@ -84,10 +84,8 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="h-screen bg-black">
-      <h2 className="text-center " ref={test}>
-        Experience
-      </h2>
+    <section className="h-screen bg-[#efefe8] text-black flex flex-col gap-12 p-16">
+      <h2 className="text-center">Experience</h2>
       <div className="text-center">
         <p>
           I have two years of experience in web development, I remain steadfast
@@ -98,15 +96,16 @@ const Experience = () => {
       </div>
       <div className="grid grid-cols-2 items-center text-[29px]">
         <h3>Some technologies I've worked with:</h3>
+
         <StaggeredReveal
-          styles="flex flex-wrap gap-2 p-16"
+          styles="grid grid-cols-5 gap-2"
           intersectionRoot={rootRef}
         >
           {IMAGES.map((image, index) => {
             const { altText, url } = image;
             return (
               <div
-                className="bg-[#2e302b] grid  place-content-center p-4 rounded-[8px] techExp"
+                className="bg-[#2e302b] h-[150px] grid place-content-center p-4 rounded-[8px] techExp"
                 key={index}
               >
                 <Image alt={altText} src={url} width={70} height={70} />

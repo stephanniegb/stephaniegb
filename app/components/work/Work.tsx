@@ -6,7 +6,7 @@ const Work = () => {
   return (
     <section className="overflow-hidden ">
       <section id="work" className="bg-black">
-        <h2 className="text-6xl py-12">Projects</h2>
+        <h2 className="text-[12vw] p-12 text-yellow-500">Projects</h2>
         <section className={styles.ProjectsWrapper}>
           <div className={styles.AllProjects}>
             <Project

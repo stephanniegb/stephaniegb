@@ -133,7 +133,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="border-t-[1px] border-t-white border-solid">
+      <p className="border-t-[.5px] border-t-white border-solid p-8 text-sm">
         &#169; 2023 Stephanie Egbuonu. All rights reserved.{" "}
         <button className="">Credits</button>
       </p>
