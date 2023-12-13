@@ -5,17 +5,16 @@ import ReavealBlueBg from "../RevealAnimations/ReavealBlueBg";
 import SwigglyStroke from "@/svg/SwigglyStroke";
 import TextReveal from "../RevealAnimations/TextReveal";
 import { motion as m, useScroll, useTransform } from "framer-motion";
+import Navbar from "../navbar/Navbar";
+import Image from "next/image";
 
 const About = () => {
-  const [isSticky, setIsSticky] = useState(false);
   const containerRef = useRef(null);
   const targetRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: [".5 1", ".8 1"],
-
-    // offset: ["start start", "center start"],
   });
 
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
@@ -45,7 +44,11 @@ const About = () => {
   );
 
   return (
-    <div ref={containerRef} className="h-[300vh] bg-white relative ">
+    <div
+      style={{}}
+      ref={containerRef}
+      className="h-[300vh] bg-[#f6f1eb] relative"
+    >
       <m.div
         style={{
           scale: scaleProgress,
@@ -53,19 +56,31 @@ const About = () => {
           position: "sticky",
           top: topProgress,
         }}
-        variants={{
-          nonSticky: { position: "relative" },
-        }}
         ref={targetRef}
-        className="h-[100vh] w-full bg-black grid grid-cols-2 "
+        className="h-[100vh] w-full bg-black flex relative"
       >
-        <div className=""></div>
-        <m.div className="relative mt-60">
+        <m.div
+          style={{
+            borderRadius: borderRadiusProgress,
+          }}
+          className="flex-1 shadow-lg bg-black"
+        >
+          <m.img
+            style={{
+              borderTopLeftRadius: borderRadiusProgress,
+              borderBottomLeftRadius: borderRadiusProgress,
+            }}
+            className=" object-cover w-full h-full filter grayscale"
+            src="/IMG_7682 2.JPG"
+            alt="stephanie smiling"
+          />
+        </m.div>
+        <m.div className="relative flex-1 mt-60 px-32">
           <m.h2
             style={{
               opacity: text1Animation,
             }}
-            className="absolute"
+            className="absolute text-center left-0 px-[5vw] text-7xl"
           >
             Hello There!
           </m.h2>
@@ -74,8 +89,9 @@ const About = () => {
               opacity: text2Animation,
               y: textTranslate2Animation,
             }}
-            className="absolute "
+            className="absolute left-0 px-[5vw]"
           >
+            <span>I'm</span>
             <h2>Stephanie Egbuonu</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -95,7 +111,7 @@ const About = () => {
               opacity: text3Animation,
               y: textTranslate3Animation,
             }}
-            className="absolute "
+            className="absolute left-0 px-[5vw] "
           >
             <h2>I Also</h2>
             <p>
@@ -108,6 +124,76 @@ const About = () => {
         </m.div>
       </m.div>
     </div>
+    // <div ref={containerRef} className="h-[300vh] bg-[#f6f1eb] relative ">
+    // <m.div
+    //   style={{
+    //     scale: scaleProgress,
+    //     borderRadius: borderRadiusProgress,
+    //     position: "sticky",
+    //     top: topProgress,
+    //   }}
+    //   variants={{
+    //     nonSticky: { position: "relative" },
+    //   }}
+    //   ref={targetRef}
+    //   className="h-[100vh] w-full bg-black grid grid-cols-2 gap-8 p-8"
+    // >
+    //     <div className="border-[1px] border-solid border-red-700 rounded-[15px]">
+    //       <img
+    //         className="rounded-[15px]"
+    //         src="/IMG_7682 2.JPG"
+    //         alt="stephanie smiling"
+    //       />
+    //     </div>
+    // <m.div className="relative mt-60">
+    //   <m.h2
+    //     style={{
+    //       opacity: text1Animation,
+    //     }}
+    //     className="absolute text-7xl"
+    //   >
+    //     Hello There!
+    //   </m.h2>
+    //   <m.div
+    //     style={{
+    //       opacity: text2Animation,
+    //       y: textTranslate2Animation,
+    //     }}
+    //     className="absolute "
+    //   >
+    //     <span>I'm</span>
+    //     <h2>Stephanie Egbuonu</h2>
+    //     <p>
+    //       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    //       Distinctio eos labore aliquam laborum doloribus atque quod harum,
+    //       delectus in quisquam, animi temporibus exercitationem ut! Nemo a
+    //       earum aliquid commodi atque!
+    //     </p>
+    //     <p>
+    //       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    //       Distinctio eos labore aliquam laborum doloribus atque quod harum,
+    //       delectus in quisquam, animi temporibus exercitationem ut! Nemo a
+    //       earum aliquid commodi atque!
+    //     </p>
+    //   </m.div>
+    //   <m.div
+    //     style={{
+    //       opacity: text3Animation,
+    //       y: textTranslate3Animation,
+    //     }}
+    //     className="absolute "
+    //   >
+    //     <h2>I Also</h2>
+    //     <p>
+    //       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    //       Distinctio eos labore aliquam laborum doloribus atque quod harum,
+    //       delectus in quisquam, animi temporibus exercitationem ut! Nemo a
+    //       earum aliquid commodi atque!
+    //     </p>
+    //   </m.div>
+    //     </m.div>
+    //   </m.div>
+    // </div>
   );
 };
 

@@ -8,7 +8,7 @@ import { Scene } from "../scene/Scene";
 const Hero = () => {
   const rootRef = useRef(null);
   return (
-    <section className="grid place-content-center h-screen bg-black">
+    <section style={{}} className="grid place-content-center h-screen bg-black">
       <div className="absolute h-screen w-screen">
         <Canvas camera={{ position: [0, 0, 600] }}>
           <perspectiveCamera fov={75} />

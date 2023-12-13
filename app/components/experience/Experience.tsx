@@ -84,7 +84,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="h-screen bg-[#efefe8] text-black flex flex-col gap-12 p-16">
+    <section className="min-h-screen bg-[#f6f1eb] text-black flex flex-col gap-12 p-16">
       <h2 className="text-center">Experience</h2>
       <div className="text-center">
         <p>

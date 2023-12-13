@@ -1,24 +1,27 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 const Loader = () => {
   const loaderRef = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to("#logo", {
+  useEffect(() => {
+    const el = loaderRef.current;
+    gsap.fromTo(
+      el,
+      {
         opacity: 1,
-        x: 0, // Move to the left
-        y: 0, // Move to the top
-      });
-    }, loaderRef);
-
-    return () => ctx.revert();
+        duration: 5,
+      },
+      {
+        opacity: 0,
+        duration: 5,
+      }
+    );
   }, []);
 
   return (
     <div
       ref={loaderRef}
-      className="absolute top-0 left-0 w-screen h-screen grid place-content-center"
+      className="absolute top-0 left-0 w-screen h-screen grid place-content-center bg-white"
     >
       <span
         style={{

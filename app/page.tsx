@@ -34,6 +34,8 @@ export default function Home() {
 
   return (
     <main className="">
+      {/* <Loader /> */}
+      {/* <section className="h-screen w-screen bg-white">hi</section> */}
       <Hero />
       <About />
       <Experience />

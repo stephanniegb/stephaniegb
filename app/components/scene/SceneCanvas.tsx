@@ -31,7 +31,7 @@ const SceneCanvas = () => {
 
   return (
     <div style={styles[backgroundStyles]} className="star-canvas">
-      <Canvas camera={{ position: [0, 0, 700] }}>
+      <Canvas camera={{ position: [0, 0, 800] }}>
         <perspectiveCamera fov={75} />
         {/* <OrbitControls
           enableDamping={false}
@@ -50,7 +50,6 @@ const SceneCanvas = () => {
           position={[10, 10, 10]}
         />
         <Suspense fallback={null}>
-
           <Scene setBackgroundStyles={setBackgroundStyles} />
         </Suspense>
       </Canvas>
