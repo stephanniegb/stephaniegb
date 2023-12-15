@@ -1,7 +1,6 @@
 "use client";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import styles from "./About.module.css";
-import ReavealBlueBg from "../RevealAnimations/ReavealBlueBg";
 import SwigglyStroke from "@/svg/SwigglyStroke";
 import TextReveal from "../RevealAnimations/TextReveal";
 import { motion as m, useScroll, useTransform } from "framer-motion";
@@ -80,7 +79,7 @@ const About = () => {
             style={{
               opacity: text1Animation,
             }}
-            className="absolute text-center left-0 px-[5vw] text-7xl"
+            className="absolute font-cursive text-[7vw] text-center  text-7xl"
           >
             Hello There!
           </m.h2>

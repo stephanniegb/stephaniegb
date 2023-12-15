@@ -1,29 +1,31 @@
 "use client";
 import { useEffect, useState, useRef, MutableRefObject } from "react";
+import { motion as m } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
   intersectionRoot: MutableRefObject<null>;
 }
 
+const variants = {
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 50 },
+};
+
 const Reveal = ({ children, intersectionRoot }: Props) => {
+  const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          } else {
-            entry.target.classList.remove("show");
-          }
-        });
-      },
-      {
-        root: intersectionRoot.current,
-      }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      });
+    });
     if (ref.current) {
       observer.observe(ref.current);
     }
@@ -35,9 +37,15 @@ const Reveal = ({ children, intersectionRoot }: Props) => {
   }, []);
 
   return (
-    <div className={`Reveal`} ref={ref}>
+    <m.div
+      initial="hidden"
+      animate={isInView && "visible"}
+      variants={variants}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      ref={ref}
+    >
       {children}
-    </div>
+    </m.div>
   );
 };
 

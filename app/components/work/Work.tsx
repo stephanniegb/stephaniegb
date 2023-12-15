@@ -1,103 +1,106 @@
 "use client";
 import styles from "./Work.module.css";
 import Project from "../projects/Projects";
+import RevealBgColor from "../RevealAnimations/RevealBgColor";
 
 const Work = () => {
   return (
     <section className="overflow-hidden ">
-      <section id="work" className="bg-[#000000] text-white">
-        <h2 className="text-[12vw] p-12 font-Holiday_Sunday">Projects</h2>
-        <section className={styles.ProjectsWrapper}>
-          <div className={styles.AllProjects}>
-            <Project
-              id="project1"
-              styles={styles}
-              techs={["React", "TypeScript", "Nodejs", "Express"]}
-              projTitle="Scissors"
-              imgUrl="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-              images={[
-                "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-                "/Screenshot 2023-11-10 at 4.13.47 PM.png",
-                "/Screenshot 2023-11-10 at 4.14.13 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
+      <RevealBgColor>
+        <section id="work" className="text-white h-screen">
+          {/* <h2 className="text-[12vw] p-12 font-Holiday_Sunday">Projects</h2> */}
+          {/* <section className={styles.ProjectsWrapper}>
+            <div className={styles.AllProjects}>
+              <Project
+                id="project1"
+                styles={styles}
+                techs={["React", "TypeScript", "Nodejs", "Express"]}
+                projTitle="Scissors"
+                imgUrl="/Screenshot 2023-10-22 at 8.43.49 PM.png"
+                images={[
+                  "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+                  "/Screenshot 2023-11-10 at 4.13.47 PM.png",
+                  "/Screenshot 2023-11-10 at 4.14.13 PM.png",
+                ]}
+              />
+              <Project
+                id="project2"
+                styles={styles}
+                techs={["VueJs", "Javascript", "Sass"]}
+                projTitle="goShop"
+                imgUrl="/IMG_6522 Background Removed.png"
+                images={[
+                  "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+                  "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+                  "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+                ]}
+              />
 
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
+              <Project
+                id="project2"
+                styles={styles}
+                techs={["VueJs", "Javascript", "Sass"]}
+                projTitle="goShop"
+                imgUrl="/IMG_6522 Background Removed.png"
+                images={[
+                  "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+                  "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+                  "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+                ]}
+              />
 
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-          </div>
+              <Project
+                id="project2"
+                styles={styles}
+                techs={["VueJs", "Javascript", "Sass"]}
+                projTitle="goShop"
+                imgUrl="/IMG_6522 Background Removed.png"
+                images={[
+                  "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+                  "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+                  "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+                ]}
+              />
+              <Project
+                id="project2"
+                styles={styles}
+                techs={["VueJs", "Javascript", "Sass"]}
+                projTitle="goShop"
+                imgUrl="/IMG_6522 Background Removed.png"
+                images={[
+                  "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+                  "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+                  "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+                ]}
+              />
+              <Project
+                id="project2"
+                styles={styles}
+                techs={["VueJs", "Javascript", "Sass"]}
+                projTitle="goShop"
+                imgUrl="/IMG_6522 Background Removed.png"
+                images={[
+                  "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+                  "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+                  "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+                ]}
+              />
+              <Project
+                id="project2"
+                styles={styles}
+                techs={["VueJs", "Javascript", "Sass"]}
+                projTitle="goShop"
+                imgUrl="/IMG_6522 Background Removed.png"
+                images={[
+                  "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+                  "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+                  "/Screenshot 2023-11-10 at 4.29.56 PM.png",
+                ]}
+              />
+            </div>
+          </section> */}
         </section>
-      </section>
+      </RevealBgColor>
       {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#273036"

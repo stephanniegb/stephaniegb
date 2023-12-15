@@ -1,12 +1,10 @@
 "use client";
-import { BackgroundColorcontext } from "@/context/BackgroundContext";
 import { useContext, useEffect, useRef } from "react";
 interface Props {
   children: React.ReactNode;
   altClassname?: string;
 }
 const ReverseBgColor = ({ children }: Props) => {
-  const BgColor = useContext(BackgroundColorcontext);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -14,18 +12,15 @@ const ReverseBgColor = ({ children }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            BgColor?.setIsBgWhite(false);
-            // entry.target.classList.remove("show");
-            // BgColor?.setIsBgWhite(true);
-            // entry.target.classList.add("show");
-          } else {
-            // BgColor?.setIsBgWhite(false);
-            // entry.target.classList.remove("show");
+            console.log("EXP: beige");
           }
+          // else {
+          //   console.log("EXP: black");
+          // }
         });
       },
       {
-        threshold: 0.5,
+        // threshold: 0.5,
         rootMargin: "0px",
       }
     );

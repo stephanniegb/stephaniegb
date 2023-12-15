@@ -1,11 +1,17 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
+import { motion as m } from "framer-motion";
 
-import { useContext, useEffect, useRef } from "react";
 interface Props {
   children: React.ReactNode;
-  altClassname?: string;
 }
+
+const variants = {
+  black: { backgroundColor: "#000000" },
+  beige: { backgroundColor: "#f6f1eb" },
+};
 const RevealBgColor = ({ children }: Props) => {
+  const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -13,11 +19,11 @@ const RevealBgColor = ({ children }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // entry.target.classList.add("show");
-          } else {
-            // BgColor?.setIsBgWhite(false);
-            // entry.target.classList.remove("show");
+            console.log("WORK: black");
           }
+          // else {
+          //   console.log("WORK: beige");
+          // }
         });
       },
       {
@@ -35,9 +41,15 @@ const RevealBgColor = ({ children }: Props) => {
     };
   }, []);
   return (
-    <section className={`RevealBgColor`} ref={ref}>
+    <m.section
+      initial="beige"
+      variants={variants}
+      animate={isInView && "black"}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      ref={ref}
+    >
       {children}
-    </section>
+    </m.section>
   );
 };
 
