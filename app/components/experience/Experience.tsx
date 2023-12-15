@@ -84,8 +84,10 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#f6f1eb] text-black flex flex-col gap-12 p-16">
-      <h2 className="text-center">Experience</h2>
+    <section className="min-h-[200vh] bg-[#f6f1eb] text-black flex flex-col gap-12 p-16">
+      <h2 className="text-center text-[12vw] font-Holiday_Sunday">
+        Experience
+      </h2>
       <div className="text-center">
         <p>
           I have two years of experience in web development, I remain steadfast

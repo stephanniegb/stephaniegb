@@ -40,7 +40,7 @@ const Project = ({ techs, projTitle, images }: ProjectsProps) => {
   };
   return (
     <div
-      className="transition duration-300 ease-out  hover:text-red-300  hover:ease-in relative"
+      className="transition duration-300 ease-out  hover:text-[#94948f]  hover:ease-in relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}

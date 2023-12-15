@@ -33,7 +33,7 @@ export default function Home() {
   }, [timer]);
 
   return (
-    <main className="">
+    <main className="relative -z-40">
       {/* <Loader /> */}
       {/* <section className="h-screen w-screen bg-white">hi</section> */}
       <Hero />

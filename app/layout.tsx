@@ -23,7 +23,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">{children}</body>
+      {/* text-[#474747] */}
+      <body className="bg-[#0f0f0f] text-[#94948f] ">{children}</body>
     </html>
   );
 }

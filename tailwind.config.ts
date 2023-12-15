@@ -19,6 +19,7 @@ const config: Config = {
       fontFamily: {
         cursive: ["Sacramento", "cursive"],
         serif: ["Cinzel Decorative", "serif"],
+        Holiday_Sunday: ["Holiday Sunday", "sans-serif"],
       },
       colors: {
         transparent: "transparent",

@@ -4,11 +4,16 @@ import Reveal from "../Reveal";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Scene } from "../scene/Scene";
+import TextReveal from "../RevealAnimations/TextReveal";
 
 const Hero = () => {
   const rootRef = useRef(null);
   return (
-    <section style={{}} className="grid place-content-center h-screen bg-black">
+    <section
+      ref={rootRef}
+      style={{}}
+      className="grid place-content-center h-screen bg-black"
+    >
       <div className="absolute h-screen w-screen">
         <Canvas camera={{ position: [0, 0, 600] }}>
           <perspectiveCamera fov={75} />
@@ -19,8 +24,27 @@ const Hero = () => {
           </Suspense>
         </Canvas>
       </div>
-      <h1 className="text-[6vw] text-center font-serif">Stephanie Egbuonu</h1>
+      <Reveal intersectionRoot={rootRef}>
+        <h1 className="text-[6vw] text-center font-serif">Stephanie Egbuonu</h1>
+      </Reveal>
+
       <p className="">Front End Software Engineer </p>
+      {/* <p>
+        SCROLL{" "}
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="256"
+            height="256"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="currentColor"
+              d="m202.83 146.83l-72 72a4 4 0 0 1-5.66 0l-72-72a4 4 0 0 1 5.66-5.66L124 206.34V40a4 4 0 0 1 8 0v166.34l65.17-65.17a4 4 0 0 1 5.66 5.66"
+            />
+          </svg>
+        </span>
+      </p> */}
     </section>
   );
 };

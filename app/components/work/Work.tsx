@@ -5,8 +5,8 @@ import Project from "../projects/Projects";
 const Work = () => {
   return (
     <section className="overflow-hidden ">
-      <section id="work" className="bg-[#000000]">
-        <h2 className="text-[12vw] p-12 text-yellow-500">Projects</h2>
+      <section id="work" className="bg-[#000000] text-white">
+        <h2 className="text-[12vw] p-12 font-Holiday_Sunday">Projects</h2>
         <section className={styles.ProjectsWrapper}>
           <div className={styles.AllProjects}>
             <Project

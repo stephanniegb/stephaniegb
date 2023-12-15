@@ -2,13 +2,14 @@ const X = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      aria-hidden="true"
-      focusable="false"
-      className="icon"
-      viewBox="0 0 512 512"
+      width="48"
+      height="48"
+      viewBox="0 0 24 24"
     >
-      <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+      <path
+        fill="currentColor"
+        d="M13.808 10.469L20.88 2h-1.676l-6.142 7.353L8.158 2H2.5l7.418 11.12L2.5 22h1.676l6.486-7.765L15.842 22H21.5l-7.693-11.531Zm-2.296 2.748l-.752-1.107L4.78 3.3h2.575l4.826 7.11l.751 1.107l6.273 9.242h-2.574l-5.12-7.541Z"
+      />
     </svg>
   );
 };
