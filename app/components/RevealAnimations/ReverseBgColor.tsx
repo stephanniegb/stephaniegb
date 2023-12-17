@@ -13,10 +13,9 @@ const ReverseBgColor = ({ children }: Props) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             console.log("EXP: beige");
+          } else {
+            entry.target.classList.add("bgBlack");
           }
-          // else {
-          //   console.log("EXP: black");
-          // }
         });
       },
       {
@@ -33,7 +32,11 @@ const ReverseBgColor = ({ children }: Props) => {
       }
     };
   }, []);
-  return <section ref={ref}>{children}</section>;
+  return (
+    <section className="reveal" ref={ref}>
+      {children}
+    </section>
+  );
 };
 
 export default ReverseBgColor;

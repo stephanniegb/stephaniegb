@@ -19,15 +19,14 @@ const RevealBgColor = ({ children }: Props) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("WORK: black");
+            entry.target.classList.add("bgBlack");
+          } else {
+            entry.target.classList.remove("bgBlack");
           }
-          // else {
-          //   console.log("WORK: beige");
-          // }
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.25,
         rootMargin: "0px",
       }
     );
@@ -42,9 +41,8 @@ const RevealBgColor = ({ children }: Props) => {
   }, []);
   return (
     <m.section
-      initial="beige"
+      className="reveal"
       variants={variants}
-      animate={isInView && "black"}
       transition={{ duration: 0.5, ease: "easeInOut" }}
       ref={ref}
     >

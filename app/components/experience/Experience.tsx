@@ -85,41 +85,40 @@ const Experience = () => {
   }, []);
 
   return (
-    <ReverseBgColor>
-      <section className="min-h-[200vh] bg-[#f6f1eb] text-black flex flex-col gap-12 p-16">
-        <h2 className="text-center text-[12vw] font-Holiday_Sunday">
-          Experience
-        </h2>
-        <div className="text-center">
-          <p>
-            I have two years of experience in web development, I remain
-            steadfast in my commitment to continuous learning in this dynamic
-            and fast-paced industry.Web development is not just a profession for
-            me; it's a continuous journey of growth and exploration.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 items-center text-[29px] ">
-          <h3>Some technologies I've worked with:</h3>
+    <section className="min-h-[200vh] text-black flex flex-col gap-12 p-16">
+      <h2 className="text-center text-[12vw] font-Holiday_Sunday">
+        Experience
+      </h2>
+      <div className="text-center">
+        <p>
+          I have two years of experience in web development, I remain steadfast
+          in my commitment to continuous learning in this dynamic and fast-paced
+          industry.Web development is not just a profession for me; it's a
+          continuous journey of growth and exploration.
+        </p>
+      </div>
+      <div className="grid grid-cols-2 items-center text-[29px] ">
+        <h3>Some technologies I've worked with:</h3>
 
-          <StaggeredReveal
-            styles="grid grid-cols-5 gap-2"
-            intersectionRoot={rootRef}
-          >
-            {IMAGES.map((image, index) => {
-              const { altText, url } = image;
-              return (
-                <div
-                  className="bg-[#2e302b] h-[150px] grid place-content-center p-4 rounded-[8px] techExp"
-                  key={index}
-                >
-                  <Image alt={altText} src={url} width={70} height={70} />
-                </div>
-              );
-            })}
-          </StaggeredReveal>
-        </div>
-        {/* <div className="w-[60vw] h-[60vh] my-0 mx-auto"> */}
-        {/* <Canvas camera={{ position: [0, 0, 600] }}>
+        <StaggeredReveal
+          styles="grid grid-cols-5 gap-2"
+          intersectionRoot={rootRef}
+        >
+          {IMAGES.map((image, index) => {
+            const { altText, url } = image;
+            return (
+              <div
+                className="bg-[#2e302b] h-[150px] grid place-content-center p-4 rounded-[8px] techExp"
+                key={index}
+              >
+                <Image alt={altText} src={url} width={70} height={70} />
+              </div>
+            );
+          })}
+        </StaggeredReveal>
+      </div>
+      {/* <div className="w-[60vw] h-[60vh] my-0 mx-auto"> */}
+      {/* <Canvas camera={{ position: [0, 0, 600] }}>
         <perspectiveCamera fov={75} />
         <ambientLight intensity={4} />
         <OrbitControls enableZoom={false} />
@@ -127,9 +126,9 @@ const Experience = () => {
           <Scene />
         </Suspense>
       </Canvas> */}
-        {/* </div> */}
-      </section>
-    </ReverseBgColor>
+      {/* </div> */}
+    </section>
+
     // <section className="h-screen w-screen bg-black grid">
     //   <div className="w-[60vw] h-[60vh] self-center justify-self-center">
 

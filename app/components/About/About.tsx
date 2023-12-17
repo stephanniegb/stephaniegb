@@ -66,6 +66,7 @@ const About = () => {
         >
           <m.img
             style={{
+              // height: "80%",
               borderTopLeftRadius: borderRadiusProgress,
               borderBottomLeftRadius: borderRadiusProgress,
             }}

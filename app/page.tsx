@@ -11,6 +11,7 @@ import Hero from "./components/hero/Hero";
 import About from "./components/About/About";
 import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
+import Background from "./components/Background";
 
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
@@ -38,8 +39,10 @@ export default function Home() {
       {/* <section className="h-screen w-screen bg-white">hi</section> */}
       <Hero />
       <About />
-      <Experience />
-      <Work />
+      <Background />
+      {/* <Experience />
+      <Work /> */}
+
       <Footer />
     </main>
   );
