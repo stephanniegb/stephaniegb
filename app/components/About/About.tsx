@@ -24,7 +24,12 @@ const About = () => {
   const textYAnimation = useTransform(
     scrollYProgress,
     [0, 0.3],
-    ["0vw", "-15vw"]
+    ["0vw", "-10vw"]
+  );
+  const fontSizeProgress = useTransform(
+    scrollYProgress,
+    [0, 0.3],
+    ["10vw", "7vw"]
   );
 
   const text1Animation = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
@@ -85,13 +90,13 @@ const About = () => {
               top: textYAnimation,
               x: textXAnimation,
               opacity: text1Animation,
-
-              fontSize: "10vw",
+              fontSize: fontSizeProgress,
             }}
-            className="absolute font-cursive text-center"
+            className="absolute left-0 px-[5vw] font-cursive"
           >
             Hello There!
           </m.p>
+          {/* <p className="absolute left-0 px-[5vw] font-cursive"> Hello There!</p> */}
           <m.div
             style={{
               opacity: text2Animation,
