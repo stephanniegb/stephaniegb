@@ -11,6 +11,7 @@ import { Environment, OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import { Scene } from "../scene/Scene";
 import ReverseBgColor from "../RevealAnimations/ReverseBgColor";
+import AnimatedLines from "../AnimatedLines";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,20 +70,20 @@ const Experience = () => {
   const rootRef = useRef(null);
   const test = useRef(null);
 
-  useEffect(() => {
-    const el = test.current;
-    gsap.fromTo(
-      el,
-      {
-        // scale: 0,
-        duration: 3,
-      },
-      {
-        // scale: 2.5,
-        duration: 3,
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   const el = test.current;
+  //   gsap.fromTo(
+  //     el,
+  //     {
+  //       // scale: 0,
+  //       duration: 3,
+  //     },
+  //     {
+  //       // scale: 2.5,
+  //       duration: 3,
+  //     }
+  //   );
+  // }, []);
 
   return (
     <section className="min-h-[200vh] text-black flex flex-col gap-12 p-16">
@@ -91,10 +92,10 @@ const Experience = () => {
       </h2>
       <div className="text-center">
         <p>
-          I have two years of experience in web development, I remain steadfast
-          in my commitment to continuous learning in this dynamic and fast-paced
-          industry.Web development is not just a profession for me; it's a
-          continuous journey of growth and exploration.
+          <AnimatedLines sentence=" I have two years of experience in web development, I remain steadfast" />
+          <AnimatedLines sentence=" in my commitment to continuous learning in this dynamic and fast-paced" />
+          <AnimatedLines sentence=" industry.Web development is not just a profession for me; it's a" />
+          <AnimatedLines sentence=" continuous journey of growth and exploration." />
         </p>
       </div>
       <div className="grid grid-cols-2 items-center text-[29px] ">

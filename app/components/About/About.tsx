@@ -1,11 +1,6 @@
 "use client";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import styles from "./About.module.css";
-import SwigglyStroke from "@/svg/SwigglyStroke";
-import TextReveal from "../RevealAnimations/TextReveal";
+import { useRef } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
-import Navbar from "../navbar/Navbar";
-import Image from "next/image";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -22,9 +17,18 @@ const About = () => {
     [0, 1],
     ["0px", "50px"]
   );
+  const imageOpacityProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
+  const center = -innerWidth / 4;
+  const textXAnimation = useTransform(scrollYProgress, [0, 0.3], [center, 0]);
+  const textYAnimation = useTransform(
+    scrollYProgress,
+    [0, 0.3],
+    ["0vw", "-15vw"]
+  );
 
-  const text1Animation = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const text1Animation = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
+
   const text2Animation = useTransform(
     scrollYProgress,
     [0.2, 0.6, 0.8],
@@ -66,7 +70,7 @@ const About = () => {
         >
           <m.img
             style={{
-              // height: "80%",
+              opacity: imageOpacityProgress,
               borderTopLeftRadius: borderRadiusProgress,
               borderBottomLeftRadius: borderRadiusProgress,
             }}
@@ -75,15 +79,19 @@ const About = () => {
             alt="stephanie smiling"
           />
         </m.div>
-        <m.div className="relative flex-1 mt-60 px-32">
-          <m.h2
+        <m.div className="relative flex place-content-center flex-1 mt-60 px-32">
+          <m.p
             style={{
+              top: textYAnimation,
+              x: textXAnimation,
               opacity: text1Animation,
+
+              fontSize: "10vw",
             }}
-            className="absolute font-cursive text-[7vw] text-center  text-7xl"
+            className="absolute font-cursive text-center"
           >
             Hello There!
-          </m.h2>
+          </m.p>
           <m.div
             style={{
               opacity: text2Animation,
@@ -124,76 +132,6 @@ const About = () => {
         </m.div>
       </m.div>
     </div>
-    // <div ref={containerRef} className="h-[300vh] bg-[#f6f1eb] relative ">
-    // <m.div
-    //   style={{
-    //     scale: scaleProgress,
-    //     borderRadius: borderRadiusProgress,
-    //     position: "sticky",
-    //     top: topProgress,
-    //   }}
-    //   variants={{
-    //     nonSticky: { position: "relative" },
-    //   }}
-    //   ref={targetRef}
-    //   className="h-[100vh] w-full bg-black grid grid-cols-2 gap-8 p-8"
-    // >
-    //     <div className="border-[1px] border-solid border-red-700 rounded-[15px]">
-    //       <img
-    //         className="rounded-[15px]"
-    //         src="/IMG_7682 2.JPG"
-    //         alt="stephanie smiling"
-    //       />
-    //     </div>
-    // <m.div className="relative mt-60">
-    //   <m.h2
-    //     style={{
-    //       opacity: text1Animation,
-    //     }}
-    //     className="absolute text-7xl"
-    //   >
-    //     Hello There!
-    //   </m.h2>
-    //   <m.div
-    //     style={{
-    //       opacity: text2Animation,
-    //       y: textTranslate2Animation,
-    //     }}
-    //     className="absolute "
-    //   >
-    //     <span>I'm</span>
-    //     <h2>Stephanie Egbuonu</h2>
-    //     <p>
-    //       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    //       Distinctio eos labore aliquam laborum doloribus atque quod harum,
-    //       delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-    //       earum aliquid commodi atque!
-    //     </p>
-    //     <p>
-    //       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    //       Distinctio eos labore aliquam laborum doloribus atque quod harum,
-    //       delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-    //       earum aliquid commodi atque!
-    //     </p>
-    //   </m.div>
-    //   <m.div
-    //     style={{
-    //       opacity: text3Animation,
-    //       y: textTranslate3Animation,
-    //     }}
-    //     className="absolute "
-    //   >
-    //     <h2>I Also</h2>
-    //     <p>
-    //       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    //       Distinctio eos labore aliquam laborum doloribus atque quod harum,
-    //       delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-    //       earum aliquid commodi atque!
-    //     </p>
-    //   </m.div>
-    //     </m.div>
-    //   </m.div>
-    // </div>
   );
 };
 
