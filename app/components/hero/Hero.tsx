@@ -4,17 +4,27 @@ import Reveal from "../Reveal";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Scene } from "../scene/Scene";
+import { motion as m, useScroll } from "framer-motion";
 
 const Hero = () => {
-  const rootRef = useRef(null);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["0 1", "1 0"],
+  });
+  console.log(scrollYProgress);
+
   return (
     <section
-      ref={rootRef}
-      style={{}}
-      className="grid place-content-center h-screen bg-black py-8 relative"
+      ref={containerRef}
+      className="grid h-[200vh] bg-black py-8 relative"
     >
-      <div className="absolute h-screen w-screen">
-        <Canvas camera={{ position: [0, 0, 600] }}>
+      <div className="absolute h-full w-full">
+        <Canvas
+          camera={{
+            position: [0, 0, 700],
+          }}
+        >
           <perspectiveCamera fov={75} />
           <ambientLight intensity={4} />
           <OrbitControls enableZoom={false} />
@@ -23,9 +33,9 @@ const Hero = () => {
           </Suspense>
         </Canvas>
       </div>
-      <div className="flex flex-col h-screen w-full justify-center items-start">
+      <div className="flex flex-col mx-auto my-0 h-screen w-fit justify-center items-start">
         <div>
-          <Reveal intersectionRoot={rootRef}>
+          <Reveal>
             <h1 className="text-[6vw] text-center font-serif">
               Stephanie Egbuonu
             </h1>
@@ -33,6 +43,7 @@ const Hero = () => {
           <p className="">Front End Software Engineer </p>
         </div>
       </div>
+      {/* 
       <p className="flex absolute left-0 bottom-0">
         <span>
           <svg
@@ -48,7 +59,7 @@ const Hero = () => {
           </svg>
         </span>
         SCROLL{" "}
-      </p>
+      </p> */}
     </section>
   );
 };

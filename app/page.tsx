@@ -12,37 +12,46 @@ import About from "./components/About/About";
 import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
 import Background from "./components/Background";
-
+import Lenis from "@studio-freight/lenis";
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
   const [timer, setTimer] = useState(2);
   const pageRef = useRef(null);
 
-  const clear = () => {
-    clearInterval(pageRef.current);
-    setPreLoader(false);
-  };
+  // const clear = () => {
+  //   clearInterval(pageRef.current);
+  //   setPreLoader(false);
+  // };
+  // useEffect(() => {
+  //   pageRef.current = setInterval(() => {
+  //     setTimer((timer) => timer - 1);
+  //   }, 1000);
+  // }, []);
+  // useEffect(() => {
+  //   if (timer === 0) {
+  //     clear();
+  //   }
+  // }, [timer]);
   useEffect(() => {
-    pageRef.current = setInterval(() => {
-      setTimer((timer) => timer - 1);
-    }, 1000);
-  }, []);
-  useEffect(() => {
-    if (timer === 0) {
-      clear();
+    const lenis = new Lenis({});
+
+    lenis.on("scroll", (e) => {
+      // console.log(e);
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
-  }, [timer]);
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <main className="relative -z-40">
-      {/* <Loader /> */}
-      {/* <section className="h-screen w-screen bg-white">hi</section> */}
       <Hero />
       <About />
       <Background />
-      {/* <Experience />
-      <Work /> */}
-
       <Footer />
     </main>
   );

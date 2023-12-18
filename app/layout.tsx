@@ -3,6 +3,7 @@ import "./animations.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Cursor from "./components/cursor/Cursor";
+import Navbar from "./components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* text-[#474747] */}
-      <body className="bg-[#0f0f0f] text-[#94948f] ">{children}</body>
+      <body className="bg-[#0f0f0f] text-[#94948f] ">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -19,6 +19,8 @@ const About = () => {
   );
   const imageOpacityProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
+
+  /* Hello there animation */
   const center = -innerWidth / 4;
   const textXAnimation = useTransform(scrollYProgress, [0, 0.3], [center, 0]);
   const textYAnimation = useTransform(
@@ -32,24 +34,15 @@ const About = () => {
     ["10vw", "7vw"]
   );
 
-  const text1Animation = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
-
-  const text2Animation = useTransform(
+  const text1Opacity = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
+  const text2Opacity = useTransform(
     scrollYProgress,
-    [0.2, 0.6, 0.8],
+    [0.2, 0.6, 0.62],
     [0, 1, 0]
   );
-  const text3Animation = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-  const textTranslate2Animation = useTransform(
-    scrollYProgress,
-    [0.2, 0.6],
-    [100, 0]
-  );
-  const textTranslate3Animation = useTransform(
-    scrollYProgress,
-    [0.6, 0.8],
-    [100, 0]
-  );
+  const text3Opacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
+  const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.6], [100, 0]);
+  const text3TranslateY = useTransform(scrollYProgress, [0.6, 0.8], [100, 0]);
 
   return (
     <div
@@ -89,18 +82,18 @@ const About = () => {
             style={{
               top: textYAnimation,
               x: textXAnimation,
-              opacity: text1Animation,
+              opacity: text1Opacity,
               fontSize: fontSizeProgress,
             }}
             className="absolute left-0 px-[5vw] font-cursive"
           >
             Hello There!
           </m.p>
-          {/* <p className="absolute left-0 px-[5vw] font-cursive"> Hello There!</p> */}
+
           <m.div
             style={{
-              opacity: text2Animation,
-              y: textTranslate2Animation,
+              opacity: text2Opacity,
+              y: text2TranslateY,
             }}
             className="absolute left-0 px-[5vw]"
           >
@@ -121,8 +114,8 @@ const About = () => {
           </m.div>
           <m.div
             style={{
-              opacity: text3Animation,
-              y: textTranslate3Animation,
+              opacity: text3Opacity,
+              y: text3TranslateY,
             }}
             className="absolute left-0 px-[5vw] "
           >

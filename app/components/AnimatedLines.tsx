@@ -5,7 +5,7 @@ import {
   useInView,
   stagger,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   sentence: string;
@@ -29,7 +29,7 @@ const AnimatedLines = ({ sentence }: Props) => {
         ref={sentenceRef}
         className="inline-block"
         transition={{
-          duration: 2,
+          duration: 0.6,
         }}
       >
         {sentence}

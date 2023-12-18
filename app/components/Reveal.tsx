@@ -4,7 +4,6 @@ import { motion as m } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
-  intersectionRoot: MutableRefObject<null>;
 }
 
 const variants = {
@@ -12,7 +11,7 @@ const variants = {
   hidden: { opacity: 0, y: 50 },
 };
 
-const Reveal = ({ children, intersectionRoot }: Props) => {
+const Reveal = ({ children }: Props) => {
   const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
 

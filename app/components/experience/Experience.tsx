@@ -1,19 +1,7 @@
-import SwigglyStroke from "@/svg/SwigglyStroke";
-
 import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Suspense, useState } from "react";
-import { Environment, OrbitControls, Stars } from "@react-three/drei";
-import * as THREE from "three";
-import { Scene } from "../scene/Scene";
-import ReverseBgColor from "../RevealAnimations/ReverseBgColor";
 import AnimatedLines from "../AnimatedLines";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const IMAGES = [
   {
@@ -68,22 +56,6 @@ const IMAGES = [
 ];
 const Experience = () => {
   const rootRef = useRef(null);
-  const test = useRef(null);
-
-  // useEffect(() => {
-  //   const el = test.current;
-  //   gsap.fromTo(
-  //     el,
-  //     {
-  //       // scale: 0,
-  //       duration: 3,
-  //     },
-  //     {
-  //       // scale: 2.5,
-  //       duration: 3,
-  //     }
-  //   );
-  // }, []);
 
   return (
     <section className="min-h-[200vh] text-black flex flex-col gap-12 p-16">
@@ -92,10 +64,13 @@ const Experience = () => {
       </h2>
       <div className="text-center">
         <p>
-          <AnimatedLines sentence=" I have two years of experience in web development, I remain steadfast" />
-          <AnimatedLines sentence=" in my commitment to continuous learning in this dynamic and fast-paced" />
-          <AnimatedLines sentence=" industry.Web development is not just a profession for me; it's a" />
-          <AnimatedLines sentence=" continuous journey of growth and exploration." />
+          <AnimatedLines
+            sentence={` I have two years of experience in web development, I remain steadfast 
+            in my commitment to continuous learning in this dynamic and fast-paced  industry.Web development is not just a profession for me it's a continuous journey of growth and exploration.`}
+          />
+          {/* <AnimatedLines sentence=" " /> */}
+          {/* <AnimatedLines sentence="" /> */}
+          {/* <AnimatedLines sentence=" " /> */}
         </p>
       </div>
       <div className="grid grid-cols-2 items-center text-[29px] ">
@@ -118,55 +93,7 @@ const Experience = () => {
           })}
         </StaggeredReveal>
       </div>
-      {/* <div className="w-[60vw] h-[60vh] my-0 mx-auto"> */}
-      {/* <Canvas camera={{ position: [0, 0, 600] }}>
-        <perspectiveCamera fov={75} />
-        <ambientLight intensity={4} />
-        <OrbitControls enableZoom={false} />
-        <Suspense fallback={null}>
-          <Scene />
-        </Suspense>
-      </Canvas> */}
-      {/* </div> */}
     </section>
-
-    // <section className="h-screen w-screen bg-black grid">
-    //   <div className="w-[60vw] h-[60vh] self-center justify-self-center">
-
-    //   </div>
-    //   {/* <div className="absolute top-[50%]   flex gap-4 bg-red-700 overflow-auto">
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //     <div className="w-[100px] h-[100px] bg-white rounded-md"></div>
-    //   </div> */}
-    // </section>
-    // <section className="h-screen p-12">
-    //   <ReavealBlackBg setState={setState} intersectionRoot={rootRef}>
-
-    //     <SwigglyStroke />
-    //     <div>
-
-    //     </div>
-    //   </ReavealBlackBg>
-    // </section>
   );
 };
 
