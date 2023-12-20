@@ -1,0 +1,79 @@
+[
+  {
+    "id": "project1",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["React", "TypeScript", "Nodejs", "Express"],
+    "title": "Scissors",
+    "images": [
+      "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+      "/Screenshot 2023-11-10 at 4.13.47 PM.png",
+      "/Screenshot 2023-11-10 at 4.14.13 PM.png"
+    ]
+  },
+  {
+    "id": "project2",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["VueJs", "Javascript", "Sass"],
+    "title": "goShop",
+    "images": [
+      "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+      "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+      "/Screenshot 2023-11-10 at 4.29.56 PM.png"
+    ]
+  },
+  {
+    "id": "project3",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["VueJs", "Javascript", "Sass"],
+    "title": "goShop",
+    "images": [
+      "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+      "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+      "/Screenshot 2023-11-10 at 4.29.56 PM.png"
+    ]
+  },
+  {
+    "id": "project4",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["React", "TypeScript", "Nodejs", "Express"],
+    "title": "Scissors",
+    "images": [
+      "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+      "/Screenshot 2023-11-10 at 4.13.47 PM.png",
+      "/Screenshot 2023-11-10 at 4.14.13 PM.png"
+    ]
+  },
+  {
+    "id": "project5",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["VueJs", "Javascript", "Sass"],
+    "title": "goShop",
+    "images": [
+      "/Screenshot 2023-11-10 at 4.27.31 PM.png",
+      "/Screenshot 2023-11-10 at 4.28.55 PM.png",
+      "/Screenshot 2023-11-10 at 4.29.56 PM.png"
+    ]
+  },
+  {
+    "id": "project6",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["React", "TypeScript", "Nodejs", "Express"],
+    "title": "Scissors",
+    "images": [
+      "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+      "/Screenshot 2023-11-10 at 4.13.47 PM.png",
+      "/Screenshot 2023-11-10 at 4.14.13 PM.png"
+    ]
+  },
+  {
+    "id": "project7",
+    "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
+    "tech": ["React", "TypeScript", "Nodejs", "Express"],
+    "title": "Scissors",
+    "images": [
+      "/Screenshot 2023-10-22 at 8.43.49 PM.png",
+      "/Screenshot 2023-11-10 at 4.13.47 PM.png",
+      "/Screenshot 2023-11-10 at 4.14.13 PM.png"
+    ]
+  }
+]

@@ -64,6 +64,8 @@ body {
   background-color: var(--beige);
   line-height: 1.8;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 img {
   max-width: 100%;

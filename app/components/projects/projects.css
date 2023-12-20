@@ -32,27 +32,7 @@
   /* background-color: rgba(95, 203, 151, 0.4); */
   color: #5dcb96;
 }
-.noPreview {
-  display: none;
-  /* height: 0px; */
-  /* visibility: hidden; */
-  /* opacity: 0; */
-  /* transform: scale(0); */
-}
-.projPreview {
-  display: block;
-  /* visibility: visible; */
-  /* opacity: 1; */
-  position: absolute;
-  z-index: 3;
-  cursor: pointer;
-  /* background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
-  padding: 0.5rem;
-  max-width: 25rem; */
-  /* transform: scale(1); */
-  /* transition: all 0.3; */
-}
+
 .slideshow-image {
   width: 100%;
   height: auto;

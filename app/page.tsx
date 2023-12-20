@@ -48,7 +48,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative -z-40">
+    <main className="relative">
+      <Navbar />
       <Hero />
       <About />
       <Background />

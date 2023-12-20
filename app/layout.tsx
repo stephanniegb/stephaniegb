@@ -24,10 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#0f0f0f] text-[#94948f] ">
-        <Navbar />
-        {children}
-      </body>
+      <body className="bg-[#0f0f0f] text-[#94948f] ">{children}</body>
     </html>
   );
 }

@@ -12,33 +12,23 @@ interface ProjectsProps {
   imgUrl?: string;
   techs: string[];
   projectUrl?: string;
-  styles: ProjectStyles;
+
   images: string[];
+  handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void;
+  handleMouseLeave: () => void;
+  handleMouseMove: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
-import { motion as m } from "framer-motion";
-import UpRightArrow from "@/svg/upRightArrow";
+import UpRightArrow from "@/svg/UpRightArrow";
 
-const variants = {
-  open: { opacity: 1, scale: 1 },
-  closed: { opacity: 0, scale: 0.7 },
-};
-const transition = {
-  duration: 0.5,
-};
-const Project = ({ techs, projTitle, images }: ProjectsProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
-  };
+const Project = ({
+  techs,
+  projTitle,
+  images,
+  handleMouseEnter,
+  handleMouseLeave,
+  handleMouseMove,
+  projectUrl,
+}: ProjectsProps) => {
   return (
     <div
       className="transition duration-300 ease-out  hover:text-[#94948f]  hover:ease-in relative"
@@ -48,7 +38,7 @@ const Project = ({ techs, projTitle, images }: ProjectsProps) => {
     >
       <SlideinBorder height=".5px" />
       <a
-        href="http://"
+        href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="p-20 block hover:-translate-x-10 transition duration-300 ease-out hover:ease-in  projLink"
@@ -72,16 +62,6 @@ const Project = ({ techs, projTitle, images }: ProjectsProps) => {
           </ul>
         </div>
       </a>
-
-      <m.div
-        className={isHovered ? "w-[400px] projPreview " : "noPreview"}
-        variants={variants}
-        animate={isHovered ? "open" : "closed"}
-        transition={transition}
-        style={{ top: 20, left: mousePosition.x }}
-      >
-        <ProjectPreview images={images} />
-      </m.div>
     </div>
   );
 };

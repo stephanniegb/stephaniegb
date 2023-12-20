@@ -13,6 +13,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      gridAutoColumns: {
+        "5fr": "repeat(auto-fit, minmax(150px, 1fr))",
+      },
       fontSize: {
         pFS: "1.125em",
       },

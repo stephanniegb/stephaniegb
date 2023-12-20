@@ -1,5 +1,5 @@
 import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import AnimatedLines from "../AnimatedLines";
 
@@ -58,7 +58,7 @@ const Experience = () => {
   const rootRef = useRef(null);
 
   return (
-    <section className="min-h-[200vh] text-black flex flex-col gap-12 p-16">
+    <section className="min-h-[100vh] text-black flex flex-col gap-12 p-16">
       <h2 className="text-center text-[12vw] font-Holiday_Sunday">
         Experience
       </h2>
@@ -73,21 +73,26 @@ const Experience = () => {
           {/* <AnimatedLines sentence=" " /> */}
         </p>
       </div>
-      <div className="grid grid-cols-2 items-center text-[29px] ">
-        <h3>Some technologies I've worked with:</h3>
-
+      <h3 className="text-center text-3xl">Some technologies I have used:</h3>
+      <div className=" w-[70%] mx-auto my-0 p-4 ">
         <StaggeredReveal
-          styles="grid grid-cols-5 gap-2"
+          styles="grid grid-cols-5 gap-4"
           intersectionRoot={rootRef}
         >
           {IMAGES.map((image, index) => {
             const { altText, url } = image;
             return (
               <div
-                className="bg-[#2e302b] h-[150px] grid place-content-center p-4 rounded-[8px] techExp"
+                className="grid place-content-center w-[80px] h-[100px]"
                 key={index}
               >
-                <Image alt={altText} src={url} width={70} height={70} />
+                <Image
+                  className="grayscale hover:filter-none transition-transform duration-500 transform hover:scale-110"
+                  alt={altText}
+                  src={url}
+                  width={100}
+                  height={100}
+                />
               </div>
             );
           })}

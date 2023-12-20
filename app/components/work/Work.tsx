@@ -1,101 +1,89 @@
 "use client";
 import styles from "./Work.module.css";
 import Project from "../projects/Projects";
-import RevealBgColor from "../RevealAnimations/RevealBgColor";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion as m } from "framer-motion";
+import ProjectPreview from "../projects/ProjectPreview";
+import ProjectsData from "@/data/projects.json";
+
+const variants = {
+  open: { opacity: 1, scale: 1 },
+  closed: { opacity: 0, scale: 0.7 },
+};
+const transition = {
+  duration: 0.5,
+};
 
 const Work = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [images, setImages] = useState<string[]>([]);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const handleMouseEnter = (projImages: string[]) => {
+    setIsHovered(true);
+    setImages(projImages);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const containerRect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - containerRect.left;
+    const y = e.clientY - containerRect.top;
+    setMousePosition({ x, y });
+    console.log(containerRect);
+  };
+
+  useEffect(() => {
+    // amimate
+  }, [images]);
+
   return (
-    <section className="overflow-hidden ">
-      <section id="work" className="text-white">
+    <section className="">
+      <section id="work" className="">
         <h2 className="text-[12vw] p-12 font-Holiday_Sunday">Projects</h2>
         <section className={styles.ProjectsWrapper}>
-          <div className="flex flex-col w-[80%] my-0 mx-auto">
-            <Project
-              id="project1"
-              styles={styles}
-              techs={["React", "TypeScript", "Nodejs", "Express"]}
-              projTitle="Scissors"
-              imgUrl="/Screenshot 2023-10-22 at 8.43.49 PM.png"
-              images={[
-                "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-                "/Screenshot 2023-11-10 at 4.13.47 PM.png",
-                "/Screenshot 2023-11-10 at 4.14.13 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
+          <div className="flex flex-col w-[80%] my-0 mx-auto relative overflow-hidden">
+            <m.div
+              variants={variants}
+              animate={isHovered ? "open" : "closed"}
+              transition={transition}
+              className={" absolute z-[3]  w-[400px] pointer-events-none"}
+              style={{ top: mousePosition.y - 20, left: mousePosition.x - 20 }}
+            >
+              <ProjectPreview images={images} />
+            </m.div>
+            {ProjectsData.map((project) => {
+              const { id, images, tech, title, url } = project;
+              return (
+                <Project
+                  key={id}
+                  handleMouseEnter={() => handleMouseEnter(images)}
+                  handleMouseLeave={handleMouseLeave}
+                  handleMouseMove={handleMouseMove}
+                  id={id}
+                  techs={tech}
+                  projTitle={title}
+                  images={images}
+                  projectUrl={url}
+                />
+              );
+            })}
 
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
-            <Project
-              id="project2"
-              styles={styles}
-              techs={["VueJs", "Javascript", "Sass"]}
-              projTitle="goShop"
-              imgUrl="/IMG_6522 Background Removed.png"
-              images={[
-                "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-                "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-                "/Screenshot 2023-11-10 at 4.29.56 PM.png",
-              ]}
-            />
+            {/* <m.div
+              className={
+                isHovered
+                  ? "block absolute z-[3] cursor-pointer"
+                  : "hidden"
+              }
+              variants={variants}
+              animate={isHovered ? "open" : "closed"}
+              transition={transition}
+              style={{ top: 0, left: 0 }}
+            >
+             
+            </m.div> */}
           </div>
         </section>
       </section>
