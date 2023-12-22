@@ -3,8 +3,9 @@ import { Suspense, useRef } from "react";
 import Reveal from "../Reveal";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Scene } from "../scene/Scene";
+
 import { motion as m, useScroll } from "framer-motion";
+import ImageMesh from "../scene/Scene";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -19,20 +20,14 @@ const Hero = () => {
       ref={containerRef}
       className="grid h-[200vh] bg-black py-8 relative"
     >
-      <div className="absolute h-full w-full">
-        <Canvas
-          camera={{
-            position: [0, 0, 700],
-          }}
-        >
-          <perspectiveCamera fov={75} />
-          <ambientLight intensity={4} />
+      {/* <div className="absolute h-full w-full">
+        <Canvas camera={{}}>
           <OrbitControls enableZoom={false} />
           <Suspense fallback={null}>
-            <Scene />
+            <ImageMesh url={"/IMG_7682 2.JPG"} />
           </Suspense>
         </Canvas>
-      </div>
+      </div> */}
       <div className="flex flex-col mx-auto my-0 h-screen w-fit justify-center items-start">
         <div>
           <Reveal>

@@ -1,5 +1,5 @@
 import "./projects.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ProjectPreview from "./ProjectPreview";
 import SlideinBorder from "../RevealAnimations/SlideinBorder";
 interface ProjectStyles {
@@ -14,28 +14,17 @@ interface ProjectsProps {
   projectUrl?: string;
 
   images: string[];
-  handleMouseEnter: (e: React.MouseEvent<HTMLDivElement>) => void;
-  handleMouseLeave: () => void;
-  handleMouseMove: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 import UpRightArrow from "@/svg/UpRightArrow";
 
 const Project = ({
   techs,
   projTitle,
-  images,
-  handleMouseEnter,
-  handleMouseLeave,
-  handleMouseMove,
+
   projectUrl,
 }: ProjectsProps) => {
   return (
-    <div
-      className="transition duration-300 ease-out  hover:text-[#94948f]  hover:ease-in relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
-    >
+    <li className="transition duration-300 ease-out  hover:text-[#94948f]  hover:ease-in relative">
       <SlideinBorder height=".5px" />
       <a
         href={projectUrl}
@@ -62,7 +51,7 @@ const Project = ({
           </ul>
         </div>
       </a>
-    </div>
+    </li>
   );
 };
 
