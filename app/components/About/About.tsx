@@ -49,14 +49,9 @@ const About = () => {
   const text3Opacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
   const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.6], [100, 0]);
   const text3TranslateY = useTransform(scrollYProgress, [0.6, 0.8], [100, 0]);
-  console.log(innerWidth * 0.1);
 
   return (
-    <div
-      style={{}}
-      ref={containerRef}
-      className="h-[300vh] bg-[#f6f1eb] relative"
-    >
+    <div ref={containerRef} className="h-[300vh] bg-[#f6f1eb] relative">
       <m.div
         style={{
           scale: scaleProgress,

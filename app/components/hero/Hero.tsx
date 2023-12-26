@@ -1,24 +1,31 @@
 "use client";
 import { Suspense, useRef } from "react";
-import Reveal from "../Reveal";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-
-import { motion as m, useScroll } from "framer-motion";
-import ImageMesh from "../scene/Scene";
+import { motion as m, useScroll, useTransform } from "framer-motion";
 import AnimatedLines from "../AnimatedLines";
 
 const Hero = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["0 1", "1 0"],
+    offset: ["0.5 1", "1 0"],
   });
+
+  const rightTranslateProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", "50%"]
+  );
+  const leftTranslateProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["0%", "-50%"]
+  );
 
   return (
     <section
+      id="hero"
       ref={containerRef}
-      className="grid h-[200vh] bg-black py-8 relative overflow-hidden"
+      className="grid h-full bg-black py-8 relative"
     >
       <div className="flex flex-col mx-auto my-0 h-screen w-fit justify-center items-start">
         <div>
@@ -33,11 +40,26 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      {/* <div>
-        <h2 className="text-[20vw]">
-          SOMETHING HUGE THAT TRANSLATES ON SCROLL
+      <div ref={containerRef} className="h-[150vh]">
+        <h2 className="sticky top-[25%] text-[10vw] w-[150%]">
+          <m.span
+            style={{
+              translateX: rightTranslateProgress,
+            }}
+            className="block"
+          >
+            SOMETHING - HUGE I LOVE
+          </m.span>
+          <m.span
+            style={{
+              translateX: leftTranslateProgress,
+            }}
+            className="block"
+          >
+            THAT TRANSLATES - ON SCROLL
+          </m.span>
         </h2>
-      </div> */}
+      </div>
     </section>
   );
 };
