@@ -1,33 +1,33 @@
-import * as THREE from "three";
-import { useContext, useLayoutEffect, useMemo, useState } from "react";
+"use client";
+import { Stars } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { ShaderContext } from "@/app/context/ShaderContext";
+import * as THREE from "three";
 
-const Texture = ({ texture }: { texture: THREE.Texture }) => {
-  const { setIsHovered, isHovered, setOffset, offset } =
-    useContext(ShaderContext);
-  // const [offset, setOffset] = useState({
-  //   x: 0,
-  //   y: 0,
-  // });
+function Scene() {
+  useFrame(({ mouse, camera }) => {
+    camera.position.x = THREE.MathUtils.lerp(
+      camera.position.x,
+      mouse.x * 2,
+      0.05
+    );
+    camera.position.y = THREE.MathUtils.lerp(
+      camera.position.y,
+      mouse.y * 2,
+      0.05
+    );
+    camera.position.z = THREE.MathUtils.lerp(
+      camera.position.z,
+      Math.max(4, Math.abs(mouse.x * mouse.y * 8)),
+      0.01
+    );
+    camera.rotation.y = THREE.MathUtils.lerp(
+      camera.rotation.y,
+      mouse.x * -Math.PI * 0.025,
+      0.001
+    );
+  });
 
-  // useFrame(({ mouse }) => {
-  //   setOffset({
-  //     x: THREE.MathUtils.lerp(offset.x, mouse.x, 0.1),
-  //     y: THREE.MathUtils.lerp(offset.y, mouse.y, 0.1),
-  //   });
-  // });
+  return <Stars />;
+}
 
-  return (
-    <mesh position={[offset.x, offset.y * 2.9, 0]}>
-      <planeGeometry attach="geometry" args={[1.3, 2]} />
-
-      <meshBasicMaterial attach="material" map={texture} />
-    </mesh>
-  );
-};
-const ImageMesh = ({ url }: { url: string }) => {
-  const texture = useMemo(() => new THREE.TextureLoader().load(url), [url]);
-  return <Texture texture={texture} />;
-};
-export default ImageMesh;
+export { Scene };
