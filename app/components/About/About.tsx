@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
+import Hello from "@/svg/Hello";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -31,8 +32,13 @@ const About = () => {
   const fontSizeProgress = useTransform(
     scrollYProgress,
     [0, 0.3],
-    ["10vw", "7vw"]
+    [`10vw`, `7vw`]
   );
+  // const fontSizeProgress = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.3],
+  //   [`${innerWidth * 0.5}`, `${innerWidth * 0.2}`]
+  // );
 
   const text1Opacity = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
   const text2Opacity = useTransform(
@@ -43,6 +49,7 @@ const About = () => {
   const text3Opacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
   const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.6], [100, 0]);
   const text3TranslateY = useTransform(scrollYProgress, [0.6, 0.8], [100, 0]);
+  console.log(innerWidth * 0.1);
 
   return (
     <div
@@ -88,6 +95,7 @@ const About = () => {
             className="absolute left-0 px-[5vw] font-cursive"
           >
             Hello There!
+            {/* <Hello width={fontSizeProgress} /> */}
           </m.p>
 
           <m.div

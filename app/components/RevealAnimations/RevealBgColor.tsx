@@ -1,7 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion as m } from "framer-motion";
-
 interface Props {
   children: React.ReactNode;
 }
@@ -11,7 +10,6 @@ const variants = {
   beige: { backgroundColor: "#f6f1eb" },
 };
 const RevealBgColor = ({ children }: Props) => {
-  const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {

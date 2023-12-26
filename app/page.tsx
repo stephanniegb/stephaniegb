@@ -13,6 +13,7 @@ import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
 import Background from "./components/Background";
 import Lenis from "@studio-freight/lenis";
+import { ShaderContextProvider } from "./context/ShaderContext";
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
   const [timer, setTimer] = useState(2);
@@ -49,10 +50,13 @@ export default function Home() {
 
   return (
     <main className="relative">
+      <Loader />
       <Navbar />
       <Hero />
       <About />
-      <Background />
+      <ShaderContextProvider>
+        <Background />
+      </ShaderContextProvider>
       <Footer />
     </main>
   );

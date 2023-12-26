@@ -1,24 +1,19 @@
-import {
-  motion as m,
-  animate,
-  inView,
-  useInView,
-  stagger,
-} from "framer-motion";
+import { motion as m, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
   sentence: string;
+  className?: string;
 };
-const AnimatedLines = ({ sentence }: Props) => {
-  const sentenceConatinerRef = useRef(null);
-  const sentenceRef = useRef(null);
-  const isInView = useInView(sentenceConatinerRef, { once: false });
+const AnimatedLines = ({ sentence, className }: Props) => {
+  const sentenceContainerRef = useRef(null);
+
+  const isInView = useInView(sentenceContainerRef, { once: false });
 
   return (
     <span
-      ref={sentenceConatinerRef}
-      className="inline-block overflow-hidden text[2vw]"
+      ref={sentenceContainerRef}
+      className={`inline-block overflow-hidden text[2vw] h-fit ${className} `}
     >
       <m.span
         style={{
@@ -26,10 +21,9 @@ const AnimatedLines = ({ sentence }: Props) => {
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
-        ref={sentenceRef}
         className="inline-block"
         transition={{
-          duration: 0.6,
+          duration: 0.5,
         }}
       >
         {sentence}

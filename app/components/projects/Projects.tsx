@@ -1,10 +1,6 @@
 import "./projects.css";
-import { useRef, useState } from "react";
-import ProjectPreview from "./ProjectPreview";
 import SlideinBorder from "../RevealAnimations/SlideinBorder";
-interface ProjectStyles {
-  [key: string]: string;
-}
+
 interface ProjectsProps {
   id: string;
   projTitle: string;
@@ -17,20 +13,14 @@ interface ProjectsProps {
 }
 import UpRightArrow from "@/svg/UpRightArrow";
 
-const Project = ({
-  techs,
-  projTitle,
-
-  projectUrl,
-}: ProjectsProps) => {
+const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
   return (
-    <li className="transition duration-300 ease-out  hover:text-[#94948f]  hover:ease-in relative">
-      <SlideinBorder height=".5px" />
+    <li className="relative projectLink">
       <a
         href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-20 block hover:-translate-x-10 transition duration-300 ease-out hover:ease-in  projLink"
+        className="p-20 block hover:-translate-x-10 transition duration-300 ease-out hover:ease-in"
       >
         <div className="projText">
           <div className="projectTitleContainer">
@@ -51,6 +41,7 @@ const Project = ({
           </ul>
         </div>
       </a>
+      <SlideinBorder height=".5px" />
     </li>
   );
 };

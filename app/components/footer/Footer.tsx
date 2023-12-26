@@ -29,7 +29,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" flex flex-col   sticky -z-[1] bottom-0 justify-between  w-screen pt-16 h-[85vh]">
+    <footer className=" flex flex-col sticky -z-[1] bottom-0 justify-between  w-screen pt-16 h-[85vh]">
       <div className="text-center">
         <h3>Lets talk about what we can build together</h3>
 

@@ -100,3 +100,19 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+/* use clamp() for font size and responsive d */
+
+.path {
+  stroke-dasharray: 12000;
+  stroke-dashoffset: 12000;
+  animation: dash 7s linear alternate infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 12000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
