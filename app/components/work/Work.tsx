@@ -101,14 +101,14 @@ const Work = () => {
         ref={ref}
         className="grid h-[200vh]  py-8 relative"
       >
-        <div className="absolute z-[1] h-full w-full">
+        {/* <div className="absolute z-[1] h-full w-full">
           <Canvas>
             <OrbitControls enableZoom={false} />
             <Suspense fallback={null}>
-              {/* <ImageMesh url={imageUrl} /> */}
+              <ImageMesh url={imageUrl} />
             </Suspense>
           </Canvas>
-        </div>
+        </div> */}
 
         <ul
           onMouseEnter={handleMouseEnter}

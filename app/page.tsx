@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <Loader />
+      {/* <Loader /> */}
       <Navbar />
       <Hero />
       <About />

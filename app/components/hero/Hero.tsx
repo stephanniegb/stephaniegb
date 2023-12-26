@@ -2,6 +2,9 @@
 import { Suspense, useRef } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import AnimatedLines from "../AnimatedLines";
+import { Canvas } from "@react-three/fiber";
+import { Scene } from "../scene/Scene";
+import { OrbitControls } from "@react-three/drei";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -27,6 +30,23 @@ const Hero = () => {
       ref={containerRef}
       className="grid h-full bg-black py-8 relative"
     >
+      <div className="fixed z-[3] backdrop-blur p-8 top-[50%]  grid place-content-center w-[100px] h-[100px] rounded-full">
+        SCROLL
+      </div>
+      <div className="absolute  h-full w-full">
+        <Canvas
+          camera={{
+            position: [0, 0, 400],
+          }}
+        >
+          <perspectiveCamera fov={75} />
+          <ambientLight intensity={4} />
+          <OrbitControls enableZoom={false} />
+          <Suspense fallback={null}>
+            <Scene />
+          </Suspense>
+        </Canvas>
+      </div>
       <div className="flex flex-col mx-auto my-0 h-screen w-fit justify-center items-start">
         <div>
           <h1>

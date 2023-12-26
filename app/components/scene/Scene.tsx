@@ -20,11 +20,6 @@ function Scene() {
       Math.max(4, Math.abs(mouse.x * mouse.y * 8)),
       0.01
     );
-    camera.rotation.y = THREE.MathUtils.lerp(
-      camera.rotation.y,
-      mouse.x * -Math.PI * 0.025,
-      0.001
-    );
   });
 
   return <Stars />;
