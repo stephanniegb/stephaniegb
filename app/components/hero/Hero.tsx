@@ -34,7 +34,7 @@ const Hero = () => {
         SCROLL
       </div>
       <div className="absolute  h-full w-full">
-        <Canvas
+        {/* <Canvas
           camera={{
             position: [0, 0, 400],
           }}
@@ -45,7 +45,7 @@ const Hero = () => {
           <Suspense fallback={null}>
             <Scene />
           </Suspense>
-        </Canvas>
+        </Canvas> */}
       </div>
       <div className="flex flex-col mx-auto my-0 h-screen w-fit justify-center items-start">
         <div>

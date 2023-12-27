@@ -16,6 +16,7 @@ import { OrbitControls, Scroll, ScrollControls } from "@react-three/drei";
 import ImageMesh from "../scene/Scene";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import AnimatedLetters from "../animation/AnimatedLetters";
+import WebGLComponent from "../scene/WebGLComponent";
 
 const Work = () => {
   const { setIsHovered, isHovered, setOffset, offset } =
@@ -101,14 +102,14 @@ const Work = () => {
         ref={ref}
         className="grid h-[200vh]  py-8 relative"
       >
-        {/* <div className="absolute z-[1] h-full w-full">
+        <div className="absolute z-[1] h-full w-full">
           <Canvas>
             <OrbitControls enableZoom={false} />
             <Suspense fallback={null}>
-              <ImageMesh url={imageUrl} />
+              <WebGLComponent url="/IMG_7682 2.JPG" />
             </Suspense>
           </Canvas>
-        </div> */}
+        </div>
 
         <ul
           onMouseEnter={handleMouseEnter}
