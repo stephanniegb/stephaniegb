@@ -60,7 +60,7 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      <div ref={containerRef} className="h-[150vh]">
+      {/* <div ref={containerRef} className="h-[150vh]">
         <h2 className="sticky top-[25%] text-[10vw] w-[150%]">
           <m.span
             style={{
@@ -79,7 +79,7 @@ const Hero = () => {
             THAT TRANSLATES - ON SCROLL
           </m.span>
         </h2>
-      </div>
+      </div> */}
     </section>
   );
 };

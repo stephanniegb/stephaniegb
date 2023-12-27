@@ -12,7 +12,7 @@ function Scene() {
     );
     camera.position.y = THREE.MathUtils.lerp(
       camera.position.y,
-      mouse.y * 2,
+      mouse.y * 0.5,
       0.05
     );
     camera.position.z = THREE.MathUtils.lerp(

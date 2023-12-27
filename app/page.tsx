@@ -14,6 +14,7 @@ import Work from "./components/work/Work";
 import Background from "./components/Background";
 import Lenis from "@studio-freight/lenis";
 import { ShaderContextProvider } from "./context/ShaderContext";
+import Translate from "./components/Translate";
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
   const [timer, setTimer] = useState(2);
@@ -54,6 +55,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Translate />
       <ShaderContextProvider>
         <Background />
       </ShaderContextProvider>
