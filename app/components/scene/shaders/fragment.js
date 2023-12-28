@@ -17,10 +17,13 @@ vec3 rgbShift(sampler2D textureImage, vec2 uv, vec2 offset ){
 
 
 void main() {
-  vec3 color = rgbShift(u_texture, vUv, u_offset);
-  gl_FragColor = vec4(0.0,0.4,1.0,u_Alpha);
+
+ gl_FragColor = vec4(0.0,0.4,1.0,u_Alpha);
 }
 
 `;
 
 export default fragmentShader;
+
+// vec3 color = rgbShift(u_texture, vUv, u_offset);
+//gl_FragColor = vec4(0.0,0.4,1.0,u_Alpha);
