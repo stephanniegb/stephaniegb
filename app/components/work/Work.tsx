@@ -19,9 +19,8 @@ import AnimatedLetters from "../animation/AnimatedLetters";
 import WebGLComponent, { Thing } from "../scene/WebGLComponent";
 
 const Work = () => {
-  const { setIsHovered, isHovered, setOffset, offset } =
+  const { setIsHovered, isHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
-  // const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const [imageUrl, setImageUrl] = useState("");
   const projectsParentRef = useRef(null);
@@ -82,15 +81,20 @@ const Work = () => {
   };
 
   const handlePointerMove = (e) => {
-    const mouseX = (e.clientX / innerWidth) * 2 - 1;
-    const mouseY = -(e.clientY / innerHeight) * 2 + 1;
-
-    setOffset((prev) => ({
+    setMouse((prev) => ({
       ...prev,
-      x: THREE.MathUtils.lerp(prev.x, mouseX, 0.1),
-      y: THREE.MathUtils.lerp(prev.y, mouseY, 0.1),
+      x: e.clientX,
+      y: e.clientY,
     }));
   };
+
+  useEffect(() => {
+    setOffset((prev) => ({
+      ...prev,
+      x: THREE.MathUtils.lerp(prev.x, mouse.x, 0.1),
+      y: THREE.MathUtils.lerp(prev.y, mouse.y, 0.1),
+    }));
+  }, [mouse]);
 
   return (
     <section id="work" className="">
@@ -102,7 +106,7 @@ const Work = () => {
         ref={ref}
         className="grid h-[200vh]  py-8 relative"
       >
-        <div className="absolute z-10 h-full w-full">
+        <div className="absolute -z-1 h-full w-full">
           <Canvas>
             <OrbitControls enableZoom={false} />
             <pointLight position={[10, 10, 10]} />

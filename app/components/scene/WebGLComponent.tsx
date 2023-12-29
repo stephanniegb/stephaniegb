@@ -1,7 +1,8 @@
 import { shaderMaterial } from "@react-three/drei";
 import { extend, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { ShaderContext } from "@/app/context/ShaderContext";
 
 const vertexShader = /* glsl */ `
 precision mediump float;
@@ -48,30 +49,33 @@ const ImageShader = shaderMaterial(
 extend({ ImageShader });
 
 export function Thing() {
+  const { setOffset, offset, setMouse, mouse } = useContext(ShaderContext);
   const mesh = useRef(null);
 
-  const [offset, setOffset] = useState({
+  const [canvasOffset, setCanvasOffset] = useState({
     x: 0,
     y: 0,
   });
   useFrame(({ mouse, clock }) => {
-    setOffset({
-      x: THREE.MathUtils.lerp(offset.x, mouse.x, 0.1),
-      y: THREE.MathUtils.lerp(offset.y, mouse.y, 0.1),
+    setCanvasOffset({
+      x: THREE.MathUtils.lerp(canvasOffset.x, mouse.x, 0.1),
+      y: THREE.MathUtils.lerp(canvasOffset.y, mouse.y, 0.1),
     });
     mesh.current.uTime = clock.getElapsedTime();
-    mesh.current.uOffset = [
-      (mouse.x - 987.9999993023055) * 0.0005,
-      -(mouse.y - 11.00000015045426) * 0.0005,
-    ];
-
-    console.log(mesh.current.uOffset);
   });
 
   return (
-    <mesh position={[offset.x * 1.5, offset.y * 2.9, 0]}>
+    <mesh position={[canvasOffset.x * 1.5, canvasOffset.y * 2.9, 0]}>
       <planeGeometry attach="geometry" args={[1.3, 2, 16, 16]} />
-      <imageShader ref={mesh} attach="material" uColor={[0.0, 1.0, 0.0]} />
+      <imageShader
+        ref={mesh}
+        attach="material"
+        uColor={[0.0, 1.0, 0.0]}
+        uOffset={[
+          (mouse.x - offset.x) * 0.0005,
+          -(mouse.y - offset.y) * 0.0005,
+        ]}
+      />
     </mesh>
   );
 }
