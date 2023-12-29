@@ -13,10 +13,10 @@ import images from "../scene/assets/images";
 import ProjectsData from "@/data/projects.json";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Scroll, ScrollControls } from "@react-three/drei";
-import ImageMesh from "../scene/Scene";
+
 import { ShaderContext } from "@/app/context/ShaderContext";
 import AnimatedLetters from "../animation/AnimatedLetters";
-import WebGLComponent, { Thing } from "../scene/WebGLComponent";
+import ImageMesh from "../scene/ImageMesh";
 
 const Work = () => {
   const { setIsHovered, isHovered, setOffset, offset, setMouse, mouse } =
@@ -81,6 +81,7 @@ const Work = () => {
   };
 
   const handlePointerMove = (e) => {
+    const rect = e.target.getBoundingClientRect();
     setMouse((prev) => ({
       ...prev,
       x: e.clientX,
@@ -106,13 +107,12 @@ const Work = () => {
         ref={ref}
         className="grid h-[200vh]  py-8 relative"
       >
-        <div className="absolute -z-1 h-full w-full">
+        <div className="absolute z-10 h-full w-full">
           <Canvas>
             <OrbitControls enableZoom={false} />
             <pointLight position={[10, 10, 10]} />
             <Suspense fallback={null}>
-              <Thing />
-              {/* <WebGLComponent url="/IMG_7682 2.JPG" /> */}
+              <ImageMesh url="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
             </Suspense>
           </Canvas>
         </div>
