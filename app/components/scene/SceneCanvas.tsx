@@ -1,56 +1,24 @@
-"use client";
-import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
-import { Scene } from "./Scene";
+import { Suspense } from "react";
+import ImageMesh from "./ImageMesh";
 
-const styles = [
-  {
-    backgroundImage:
-      "radial-gradient(ellipse at bottom, #2b5876 0%, #4e4376 70%, #4e4376 100%)",
-    // backgroundImage: "linear-gradient(-20deg, #2b5876 0%, #4e4376 100%)",
-    transition: "background-image 1.5s ease",
-    color: "white",
-  },
-  {
-    backgroundImage: "linear-gradient(-20deg, #021937 0%, #021937 100%)",
-
-    backgroundColor: "black",
-    transition: "background-image 1.5s ease",
-    color: "white",
-  },
-  {
-    backgroundImage: "linear-gradient(-20deg, #0a0a0a 0%, #000000 100%)",
-    transition: "background-image 1.5s ease",
-    color: "white",
-  },
-];
-
-const SceneCanvas = () => {
-  const [backgroundStyles, setBackgroundStyles] = useState<number>(0);
-
+const SceneCanvas = ({
+  imageUrl,
+  isHovered,
+}: {
+  imageUrl: string;
+  isHovered: boolean;
+}) => {
   return (
-    <div style={styles[backgroundStyles]} className="star-canvas">
-      <Canvas camera={{ position: [0, 0, 800] }}>
-        <perspectiveCamera fov={75} />
-        {/* <OrbitControls
-          enableDamping={false}
-          enablePan={false}
-          enableZoom={false}
-        /> */}
-        <directionalLight
-          color={"white"}
-          position={[10, -5, -2]}
-          intensity={4}
-        ></directionalLight>
-        <ambientLight intensity={1} />
-        <pointLight
-          color={"0xffffff"}
-          intensity={1.5}
-          position={[10, 10, 10]}
-        />
+    <div
+      className={`absolute transition duration-300 ease-out h-full w-full ${
+        isHovered ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <Canvas>
+        <ambientLight />
         <Suspense fallback={null}>
-          <Scene setBackgroundStyles={setBackgroundStyles} />
+          <ImageMesh url={imageUrl} />
         </Suspense>
       </Canvas>
     </div>

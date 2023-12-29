@@ -2,7 +2,6 @@
 import Project from "../projects/Projects";
 import * as THREE from "three";
 import {
-  Suspense,
   useContext,
   useEffect,
   useLayoutEffect,
@@ -11,20 +10,19 @@ import {
 } from "react";
 import images from "../scene/assets/images";
 import ProjectsData from "@/data/projects.json";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Scroll, ScrollControls } from "@react-three/drei";
-
 import { ShaderContext } from "@/app/context/ShaderContext";
 import AnimatedLetters from "../animation/AnimatedLetters";
-import ImageMesh from "../scene/ImageMesh";
+import SceneCanvas from "../scene/SceneCanvas";
 
 const Work = () => {
   const { setIsHovered, isHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
 
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState(
+    "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+  );
   const projectsParentRef = useRef(null);
-  const ref = useRef(null);
+
   useLayoutEffect(() => {
     const children = Array.from(projectsParentRef.current.children);
     children.forEach((link, idx) => {
@@ -35,20 +33,21 @@ const Work = () => {
             break;
           case 1:
             setImageUrl(images.imageTwo);
-
             break;
           case 2:
             setImageUrl(images.imageThree);
-
             break;
           case 3:
             setImageUrl(images.imageFour);
             break;
           case 4:
+            setImageUrl(images.imageFive);
             break;
           case 5:
+            setImageUrl(images.imageSix);
             break;
           case 6:
+            setImageUrl(images.imageSeven);
             break;
         }
       });
@@ -70,7 +69,6 @@ const Work = () => {
         }
       });
     }
-    return () => {};
   }, [isHovered]);
 
   const handleMouseEnter = () => {
@@ -92,8 +90,8 @@ const Work = () => {
   useEffect(() => {
     setOffset((prev) => ({
       ...prev,
-      x: THREE.MathUtils.lerp(prev.x, mouse.x, 0.1),
-      y: THREE.MathUtils.lerp(prev.y, mouse.y, 0.1),
+      x: THREE.MathUtils.lerp(offset.x, mouse.x, 0.1),
+      y: THREE.MathUtils.lerp(offset.y, mouse.y, 0.1),
     }));
   }, [mouse]);
 
@@ -102,26 +100,13 @@ const Work = () => {
       <h2 className="text-[15vw] p-12 font-Holiday_Sunday">
         <AnimatedLetters word="Projects" />
       </h2>
-      <section
-        onPointerMove={handlePointerMove}
-        ref={ref}
-        className="grid h-[200vh]  py-8 relative"
-      >
-        <div className="absolute z-10 h-full w-full">
-          <Canvas>
-            <OrbitControls enableZoom={false} />
-            <pointLight position={[10, 10, 10]} />
-            <Suspense fallback={null}>
-              <ImageMesh url="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
-            </Suspense>
-          </Canvas>
-        </div>
-
+      <section onPointerMove={handlePointerMove} className="grid py-8 relative">
+        <SceneCanvas imageUrl={imageUrl} isHovered={isHovered} />
         <ul
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           ref={projectsParentRef}
-          className="flex flex-col w-[80%] my-0 z-[1] mx-auto relative transition duration-300 ease-out overflow-hidden"
+          className="flex flex-col w-[80%] my-0 z-[1] mx-auto relative transition duration-800 ease-out overflow-hidden"
         >
           {ProjectsData.map((project) => {
             const { id, images, tech, title, url } = project;

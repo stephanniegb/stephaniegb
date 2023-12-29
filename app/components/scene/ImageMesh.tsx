@@ -27,23 +27,18 @@ function ImageMesh({ url }: { url: string }) {
   const mesh = useRef(null);
   const [texture] = useMemo(() => useLoader(THREE.TextureLoader, [url]), [url]);
 
-  useFrame(({ mouse, clock }) => {
+  useFrame(({ mouse }) => {
     setCanvasOffset({
       x: THREE.MathUtils.lerp(canvasOffset.x, mouse.x, 0.1),
       y: THREE.MathUtils.lerp(canvasOffset.y, mouse.y, 0.1),
     });
-
-    mesh.current.uTime = clock.getElapsedTime();
   });
 
+  const why = -(offset.y / innerHeight) * 2 + 1;
+
   return (
-    <mesh
-      position={[
-        ((offset.x / innerWidth) * 2 - 1) * 1.5,
-        canvasOffset.y * 2.9,
-        0,
-      ]}
-    >
+    <mesh position={[0, 0, 0]}>
+      {/*[((offset.x / innerWidth) * 2 - 1) * 1.5, why * 2.9, 0] */}
       <planeGeometry attach="geometry" args={[1.3, 2, 16, 16]} />
       <imageShader
         ref={mesh}

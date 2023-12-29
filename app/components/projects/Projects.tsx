@@ -20,7 +20,8 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
         href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-20 block hover:-translate-x-10 transition duration-300 ease-out hover:ease-in"
+        className="p-20 block"
+        /* hover:-translate-x-10 transition duration-300 ease-out hover:ease-in */
       >
         <div className="projText">
           <div className="projectTitleContainer">
