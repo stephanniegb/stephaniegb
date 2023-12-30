@@ -51,13 +51,15 @@ const About = () => {
   const text3TranslateY = useTransform(scrollYProgress, [0.6, 0.8], [100, 0]);
 
   return (
-    <div ref={containerRef} className="h-[300vh] bg-[#f6f1eb] relative">
+    <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#f6f1eb] relative">
       <m.div
+        id="about"
         style={{
           scale: scaleProgress,
           borderRadius: borderRadiusProgress,
           position: "sticky",
           top: topProgress,
+          cursor: "none",
         }}
         ref={targetRef}
         className="h-[100vh] w-full bg-black flex relative"

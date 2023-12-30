@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, useContext } from "react";
 import ImageMesh from "./ImageMesh";
+import CursorContext from "@/app/context/CursorContext";
 
 const SceneCanvas = ({
   imageUrl,

@@ -1,20 +1,16 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
-
 import Loader from "./components/loader/Loader";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-import SceneCanvas from "./components/scene/SceneCanvas";
-import Html from "./components/Html";
 import Hero from "./components/hero/Hero";
 import About from "./components/About/About";
-import Experience from "./components/experience/Experience";
-import Work from "./components/work/Work";
 import Background from "./components/Background";
 import Lenis from "@studio-freight/lenis";
 import { ShaderContextProvider } from "./context/ShaderContext";
 import Translate from "./components/Translate";
+import Cursor from "./components/cursor/Cursor";
+import { CursorContextProvider } from "./context/CursorContext";
 export default function Home() {
   const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
   const [timer, setTimer] = useState(2);
@@ -52,14 +48,17 @@ export default function Home() {
   return (
     <main className="relative">
       {/* <Loader /> */}
-      <Navbar />
-      <Hero />
-      <About />
-      <Translate />
-      <ShaderContextProvider>
-        <Background />
-      </ShaderContextProvider>
-      <Footer />
+      <CursorContextProvider>
+        <Cursor />
+        <Navbar />
+        <Hero />
+        <About />
+        <Translate />
+        <ShaderContextProvider>
+          <Background />
+        </ShaderContextProvider>
+        <Footer />
+      </CursorContextProvider>
     </main>
   );
 }

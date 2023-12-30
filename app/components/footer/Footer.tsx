@@ -4,62 +4,33 @@ import LinkedIn from "@/svg/LinkedIn";
 import X from "@/svg/X";
 import Instagram from "@/svg/Instagram";
 import Medium from "@/svg/Medium";
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useEffect } from "react";
+import CursorContext from "@/app/context/CursorContext";
 
 const EMAILADDRESS = "egbuonustephanie@gmail.com";
 
 const Footer = () => {
-  const [copied, setCopied] = useState(false);
-  const onCopy = useCallback(() => {
-    setCopied(true);
-  }, []);
-
-  const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    setMousePosition({ x: e.clientX, y: e.clientY });
-  };
+  const { setCopied, copied } = useContext(CursorContext);
+  useEffect(() => {
+    if (copied) {
+      setTimeout(() => setCopied(false), 2000);
+    }
+  }, [copied]);
 
   return (
-    <footer className=" flex flex-col sticky -z-[1] bottom-0 justify-between  w-screen pt-16 h-[85vh]">
+    <footer className=" flex flex-col sticky bottom-0 justify-between  w-screen pt-16 h-[85vh]">
       <div className="text-center">
         <h3>Lets talk about what we can build together</h3>
 
         <div className="relative">
-          <CopyToClipboard
-            onCopy={() => onCopy}
-            text={EMAILADDRESS}
-            // onCopy={() => this.setState({ copied: true })}
-          >
+          <CopyToClipboard onCopy={() => setCopied(true)} text={EMAILADDRESS}>
             <p
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onMouseMove={handleMouseMove}
-              className="text-6xl text-white cursor-none py-4 w-fit my-0 mx-auto "
+              id="emailAddress"
+              className="text-6xl text-white cursor-none py-4 w-fit my-0 mx-auto px-0"
             >
               {EMAILADDRESS}
             </p>
           </CopyToClipboard>
-          {isHovered && (
-            <div
-              style={{
-                top: 0,
-                left: mousePosition.x,
-                pointerEvents: "none",
-              }}
-              className="absolute bg-black w-[6rem] h-[6rem] grid place-content-center rounded-full text-white"
-            >
-              Click to copy
-            </div>
-          )}
         </div>
 
         <span className="font-cursive text-[2em]">stephani.egb</span>

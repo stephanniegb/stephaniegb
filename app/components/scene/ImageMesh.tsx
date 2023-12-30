@@ -23,6 +23,7 @@ function ImageMesh({ url }: { url: string }) {
     x: 0,
     y: 0,
   });
+
   const { setOffset, offset, setMouse, mouse } = useContext(ShaderContext);
   const mesh = useRef(null);
   const [texture] = useMemo(() => useLoader(THREE.TextureLoader, [url]), [url]);

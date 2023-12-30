@@ -8,20 +8,21 @@ interface ProjectsProps {
   imgUrl?: string;
   techs: string[];
   projectUrl?: string;
-
   images: string[];
 }
 import UpRightArrow from "@/svg/UpRightArrow";
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
   return (
-    <li className="relative projectLink">
+    <li className="relative cursor-none projectLink">
       <a
+        style={{
+          cursor: "none",
+        }}
         href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-20 block"
-        /* hover:-translate-x-10 transition duration-300 ease-out hover:ease-in */
+        className="p-20 block hover:-translate-x-5 transition duration-300 ease-out hover:ease-in"
       >
         <div className="projText">
           <div className="projectTitleContainer">

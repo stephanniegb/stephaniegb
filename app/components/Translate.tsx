@@ -20,7 +20,10 @@ const Translate = () => {
   );
 
   return (
-    <div ref={containerRef} className="h-screen pt-10  bg-[#f6f1eb]">
+    <div
+      ref={containerRef}
+      className="h-screen pt-10 z-[1] relative  bg-[#f6f1eb]"
+    >
       <h2 className="sticky top-[25%]">
         <m.span
           style={{

@@ -28,13 +28,10 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="grid h-full bg-black py-8 relative"
+      className="grid h-full bg-black z-[1] py-8 relative"
     >
-      <div className="fixed z-[3] backdrop-blur p-8 top-[50%]  grid place-content-center w-[100px] h-[100px] rounded-full">
-        SCROLL
-      </div>
-      <div className="absolute  h-full w-full">
-        {/* <Canvas
+      {/* <div className="absolute  h-full w-full">
+        <Canvas
           camera={{
             position: [0, 0, 400],
           }}
@@ -45,8 +42,8 @@ const Hero = () => {
           <Suspense fallback={null}>
             <Scene />
           </Suspense>
-        </Canvas> */}
-      </div>
+        </Canvas>
+      </div> */}
       <div className="flex flex-col mx-auto my-0 h-screen w-fit justify-center items-start">
         <div>
           <h1>
@@ -60,26 +57,6 @@ const Hero = () => {
           </h1>
         </div>
       </div>
-      {/* <div ref={containerRef} className="h-[150vh]">
-        <h2 className="sticky top-[25%] text-[10vw] w-[150%]">
-          <m.span
-            style={{
-              translateX: rightTranslateProgress,
-            }}
-            className="block"
-          >
-            SOMETHING - HUGE I LOVE
-          </m.span>
-          <m.span
-            style={{
-              translateX: leftTranslateProgress,
-            }}
-            className="block"
-          >
-            THAT TRANSLATES - ON SCROLL
-          </m.span>
-        </h2>
-      </div> */}
     </section>
   );
 };

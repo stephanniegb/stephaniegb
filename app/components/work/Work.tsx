@@ -13,10 +13,13 @@ import ProjectsData from "@/data/projects.json";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import AnimatedLetters from "../animation/AnimatedLetters";
 import SceneCanvas from "../scene/SceneCanvas";
+import CursorContext from "@/app/context/CursorContext";
 
 const Work = () => {
   const { setIsHovered, isHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
+
+  const { setCursorText } = useContext(CursorContext);
 
   const [imageUrl, setImageUrl] = useState(
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -30,28 +33,37 @@ const Work = () => {
         switch (idx) {
           case 0:
             setImageUrl(images.imageOne);
+            setCursorText("View");
             break;
           case 1:
             setImageUrl(images.imageTwo);
+            setCursorText("View");
             break;
           case 2:
             setImageUrl(images.imageThree);
+            setCursorText("View");
+
             break;
           case 3:
             setImageUrl(images.imageFour);
+            setCursorText("View");
             break;
           case 4:
             setImageUrl(images.imageFive);
+            setCursorText("View");
             break;
           case 5:
             setImageUrl(images.imageSix);
+            setCursorText("View");
             break;
           case 6:
             setImageUrl(images.imageSeven);
+            setCursorText("View");
             break;
         }
       });
       link.addEventListener("mouseleave", () => {
+        setCursorText("");
         // this.uniforms.uAlpha.value = lerp(this.uniforms.uAlpha.value, 0.0, 0.1);
       });
     });
@@ -79,7 +91,6 @@ const Work = () => {
   };
 
   const handlePointerMove = (e) => {
-    const rect = e.target.getBoundingClientRect();
     setMouse((prev) => ({
       ...prev,
       x: e.clientX,

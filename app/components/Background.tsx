@@ -28,12 +28,17 @@ const Background = () => {
           backgroundColor: backgroundColorProgress,
         }}
         ref={containerRef}
+        className="z-[1] relative"
       >
         <Experience />
         <Work />
       </m.div>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg
+        className="z-[1] relative"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
         <path
           fill="#000000"
           fill-opacity="1"
