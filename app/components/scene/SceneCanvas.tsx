@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useContext } from "react";
+import { Suspense } from "react";
 import ImageMesh from "./ImageMesh";
-import CursorContext from "@/app/context/CursorContext";
 
 const SceneCanvas = ({
   imageUrl,
@@ -12,7 +11,7 @@ const SceneCanvas = ({
 }) => {
   return (
     <div
-      className={`absolute transition duration-300 ease-out h-full w-full ${
+      className={`absolute transition  duration-300 ease-out h-full w-full ${
         isHovered ? "opacity-100" : "opacity-0"
       }`}
     >

@@ -5,6 +5,7 @@ import React, { useContext, useMemo, useRef, useState } from "react";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import fragmentShader from "./shaders/fragment";
 import vertexShader from "./shaders/vertex";
+import CursorContext from "@/app/context/CursorContext";
 
 const ImageShader = shaderMaterial(
   {
@@ -25,6 +26,8 @@ function ImageMesh({ url }: { url: string }) {
   });
 
   const { setOffset, offset, setMouse, mouse } = useContext(ShaderContext);
+  const { cursor, setCursorText } = useContext(CursorContext);
+
   const mesh = useRef(null);
   const [texture] = useMemo(() => useLoader(THREE.TextureLoader, [url]), [url]);
 
@@ -35,19 +38,16 @@ function ImageMesh({ url }: { url: string }) {
     });
   });
 
-  const why = -(offset.y / innerHeight) * 2 + 1;
-
   return (
-    <mesh position={[0, 0, 0]}>
-      {/*[((offset.x / innerWidth) * 2 - 1) * 1.5, why * 2.9, 0] */}
+    <mesh position={[mouse.x * 1.5, mouse.y * 2.9, 0]}>
       <planeGeometry attach="geometry" args={[1.3, 2, 16, 16]} />
       <imageShader
         ref={mesh}
         attach="material"
         uColor={[0.0, 1.0, 0.0]}
         uOffset={[
-          (mouse.x - offset.x) * 0.0005,
-          -(mouse.y - offset.y) * 0.0005,
+          (cursor.x - offset.x) * 0.0005,
+          -(cursor.y - offset.y) * 0.0005,
         ]}
         uTexture={texture}
       />

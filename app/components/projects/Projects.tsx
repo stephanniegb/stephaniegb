@@ -22,9 +22,10 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
         href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-20 block hover:-translate-x-3 transition duration-300 ease-out hover:ease-in"
+        className="p-20 block transition duration-300 ease-out hover:ease-in"
       >
-        <div className="projText">
+        {/* hover:-translate-x-3 */}
+        <div className="projText relative z-[-2]">
           <div className="projectTitleContainer">
             <h3 className="text-[3vw] uppercase">{projTitle}</h3>
             <span className="arrow">
