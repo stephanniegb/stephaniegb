@@ -22,8 +22,11 @@ const About = () => {
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
 
   /* Hello there animation */
-  const center = 4.5;
-  const textXAnimation = useTransform(scrollYProgress, [0, 0.3], [center, 0]);
+  const textXAnimation = useTransform(
+    scrollYProgress,
+    [0, 0.3],
+    ["-50%", "0%"]
+  );
   const textYAnimation = useTransform(
     scrollYProgress,
     [0, 0.3],
@@ -84,7 +87,7 @@ const About = () => {
               opacity: text1Opacity,
               fontSize: fontSizeProgress,
             }}
-            className="w-fit h-fit translate-x-[-50%]"
+            className="w-fit h-fit"
 
             /* font-cursive */
           >
