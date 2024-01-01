@@ -22,7 +22,7 @@ const Translate = () => {
   return (
     <div
       ref={containerRef}
-      className="h-screen pt-10 z-[1] relative  bg-[#f6f1eb]"
+      className="h-screen pt-10 z-[1] relative  bg-[#fcfaf8]"
     >
       <h2 className="sticky top-[25%]">
         <m.span

@@ -1,5 +1,5 @@
 import { motion as m, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 type Props = {
   sentence: string;

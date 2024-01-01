@@ -11,11 +11,8 @@ import { ShaderContextProvider } from "./context/ShaderContext";
 import Translate from "./components/Translate";
 import Cursor from "./components/cursor/Cursor";
 import { CursorContextProvider } from "./context/CursorContext";
-export default function Home() {
-  const [preLoader, setPreLoader] = useState(true); // change this to true for it to work
-  const [timer, setTimer] = useState(2);
-  const pageRef = useRef(null);
 
+export default function Home() {
   // const clear = () => {
   //   clearInterval(pageRef.current);
   //   setPreLoader(false);
@@ -47,7 +44,6 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* <Loader /> */}
       <CursorContextProvider>
         <Cursor />
         <Navbar />

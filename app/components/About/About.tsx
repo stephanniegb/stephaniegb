@@ -22,7 +22,7 @@ const About = () => {
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
 
   /* Hello there animation */
-  const center = -innerWidth / 4;
+  const center = 4.5;
   const textXAnimation = useTransform(scrollYProgress, [0, 0.3], [center, 0]);
   const textYAnimation = useTransform(
     scrollYProgress,
@@ -32,13 +32,8 @@ const About = () => {
   const fontSizeProgress = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [`10vw`, `7vw`]
+    [`7vw`, `5vw`]
   );
-  // const fontSizeProgress = useTransform(
-  //   scrollYProgress,
-  //   [0, 0.3],
-  //   [`${innerWidth * 0.5}`, `${innerWidth * 0.2}`]
-  // );
 
   const text1Opacity = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
   const text2Opacity = useTransform(
@@ -51,7 +46,7 @@ const About = () => {
   const text3TranslateY = useTransform(scrollYProgress, [0.6, 0.8], [100, 0]);
 
   return (
-    <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#f6f1eb] relative">
+    <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#fcfaf8] relative">
       <m.div
         id="about"
         style={{
@@ -76,23 +71,24 @@ const About = () => {
               borderTopLeftRadius: borderRadiusProgress,
               borderBottomLeftRadius: borderRadiusProgress,
             }}
-            className=" object-cover w-full h-full filter grayscale"
-            src="/IMG_7682 2.JPG"
+            className=" object-cover w-full h-full"
+            src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
             alt="stephanie smiling"
           />
         </m.div>
         <m.div className="relative flex place-content-center flex-1 mt-60 px-32">
           <m.p
             style={{
-              top: textYAnimation,
+              y: textYAnimation,
               x: textXAnimation,
               opacity: text1Opacity,
               fontSize: fontSizeProgress,
             }}
-            className="absolute left-0 px-[5vw] font-cursive"
+            className="w-fit h-fit translate-x-[-50%]"
+
+            /* font-cursive */
           >
             Hello There!
-            {/* <Hello width={fontSizeProgress} /> */}
           </m.p>
 
           <m.div

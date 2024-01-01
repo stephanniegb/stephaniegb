@@ -109,7 +109,8 @@ const Work = () => {
   return (
     <section id="work" className="">
       <h2 className="text-[15vw] p-12 font-Holiday_Sunday">
-        <AnimatedLetters word="Projects" />
+        Recent Projects
+        {/* <AnimatedLetters word="Recent Projects" /> */}
       </h2>
       <section onPointerMove={handlePointerMove} className="grid py-8 relative">
         <SceneCanvas imageUrl={imageUrl} isHovered={isHovered} />

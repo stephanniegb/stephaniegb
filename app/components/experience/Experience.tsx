@@ -61,7 +61,8 @@ const Experience = () => {
   return (
     <section className="min-h-[100vh] text-black flex flex-col gap-12 p-16">
       <h2 className="text-center text-[15vw] font-Holiday_Sunday">
-        <AnimatedLetters word="Experience" />
+        Experience
+        {/* <AnimatedLetters word="Experience" /> */}
       </h2>
       <div className="text-center">
         <p>

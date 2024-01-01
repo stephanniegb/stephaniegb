@@ -12,13 +12,13 @@ const Background = () => {
   const backgroundColorProgress = useTransform(
     scrollYProgress,
     [0, 1],
-    ["#f6f1eb", "#000000"]
+    ["#fcfaf8", "#000000"]
   );
 
   const textColorProgress = useTransform(
     scrollYProgress,
     [0, 1],
-    ["#000000", "#ffffff"]
+    ["#000000", "#94948f"]
   );
   return (
     <>

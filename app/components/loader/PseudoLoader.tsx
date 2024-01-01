@@ -1,7 +1,8 @@
 import { AnimatePresence, motion as m } from "framer-motion";
-import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
-const Loader = ({
+import Image from "next/image";
+
+const PseudoLoader = ({
   loader,
   setLoader,
 }: {
@@ -14,11 +15,13 @@ const Loader = ({
     visible: { opacity: 1 },
     exit: { opacity: 0 },
   };
-
   return (
     <AnimatePresence mode="wait">
       {loader && (
-        <m.div className="h-screen w-screen grid place-content-center relative z-[10] bg-black">
+        <m.div
+          id="loader"
+          className="h-screen w-screen grid place-content-center relative z-[10] bg-black"
+        >
           <div
             style={{
               width: "clamp(13rem, 20vmax, 18.7rem)",
@@ -53,4 +56,4 @@ const Loader = ({
   );
 };
 
-export default Loader;
+export default PseudoLoader;

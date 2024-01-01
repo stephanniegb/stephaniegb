@@ -13,10 +13,7 @@
   transform: translateY(0rem);
   transition: transform 0.3s ease-in-out;
 }
-.projectTitle {
-  font-size: 2rem;
-  text-transform: uppercase;
-}
+
 .techWrapper {
   display: flex;
   gap: 0.5rem;

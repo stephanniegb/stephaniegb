@@ -12,6 +12,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-image": "url('/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg')",
       },
       gridAutoColumns: {
         "5fr": "repeat(auto-fit, minmax(150px, 1fr))",
