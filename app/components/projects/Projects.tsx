@@ -1,5 +1,5 @@
 import "./projects.css";
-import SlideinBorder from "../RevealAnimations/SlideinBorder";
+import SlideinBorder from "../animation/SlideinBorder";
 
 interface ProjectsProps {
   id: string;

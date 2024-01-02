@@ -63,7 +63,7 @@ const Hero = () => {
         </h1>
       </div>
       <m.div
-        className="w-full"
+        className="w-full flex flex-col gap-4"
         initial={{
           y: "-110%",
         }}

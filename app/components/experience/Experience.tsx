@@ -1,7 +1,7 @@
 import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
 import { useRef } from "react";
 import Image from "next/image";
-import AnimatedLines from "../AnimatedLines";
+import AnimatedLines from "../animation/AnimatedLines";
 import AnimatedLetters from "../animation/AnimatedLetters";
 
 const IMAGES = [
@@ -59,17 +59,21 @@ const Experience = () => {
   const rootRef = useRef(null);
 
   return (
-    <section className="min-h-[100vh] text-black flex flex-col gap-12 p-16">
-      <h2 className="text-center text-[15vw] font-Holiday_Sunday">
-        Experience
-        {/* <AnimatedLetters word="Experience" /> */}
+    <section className="min-h-[100vh] text-black flex flex-col p-16">
+      <h2 className="text-center p-0 m-0">
+        <AnimatedLines sentence=" Experience" />
       </h2>
-      <div className="text-center">
+      <div
+        style={{
+          border: "1px solid red",
+        }}
+        className="text-center"
+      >
         <p>
-          <AnimatedLines
-            sentence={` I have two years of experience in web development, I remain steadfast 
-            in my commitment to continuous learning in this dynamic and fast-paced  industry.Web development is not just a profession for me it's a continuous journey of growth and exploration.`}
-          />
+          I have two years of experience in web development, I remain steadfast
+          in my commitment to continuous learning in this dynamic and fast-paced
+          industry.Web development is not just a profession for me it's a
+          continuous journey of growth and exploration.
         </p>
       </div>
       <h3 className="text-center text-3xl">Some technologies I have used:</h3>

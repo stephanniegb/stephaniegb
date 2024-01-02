@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import Hello from "@/svg/Hello";
+import AnimatedLetters from "../animation/AnimatedLetters";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -38,7 +39,7 @@ const About = () => {
     [`7vw`, `5vw`]
   );
 
-  const text1Opacity = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
+  const text1Opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const text2Opacity = useTransform(
     scrollYProgress,
     [0.2, 0.6, 0.62],
@@ -88,10 +89,8 @@ const About = () => {
               fontSize: fontSizeProgress,
             }}
             className="w-fit h-fit"
-
-            /* font-cursive */
           >
-            Hello There!
+            <AnimatedLetters word="Hello There!" />
           </m.p>
 
           <m.div

@@ -13,6 +13,7 @@ import ProjectsData from "@/data/projects.json";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import SceneCanvas from "../scene/SceneCanvas";
 import CursorContext from "@/app/context/CursorContext";
+import AnimatedLines from "../animation/AnimatedLines";
 
 const Work = () => {
   const { setIsHovered, isHovered, setOffset, offset, setMouse, mouse } =
@@ -114,7 +115,9 @@ const Work = () => {
 
   return (
     <section id="work" className="">
-      <h2 className="text-[15vw] p-12 font-Holiday_Sunday">Recent Projects</h2>
+      <h2 className="font-Holiday_Sunday">
+        <AnimatedLines sentence="Recent Projects" />
+      </h2>
       <section onPointerMove={handlePointerMove} className="grid py-8 relative">
         <SceneCanvas imageUrl={imageUrl} isHovered={isHovered} />
         <ul

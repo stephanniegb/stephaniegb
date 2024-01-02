@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { motion as m, useInView } from "framer-motion";
+import { useRef } from "react";
+import { inView, motion as m, useInView } from "framer-motion";
 
 type Props = {
   word: string;
@@ -7,31 +7,29 @@ type Props = {
 const AnimatedLetters = ({ word }: Props) => {
   const wordRef = useRef(null);
   const isInView = useInView(wordRef, { once: false });
-  const [characters, setCharacters] = useState<string[]>([]);
-
-  useEffect(() => {
-    const chars = word.split("");
-    setCharacters(chars);
-  }, []);
-
+  const transition = {
+    duration: 0.6,
+    ease: [0.43, 0.13, 0.23, 0.96],
+  };
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+  };
   return (
     <span ref={wordRef} className="inline-block">
-      {characters &&
-        characters.map((char, idx) => (
-          <m.span
-            style={{
-              transform: isInView ? "none" : "translateY(4vw)",
-              opacity: isInView ? 1 : 0,
-              transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${
-                0.1 * idx
-              }s`,
-            }}
-            className="inline-block"
-            key={idx}
-          >
-            {char}
-          </m.span>
-        ))}
+      <m.span
+        variants={variants}
+        initial="initial"
+        animate={isInView && "animate"}
+        transition={transition}
+        className="inline-block"
+      >
+        {word}
+      </m.span>
     </span>
   );
 };
