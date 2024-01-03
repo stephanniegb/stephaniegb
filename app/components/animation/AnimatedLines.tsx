@@ -12,9 +12,6 @@ const AnimatedLines = ({ sentence, className }: Props) => {
 
   return (
     <span
-      style={{
-        border: "1px solid red",
-      }}
       ref={sentenceContainerRef}
       className={`inline-block overflow-hidden text[2vw] h-fit ${className} p-0`}
     >

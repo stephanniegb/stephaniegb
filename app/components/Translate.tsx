@@ -22,37 +22,20 @@ const Translate = () => {
   return (
     <div
       ref={containerRef}
-      className="h-[100vh] pt-10 z-[1] relative  bg-[#fcfaf8]"
+      className="h-[50vh] grid place-content-center pt-10 z-[1] relative  bg-[#fcfaf8]"
     >
-      <div className="sticky top-[25%]">
-        <h2 className="text-[9vw] text-[#fcfaf8] absolute z-[2]">
-          Creative Developer
+      <div className="relative w-screen h-[30vh]">
+        {/*text-[#fcfaf8]  */}
+        <h2 className=" text-[8vw] text-[#fcfaf8] text-center absolute z-[2]">
+          CREATIVE . INNOVATIVE
         </h2>
         <m.div
           style={{
             translateX: rightTranslateProgress,
           }}
-          className="absolute z-[1] top-0 bg-black w-[300px] h-[300px]"
+          className="absolute z-[1] top-0 bg-black w-[50vw] h-[30vh]"
         ></m.div>
       </div>
-      {/* <h2 className="sticky top-[25%]">
-        <m.span
-          style={{
-            translateX: rightTranslateProgress,
-          }}
-          className="block w-fit my-0 mx-auto"
-        >
-          SOMETHING - HUGE I LOVE
-        </m.span>
-        <m.span
-          style={{
-            translateX: leftTranslateProgress,
-          }}
-          className="block w-fit my-0 mx-auto"
-        >
-          THAT TRANSLATES - ON SCROLL
-        </m.span>
-      </h2> */}
     </div>
   );
 };

@@ -46,8 +46,8 @@ const About = () => {
     [0, 1, 0]
   );
   const text3Opacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-  const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.6], [100, 0]);
-  const text3TranslateY = useTransform(scrollYProgress, [0.6, 0.8], [100, 0]);
+  const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.8], [100, 0]);
+  const text3TranslateY = useTransform(scrollYProgress, [0.8, 1.0], [100, 0]);
 
   return (
     <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#fcfaf8] relative">

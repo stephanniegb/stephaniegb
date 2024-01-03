@@ -115,11 +115,11 @@ const Work = () => {
 
   return (
     <section id="work" className="">
-      <h2 className="font-Holiday_Sunday">
+      <h2 className="">
         <AnimatedLines sentence="Recent Projects" />
       </h2>
       <section onPointerMove={handlePointerMove} className="grid py-8 relative">
-        <SceneCanvas imageUrl={imageUrl} isHovered={isHovered} />
+        <SceneCanvas imageUrl={imageUrl} />
         <ul
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}

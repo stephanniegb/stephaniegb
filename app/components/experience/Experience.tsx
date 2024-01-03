@@ -63,12 +63,7 @@ const Experience = () => {
       <h2 className="text-center p-0 m-0">
         <AnimatedLines sentence=" Experience" />
       </h2>
-      <div
-        style={{
-          border: "1px solid red",
-        }}
-        className="text-center"
-      >
+      <div className="text-center">
         <p>
           I have two years of experience in web development, I remain steadfast
           in my commitment to continuous learning in this dynamic and fast-paced

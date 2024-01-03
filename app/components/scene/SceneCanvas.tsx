@@ -2,19 +2,9 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import ImageMesh from "./ImageMesh";
 
-const SceneCanvas = ({
-  imageUrl,
-  isHovered,
-}: {
-  imageUrl: string;
-  isHovered: boolean;
-}) => {
+const SceneCanvas = ({ imageUrl }: { imageUrl: string }) => {
   return (
-    <div
-      className={`absolute transition  duration-300 ease-out h-full w-full ${
-        isHovered ? "opacity-100" : "opacity-0"
-      }`}
-    >
+    <div className={`absolute transition  duration-300 ease-out h-full w-full`}>
       <Canvas>
         <ambientLight />
         <Suspense fallback={null}>
@@ -26,3 +16,6 @@ const SceneCanvas = ({
 };
 
 export default SceneCanvas;
+/* ${
+        isHovered ? "opacity-100" : "opacity-0"
+      } */

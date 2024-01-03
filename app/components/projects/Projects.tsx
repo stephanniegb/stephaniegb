@@ -25,7 +25,7 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
         className="p-20 block transition duration-300 ease-out hover:ease-in"
       >
         {/* hover:-translate-x-3 */}
-        <div className="projText relative z-[-2]">
+        <div className="projText relative z-[-6]">
           <div className="projectTitleContainer">
             <h3 className="text-[3vw] uppercase">{projTitle}</h3>
             <span className="arrow">
