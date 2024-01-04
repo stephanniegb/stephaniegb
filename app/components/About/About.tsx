@@ -50,7 +50,7 @@ const About = () => {
   const text3TranslateY = useTransform(scrollYProgress, [0.8, 1.0], [100, 0]);
 
   return (
-    <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#fcfaf8] relative">
+    <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#d9d9d9] relative">
       <m.div
         id="about"
         style={{

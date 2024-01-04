@@ -21,7 +21,7 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="grid bg-black z-[1] py-8 relative overflow-hidden"
+      className="grid bg-black z-[1] relative overflow-hidden"
     >
       <div className="w-screen h-[70vh] grid place-content-center">
         <h1>

@@ -11,28 +11,14 @@ import { ShaderContextProvider } from "./context/ShaderContext";
 import Translate from "./components/Translate";
 import Cursor from "./components/cursor/Cursor";
 import { CursorContextProvider } from "./context/CursorContext";
+import Experience from "./components/experience/Experience";
+import Work from "./components/work/Work";
 
 export default function Home() {
-  // const clear = () => {
-  //   clearInterval(pageRef.current);
-  //   setPreLoader(false);
-  // };
-  // useEffect(() => {
-  //   pageRef.current = setInterval(() => {
-  //     setTimer((timer) => timer - 1);
-  //   }, 1000);
-  // }, []);
-  // useEffect(() => {
-  //   if (timer === 0) {
-  //     clear();
-  //   }
-  // }, [timer]);
   useEffect(() => {
     const lenis = new Lenis({});
 
-    lenis.on("scroll", (e) => {
-      // console.log(e);
-    });
+    lenis.on("scroll", (e) => {});
 
     function raf(time) {
       lenis.raf(time);
@@ -49,9 +35,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        <Translate />
+        {/* <Translate /> */}
         <ShaderContextProvider>
-          <Background />
+          <Experience />
+          <Work />
         </ShaderContextProvider>
         <Footer />
       </CursorContextProvider>

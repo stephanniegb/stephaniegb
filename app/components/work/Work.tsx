@@ -25,13 +25,13 @@ const Work = () => {
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   );
   const projectsParentRef = useRef(null);
-
+  const [showProj, setShowProj] = useState(false);
   useLayoutEffect(() => {
     const children = Array.from(projectsParentRef.current.children);
     children.forEach((link, idx) => {
       link.addEventListener("mouseenter", () => {
         setCursorText("View");
-
+        setShowProj(true);
         switch (idx) {
           case 0:
             setImageUrl(images.imageOne);
@@ -65,6 +65,7 @@ const Work = () => {
       });
       link.addEventListener("mouseleave", () => {
         setCursorText("");
+        setShowProj(false);
       });
     });
   }, []);
@@ -114,34 +115,50 @@ const Work = () => {
   }, [mouse]);
 
   return (
-    <section id="work" className="">
-      <h2 className="">
+    <>
+      <section id="work" className="z-[1] relative bg-[#D9D9D9]">
+        {/* <h2 className="">
         <AnimatedLines sentence="Recent Projects" />
-      </h2>
-      <section onPointerMove={handlePointerMove} className="grid py-8 relative">
-        <SceneCanvas imageUrl={imageUrl} />
-        <ul
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          ref={projectsParentRef}
-          className="flex flex-col w-[80%] my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
+      </h2> */}
+        <section
+          onPointerMove={handlePointerMove}
+          className="grid py-8 relative"
         >
-          {ProjectsData.map((project) => {
-            const { id, images, tech, title, url } = project;
-            return (
-              <Project
-                key={id}
-                id={id}
-                techs={tech}
-                projTitle={title}
-                images={images}
-                projectUrl={url}
-              />
-            );
-          })}
-        </ul>
+          <SceneCanvas showProj={showProj} imageUrl={imageUrl} />
+          <ul
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            ref={projectsParentRef}
+            className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
+          >
+            {ProjectsData.map((project) => {
+              const { id, images, tech, title, url } = project;
+              return (
+                <Project
+                  key={id}
+                  id={id}
+                  techs={tech}
+                  projTitle={title}
+                  images={images}
+                  projectUrl={url}
+                />
+              );
+            })}
+          </ul>
+        </section>
       </section>
-    </section>
+      <svg
+        className="z-[1] relative"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#d9d9d9"
+          fill-opacity="1"
+          d="M0,224L80,234.7C160,245,320,267,480,282.7C640,299,800,309,960,309.3C1120,309,1280,299,1360,293.3L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+    </>
   );
 };
 

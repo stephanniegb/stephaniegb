@@ -116,3 +116,6 @@ html.lenis {
     stroke-dashoffset: 0;
   }
 }
+canvas {
+  pointer-events: none;
+}

@@ -59,11 +59,11 @@ const Experience = () => {
   const rootRef = useRef(null);
 
   return (
-    <section className="min-h-[100vh] text-black flex flex-col p-16">
-      <h2 className="text-center p-0 m-0">
+    <section className="min-h-[100vh] text-black flex flex-col p-16 bg-[#D9D9D9] z-[1] relative">
+      <h2 className="text-center text-[6vw]">
         <AnimatedLines sentence=" Experience" />
       </h2>
-      <div className="text-center">
+      <div className="text-center ">
         <p>
           I have two years of experience in web development, I remain steadfast
           in my commitment to continuous learning in this dynamic and fast-paced

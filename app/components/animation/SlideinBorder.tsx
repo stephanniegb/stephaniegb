@@ -30,7 +30,11 @@ const SlideinBorder = ({ height }: PropTypes) => {
     };
   }, []);
   return (
-    <div style={{ height: height }} ref={ref} className="SlideinBorder"></div>
+    <div
+      style={{ height: height }}
+      ref={ref}
+      className="bg-black SlideinBorder"
+    ></div>
   );
 };
 

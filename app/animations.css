@@ -4,7 +4,6 @@
 }
 .SlideinBorder.show {
   width: 100%;
-  background-color: #ffffff;
 }
 
 .aboutContainerBg {
@@ -14,16 +13,7 @@
 .aboutContainerBg.show {
   background-color: rgb(20, 18, 18);
 }
-/* .RevealBgColor {
 
-  background-color: #021937;
-
-  transition: background-color 1.5s ease-in;
-  min-height: 100vh;
-}
-.RevealBgColor.show {
-
-} */
 .writeContainer {
   padding: 4rem;
   min-height: 100vh;
