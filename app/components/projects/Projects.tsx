@@ -14,7 +14,7 @@ import UpRightArrow from "@/svg/UpRightArrow";
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
   return (
-    <li className="relative cursor-none group">
+    <li className="relative cursor-none  group">
       <a
         style={{
           cursor: "none",

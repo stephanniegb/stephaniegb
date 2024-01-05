@@ -25,6 +25,7 @@ const Work = () => {
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   );
   const projectsParentRef = useRef(null);
+  const containerRef = useRef(null);
   const [showProj, setShowProj] = useState(false);
   useLayoutEffect(() => {
     const children = Array.from(projectsParentRef.current.children);
@@ -92,7 +93,7 @@ const Work = () => {
   };
 
   const handlePointerMove = (e) => {
-    const rect = projectsParentRef.current.getBoundingClientRect();
+    const rect = containerRef.current.getBoundingClientRect();
     const relativeMouseY = e.clientY - rect.top;
 
     setMouse((prev) => ({
@@ -124,14 +125,15 @@ const Work = () => {
         {/* <div className="z-[-4] relative bg-[#ff0000] h-[15rem] w-[screenhj]"></div> */}
 
         <section
-          ref={projectsParentRef}
           onPointerMove={handlePointerMove}
-          className="grid py-[400px] relative"
+          ref={containerRef}
+          className="grid py-[13rem] relative"
         >
           <SceneCanvas showProj={showProj} imageUrl={imageUrl} />
           <ul
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            ref={projectsParentRef}
             className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
           >
             {ProjectsData.map((project) => {
