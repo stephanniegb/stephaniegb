@@ -123,13 +123,15 @@ const Work = () => {
 
         {/* <div className="z-[-4] relative bg-[#ff0000] h-[15rem] w-[screenhj]"></div> */}
 
-        <section className="grid py-8 relative">
+        <section
+          ref={projectsParentRef}
+          onPointerMove={handlePointerMove}
+          className="grid py-[400px] relative"
+        >
           <SceneCanvas showProj={showProj} imageUrl={imageUrl} />
           <ul
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            ref={projectsParentRef}
-            onPointerMove={handlePointerMove}
             className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
           >
             {ProjectsData.map((project) => {
