@@ -5,6 +5,10 @@ const LinkedIn = () => {
       width="48"
       height="48"
       viewBox="0 0 48 48"
+      className="group-hover:scale-110"
+      style={{
+        transition: "transform 0.3s ease-in-out",
+      }}
     >
       <circle cx="15.64" cy="13.46" r=".75" fill="currentColor" />
       <path

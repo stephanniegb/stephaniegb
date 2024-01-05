@@ -5,6 +5,10 @@ const X = () => {
       width="48"
       height="48"
       viewBox="0 0 24 24"
+      className="group-hover:scale-110"
+      style={{
+        transition: "transform 0.3s ease-in-out",
+      }}
     >
       <path
         fill="currentColor"

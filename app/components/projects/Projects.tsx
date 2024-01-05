@@ -14,7 +14,7 @@ import UpRightArrow from "@/svg/UpRightArrow";
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
   return (
-    <li className="relative cursor-none projectLink">
+    <li className="relative cursor-none group">
       <a
         style={{
           cursor: "none",
@@ -32,7 +32,12 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
             >
               {projTitle}
             </h3>
-            <span className="arrow">
+            <span
+              style={{
+                transition: "transform 0.3s ease-in-out",
+              }}
+              className="group-hover:text-lemon group-hover:translate-y-[-0.35rem]"
+            >
               <UpRightArrow />
             </span>
           </div>

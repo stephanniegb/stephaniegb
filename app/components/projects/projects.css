@@ -26,16 +26,7 @@
   border-radius: 5px;
 }
 
-.projectLink.inactive {
-  opacity: 0.5;
-  transition: opacity 0.8s;
-}
 .projectLink:hover {
   opacity: 1 !important;
-
   transition: opacity 0.8s;
-}
-.projectLink:hover .arrow {
-  transform: translateY(-0.35rem);
-  color: rgb(95, 203, 151);
 }

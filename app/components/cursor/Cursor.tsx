@@ -1,8 +1,8 @@
 import CursorContext from "@/app/context/CursorContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 const Cursor = () => {
-  const { setCursorText, cursorText, setCursor, cursor } =
+  const { setCursorText, cursorText, setCursor, cursor, copied, setCopied } =
     useContext(CursorContext);
 
   const [deviceType, setDeviceType] = useState("");
@@ -39,7 +39,7 @@ const Cursor = () => {
     });
 
     footerEmail?.addEventListener("click", () => {
-      handleMouseText({ text: "Copied" });
+      setCopied(true);
     });
 
     aboutSection?.addEventListener("mouseenter", () => {
@@ -61,14 +61,22 @@ const Cursor = () => {
           style={{
             left: `${cursor.x}px`,
             top: `${cursor.y}px`,
-            scale: `${cursorText === "" ? "0" : "1"}`,
+            scale: `${
+              cursorText === ""
+                ? "0"
+                : copied && cursorText !== ""
+                ? "1.1"
+                : "1"
+            }`,
             opacity: `${cursorText === "" ? "0" : "1"}`,
             transition: "scale .5s, opacity .5s",
           }}
-          className={`fixed bg-[#035AA6] text-white text-[.8rem] z-[3] pointer-events-none translate-x-[-50%] translate-y-[-50%] backdrop-blur p-1 grid place-content-center w-[6rem] h-[6rem] rounded-full`}
+          className={`fixed bg-[#035AA6] text-white text-[.8rem] font-bold z-[3] pointer-events-none translate-x-[-50%] translate-y-[-50%] backdrop-blur p-1 grid place-content-center w-[6rem] h-[6rem] rounded-full`}
         >
           <p className="z-[2] p-0">
-            <span className="block text-[.8rem]">{cursorText}</span>
+            <span className="block text-[.8rem]">
+              {copied ? "Copied" : cursorText}
+            </span>
           </p>
         </div>
       )}
