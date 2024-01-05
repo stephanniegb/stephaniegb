@@ -22,21 +22,25 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
         href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-20 block transition duration-300 ease-out hover:ease-in"
+        className="p-20 block relative transition duration-300 ease-out hover:ease-in"
       >
-        {/* hover:-translate-x-3 */}
         <div className="projText relative">
-          <div className="projectTitleContainer">
-            <h3 className="text-[3vw] uppercase">{projTitle}</h3>
+          <div className="relative z-[-1] projectTitleContainer">
+            <h3
+              className="text-[3vw] font-Bruno_Ace text-brown  
+             uppercase"
+            >
+              {projTitle}
+            </h3>
             <span className="arrow">
               <UpRightArrow />
             </span>
           </div>
 
-          <ul className="techWrapper">
+          <ul className=" relative z-[-1] techWrapper">
             {techs.map((tech, key) => {
               return (
-                <li key={key} className="tech">
+                <li key={key} className="p-2 rounded-[25px] text-lemon">
                   {tech}
                 </li>
               );
@@ -44,7 +48,7 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
           </ul>
         </div>
       </a>
-      <SlideinBorder height="2px" />
+      <SlideinBorder height="4px" />
     </li>
   );
 };

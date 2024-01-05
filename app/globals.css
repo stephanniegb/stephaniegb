@@ -4,6 +4,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Gilda+Display&family=Poltawski+Nowy:wght@500&display=swap");
 @import url("https://fonts.cdnfonts.com/css/holiday-sunday");
+/* today */
+
+@import url("https://fonts.cdnfonts.com/css/bruno-ace-2");
+@import url("https://fonts.cdnfonts.com/css/oak-sans");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -58,7 +62,8 @@ h2 {
   box-sizing: inherit;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Oak Sans", sans-serif;
+
   margin: 0;
   padding: 0;
   background-color: var(--beige);

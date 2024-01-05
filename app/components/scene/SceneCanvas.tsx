@@ -14,8 +14,8 @@ const SceneCanvas = ({
       style={{
         pointerEvents: "none",
       }}
-      className={`absolute z-[2] transition  duration-300 ease-out h-full w-full ${
-        showProj ? "opacity-100" : "opacity-100"
+      className={`absolute transition   duration-300 ease-out h-full w-full ${
+        showProj ? "opacity-100" : "opacity-0"
       }`}
     >
       <Canvas>

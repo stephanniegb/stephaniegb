@@ -8,8 +8,8 @@ type Props = {
 const AnimatedLines = ({ sentence, className }: Props) => {
   const sentenceContainerRef = useRef(null);
 
-  const isInView = useInView(sentenceContainerRef, { once: false });
-
+  const isInView = useInView(sentenceContainerRef, { once: true });
+  /* */
   return (
     <span
       ref={sentenceContainerRef}

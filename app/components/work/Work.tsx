@@ -70,19 +70,19 @@ const Work = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const parent = projectsParentRef.current;
-    if (parent) {
-      const children = Array.from(parent.children);
-      children.forEach((link) => {
-        if (isHovered) {
-          link.style.opacity = 0.2;
-        } else {
-          link.style.opacity = 1;
-        }
-      });
-    }
-  }, [isHovered]);
+  // useEffect(() => {
+  //   const parent = projectsParentRef.current;
+  //   if (parent) {
+  //     const children = Array.from(parent.children);
+  //     children.forEach((link) => {
+  //       if (isHovered) {
+  //         link.style.opacity = 0.2;
+  //       } else {
+  //         link.style.opacity = 1;
+  //       }
+  //     });
+  //   }
+  // }, [isHovered]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -116,19 +116,20 @@ const Work = () => {
 
   return (
     <>
-      <section id="work" className="z-[1] relative bg-[#D9D9D9]">
+      <section id="work" className="z-[1] py-4 relative bg-[#D9D9D9]">
         {/* <h2 className="">
         <AnimatedLines sentence="Recent Projects" />
       </h2> */}
-        <section
-          onPointerMove={handlePointerMove}
-          className="grid py-8 relative"
-        >
+
+        {/* <div className="z-[-4] relative bg-[#ff0000] h-[15rem] w-[screenhj]"></div> */}
+
+        <section className="grid py-8 relative">
           <SceneCanvas showProj={showProj} imageUrl={imageUrl} />
           <ul
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             ref={projectsParentRef}
+            onPointerMove={handlePointerMove}
             className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
           >
             {ProjectsData.map((project) => {

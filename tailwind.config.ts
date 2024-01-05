@@ -24,6 +24,7 @@ const config: Config = {
         cursive: ["Sacramento", "cursive"],
         serif: ["Cinzel Decorative", "serif"],
         Holiday_Sunday: ["Holiday Sunday", "sans-serif"],
+        Bruno_Ace: ["Bruno Ace", "sans-serif"],
       },
       colors: {
         transparent: "transparent",
@@ -37,6 +38,8 @@ const config: Config = {
         "bubble-gum": "#ff77e9",
         bermuda: "#78dcca",
         black: "#000000",
+        brown: "#463f3a",
+        lemon: "#5dcb96",
       },
       transitionProperty: {
         staggeredReveal: "opacity",

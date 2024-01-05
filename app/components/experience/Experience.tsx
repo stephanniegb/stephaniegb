@@ -59,19 +59,24 @@ const Experience = () => {
   const rootRef = useRef(null);
 
   return (
-    <section className="min-h-[100vh] text-black flex flex-col p-16 bg-[#D9D9D9] z-[1] relative">
-      <h2 className="text-center text-[6vw]">
+    <section className="min-h-[100vh] text-black flex flex-col gap-4 p-16 bg-[#D9D9D9] z-[1] relative">
+      <h2 className="text-center text-brown text-[6vw]">
         <AnimatedLines sentence=" Experience" />
       </h2>
       <div className="text-center ">
         <p>
-          I have two years of experience in web development, I remain steadfast
-          in my commitment to continuous learning in this dynamic and fast-paced
-          industry.Web development is not just a profession for me it's a
-          continuous journey of growth and exploration.
+          <AnimatedLines
+            sentence="I have two years of experience
+          in web development, I remain steadfast in my commitment to continuous
+          learning in this dynamic and fast-paced industry.Web development is
+          not just a profession for me it's a continuous journey of growth and
+          exploration."
+          />
         </p>
       </div>
-      <h3 className="text-center text-3xl">Some technologies I have used:</h3>
+      <h3 className="text-center text-3xl my-4">
+        Some technologies I have used:
+      </h3>
       <div className=" w-[70%] mx-auto my-0 p-4 ">
         <StaggeredReveal
           styles="grid grid-cols-5 gap-4"

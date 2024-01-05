@@ -13,7 +13,7 @@ const Navbar = () => {
       animate={"visible"}
       transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
       variants={variants}
-      className={`fixed bg-transparent top-0 flex justify-between items-center w-screen z-[4] backdrop-blur px-[2rem] py-[.2rem]`}
+      className={`fixed bg-transparent top-0 flex justify-between items-center w-screen z-[4] px-[2rem] py-[.2rem]`}
     >
       <Link href={"/"}>
         <span className="font-cursive text-[2em]">stephani.egb</span>

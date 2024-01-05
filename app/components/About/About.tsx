@@ -42,10 +42,10 @@ const About = () => {
   const text1Opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const text2Opacity = useTransform(
     scrollYProgress,
-    [0.2, 0.6, 0.62],
+    [0.2, 0.6, 0.8],
     [0, 1, 0]
   );
-  const text3Opacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
+  const text3Opacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
   const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.8], [100, 0]);
   const text3TranslateY = useTransform(scrollYProgress, [0.8, 1.0], [100, 0]);
 
@@ -96,9 +96,9 @@ const About = () => {
           <m.div
             style={{
               opacity: text2Opacity,
-              y: text2TranslateY,
+              // y: text2TranslateY,
             }}
-            className="absolute left-0 px-[5vw]"
+            className="absolute flex flex-col left-0 px-[5vw]"
           >
             <span>I'm</span>
             <h2>Stephanie Egbuonu</h2>
@@ -108,7 +108,7 @@ const About = () => {
               delectus in quisquam, animi temporibus exercitationem ut! Nemo a
               earum aliquid commodi atque!
             </p>
-            <p>
+            <p className="mt-4">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Distinctio eos labore aliquam laborum doloribus atque quod harum,
               delectus in quisquam, animi temporibus exercitationem ut! Nemo a

@@ -21,7 +21,7 @@ const Cursor = () => {
     const y = (!isTouchDevice() && e.clientY) || 0;
     setCursor({ x, y });
   };
-  const handleMouseEnter = ({ text }: { text: string }) => {
+  const handleMouseText = ({ text }: { text: string }) => {
     setCursorText(text);
   };
   const handleMouseLeave = () => {
@@ -32,14 +32,18 @@ const Cursor = () => {
     const aboutSection = document.getElementById("about");
 
     footerEmail?.addEventListener("mouseenter", () => {
-      handleMouseEnter({ text: "Click to copy" });
+      handleMouseText({ text: "Click to copy" });
     });
     footerEmail?.addEventListener("mouseleave", () => {
       handleMouseLeave();
     });
 
+    footerEmail?.addEventListener("click", () => {
+      handleMouseText({ text: "Copied" });
+    });
+
     aboutSection?.addEventListener("mouseenter", () => {
-      handleMouseEnter({ text: "Scroll" });
+      handleMouseText({ text: "Scroll" });
     });
     aboutSection?.addEventListener("mouseleave", () => {
       handleMouseLeave();
@@ -61,7 +65,7 @@ const Cursor = () => {
             opacity: `${cursorText === "" ? "0" : "1"}`,
             transition: "scale .5s, opacity .5s",
           }}
-          className={`fixed text-white text-[.8rem] z-[3] pointer-events-none translate-x-[-50%] translate-y-[-50%] backdrop-blur p-1 grid place-content-center w-[6rem] h-[6rem] rounded-full`}
+          className={`fixed bg-[#035AA6] text-white text-[.8rem] z-[3] pointer-events-none translate-x-[-50%] translate-y-[-50%] backdrop-blur p-1 grid place-content-center w-[6rem] h-[6rem] rounded-full`}
         >
           <p className="z-[2] p-0">
             <span className="block text-[.8rem]">{cursorText}</span>

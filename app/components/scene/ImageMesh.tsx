@@ -39,8 +39,8 @@ function ImageMesh({ url }: { url: string }) {
   });
 
   return (
-    <mesh position={[mouse.x * 2, mouse.y * 2.9, 0]}>
-      <planeGeometry attach="geometry" args={[2, 2, 16, 16]} />
+    <mesh position={[mouse.x * 2.9, mouse.y * 4, 0]}>
+      <planeGeometry attach="geometry" args={[2.3, 1.7, 16, 16]} />
       <imageShader
         ref={mesh}
         attach="material"

@@ -18,13 +18,6 @@
   display: flex;
   gap: 0.5rem;
 }
-.tech {
-  padding: 0.5rem;
-  border-radius: 25px;
-  font-size: var(--small-p-fs);
-
-  color: #5dcb96;
-}
 
 .slideshow-image {
   width: 100%;
