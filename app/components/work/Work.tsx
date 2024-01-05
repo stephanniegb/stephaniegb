@@ -122,12 +122,14 @@ const Work = () => {
         <AnimatedLines sentence="Recent Projects" />
       </h2> */}
 
-        {/* <div className="z-[-4] relative bg-[#ff0000] h-[15rem] w-[screenhj]"></div> */}
-
         <section
+          style={{
+            paddingTop: "clamp(13rem, 15vmax, 15rem)",
+            paddingBottom: "clamp(13rem, 15vmax, 15rem)",
+          }}
           onPointerMove={handlePointerMove}
           ref={containerRef}
-          className="grid py-[13rem] relative"
+          className="grid relative"
         >
           <SceneCanvas showProj={showProj} imageUrl={imageUrl} />
           <ul
