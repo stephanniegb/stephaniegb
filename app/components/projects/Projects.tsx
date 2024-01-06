@@ -1,6 +1,6 @@
 import "./projects.css";
 import SlideinBorder from "../animation/SlideinBorder";
-
+import { useContext } from "react";
 interface ProjectsProps {
   id: string;
   projTitle: string;
@@ -11,13 +11,16 @@ interface ProjectsProps {
   images: string[];
 }
 import UpRightArrow from "@/svg/UpRightArrow";
+import CursorContext from "@/app/context/CursorContext";
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
+  const { cursorText } = useContext(CursorContext);
+
   return (
     <li className="relative cursor-none  group">
       <a
         style={{
-          cursor: "none",
+          cursor: cursorText === "" ? "pointer" : "none",
         }}
         href={projectUrl}
         target="_blank"

@@ -14,9 +14,10 @@ import { ShaderContext } from "@/app/context/ShaderContext";
 import SceneCanvas from "../scene/SceneCanvas";
 import CursorContext from "@/app/context/CursorContext";
 import AnimatedLines from "../animation/AnimatedLines";
+import { useDebounce } from "@/hooks/useDebounce";
 
 const Work = () => {
-  const { setIsHovered, isHovered, setOffset, offset, setMouse, mouse } =
+  const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
 
   const { cursor, setCursorText } = useContext(CursorContext);
@@ -24,15 +25,22 @@ const Work = () => {
   const [imageUrl, setImageUrl] = useState(
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   );
+
+  function hideImage() {
+    setShowProj(false);
+    setCursorText("");
+  }
+
   const projectsParentRef = useRef(null);
   const containerRef = useRef(null);
   const [showProj, setShowProj] = useState(false);
   useLayoutEffect(() => {
     const children = Array.from(projectsParentRef.current.children);
     children.forEach((link, idx) => {
-      link.addEventListener("mouseenter", () => {
+      link.addEventListener("mousemove", () => {
         setCursorText("View");
         setShowProj(true);
+
         switch (idx) {
           case 0:
             setImageUrl(images.imageOne);
@@ -65,8 +73,7 @@ const Work = () => {
         }
       });
       link.addEventListener("mouseleave", () => {
-        setCursorText("");
-        setShowProj(false);
+        hideImage();
       });
     });
   }, []);
@@ -84,6 +91,10 @@ const Work = () => {
   //     });
   //   }
   // }, [isHovered]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", useDebounce(hideImage, 200));
+  }, []);
 
   const handleMouseEnter = () => {
     setIsHovered(true);

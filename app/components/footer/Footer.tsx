@@ -11,7 +11,7 @@ const EMAILADDRESS = "egbuonustephanie@gmail.com";
 
 const SocialLink = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="group border-[1px] border-solid border-[#2a2a28]  h-[120px] w-full p-12 rounded-[10px]  grid place-content-center hover:text-lemon  transition-[color] duration-300 cursor-pointer">
+    <div className="border-[1px] border-solid border-[#2a2a28]  h-[120px] w-full p-12 rounded-[10px]  grid place-content-center hover:text-lemon  transition-[color] duration-300 cursor-pointer group">
       {children}
     </div>
   );
