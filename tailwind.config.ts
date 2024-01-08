@@ -40,6 +40,7 @@ const config: Config = {
         black: "#000000",
         brown: "#463f3a",
         lemon: "#5dcb96",
+        offWhite: "#D9D9D9",
       },
       transitionProperty: {
         staggeredReveal: "opacity",

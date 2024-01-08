@@ -23,7 +23,7 @@ const Hero = () => {
       ref={containerRef}
       className="grid bg-black z-[1] relative overflow-hidden"
     >
-      <div className="w-screen h-[70vh] grid place-content-center">
+      <div className="w-screen h-[70vh] grid place-content-center p-4">
         <h1>
           <m.span
             initial={{
@@ -56,7 +56,7 @@ const Hero = () => {
               ease: [0.43, 0.13, 0.23, 0.96],
               delay: 1.9,
             }}
-            className="text-pFS inline-block"
+            className="text-[1.1em] md:text-pFS inline-block"
           >
             Front End Software Engineer
           </m.span>
@@ -65,7 +65,7 @@ const Hero = () => {
       <m.div
         className="w-full flex flex-col gap-4"
         initial={{
-          y: "-110%",
+          y: "-50vh",
         }}
         animate={{
           y: 0,

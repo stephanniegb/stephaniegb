@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 type PropTypes = {
   height: string;
 };
-const SlideinBorder = ({ height }: PropTypes) => {
+const SlideInBorder = ({ height }: PropTypes) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ const SlideinBorder = ({ height }: PropTypes) => {
   );
 };
 
-export default SlideinBorder;
+export default SlideInBorder;

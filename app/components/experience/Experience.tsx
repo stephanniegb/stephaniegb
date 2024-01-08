@@ -59,34 +59,32 @@ const Experience = () => {
   const rootRef = useRef(null);
 
   return (
-    <section className="min-h-[100vh] text-black flex flex-col gap-4 p-16 bg-[#D9D9D9] z-[1] relative">
+    <section className="min-h-[100vh] text-black flex flex-col  gap-4 px-4 py-16 lg:p-16 bg-[#D9D9D9] z-[1] relative">
       <h2 className="text-center text-brown text-[6vw]">
         <AnimatedLines sentence=" Experience" />
       </h2>
-      <div className="text-center ">
-        <p>
+      <div className="text-center">
+        <p className="my-0 mx-auto lg:w-[60%]">
           <AnimatedLines
             sentence="I have two years of experience
-          in web development, I remain steadfast in my commitment to continuous
-          learning in this dynamic and fast-paced industry.Web development is
-          not just a profession for me it's a continuous journey of growth and
-          exploration."
+          in web development, I remain steadfast in my commitment to continuous in web development
+          "
           />
         </p>
       </div>
-      <h3 className="text-center text-3xl my-4">
-        Some technologies I have used:
+      <h3 className="text-center lg:text-3xl my-4">
+        Some technologies I have worked with:
       </h3>
-      <div className=" w-[70%] mx-auto my-0 p-4 ">
+      <div className=" ">
         <StaggeredReveal
-          styles="grid grid-cols-5 gap-4"
+          styles="w-[90%] lg:w-[70%] mx-auto my-0  grid  gap-4 grid-cols-4 justify-center  lg:grid-cols-5"
           intersectionRoot={rootRef}
         >
           {IMAGES.map((image, index) => {
             const { altText, url } = image;
             return (
               <div
-                className="grid place-content-center w-[80px] h-[100px]"
+                className="grid place-content-center max-w-[80px] max-h-[100px] p-2 mx-auto my-0"
                 key={index}
               >
                 <Image

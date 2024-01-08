@@ -35,7 +35,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        {/* <Translate /> */}
+        <Translate />
         <ShaderContextProvider>
           <Experience />
           <Work />

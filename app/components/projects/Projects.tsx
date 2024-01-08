@@ -1,6 +1,7 @@
-import "./projects.css";
-import SlideinBorder from "../animation/SlideinBorder";
 import { useContext } from "react";
+import UpRightArrow from "@/svg/UpRightArrow";
+import CursorContext from "@/app/context/CursorContext";
+import SlideInBorder from "../animation/SlideInBorder";
 interface ProjectsProps {
   id: string;
   projTitle: string;
@@ -10,8 +11,6 @@ interface ProjectsProps {
   projectUrl?: string;
   images: string[];
 }
-import UpRightArrow from "@/svg/UpRightArrow";
-import CursorContext from "@/app/context/CursorContext";
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
   const { cursorText } = useContext(CursorContext);
@@ -27,8 +26,8 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
         rel="noopener noreferrer"
         className="p-20 block relative transition duration-300 ease-out hover:ease-in"
       >
-        <div className="projText relative">
-          <div className="relative z-[-1] projectTitleContainer">
+        <div className="flex justify-between items-center relative">
+          <div className="relative z-[-1] flex gap-4 items-center">
             <h3
               className="text-[3vw] font-Bruno_Ace text-brown  
              uppercase"
@@ -45,7 +44,7 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
             </span>
           </div>
 
-          <ul className=" relative z-[-1] techWrapper">
+          <ul className=" relative z-[-1] flex gap-2">
             {techs.map((tech, key) => {
               return (
                 <li key={key} className="p-2 rounded-[25px] text-lemon">
@@ -56,7 +55,7 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
           </ul>
         </div>
       </a>
-      <SlideinBorder height="4px" />
+      <SlideInBorder height="4px" />
     </li>
   );
 };
