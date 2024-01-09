@@ -28,12 +28,12 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
       >
         <div className="flex justify-between items-center relative">
           <div className="relative z-[-1] flex gap-4 items-center">
-            <h3
+            <h4
               className="text-[3vw] font-Bruno_Ace text-brown  
              uppercase"
             >
               {projTitle}
-            </h3>
+            </h4>
             <span
               style={{
                 transition: "transform 0.3s ease-in-out",

@@ -25,8 +25,8 @@ function ImageMesh({ url }: { url: string }) {
     y: 0,
   });
 
-  const { setOffset, offset, setMouse, mouse } = useContext(ShaderContext);
-  const { cursor, setCursorText } = useContext(CursorContext);
+  const { offset, mouse } = useContext(ShaderContext);
+  const { cursor } = useContext(CursorContext);
 
   const mesh = useRef(null);
   const [texture] = useMemo(() => useLoader(THREE.TextureLoader, [url]), [url]);
@@ -40,7 +40,7 @@ function ImageMesh({ url }: { url: string }) {
 
   return (
     <mesh position={[mouse.x * 2.9, mouse.y * 4, 0]}>
-      <planeGeometry attach="geometry" args={[2, 1.3, 16, 16]} />
+      <planeGeometry attach="geometry" args={[2.8, 1.8, 16, 16]} />
       <imageShader
         ref={mesh}
         attach="material"

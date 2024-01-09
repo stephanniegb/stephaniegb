@@ -17,6 +17,7 @@ import images from "../../scene/assets/images";
 import Scene from "../../scene/Scene";
 import Link from "next/link";
 import UpRightArrow from "@/svg/UpRightArrow";
+import Archive from "./Archive";
 const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
@@ -129,9 +130,10 @@ const Large = () => {
   return (
     <>
       <section id="work" className="z-[1] py-4 relative bg-[#D9D9D9]">
-        {/* <h2 className="">
-        <AnimatedLines sentence="Recent Projects" />
-      </h2> */}
+        <h3 className="uppercase">
+          Recent Projects
+          {/* <AnimatedLines sentence="" /> */}
+        </h3>
 
         <section
           style={{
@@ -164,47 +166,8 @@ const Large = () => {
             })}
           </ul>
         </section>
+        <Archive />
       </section>
-      <div className="z-[1] py-4 relative bg-[#D9D9D9] flex flex-col uppercase w-full items-end">
-        <h3 className="">Archive</h3>
-        <div className="flex flex-col ">
-          <a
-            className="underline flex items-center "
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Some link
-            <div className="w-[30px] bg-lemon grid place-content-center h-[30px] rounded-full">
-              <UpRightArrow />
-            </div>
-          </a>
-          <a
-            className="inline-block"
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Some link
-          </a>
-          <a
-            className="inline-block"
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Some link
-          </a>
-          <a
-            className="inline-block"
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Some link
-          </a>
-        </div>
-      </div>
       <svg
         className="z-[1] relative"
         xmlns="http://www.w3.org/2000/svg"

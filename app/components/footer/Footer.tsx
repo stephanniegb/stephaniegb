@@ -19,14 +19,13 @@ const SocialLink = ({
   social: string;
 }) => {
   return (
-    <div className="border-b-[1px] lg:border-[1px] border-solid border-[#2a2a28]  h-[120px] w-full lg:p-12 lg:rounded-[10px] flex items-center justify-between lg:grid  lg:place-content-center hover:text-lemon  transition-[color] duration-300 cursor-pointer group">
+    <div className="border-b-[1px] h-[50px] py-8 lg:border-[1px] border-solid border-[#2a2a28] w-full lg:p-12 lg:rounded-[10px] flex items-center justify-between lg:grid  lg:place-content-center hover:text-lemon  transition-[color] duration-300 cursor-pointer group">
       <div className="lg:hidden">
         <p className="flex flex-col">
           <span>{social}</span>
-          <span className="text-[.6em]">{handler}</span>
+          <span className="text-[.6em] break-words">{handler}</span>
         </p>
       </div>
-
       {children}
     </div>
   );
@@ -44,21 +43,40 @@ const Footer = () => {
     <footer className=" flex flex-col sticky bottom-0 justify-between px-4  w-screen pt-16 h-[85vh]">
       <div className="text-center">
         <h3>Lets talk about what we can build together</h3>
+        {/* <svg
+          width="722"
+          height="194"
+          viewBox="0 0 722 194"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          // style="stroke-dashoffset: 0px;"
+        >
+          <path
+            d="M720 44C720 117 507.356 232.749 271.675 68.1592C35.9949 -96.4308 -5.61532 84.8047 3.03962 193"
+            stroke="#ffffff"
+            stroke-width="4"
+          ></path>
+        </svg> */}
 
-        <div className="relative">
+        <div className="hidden lg:block lg:relative">
           <CopyToClipboard onCopy={() => setCopied(true)} text={EMAILADDRESS}>
             <p
               id="emailAddress"
-              className="text-white cursor-none underline py-4 w-fit my-0 mx-auto px-0"
+              className="text-white text-[5vw] uppercase break-words cursor-none underline py-4 w-fit my-0 mx-auto px-0"
             >
               {EMAILADDRESS}
             </p>
           </CopyToClipboard>
         </div>
-
-        <span className="font-cursive text-[2em]">stephani.egb</span>
+        <a
+          className="text-[8vw] py-32 underline block break-words uppercase lg:hidden"
+          href={`mailto:${EMAILADDRESS}`}
+        >
+          {EMAILADDRESS}
+        </a>
+        {/* <span className="font-cursive text-[2em]">stephani.egb</span> */}
       </div>
-      <div className=" w-[90%] flex flex-col gap-4 lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]">
+      <div className="w-[90%] flex flex-col pb-32 md:pb-4 gap-4 md:gap-8 md:flex-row md:w-full lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]">
         <SocialLink handler="@stephanniegb" social="Twitter">
           <X />
         </SocialLink>
