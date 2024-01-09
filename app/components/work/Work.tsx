@@ -1,11 +1,11 @@
-import useScreenSize from "@/hooks/useScreenSize";
+import useWindowSize from "@/hooks/useWindowSize";
 import Large from "./components/Large";
 import Small from "./components/Small";
 
 const Work = () => {
-  const screenSize = useScreenSize();
+  const windowSize = useWindowSize();
 
-  return <>{screenSize.width < 1024 ? <Small /> : <Large />}</>;
+  return <>{windowSize.width < 1024 ? <Small /> : <Large />}</>;
 };
 
 export default Work;

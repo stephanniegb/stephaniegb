@@ -1,21 +1,30 @@
 import { useState, useEffect } from "react";
 
-const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+const useWindowSize = () => {
+  function getSize() {
+    if (typeof window !== "undefined") {
+      return {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    }
+  }
+
+  const [windowSize, setWindowSize] = useState({
+    width: 375,
+    height: 812,
   });
 
   useEffect(() => {
     const handleResize = () => {
-      setScreenSize({
+      setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
       });
     };
 
     window.addEventListener("resize", handleResize);
-    setScreenSize({
+    setWindowSize({
       width: window.innerWidth,
       height: window.innerHeight,
     });
@@ -25,7 +34,7 @@ const useScreenSize = () => {
     };
   }, []);
 
-  return screenSize;
+  return windowSize;
 };
 
-export default useScreenSize;
+export default useWindowSize;

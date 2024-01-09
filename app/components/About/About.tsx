@@ -1,5 +1,5 @@
 import Large from "./components/Large";
-import useScreenSize from "@/hooks/useScreenSize";
+import useScreenSize from "@/hooks/useWindowSize";
 import Small from "./components/Small";
 
 const About = () => {
