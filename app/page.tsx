@@ -13,21 +13,9 @@ import Cursor from "./components/cursor/Cursor";
 import { CursorContextProvider } from "./context/CursorContext";
 import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
+import Header from "./components/experience/components/Header";
 
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis({});
-
-    lenis.on("scroll", (e) => {});
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
     <main className="relative">
       <CursorContextProvider>
@@ -35,8 +23,9 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        <Translate />
+
         <ShaderContextProvider>
+          {/* <Header /> */}
           <Experience />
           <Work />
         </ShaderContextProvider>

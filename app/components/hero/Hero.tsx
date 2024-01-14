@@ -1,8 +1,13 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
+  const [canScroll, setCanScroll] = useState(false);
+  useEffect(() => {
+    // document.body.style.overflow = "hidden";
+  }, []);
+
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -21,7 +26,7 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="grid bg-black z-[1] relative overflow-hidden"
+      className="grid bg-black z-[1] text-[#d0d0c5]  relative overflow-hidden"
     >
       <div className="w-screen h-[70vh] grid place-content-center p-4">
         <h1>
@@ -73,6 +78,7 @@ const Hero = () => {
         transition={transition}
       >
         <m.div
+          onAnimationComplete={() => setCanScroll(true)}
           initial={{
             width: "clamp(13rem, 20vmax, 18.7rem)",
             height: "clamp(18rem, 22vmax, 25rem)",

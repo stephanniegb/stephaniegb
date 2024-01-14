@@ -29,7 +29,6 @@ const Cursor = () => {
   };
   useEffect(() => {
     const footerEmail = document.getElementById("emailAddress");
-    const aboutSection = document.getElementById("about");
 
     footerEmail?.addEventListener("mouseenter", () => {
       handleMouseText({ text: "Click to copy" });
@@ -40,13 +39,6 @@ const Cursor = () => {
 
     footerEmail?.addEventListener("click", () => {
       setCopied(true);
-    });
-
-    aboutSection?.addEventListener("mouseenter", () => {
-      handleMouseText({ text: "Scroll" });
-    });
-    aboutSection?.addEventListener("mouseleave", () => {
-      handleMouseLeave();
     });
 
     document.addEventListener("mousemove", handleMouseMove);

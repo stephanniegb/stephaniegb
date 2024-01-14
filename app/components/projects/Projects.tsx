@@ -2,6 +2,7 @@ import { useContext } from "react";
 import UpRightArrow from "@/svg/UpRightArrow";
 import CursorContext from "@/app/context/CursorContext";
 import SlideInBorder from "../animation/SlideInBorder";
+import RightArrow from "@/svg/RightArrow";
 interface ProjectsProps {
   id: string;
   projTitle: string;
@@ -34,13 +35,8 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
             >
               {projTitle}
             </h4>
-            <span
-              style={{
-                transition: "transform 0.3s ease-in-out",
-              }}
-              className="group-hover:text-lemon group-hover:translate-y-[-0.35rem]"
-            >
-              <UpRightArrow />
+            <span className="transition-[transform] duration-500 ease-in-out transform group-hover:text-lemon group-hover:-rotate-[30deg]">
+              <RightArrow width="40" height="40" />
             </span>
           </div>
 

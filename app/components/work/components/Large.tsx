@@ -15,14 +15,13 @@ import Project from "../../projects/Projects";
 import images from "../../scene/assets/images";
 
 import Scene from "../../scene/Scene";
-import Link from "next/link";
-import UpRightArrow from "@/svg/UpRightArrow";
+
 import Archive from "./Archive";
 const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
 
-  const { cursor, setCursorText } = useContext(CursorContext);
+  const { cursor, setCursorText, cursorText } = useContext(CursorContext);
 
   const [imageUrl, setImageUrl] = useState(
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -30,7 +29,7 @@ const Large = () => {
 
   function hideImage() {
     setShowProj(false);
-    setCursorText("");
+    // setCursorText("");
   }
 
   const projectsParentRef = useRef(null);
@@ -129,12 +128,10 @@ const Large = () => {
   }, [mouse]);
   return (
     <>
-      <section id="work" className="z-[1] py-4 relative bg-[#D9D9D9]">
-        <h3 className="uppercase">
-          Recent Projects
-          {/* <AnimatedLines sentence="" /> */}
-        </h3>
-
+      <section
+        id="work"
+        className="z-[1] py-4 relative bg-noise-bg bg-[#D9D9D9]"
+      >
         <section
           style={{
             paddingTop: "clamp(13rem, 15vmax, 15rem)",
@@ -144,6 +141,7 @@ const Large = () => {
           ref={containerRef}
           className="grid relative"
         >
+          <h3 className="uppercase px-8 text-brown">Recent Projects</h3>
           <Scene showProj={showProj} imageUrl={imageUrl} />
           <ul
             onMouseEnter={handleMouseEnter}
@@ -169,14 +167,36 @@ const Large = () => {
         <Archive />
       </section>
       <svg
-        className="z-[1] relative"
+        className="z-[1] relative "
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >
+        <defs>
+          <clipPath id="the-object">
+            <path
+              fill="#eae7e7"
+              fillOpacity="1"
+              d="M0,224L80,234.7C160,245,320,267,480,282.7C640,299,800,309,960,309.3C1120,309,1280,299,1360,293.3L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+            ></path>
+          </clipPath>
+          <filter id="noiseFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="4.22"
+              numOctaves="2"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+            <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
+          </filter>
+        </defs>
+
         <path
-          fill="#d9d9d9"
+          fill="#e7e5e5"
           fillOpacity="1"
           d="M0,224L80,234.7C160,245,320,267,480,282.7C640,299,800,309,960,309.3C1120,309,1280,299,1360,293.3L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          filter="url(#noiseFilter)"
+          clip-path="url(#the-object)"
         ></path>
       </svg>
     </>

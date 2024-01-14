@@ -17,7 +17,7 @@ const ArchiveLink = ({ text, url }: { text: string; url: string }) => {
 };
 const Archive = () => {
   return (
-    <div className="w-fit px-8  my-0 mx-auto z-[1] relative bg-offWhite">
+    <div className="w-fit px-8  my-0 mx-auto z-[1] relative">
       <h3 className="w-fit py-8 uppercase">Archive</h3>
       <div className="flex flex-col gap-3 justify-center uppercase">
         <ArchiveLink text="Some link" url="http://" />

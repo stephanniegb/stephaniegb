@@ -6,6 +6,7 @@ import Cursor from "./components/cursor/Cursor";
 import Navbar from "./components/navbar/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
+import SmoothScroll from "./SmoothScroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <Suspense fallback={<Loading />}> */}
-      <body className="bg-[#0f0f0f] text-[#94948f] ">{children}</body>
+      <body className="bg-[#0f0f0f] text-[#090908]">
+        {/* {children} */}
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
       {/* </Suspense> */}
     </html>
   );

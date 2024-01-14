@@ -1,10 +1,13 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import Hello from "@/svg/Hello";
 import AnimatedLetters from "../../animation/AnimatedLetters";
+import CursorContext from "@/app/context/CursorContext";
 
 const Large = () => {
+  const { cursor, setCursorText } = useContext(CursorContext);
+
   const containerRef = useRef(null);
   const targetRef = useRef(null);
 
@@ -49,8 +52,32 @@ const Large = () => {
   const text3Opacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
   const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.8], [100, 0]);
   const text3TranslateY = useTransform(scrollYProgress, [0.8, 1.0], [100, 0]);
+
+  // useEffect(() => {
+  //   const handleMouseText = ({ text }: { text: string }) => {
+  //     setCursorText(text);
+  //   };
+  //   const handleMouseLeave = () => {
+  //     setCursorText("");
+  //   };
+  //   containerRef.current.addEventListener(
+  //     "mouseenter",
+
+  //     handleMouseText({ text: "Scroll" })
+  //   );
+  //   // containerRef.current.addEventListener("mouseleave", handleMouseLeave);
+
+  //   return () => {
+  //     containerRef.current.removeEventListener("mouseenter", handleMouseText);
+  //     containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
+  //   };
+  // }, []);
+
   return (
-    <div ref={containerRef} className="h-[300vh]  z-[1] bg-[#d9d9d9] relative">
+    <div
+      ref={containerRef}
+      className="h-[300vh] lg:pb-64 text-[#ececdf]  z-[1] bg-[#d9d9d9] bg-noise-bg relative"
+    >
       <m.div
         id="about"
         style={{
@@ -155,13 +182,6 @@ const Large = () => {
             </a>
           </m.div>
         </div>
-        {/* 
-        <m.div className="relative flex place-content-center flex-1 mt-60 px-32">
-          
-          
-         
-          
-        </m.div> */}
       </m.div>
     </div>
   );

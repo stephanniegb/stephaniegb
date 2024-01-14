@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-radial":
+          "linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );",
         "hero-image": "url('/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg')",
+        "noise-bg": "url('/noise.svg')",
       },
       gridAutoColumns: {
         "5fr": "repeat(auto-fit, minmax(150px, 1fr))",
@@ -25,6 +25,7 @@ const config: Config = {
         serif: ["Cinzel Decorative", "serif"],
         Holiday_Sunday: ["Holiday Sunday", "sans-serif"],
         Bruno_Ace: ["Bruno Ace", "sans-serif"],
+        Pumpkin: ["Pumpkin Pie Lattes", "sans-serif"],
       },
       colors: {
         transparent: "transparent",
@@ -38,8 +39,9 @@ const config: Config = {
         "bubble-gum": "#ff77e9",
         bermuda: "#78dcca",
         black: "#000000",
-        brown: "#463f3a",
-        lemon: "#5dcb96",
+        brown: "#2f1b12",
+        lemon: "#03730B",
+        // lemon: "#5dcb96",
         offWhite: "#D9D9D9",
       },
       transitionProperty: {

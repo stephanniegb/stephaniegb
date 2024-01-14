@@ -40,23 +40,9 @@ const Footer = () => {
   }, [copied]);
 
   return (
-    <footer className=" flex flex-col sticky bottom-0 justify-between px-4  w-screen pt-16 h-[85vh]">
+    <footer className=" flex flex-col text-[#d0d0c5] sticky bottom-0 justify-between px-4   w-screen pt-16 h-[85vh]">
       <div className="text-center">
         <h3>Lets talk about what we can build together</h3>
-        {/* <svg
-          width="722"
-          height="194"
-          viewBox="0 0 722 194"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          // style="stroke-dashoffset: 0px;"
-        >
-          <path
-            d="M720 44C720 117 507.356 232.749 271.675 68.1592C35.9949 -96.4308 -5.61532 84.8047 3.03962 193"
-            stroke="#ffffff"
-            stroke-width="4"
-          ></path>
-        </svg> */}
 
         <div className="hidden lg:block lg:relative">
           <CopyToClipboard onCopy={() => setCopied(true)} text={EMAILADDRESS}>
@@ -74,7 +60,7 @@ const Footer = () => {
         >
           {EMAILADDRESS}
         </a>
-        {/* <span className="font-cursive text-[2em]">stephani.egb</span> */}
+        <span className="font-cursive text-[2em]">stephani.egb</span>
       </div>
       <div className="w-[90%] flex flex-col pb-32 md:pb-4 gap-4 md:gap-8 md:flex-row md:w-full lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]">
         <SocialLink handler="@stephanniegb" social="Twitter">

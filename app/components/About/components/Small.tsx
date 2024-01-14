@@ -1,10 +1,10 @@
 const Small = () => {
   return (
-    <section className="z-[1]  bg-black relative px-4 py-16 flex flex-col gap-4">
+    <section className="z-[1] text-[#d0d0c5] min-h-[50vh]  bg-black relative px-8 md:px-32 py-16 flex flex-col gap-4">
       <div>
         <h3>About myself</h3>
       </div>
-      <h2 className="text-pFS uppercase font-serif">
+      <h2 className="text-pFS uppercase">
         I am Stephanie Egbuonu Lorem, ipsum dolor sit amet{" "}
         <span className="text-lemon">consectetur</span> adipisicing elit.
         Distinctio eos labore aliquam laborum doloribus atque quod harum,!
