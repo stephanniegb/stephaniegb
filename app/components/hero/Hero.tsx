@@ -1,14 +1,43 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
+import GlobalContext from "@/app/context/GlobalContext";
 
 const Hero = () => {
   const [canScroll, setCanScroll] = useState(false);
+  const containerRef = useRef(null);
+
   useEffect(() => {
     // document.body.style.overflow = "hidden";
   }, []);
 
-  const containerRef = useRef(null);
+  const { setTextColor } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log("its me bitch");
+
+            setTextColor("text-[#d0d0c5]");
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["0.5 1", "1 0"],
@@ -26,7 +55,7 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="grid bg-black z-[1] text-[#d0d0c5]  relative overflow-hidden"
+      className="grid bg-black z-[1] text-[#d0d0c5]   relative overflow-hidden"
     >
       <div className="w-screen h-[70vh] grid place-content-center p-4">
         <h1>
@@ -67,6 +96,7 @@ const Hero = () => {
           </m.span>
         </h1>
       </div>
+
       <m.div
         className="w-full flex flex-col gap-4"
         initial={{

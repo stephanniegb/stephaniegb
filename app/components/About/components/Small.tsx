@@ -1,10 +1,45 @@
+import GlobalContext from "@/app/context/GlobalContext";
+import SwigglyStroke from "@/svg/SwigglyStroke";
+import { useEffect, useRef, useContext } from "react";
+
 const Small = () => {
+  const { setTextColor } = useContext(GlobalContext);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log("its me bitch");
+
+            setTextColor("text-[#d0d0c5]");
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
   return (
-    <section className="z-[1] text-[#d0d0c5] min-h-[50vh]  bg-black relative px-8 md:px-32 py-16 flex flex-col gap-4">
+    <section
+      ref={containerRef}
+      className="z-[1] text-[#d0d0c5] min-h-[50vh]   bg-black relative px-8 md:px-32 py-16 flex place-content-center flex-col gap-16"
+    >
       <div>
-        <h3>About myself</h3>
+        <h3 className="uppercase">About myself</h3>
+        <SwigglyStroke />
       </div>
-      <h2 className="text-pFS uppercase">
+      <h2 className="text-pFS  uppercase">
         I am Stephanie Egbuonu Lorem, ipsum dolor sit amet{" "}
         <span className="text-lemon">consectetur</span> adipisicing elit.
         Distinctio eos labore aliquam laborum doloribus atque quod harum,!

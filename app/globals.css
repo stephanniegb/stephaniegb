@@ -117,9 +117,8 @@ html.lenis {
 /* use clamp() for font size and responsive d */
 
 .path {
-  stroke-dasharray: 12000;
   stroke-dashoffset: 12000;
-  animation: dash 7s linear alternate infinite;
+  /* animation: dash 7s linear alternate infinite; */
 }
 
 @keyframes dash {

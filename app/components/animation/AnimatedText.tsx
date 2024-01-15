@@ -22,6 +22,7 @@ const AnimatedText = ({
     duration: 1,
     ease: [0.43, 0.13, 0.23, 0.96],
   };
+
   return (
     <Wrapper className={className}>
       <span className="sr-only">{text}</span>
@@ -32,14 +33,20 @@ const AnimatedText = ({
         transition={{ ...transition, staggerChildren: 0.1 }}
         className="aria-hidden"
       >
-        {text.split(" ").map((word) => (
-          <span className="inline-block">
-            {word.split("").map((char) => (
-              <m.span className="inline-block" variants={variants}>
+        {text.split(" ").map((word, index) => (
+          <span key={index} className="inline-block">
+            {word.split("").map((char, index) => (
+              <m.span
+                key={index + char}
+                className="inline-block"
+                variants={variants}
+              >
                 {char}
               </m.span>
             ))}
-            <span className="inline-block">&nbsp;</span>
+            {text.split(" ").length > 1 && (
+              <span className="inline-block">&nbsp;</span>
+            )}
           </span>
         ))}
       </m.span>

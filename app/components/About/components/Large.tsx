@@ -3,13 +3,36 @@ import { useEffect, useRef, useContext } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import Hello from "@/svg/Hello";
 import AnimatedLetters from "../../animation/AnimatedLetters";
-import CursorContext from "@/app/context/CursorContext";
+import { GlobalContext } from "@/app/context/GlobalContext";
 
 const Large = () => {
-  const { cursor, setCursorText } = useContext(CursorContext);
+  const { cursor, setCursorText, setTextColor } = useContext(GlobalContext);
 
   const containerRef = useRef(null);
   const targetRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTextColor("text-[#090908]");
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,

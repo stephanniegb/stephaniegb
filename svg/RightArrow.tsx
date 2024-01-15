@@ -2,8 +2,8 @@ const RightArrow = ({
   width = "24",
   height = "24",
 }: {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
 }) => {
   return (
     <svg

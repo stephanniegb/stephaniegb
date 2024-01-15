@@ -1,8 +1,9 @@
 import useWindowSize from "@/hooks/useWindowSize";
 import RightArrow from "@/svg/RightArrow";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Archive from "./Archive";
 import SlideInBorder from "../../animation/SlideInBorder";
+import { motion as m, useInView } from "framer-motion";
 
 const ProjectLink = ({
   alt,
@@ -15,22 +16,55 @@ const ProjectLink = ({
   title: string;
   url: string;
 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: false });
+  const variants = {
+    hidden: { color: "#2f1b12", rotate: "0deg" },
+    visible: { color: "#03730B", rotate: "-45deg" },
+  };
+  const imageVariants = {
+    initial: { scale: 1.05 },
+    animate: { scale: 1 },
+  };
+  const transition = {
+    duration: 1,
+    ease: [0.43, 0.13, 0.23, 0.96],
+  };
   return (
-    <figure className="w-[80vw]  max-w-[700px] h-[60vw]  my-0 mx-auto group">
+    <figure
+      ref={ref}
+      className="w-[80vw]  max-w-[700px] h-[60vw]  my-0 mx-auto group"
+    >
       <a
         className="flex flex-col gap-4 w-full h-full"
         href={url}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {/* Image should scale down on appearance */}
-        <img src={src} alt={alt} className="w-full h-full object-cover" />
+        <m.img
+          variants={imageVariants}
+          initial="initial"
+          animate={isInView ? "animate" : "initial"}
+          transition={transition}
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover"
+        />
         <figcaption>
           <h4 className="flex gap-4  items-center text-[5vw] font-Bruno_Ace text-brown uppercase">
             {title}{" "}
-            <span className="transition-[transform] duration-500 ease-in-out transform group-hover:-rotate-45  group-hover:text-lemon">
+            <m.span
+              variants={variants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{
+                duration: 0.5,
+                ease: [0.43, 0.13, 0.23, 0.96],
+              }}
+              className="transition-[transform] duration-500 ease-in-out"
+            >
               <RightArrow height="30" width="30" />
-            </span>
+            </m.span>
           </h4>
         </figcaption>
       </a>
@@ -41,7 +75,7 @@ const ProjectLink = ({
 const Small = () => {
   const windowSize = useWindowSize();
   const scrollContainer = useRef(null);
-  const imageRef = useRef(null);
+
   const skewData = {
     ease: 0.1,
     current: 0,
@@ -60,14 +94,14 @@ const Small = () => {
     const acceleration = difference / windowSize.width;
     const velocity = +acceleration;
     const skew = velocity * 25;
-    const scale = Math.min(Math.abs(acceleration) + 1, 1.1);
+    const scale = Math.min(Math.abs(acceleration) + 1, 1.1) - 0.3;
     // console.log(Math.min(Math.abs(acceleration) + 1, 1.1));
 
     //Assign skew and smooth scrolling to the scroll container
-    if (scrollContainer.current)
+    if (scrollContainer.current) {
       scrollContainer.current.style.transform = `skewY(${skew}deg)`;
-    // imageRef.current.style.scale = scale;
-    // }
+      // imageRef.current.style.scale = scale;
+    }
 
     //loop vai raf
     requestAnimationFrame(() => skewScrolling());
@@ -145,7 +179,7 @@ const Small = () => {
           fillOpacity="1"
           d="M0,224L80,234.7C160,245,320,267,480,282.7C640,299,800,309,960,309.3C1120,309,1280,299,1360,293.3L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
           filter="url(#noiseFilter)"
-          clip-path="url(#the-object)"
+          clipPath="url(#the-object)"
         ></path>
       </svg>
     </>

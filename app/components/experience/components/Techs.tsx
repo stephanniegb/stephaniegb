@@ -1,7 +1,5 @@
-import { useRef, useEffect, MutableRefObject } from "react";
-import { motion as m, useInView } from "framer-motion";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 const IMAGES = [
   {
     url: "/vuejs.svg",
@@ -54,46 +52,46 @@ const IMAGES = [
   },
 ];
 
-const StaggeredReveal = () => {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { amount: 0.5, once: false });
-  const variants = {
-    hidden: { opacity: 0, filter: "blur(5px)", x: -20 },
-    visible: { opacity: 1, filter: "blur(0px)", x: 0 },
-  };
-  const transition = {
-    duration: 0.5,
-    ease: [0.43, 0.13, 0.23, 0.96],
-  };
+const Techs = ({ isInView }: { isInView: boolean }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+
+    if (isInView) {
+      intervalId = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % IMAGES.length);
+      }, 2000);
+    }
+
+    return () => clearInterval(intervalId);
+  }, [isInView]);
 
   return (
-    <m.div
-      transition={{ ...transition, staggerChildren: 0.2 }}
-      ref={containerRef}
-      className="w-[90%] lg:w-[70%] mx-auto my-0  grid  gap-4 grid-cols-4 justify-center lg:grid-cols-5"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-    >
+    <div className="w-[90%] lg:w-[70%] mx-auto my-0  grid  gap-4 grid-cols-4 justify-center lg:grid-cols-5">
       {IMAGES.map((image, index) => {
         const { altText, url } = image;
         return (
-          <m.div
-            variants={variants}
+          <div
             className="grid place-content-center max-w-[80px] max-h-[100px] p-2 mx-auto my-0"
             key={index}
           >
             <Image
-              className="grayscale hover:filter-none transition-transform duration-500 transform hover:scale-110"
+              style={{
+                scale: index === currentIndex ? 1.1 : 1,
+                filter: index === currentIndex ? "none" : "",
+              }}
+              className="grayscale hover:filter-none transition-[scale, filter] duration-500 ease-in-out transform hover:scale-110"
               alt={altText}
               src={url}
               width={100}
               height={100}
             />
-          </m.div>
+          </div>
         );
       })}
-    </m.div>
+    </div>
   );
 };
 
-export default StaggeredReveal;
+export default Techs;

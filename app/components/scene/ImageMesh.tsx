@@ -5,7 +5,7 @@ import React, { useContext, useMemo, useRef, useState } from "react";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import fragmentShader from "./shaders/fragment";
 import vertexShader from "./shaders/vertex";
-import CursorContext from "@/app/context/CursorContext";
+import { GlobalContext } from "@/app/context/GlobalContext";
 
 const ImageShader = shaderMaterial(
   {
@@ -26,7 +26,9 @@ function ImageMesh({ url }: { url: string }) {
   });
 
   const { offset, mouse } = useContext(ShaderContext);
-  const { cursor } = useContext(CursorContext);
+  const { cursor } = useContext(GlobalContext);
+
+  console.log(cursor);
 
   const mesh = useRef(null);
   const [texture] = useMemo(() => useLoader(THREE.TextureLoader, [url]), [url]);

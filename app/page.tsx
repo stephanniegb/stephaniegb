@@ -10,27 +10,25 @@ import Lenis from "@studio-freight/lenis";
 import { ShaderContextProvider } from "./context/ShaderContext";
 import Translate from "./components/Translate";
 import Cursor from "./components/cursor/Cursor";
-import { CursorContextProvider } from "./context/CursorContext";
 import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
 import Header from "./components/experience/components/Header";
+import { GlobalContextProvider } from "./context/GlobalContext";
 
 export default function Home() {
   return (
     <main className="relative">
-      <CursorContextProvider>
-        <Cursor />
+      <GlobalContextProvider>
+        {/* <Cursor /> */}
         <Navbar />
         <Hero />
         <About />
-
         <ShaderContextProvider>
-          {/* <Header /> */}
           <Experience />
           <Work />
         </ShaderContextProvider>
         <Footer />
-      </CursorContextProvider>
+      </GlobalContextProvider>
     </main>
   );
 }

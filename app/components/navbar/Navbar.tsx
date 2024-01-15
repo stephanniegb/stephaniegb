@@ -1,19 +1,23 @@
 "use client";
+import { GlobalContext } from "@/app/context/GlobalContext";
 import { motion as m } from "framer-motion";
 import Link from "next/link";
+import { useContext } from "react";
 
 const variants = {
   visible: { y: 0 },
   hidden: { y: "-100%" },
 };
 const Navbar = () => {
+  const { textColor } = useContext(GlobalContext);
+
   return (
     <m.header
       initial={"hidden"}
       animate={"visible"}
       transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
       variants={variants}
-      className={`fixed bg-transparent top-0 flex justify-between items-center w-screen z-[4] px-[.8rem]  md:px-[2rem] py-4  md:py-[.2rem]`}
+      className={`fixed bg-transparent  top-0 flex justify-between items-center w-screen z-[4] px-[.8rem]  md:px-[2rem] py-4  md:py-[.2rem] transition-[color] duration-500 ease-in-out ${textColor}`}
     >
       <Link href={"/"}>
         <span className="font-cursive text-[1.5em] md:text-[2em]">

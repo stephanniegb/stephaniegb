@@ -9,7 +9,7 @@ import {
 } from "react";
 import ProjectsData from "@/data/projects.json";
 import { ShaderContext } from "@/app/context/ShaderContext";
-import CursorContext from "@/app/context/CursorContext";
+import { GlobalContext } from "@/app/context/GlobalContext";
 import { useDebounce } from "@/hooks/useDebounce";
 import Project from "../../projects/Projects";
 import images from "../../scene/assets/images";
@@ -21,7 +21,7 @@ const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
 
-  const { cursor, setCursorText, cursorText } = useContext(CursorContext);
+  const { cursor, setCursorText, cursorText } = useContext(GlobalContext);
 
   const [imageUrl, setImageUrl] = useState(
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -141,7 +141,7 @@ const Large = () => {
           ref={containerRef}
           className="grid relative"
         >
-          <h3 className="uppercase px-8 text-brown">Recent Projects</h3>
+          <h3 className="uppercase px-8  text-brown">Recent Projects</h3>
           <Scene showProj={showProj} imageUrl={imageUrl} />
           <ul
             onMouseEnter={handleMouseEnter}

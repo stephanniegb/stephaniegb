@@ -1,9 +1,9 @@
-import CursorContext from "@/app/context/CursorContext";
+import { GlobalContext } from "@/app/context/GlobalContext";
 import { useContext, useEffect, useRef, useState } from "react";
 
 const Cursor = () => {
   const { setCursorText, cursorText, setCursor, cursor, copied, setCopied } =
-    useContext(CursorContext);
+    useContext(GlobalContext);
 
   const [deviceType, setDeviceType] = useState("");
   const isTouchDevice = () => {

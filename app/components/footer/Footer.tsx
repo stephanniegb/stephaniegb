@@ -5,7 +5,7 @@ import X from "@/svg/X";
 import Instagram from "@/svg/Instagram";
 import Medium from "@/svg/Medium";
 import { ReactNode, useCallback, useContext, useEffect } from "react";
-import CursorContext from "@/app/context/CursorContext";
+import { GlobalContext } from "@/app/context/GlobalContext";
 
 const EMAILADDRESS = "egbuonustephanie@gmail.com";
 
@@ -32,7 +32,7 @@ const SocialLink = ({
 };
 
 const Footer = () => {
-  const { setCopied, copied } = useContext(CursorContext);
+  const { setCopied, copied } = useContext(GlobalContext);
   useEffect(() => {
     if (copied) {
       setTimeout(() => setCopied(false), 800);
@@ -60,9 +60,9 @@ const Footer = () => {
         >
           {EMAILADDRESS}
         </a>
-        <span className="font-cursive text-[2em]">stephani.egb</span>
+        {/* <span className="font-cursive text-[2em]">stephani.egb</span> */}
       </div>
-      <div className="w-[90%] flex flex-col pb-32 md:pb-4 gap-4 md:gap-8 md:flex-row md:w-full lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]">
+      <div className="w-[90%] flex flex-col pb-32 md:pb-12 gap-4 md:gap-8 md:flex-row md:w-full lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]">
         <SocialLink handler="@stephanniegb" social="Twitter">
           <X />
         </SocialLink>

@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontSize: {
         pFS: "1.125em",
+        h3Fs: "1.41em",
       },
       fontFamily: {
         cursive: ["Sacramento", "cursive"],

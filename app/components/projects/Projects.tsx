@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import UpRightArrow from "@/svg/UpRightArrow";
-import CursorContext from "@/app/context/CursorContext";
+import CursorContext from "@/app/context/GlobalContext";
 import SlideInBorder from "../animation/SlideInBorder";
 import RightArrow from "@/svg/RightArrow";
 interface ProjectsProps {
