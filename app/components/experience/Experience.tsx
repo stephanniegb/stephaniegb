@@ -37,20 +37,20 @@ const Experience = () => {
 
   return (
     <section className="min-h-[100vh] bg-noise-bg  bg-offWhite  flex flex-col  gap-4 px-4 py-16  lg;px-16 lg:py-8  z-[1] relative overflow-x-hidden">
-      <AnimatedText
+      <AnimatedLines
         text="Experience"
         el="h2"
         className="text-center h-fit text-brown text-[15vw]  uppercase font-semibold"
       />
 
       <div className="text-center md:mt-8 lg:mt-16">
-        <p className="my-0 mx-auto lg:w-[60%]">
-          <AnimatedLines
-            sentence="I have two years of experience
-          in web development, I remain steadfast in my commitment to continuous in web development
-          "
-          />
-        </p>
+        <AnimatedLines
+          text="I have two years of experience
+          in web development, I remain steadfast in my commitment to continuous in web development"
+          className="
+            my-0 mx-auto lg:w-[60%]
+            "
+        />
       </div>
       <h3 className="text-center lg:text-3xl my-4">
         Some technologies I have worked with:

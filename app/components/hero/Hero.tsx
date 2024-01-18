@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import GlobalContext from "@/app/context/GlobalContext";
+import DownArrow from "@/svg/DownArrow";
+import World from "@/svg/World";
 
 const Hero = () => {
   const [canScroll, setCanScroll] = useState(false);
@@ -18,8 +20,6 @@ const Hero = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("its me bitch");
-
             setTextColor("text-[#d0d0c5]");
           }
         });
@@ -57,7 +57,7 @@ const Hero = () => {
       ref={containerRef}
       className="grid bg-black  z-[1] text-[#d0d0c5]   relative overflow-hidden"
     >
-      <div className="w-screen h-[70vh] relative grid place-content-center p-4">
+      <div className="w-screen h-seventyVH relative grid place-content-center p-4">
         <h1>
           <m.span
             initial={{
@@ -107,10 +107,13 @@ const Hero = () => {
             ease: [0.43, 0.13, 0.23, 0.96],
             delay: 2,
           }}
-          className="font-thin text-[.8em] absolute bottom-0 right-0 z-10 w-[30vw] px-4 py-10 "
+          className="font-thin  text-[.8em] absolute bottom-0 right-0 z-10 w-[30vw] px-4 py-10 "
         >
-          available for freelance jobs available for freelance jobs available
-          for freelance jobs available for freelance jobs
+          Currently available for freelance worldwide available for freelance
+          jobs available for freelance jobs{" "}
+          <span className="text-lemon pt-2 h-[25px] pr-2 inline-block">
+            <World />
+          </span>
         </m.p>
         <m.div
           initial={{
@@ -126,20 +129,11 @@ const Hero = () => {
             ease: [0.43, 0.13, 0.23, 0.96],
             delay: 2.1,
           }}
-          className="absolute -bottom-20 z-10 p-4 text-[#fffff]"
+          className="absolute -bottom-20 z-10 p-4 text-[#fffff] flex flex-col gap-2"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="none"
-              stroke="currentColor"
-              d="M5 16c.742 0 1.85.733 2.78 1.475c1.2.954 2.247 2.094 3.046 3.401C11.425 21.856 12 23.044 12 24m0 0c0-.956.575-2.145 1.174-3.124c.8-1.307 1.847-2.447 3.045-3.401C17.15 16.733 18.26 16 19 16m-7 8V0"
-            />
-          </svg>
+          <span className="animate-bounce inline-block">
+            <DownArrow />
+          </span>
           <span className="uppercase text-[.8em]">scroll</span>
         </m.div>
       </div>
@@ -162,7 +156,7 @@ const Hero = () => {
           }}
           animate={{
             width: "100vw",
-            height: "50vh",
+            height: "50vh, 50dvh",
           }}
           transition={transition}
           style={{

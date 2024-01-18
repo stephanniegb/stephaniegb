@@ -1,13 +1,12 @@
 "use client";
-import { useEffect, useRef, useContext } from "react";
-import { motion as m, useScroll, useTransform } from "framer-motion";
-import Hello from "@/svg/Hello";
-import AnimatedLetters from "../../animation/AnimatedLetters";
+import { useEffect, useRef, useContext, useState } from "react";
+import { motion as m, useInView, useScroll, useTransform } from "framer-motion";
 import { GlobalContext } from "@/app/context/GlobalContext";
-import SwigglyStroke from "@/svg/SwigglyStroke";
+import SwigglyLine from "@/svg/SwigglyLine";
+import DownArrowHead from "@/svg/DownArrowHead";
 
 const Large = () => {
-  const { cursor, setCursorText, setTextColor } = useContext(GlobalContext);
+  const { setTextColor } = useContext(GlobalContext);
 
   const containerRef = useRef(null);
   const targetRef = useRef(null);
@@ -35,6 +34,19 @@ const Large = () => {
     };
   }, []);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: true });
+  const transition = {
+    duration: 1,
+    ease: [0.43, 0.13, 0.23, 0.96],
+    delay: 1,
+  };
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: [".5 1", ".8 1"],
@@ -50,22 +62,13 @@ const Large = () => {
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
 
   /* Hello there animation */
-  const textXAnimation = useTransform(
-    scrollYProgress,
-    [0, 0.3],
-    ["-40%", "0%"]
-  );
-  const textYAnimation = useTransform(
-    scrollYProgress,
-    [0, 0.3],
-    ["0vw", "-10vw"]
-  );
+
   const fontSizeProgress = useTransform(
     scrollYProgress,
     [0, 0.3],
     [`7vw`, `5vw`]
   );
-
+  const lineOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   const text1Opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const text2Opacity = useTransform(
     scrollYProgress,
@@ -81,26 +84,8 @@ const Large = () => {
     <div
       id="about"
       ref={containerRef}
-      className="h-[300vh] lg:pb-64 text-[#ececdf]  z-[1] bg-[#d9d9d9] bg-noise-bg relative"
+      className="h-[300vh] lg:pb-32 text-[#ececdf]  z-[1] bg-[#d9d9d9] bg-noise-bg relative"
     >
-      <div className="absolute z-10 top-[20%] left-[30%]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="50"
-          height="50"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="m7 10l5 5l5-5"
-          />
-        </svg>
-        <span>Pease Keep scrolling</span>
-      </div>
-
       <m.div
         style={{
           scale: scaleProgress,
@@ -129,6 +114,47 @@ const Large = () => {
           />
         </m.div>
         <div className="basis-[60%] relative  py-[7vw] ">
+          <m.div
+            style={{
+              opacity: lineOpacity,
+            }}
+          >
+            <div className="absolute z-10 top-[clamp(120px,20%,170px)] -left-[23%] ">
+              <SwigglyLine />
+            </div>
+            <m.div
+              ref={ref}
+              variants={variants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{
+                duration: 1,
+                ease: [0.43, 0.13, 0.23, 0.96],
+                delay: 1,
+              }}
+              className="absolute z-10 top-[42%] -left-[clamp(100px,16vw,220px)]"
+            >
+              <DownArrowHead />
+              <m.span
+                initial={{
+                  y: 20,
+                }}
+                animate={{
+                  y: isInView ? 0 : 20,
+                }}
+                transition={{
+                  duration: 1,
+                  ease: [0.43, 0.13, 0.23, 0.96],
+                  delay: 1.1,
+                }}
+                className="inline-block"
+              >
+                <span className="block">Keep scrolling</span>
+                <span className="block">Don't stop scrolling!</span>
+              </m.span>
+            </m.div>
+          </m.div>
+
           <m.p
             style={{
               // y: textYAnimation,
@@ -149,7 +175,7 @@ const Large = () => {
             className="absolute flex flex-col left-0 px-[5vw]"
           >
             <span>I'm</span>
-            <h2>Stephanie Egbuonu</h2>
+            <h2 className="text-lemon">Stephanie Egbuonu</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Distinctio eos labore aliquam laborum doloribus atque quod harum,
@@ -170,7 +196,7 @@ const Large = () => {
             }}
             className="absolute left-0 px-[5vw] "
           >
-            <h2>I Also</h2>
+            <h2 className="text-lemon">I Also</h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Distinctio eos labore aliquam laborum doloribus atque quod harum,

@@ -11,8 +11,6 @@ const Small = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("its me bitch");
-
             setTextColor("text-[#d0d0c5]");
           }
         });

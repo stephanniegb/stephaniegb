@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
+      height: {
+        screen: ["100vh", "100dvh"],
+        seventyVH: ["70vh", "70dvh"],
+        fiftyVH: ["50vh", "50dvh"],
+      },
       backgroundImage: {
         "gradient-radial":
           "linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );",
@@ -47,6 +55,12 @@ const config: Config = {
       },
       transitionProperty: {
         staggeredReveal: "opacity",
+      },
+      keyframes: {
+        "spin-slow": {
+          "0%": { transform: "rotateY(0deg)" },
+          "100%": { transform: "rotateY(360deg)" },
+        },
       },
     },
   },

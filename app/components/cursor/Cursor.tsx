@@ -30,13 +30,6 @@ const Cursor = () => {
   };
   useEffect(() => {
     const footerEmail = document.getElementById("emailAddress");
-    const aboutSection = document.getElementById("about");
-    console.log(aboutSection);
-
-    aboutSection?.addEventListener("mouseenter", () => {
-      console.log("scroll");
-    });
-
     footerEmail?.addEventListener("mouseenter", () => {
       handleMouseText({ text: "Click to copy" });
     });

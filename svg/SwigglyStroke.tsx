@@ -27,7 +27,7 @@ const SwigglyStroke = () => {
       viewBox="0 0 200 50"
     >
       <path
-        id="Hello there!"
+        // id="Hello there!"
         d="M0 30 C 20 20, 40 40, 60 30 S 100 20, 120 30 S 160 20, 200 30"
         fill="none"
         stroke="#ffffff"
