@@ -9,7 +9,7 @@ const ArchiveLink = ({ text, url }: { text: string; url: string }) => {
       rel="noopener noreferrer"
     >
       {text}
-      <span className="transition-[transform] duration-500 ease-in-out transform group-hover:-rotate-[30deg]">
+      <span className="transition-[transform,color] duration-500 ease-in-out group-hover:text-lemon transform group-hover:-rotate-[30deg]">
         <RightArrow />
       </span>
     </a>

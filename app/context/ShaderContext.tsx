@@ -41,8 +41,8 @@ export const ShaderContext = createContext<ContextProp>({
   },
   setMouse: () => {},
   mouse: {
-    x: 0,
-    y: 0,
+    x: -1,
+    y: 1,
   },
 });
 

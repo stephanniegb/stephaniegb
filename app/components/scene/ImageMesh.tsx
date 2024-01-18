@@ -28,8 +28,6 @@ function ImageMesh({ url }: { url: string }) {
   const { offset, mouse } = useContext(ShaderContext);
   const { cursor } = useContext(GlobalContext);
 
-  console.log(cursor);
-
   const mesh = useRef(null);
   const [texture] = useMemo(() => useLoader(THREE.TextureLoader, [url]), [url]);
 

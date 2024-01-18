@@ -75,7 +75,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--beige);
-  /* line-height: 1.8; */
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -116,19 +115,6 @@ html.lenis {
 }
 /* use clamp() for font size and responsive d */
 
-.path {
-  stroke-dashoffset: 12000;
-  /* animation: dash 7s linear alternate infinite; */
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 12000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 canvas {
   pointer-events: none;
 }

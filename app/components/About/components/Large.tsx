@@ -4,6 +4,7 @@ import { motion as m, useScroll, useTransform } from "framer-motion";
 import Hello from "@/svg/Hello";
 import AnimatedLetters from "../../animation/AnimatedLetters";
 import { GlobalContext } from "@/app/context/GlobalContext";
+import SwigglyStroke from "@/svg/SwigglyStroke";
 
 const Large = () => {
   const { cursor, setCursorText, setTextColor } = useContext(GlobalContext);
@@ -76,39 +77,36 @@ const Large = () => {
   const text2TranslateY = useTransform(scrollYProgress, [0.2, 0.8], [100, 0]);
   const text3TranslateY = useTransform(scrollYProgress, [0.8, 1.0], [100, 0]);
 
-  // useEffect(() => {
-  //   const handleMouseText = ({ text }: { text: string }) => {
-  //     setCursorText(text);
-  //   };
-  //   const handleMouseLeave = () => {
-  //     setCursorText("");
-  //   };
-  //   containerRef.current.addEventListener(
-  //     "mouseenter",
-
-  //     handleMouseText({ text: "Scroll" })
-  //   );
-  //   // containerRef.current.addEventListener("mouseleave", handleMouseLeave);
-
-  //   return () => {
-  //     containerRef.current.removeEventListener("mouseenter", handleMouseText);
-  //     containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
-  //   };
-  // }, []);
-
   return (
     <div
+      id="about"
       ref={containerRef}
       className="h-[300vh] lg:pb-64 text-[#ececdf]  z-[1] bg-[#d9d9d9] bg-noise-bg relative"
     >
+      <div className="absolute z-10 top-[20%] left-[30%]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m7 10l5 5l5-5"
+          />
+        </svg>
+        <span>Pease Keep scrolling</span>
+      </div>
+
       <m.div
-        id="about"
         style={{
           scale: scaleProgress,
           borderRadius: borderRadiusProgress,
           position: "sticky",
           top: topProgress,
-          cursor: "none",
         }}
         ref={targetRef}
         className="h-[100vh] w-full bg-black flex relative"
@@ -138,10 +136,11 @@ const Large = () => {
               opacity: text1Opacity,
               fontSize: fontSizeProgress,
             }}
-            className="w-fit h-fit px-[5vw]"
+            className="w-fit h-fit font-cursive px-[5vw]"
           >
-            <AnimatedLetters word="Hello There!" />
+            Hello There <span className="text-lemon">!</span>
           </m.p>
+
           <m.div
             style={{
               opacity: text2Opacity,

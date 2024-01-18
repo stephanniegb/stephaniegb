@@ -17,11 +17,8 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
   const { cursorText } = useContext(CursorContext);
 
   return (
-    <li className="relative cursor-none  group">
+    <li className="relative cursor-pointer  group">
       <a
-        style={{
-          cursor: cursorText === "" ? "pointer" : "none",
-        }}
         href={projectUrl}
         target="_blank"
         rel="noopener noreferrer"

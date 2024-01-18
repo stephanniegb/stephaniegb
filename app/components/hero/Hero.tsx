@@ -55,9 +55,9 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="grid bg-black z-[1] text-[#d0d0c5]   relative overflow-hidden"
+      className="grid bg-black  z-[1] text-[#d0d0c5]   relative overflow-hidden"
     >
-      <div className="w-screen h-[70vh] grid place-content-center p-4">
+      <div className="w-screen h-[70vh] relative grid place-content-center p-4">
         <h1>
           <m.span
             initial={{
@@ -95,6 +95,53 @@ const Hero = () => {
             Front End Software Engineer
           </m.span>
         </h1>
+        <m.p
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            delay: 2,
+          }}
+          className="font-thin text-[.8em] absolute bottom-0 right-0 z-10 w-[30vw] px-4 py-10 "
+        >
+          available for freelance jobs available for freelance jobs available
+          for freelance jobs available for freelance jobs
+        </m.p>
+        <m.div
+          initial={{
+            opacity: 0,
+            y: "-100%",
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            delay: 2.1,
+          }}
+          className="absolute -bottom-20 z-10 p-4 text-[#fffff]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              d="M5 16c.742 0 1.85.733 2.78 1.475c1.2.954 2.247 2.094 3.046 3.401C11.425 21.856 12 23.044 12 24m0 0c0-.956.575-2.145 1.174-3.124c.8-1.307 1.847-2.447 3.045-3.401C17.15 16.733 18.26 16 19 16m-7 8V0"
+            />
+          </svg>
+          <span className="uppercase text-[.8em]">scroll</span>
+        </m.div>
       </div>
 
       <m.div

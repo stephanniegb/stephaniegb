@@ -21,7 +21,7 @@ const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
 
-  const { cursor, setCursorText, cursorText } = useContext(GlobalContext);
+  const { cursor } = useContext(GlobalContext);
 
   const [imageUrl, setImageUrl] = useState(
     "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -29,7 +29,6 @@ const Large = () => {
 
   function hideImage() {
     setShowProj(false);
-    // setCursorText("");
   }
 
   const projectsParentRef = useRef(null);
@@ -39,7 +38,6 @@ const Large = () => {
     const children = Array.from(projectsParentRef.current.children);
     children.forEach((link, idx) => {
       link.addEventListener("mousemove", () => {
-        setCursorText("View");
         setShowProj(true);
 
         switch (idx) {

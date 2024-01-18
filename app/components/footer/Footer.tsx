@@ -40,7 +40,10 @@ const Footer = () => {
   }, [copied]);
 
   return (
-    <footer className=" flex flex-col text-[#d0d0c5] sticky bottom-0 justify-between px-4   w-screen pt-16 h-[85vh]">
+    <footer
+      id="footer"
+      className=" flex flex-col text-[#d0d0c5] sticky bottom-0 justify-between px-4   w-screen pt-16 h-[85vh]"
+    >
       <div className="text-center">
         <h3>Lets talk about what we can build together</h3>
 
@@ -48,7 +51,7 @@ const Footer = () => {
           <CopyToClipboard onCopy={() => setCopied(true)} text={EMAILADDRESS}>
             <p
               id="emailAddress"
-              className="text-white text-[5vw] uppercase break-words cursor-none underline py-4 w-fit my-0 mx-auto px-0"
+              className="text-white text-[5vw] font-thin uppercase break-words cursor-none underline py-4 w-fit my-0 mx-auto px-0"
             >
               {EMAILADDRESS}
             </p>
