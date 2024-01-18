@@ -78,20 +78,6 @@ const Large = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   const parent = projectsParentRef.current;
-  //   if (parent) {
-  //     const children = Array.from(parent.children);
-  //     children.forEach((link) => {
-  //       if (isHovered) {
-  //         link.style.opacity = 0.2;
-  //       } else {
-  //         link.style.opacity = 1;
-  //       }
-  //     });
-  //   }
-  // }, [isHovered]);
-
   useEffect(() => {
     window.addEventListener("scroll", useDebounce(hideImage, 200));
   }, []);
@@ -125,48 +111,43 @@ const Large = () => {
       y: THREE.MathUtils.lerp(offset.y, cursor.y, 0.1),
     }));
   }, [mouse]);
+
   return (
-    <>
+    <section id="work" className="z-[1] py-4 relative bg-noise-bg bg-[#D9D9D9]">
       <section
-        id="work"
-        className="z-[1] py-4 relative bg-noise-bg bg-[#D9D9D9]"
+        style={{
+          paddingTop: "clamp(13rem, 15vmax, 15rem)",
+          paddingBottom: "clamp(13rem, 15vmax, 15rem)",
+        }}
+        onPointerMove={handlePointerMove}
+        ref={containerRef}
+        className="grid relative"
       >
-        <section
-          style={{
-            paddingTop: "clamp(13rem, 15vmax, 15rem)",
-            paddingBottom: "clamp(13rem, 15vmax, 15rem)",
-          }}
-          onPointerMove={handlePointerMove}
-          ref={containerRef}
-          className="grid relative"
+        <h3 className="uppercase px-8  text-brown">Recent Projects</h3>
+        <Scene showProj={showProj} imageUrl={imageUrl} />
+        <ul
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          ref={projectsParentRef}
+          className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
         >
-          <h3 className="uppercase px-8  text-brown">Recent Projects</h3>
-          <Scene showProj={showProj} imageUrl={imageUrl} />
-          <ul
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            ref={projectsParentRef}
-            className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
-          >
-            {ProjectsData.map((project) => {
-              const { id, images, tech, title, url } = project;
-              return (
-                <Project
-                  key={id}
-                  id={id}
-                  techs={tech}
-                  projTitle={title}
-                  images={images}
-                  projectUrl={url}
-                />
-              );
-            })}
-          </ul>
-        </section>
-        <Archive />
+          {ProjectsData.map((project) => {
+            const { id, images, tech, title, url } = project;
+            return (
+              <Project
+                key={id}
+                id={id}
+                techs={tech}
+                projTitle={title}
+                images={images}
+                projectUrl={url}
+              />
+            );
+          })}
+        </ul>
       </section>
-      <Wave />
-    </>
+      <Archive />
+    </section>
   );
 };
 

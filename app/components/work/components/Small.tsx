@@ -111,46 +111,43 @@ const Small = () => {
     requestAnimationFrame(() => skewScrolling());
   }, []);
   return (
-    <>
-      <section className="z-[1] bg-noise-bg relative px-4 bg-[#D9D9D9] ">
-        <h3 className="uppercase px-8 text-brown">Recent Projects</h3>
-        <div ref={scrollContainer} className="flex flex-col py-16 gap-32">
-          <ProjectLink
-            url=""
-            alt=""
-            src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
-            title="Scissors"
-          />
-          <SlideInBorder height="4px" />
+    <section className="z-[1] bg-noise-bg relative px-4 bg-[#D9D9D9] ">
+      <h3 className="uppercase px-8 text-brown">Recent Projects</h3>
+      <div ref={scrollContainer} className="flex flex-col py-16 gap-32">
+        <ProjectLink
+          url=""
+          alt=""
+          src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
+          title="Scissors"
+        />
+        <SlideInBorder height="4px" />
 
-          <ProjectLink
-            url=""
-            alt=""
-            src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
-            title="Scissors"
-          />
-          <SlideInBorder height="4px" />
+        <ProjectLink
+          url=""
+          alt=""
+          src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
+          title="Scissors"
+        />
+        <SlideInBorder height="4px" />
 
-          <ProjectLink
-            url=""
-            alt=""
-            src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
-            title="Scissors"
-          />
-          <SlideInBorder height="4px" />
+        <ProjectLink
+          url=""
+          alt=""
+          src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
+          title="Scissors"
+        />
+        <SlideInBorder height="4px" />
 
-          <ProjectLink
-            url=""
-            alt=""
-            src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
-            title="Scissors"
-          />
-          <SlideInBorder height="4px" />
-        </div>
-        <Archive />
-      </section>
-      <Wave />
-    </>
+        <ProjectLink
+          url=""
+          alt=""
+          src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
+          title="Scissors"
+        />
+        <SlideInBorder height="4px" />
+      </div>
+      <Archive />
+    </section>
   );
 };
 

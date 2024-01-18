@@ -1,33 +1,40 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { motion as m, useInView, useScroll, useTransform } from "framer-motion";
 import Loader from "./components/loader/Loader";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import About from "./components/About/About";
-import Background from "./components/Background";
-import Lenis from "@studio-freight/lenis";
 import { ShaderContextProvider } from "./context/ShaderContext";
-import Translate from "./components/Translate";
 import Cursor from "./components/cursor/Cursor";
 import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
-import Header from "./components/experience/components/Header";
 import { GlobalContextProvider } from "./context/GlobalContext";
+import Wave from "@/svg/Wave";
 
 export default function Home() {
+  const grandParentRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: grandParentRef,
+    offset: ["0 1", "1 1"],
+  });
+
   return (
     <main className="relative">
       <GlobalContextProvider>
         <Cursor />
         <Navbar />
-        <Hero />
-        <About />
-        <ShaderContextProvider>
-          <Experience />
-          <Work />
-        </ShaderContextProvider>
-        <Footer />
+        <m.div ref={grandParentRef}>
+          <Hero />
+          <About />
+          <ShaderContextProvider>
+            <Experience />
+            <Work />
+          </ShaderContextProvider>
+          <Wave />
+          <Footer scrollYProgress={scrollYProgress} />
+        </m.div>
       </GlobalContextProvider>
     </main>
   );

@@ -15,6 +15,7 @@ const config: Config = {
         screen: ["100vh", "100dvh"],
         seventyVH: ["70vh", "70dvh"],
         fiftyVH: ["50vh", "50dvh"],
+        eightyVH: ["80vh", "80dvh"],
       },
       backgroundImage: {
         "gradient-radial":
