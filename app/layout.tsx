@@ -1,9 +1,6 @@
 import "./globals.css";
-import "./animations.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Cursor from "./components/cursor/Cursor";
-import Navbar from "./components/navbar/Navbar";
 import { Suspense } from "react";
 import Loading from "./loading";
 import SmoothScroll from "./SmoothScroll";
