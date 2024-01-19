@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import UpRightArrow from "@/svg/UpRightArrow";
-import CursorContext from "@/app/context/GlobalContext";
 import SlideInBorder from "../animation/SlideInBorder";
 import RightArrow from "@/svg/RightArrow";
 interface ProjectsProps {
@@ -14,8 +11,6 @@ interface ProjectsProps {
 }
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
-  const { cursorText } = useContext(CursorContext);
-
   return (
     <li className="relative cursor-pointer  group">
       <a
