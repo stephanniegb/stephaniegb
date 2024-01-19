@@ -6,6 +6,7 @@ import {
   useLayoutEffect,
   useRef,
   useState,
+  MouseEvent,
 } from "react";
 import ProjectsData from "@/data/projects.json";
 import { ShaderContext } from "@/app/context/ShaderContext";
@@ -13,11 +14,8 @@ import { GlobalContext } from "@/app/context/GlobalContext";
 import { useDebounce } from "@/hooks/useDebounce";
 import Project from "../../projects/Projects";
 import images from "../../scene/assets/images";
-
 import Scene from "../../scene/Scene";
-
 import Archive from "./Archive";
-import Wave from "@/svg/Wave";
 const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
@@ -32,50 +30,53 @@ const Large = () => {
     setShowProj(false);
   }
 
-  const projectsParentRef = useRef(null);
-  const containerRef = useRef(null);
+  const projectsParentRef = useRef<HTMLUListElement | null>(null);
+  const containerRef = useRef<HTMLElement | null>(null);
   const [showProj, setShowProj] = useState(false);
   useLayoutEffect(() => {
-    const children = Array.from(projectsParentRef.current.children);
-    children.forEach((link, idx) => {
-      link.addEventListener("mousemove", () => {
-        setShowProj(true);
+    const currentRef = projectsParentRef.current;
+    if (currentRef) {
+      const children = Array.from(currentRef.children);
+      children.forEach((link, idx) => {
+        link.addEventListener("mousemove", () => {
+          setShowProj(true);
 
-        switch (idx) {
-          case 0:
-            setImageUrl(images.imageOne);
+          switch (idx) {
+            case 0:
+              setImageUrl(images.imageOne);
 
-            break;
-          case 1:
-            setImageUrl(images.imageTwo);
+              break;
+            case 1:
+              setImageUrl(images.imageTwo);
 
-            break;
-          case 2:
-            setImageUrl(images.imageThree);
+              break;
+            case 2:
+              setImageUrl(images.imageThree);
 
-            break;
-          case 3:
-            setImageUrl(images.imageFour);
+              break;
+            case 3:
+              setImageUrl(images.imageFour);
 
-            break;
-          case 4:
-            setImageUrl(images.imageFive);
+              break;
+            case 4:
+              setImageUrl(images.imageFive);
 
-            break;
-          case 5:
-            setImageUrl(images.imageSix);
+              break;
+            case 5:
+              setImageUrl(images.imageSix);
 
-            break;
-          case 6:
-            setImageUrl(images.imageSeven);
+              break;
+            case 6:
+              setImageUrl(images.imageSeven);
 
-            break;
-        }
+              break;
+          }
+        });
+        link.addEventListener("mouseleave", () => {
+          hideImage();
+        });
       });
-      link.addEventListener("mouseleave", () => {
-        hideImage();
-      });
-    });
+    }
   }, []);
 
   useEffect(() => {
@@ -89,19 +90,21 @@ const Large = () => {
     setIsHovered(false);
   };
 
-  const handlePointerMove = (e) => {
-    const rect = containerRef.current.getBoundingClientRect();
-    const relativeMouseY = e.clientY - rect.top;
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (rect) {
+      const relativeMouseY = e.clientY - rect.top;
 
-    setMouse((prev) => ({
-      ...prev,
-      x: THREE.MathUtils.lerp(mouse.x, (e.clientX / innerWidth) * 2 - 1, 0.1),
-      y: THREE.MathUtils.lerp(
-        mouse.y,
-        -(relativeMouseY / rect.height) * 2 + 1,
-        0.1
-      ),
-    }));
+      setMouse((prev) => ({
+        ...prev,
+        x: THREE.MathUtils.lerp(mouse.x, (e.clientX / innerWidth) * 2 - 1, 0.1),
+        y: THREE.MathUtils.lerp(
+          mouse.y,
+          -(relativeMouseY / rect.height) * 2 + 1,
+          0.1
+        ),
+      }));
+    }
   };
 
   useEffect(() => {
@@ -119,7 +122,7 @@ const Large = () => {
           paddingTop: "clamp(13rem, 15vmax, 15rem)",
           paddingBottom: "clamp(13rem, 15vmax, 15rem)",
         }}
-        onPointerMove={handlePointerMove}
+        onMouseMove={handleMouseMove}
         ref={containerRef}
         className="grid relative"
       >
