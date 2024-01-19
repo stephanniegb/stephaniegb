@@ -17,7 +17,7 @@ const Cursor = () => {
       return false;
     }
   };
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent) => {
     const x = (!isTouchDevice() && e.clientX) || 0;
     const y = (!isTouchDevice() && e.clientY) || 0;
     setCursor({ x, y });
