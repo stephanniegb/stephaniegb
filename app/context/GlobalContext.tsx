@@ -23,8 +23,10 @@ type ContextProp = {
     x: number;
     y: number;
   };
+  setTextColor: Dispatch<SetStateAction<string>>;
+  textColor: string;
 };
-export const CursorContext = createContext<ContextProp>({
+export const GlobalContext = createContext<ContextProp>({
   cursorText: "",
   setCursorText: () => {},
   setTopUnit: () => {},
@@ -33,13 +35,16 @@ export const CursorContext = createContext<ContextProp>({
   copied: false,
   setCursor: () => {},
   cursor: { x: 0, y: 0 },
+  setTextColor: () => {},
+  textColor: "",
 });
 
-export const CursorContextProvider = ({
+export const GlobalContextProvider = ({
   children,
 }: {
   children: ReactNode;
 }) => {
+  const [textColor, setTextColor] = useState("text-[#d0d0c5]");
   const [cursorText, setCursorText] = useState<string>("");
   const [topUnit, setTopUnit] = useState<number>(0);
   const [copied, setCopied] = useState(false);
@@ -57,12 +62,14 @@ export const CursorContextProvider = ({
     copied,
     cursor,
     setCursor,
+    textColor,
+    setTextColor,
   };
   return (
-    <CursorContext.Provider value={contextValue}>
+    <GlobalContext.Provider value={contextValue}>
       {children}
-    </CursorContext.Provider>
+    </GlobalContext.Provider>
   );
 };
 
-export default CursorContext;
+export default GlobalContext;

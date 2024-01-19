@@ -2,33 +2,32 @@ import { motion as m, useInView } from "framer-motion";
 import { useRef } from "react";
 
 type Props = {
-  sentence: string;
+  text: string;
+  el?: keyof JSX.IntrinsicElements;
   className?: string;
+  once?: boolean;
 };
-const AnimatedLines = ({ sentence, className }: Props) => {
+const AnimatedLines = ({
+  el: Wrapper = "p",
+  text,
+  className,
+  once = true,
+}: Props) => {
   const sentenceContainerRef = useRef(null);
+  const isInView = useInView(sentenceContainerRef, { amount: 0.5, once: once });
 
-  const isInView = useInView(sentenceContainerRef, { once: true });
-  /* */
   return (
-    <span
+    <Wrapper
       ref={sentenceContainerRef}
-      className={`inline-block overflow-hidden text[2vw] h-fit ${className} p-0`}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transform: isInView ? "none" : "translateY(2vw)",
+        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      className={className}
     >
-      <m.span
-        style={{
-          transform: isInView ? "none" : "translateY(2vw)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
-        className="inline-block"
-        transition={{
-          duration: 0.5,
-        }}
-      >
-        {sentence}
-      </m.span>
-    </span>
+      {text}
+    </Wrapper>
   );
 };
 

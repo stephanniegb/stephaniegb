@@ -11,7 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.88.2",
     "@react-three/fiber": "^8.14.5",
-    "@studio-freight/lenis": "^1.0.29",
+    "@studio-freight/react-lenis": "^0.0.43",
     "babel-plugin-glsl": "^1.0.0",
     "framer-motion": "^10.16.15",
     "glsl-noise": "^0.0.0",

@@ -1,9 +1,43 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
+import GlobalContext from "@/app/context/GlobalContext";
+import DownArrow from "@/svg/DownArrow";
+import World from "@/svg/World";
 
 const Hero = () => {
+  const [canScroll, setCanScroll] = useState(false);
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    // document.body.style.overflow = "hidden";
+  }, []);
+
+  const { setTextColor } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTextColor("text-[#d0d0c5]");
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["0.5 1", "1 0"],
@@ -21,9 +55,9 @@ const Hero = () => {
     <section
       id="hero"
       ref={containerRef}
-      className="grid bg-black z-[1] relative overflow-hidden"
+      className="grid bg-black  z-[1] text-[#d0d0c5]   relative overflow-hidden"
     >
-      <div className="w-screen h-[70vh] grid place-content-center">
+      <div className="w-screen h-seventyVH relative grid place-content-center p-4">
         <h1>
           <m.span
             initial={{
@@ -56,16 +90,58 @@ const Hero = () => {
               ease: [0.43, 0.13, 0.23, 0.96],
               delay: 1.9,
             }}
-            className="text-pFS inline-block"
+            className="text-[1.1em] md:text-pFS inline-block"
           >
             Front End Software Engineer
           </m.span>
         </h1>
+        <m.p
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            delay: 2,
+          }}
+          className="font-thin  text-[.8em] absolute bottom-0 right-0 z-10 w-[30vw] px-4 py-10 "
+        >
+          Currently available for freelance worldwide available for freelance
+          jobs available for freelance jobs{" "}
+          <span className="text-lemon pt-2 h-[25px] pr-2 inline-block">
+            <World />
+          </span>
+        </m.p>
+        <m.div
+          initial={{
+            opacity: 0,
+            y: "-100%",
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            delay: 2.1,
+          }}
+          className="absolute -bottom-20 z-10 p-4 text-[#fffff] flex flex-col gap-2"
+        >
+          <span className="animate-bounce inline-block">
+            <DownArrow />
+          </span>
+          <span className="uppercase text-[.8em]">scroll</span>
+        </m.div>
       </div>
+
       <m.div
         className="w-full flex flex-col gap-4"
         initial={{
-          y: "-110%",
+          y: "-50vh",
         }}
         animate={{
           y: 0,
@@ -73,13 +149,14 @@ const Hero = () => {
         transition={transition}
       >
         <m.div
+          onAnimationComplete={() => setCanScroll(true)}
           initial={{
             width: "clamp(13rem, 20vmax, 18.7rem)",
             height: "clamp(18rem, 22vmax, 25rem)",
           }}
           animate={{
             width: "100vw",
-            height: "50vh",
+            height: "50vh, 50dvh",
           }}
           transition={transition}
           style={{

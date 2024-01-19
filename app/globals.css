@@ -8,6 +8,7 @@
 
 @import url("https://fonts.cdnfonts.com/css/bruno-ace-2");
 @import url("https://fonts.cdnfonts.com/css/oak-sans");
+@import url("https://fonts.cdnfonts.com/css/pumpkin-pie-lattes");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,7 +17,6 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --large-h2-fs: 1.5em;
-  --p-fs: 1.125em;
   --darkGreen: #072026;
   --lightbeige: #071952;
   --orange: #e79766;
@@ -27,6 +27,10 @@
   --DPurple: #370737;
   --bg-black: #000000;
   --plum: #dda0dd;
+
+  /* text sizes */
+  --p-sm-FS: 1.1em;
+  --p-fs: 1.125em;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,7 +55,12 @@ body {
 
 p {
   margin: 0;
-  font-size: var(--p-fs);
+  font-size: var(--p-sm-FS);
+}
+@media (min-width: 768px) {
+  p {
+    font-size: var(--p-fs);
+  }
 }
 h2 {
   font-size: 3rem;
@@ -63,15 +72,14 @@ h2 {
 }
 body {
   font-family: "Oak Sans", sans-serif;
-
   margin: 0;
   padding: 0;
   background-color: var(--beige);
-  line-height: 1.8;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -107,20 +115,6 @@ html.lenis {
 }
 /* use clamp() for font size and responsive d */
 
-.path {
-  stroke-dasharray: 12000;
-  stroke-dashoffset: 12000;
-  animation: dash 7s linear alternate infinite;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 12000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 canvas {
   pointer-events: none;
 }

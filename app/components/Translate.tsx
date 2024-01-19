@@ -22,7 +22,7 @@ const Translate = () => {
   return (
     <div
       ref={containerRef}
-      className="h-[50vh] grid place-content-center pt-10 z-[1] relative  bg-[#fcfaf8]"
+      className="h-[50vh] grid place-content-center pt-10 z-[1] relative  bg-offWhite"
     >
       <div className="relative w-screen h-[30vh]">
         {/*text-[#fcfaf8]  */}

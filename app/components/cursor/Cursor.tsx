@@ -1,9 +1,10 @@
-import CursorContext from "@/app/context/CursorContext";
+import { GlobalContext } from "@/app/context/GlobalContext";
+import { useDebounce } from "@/hooks/useDebounce";
 import { useContext, useEffect, useRef, useState } from "react";
 
 const Cursor = () => {
   const { setCursorText, cursorText, setCursor, cursor, copied, setCopied } =
-    useContext(CursorContext);
+    useContext(GlobalContext);
 
   const [deviceType, setDeviceType] = useState("");
   const isTouchDevice = () => {
@@ -29,8 +30,6 @@ const Cursor = () => {
   };
   useEffect(() => {
     const footerEmail = document.getElementById("emailAddress");
-    const aboutSection = document.getElementById("about");
-
     footerEmail?.addEventListener("mouseenter", () => {
       handleMouseText({ text: "Click to copy" });
     });
@@ -42,17 +41,19 @@ const Cursor = () => {
       setCopied(true);
     });
 
-    aboutSection?.addEventListener("mouseenter", () => {
-      handleMouseText({ text: "Scroll" });
-    });
-    aboutSection?.addEventListener("mouseleave", () => {
-      handleMouseLeave();
-    });
-
     document.addEventListener("mousemove", handleMouseMove);
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      useDebounce(() => {
+        setCursorText("");
+      }, 200)
+    );
   }, []);
   return (
     <>
@@ -71,7 +72,7 @@ const Cursor = () => {
             opacity: `${cursorText === "" ? "0" : "1"}`,
             transition: "scale .5s, opacity .5s",
           }}
-          className={`fixed bg-[#035AA6] text-white text-[.8rem] font-bold z-[3] pointer-events-none translate-x-[-50%] translate-y-[-50%] backdrop-blur p-1 grid place-content-center w-[6rem] h-[6rem] rounded-full`}
+          className={`fixed  text-white text-[.8rem] font-bold z-[3] pointer-events-none translate-x-[-50%] translate-y-[-50%] backdrop-blur p-1 grid place-content-center w-[6rem] h-[6rem] rounded-full`}
         >
           <p className="z-[2] p-0">
             <span className="block text-[.8rem]">
