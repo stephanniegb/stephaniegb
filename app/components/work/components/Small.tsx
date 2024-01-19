@@ -99,7 +99,9 @@ const Small = () => {
 
     //Assign skew and smooth scrolling to the scroll container
     if (scrollContainer.current) {
-      scrollContainer.current.style.transform = `skewY(${skew}deg)`;
+      (
+        scrollContainer.current as HTMLElement
+      ).style.transform = `skewY(${skew}deg)`;
       // imageRef.current.style.scale = scale;
     }
 
@@ -119,7 +121,7 @@ const Small = () => {
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
 
         <ProjectLink
           url=""
@@ -127,7 +129,7 @@ const Small = () => {
           src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
 
         <ProjectLink
           url=""
@@ -135,7 +137,7 @@ const Small = () => {
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
 
         <ProjectLink
           url=""
