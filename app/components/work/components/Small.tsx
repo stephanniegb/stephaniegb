@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Archive from "./Archive";
 // import SlideInBorder from "../../animation/SlideInBorder";
 import { motion as m, useInView } from "framer-motion";
+import AnimatedBorder from "../../animation/AnimatedBorder";
 
 const ProjectLink = ({
   alt,
@@ -121,31 +122,28 @@ const Small = () => {
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        {/* <SlideInBorder height="4px" /> */}
-
+        <AnimatedBorder height="4px" />
         <ProjectLink
           url=""
           alt=""
           src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
           title="Scissors"
         />
-        {/* <SlideInBorder height="4px" /> */}
-
+        <AnimatedBorder height="4px" />
         <ProjectLink
           url=""
           alt=""
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        {/* <SlideInBorder height="4px" /> */}
-
+        <AnimatedBorder height="4px" />
         <ProjectLink
           url=""
           alt=""
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        {/* <SlideInBorder height="4px" /> */}
+        <AnimatedBorder height="4px" />
       </div>
       <Archive />
     </section>

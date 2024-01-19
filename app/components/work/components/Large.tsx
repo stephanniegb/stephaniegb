@@ -12,10 +12,11 @@ import ProjectsData from "@/data/projects.json";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import { GlobalContext } from "@/app/context/GlobalContext";
 import { useDebounce } from "@/hooks/useDebounce";
-import Project from "../../projects/Projects";
+
 import images from "../../scene/assets/images";
 import Scene from "../../scene/Scene";
 import Archive from "./Archive";
+import Project from "./Projects";
 const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
