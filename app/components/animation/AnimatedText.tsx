@@ -2,7 +2,7 @@ import { motion as m, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 type Props = {
   text: string;
-  el?: keyof JSX.IntrinsicElements;
+  el?: React.ElementType;
   className?: string;
   once?: boolean;
 };
