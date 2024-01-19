@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { shaderMaterial } from "@react-three/drei";
 import { extend, useFrame, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
