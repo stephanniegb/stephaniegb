@@ -2,9 +2,8 @@ import useWindowSize from "@/hooks/useWindowSize";
 import RightArrow from "@/svg/RightArrow";
 import { useEffect, useRef, useState } from "react";
 import Archive from "./Archive";
-import SlideInBorder from "../../animation/SlideInBorder";
+// import SlideInBorder from "../../animation/SlideInBorder";
 import { motion as m, useInView } from "framer-motion";
-import Wave from "@/svg/Wave";
 
 const ProjectLink = ({
   alt,
@@ -100,7 +99,9 @@ const Small = () => {
 
     //Assign skew and smooth scrolling to the scroll container
     if (scrollContainer.current) {
-      scrollContainer.current.style.transform = `skewY(${skew}deg)`;
+      (
+        scrollContainer.current as HTMLElement
+      ).style.transform = `skewY(${skew}deg)`;
       // imageRef.current.style.scale = scale;
     }
 
@@ -120,7 +121,7 @@ const Small = () => {
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
 
         <ProjectLink
           url=""
@@ -128,7 +129,7 @@ const Small = () => {
           src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
 
         <ProjectLink
           url=""
@@ -136,7 +137,7 @@ const Small = () => {
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
 
         <ProjectLink
           url=""
@@ -144,7 +145,7 @@ const Small = () => {
           src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
           title="Scissors"
         />
-        <SlideInBorder height="4px" />
+        {/* <SlideInBorder height="4px" /> */}
       </div>
       <Archive />
     </section>

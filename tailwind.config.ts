@@ -12,10 +12,14 @@ const config: Config = {
         "spin-slow": "spin 3s linear infinite",
       },
       height: {
-        screen: ["100vh", "100dvh"],
-        seventyVH: ["70vh", "70dvh"],
-        fiftyVH: ["50vh", "50dvh"],
-        eightyVH: ["80vh", "80dvh"],
+        screen: "100vh",
+        "100dvh": "100vh",
+        seventyVH: "70vh",
+        "70dvh": "70vh",
+        fiftyVH: "50vh",
+        "50dvh": "50vh",
+        eightyVH: "80vh",
+        "80dvh": "80vh",
       },
       backgroundImage: {
         "gradient-radial":
