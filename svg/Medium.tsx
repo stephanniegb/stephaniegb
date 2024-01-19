@@ -2,8 +2,8 @@ const Medium = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
+      width="clamp(20px, 10vw, 48px)"
+      height="clamp(20px, 10vw, 48px)"
       viewBox="0 0 48 48"
       className="group-hover:scale-110"
       style={{
