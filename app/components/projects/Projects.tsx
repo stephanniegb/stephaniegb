@@ -1,4 +1,4 @@
-import SlideInBorder from "../animation/SlideInBorder";
+// import SlideInBorder from "../animation/SlideInBorder";
 import RightArrow from "@/svg/RightArrow";
 interface ProjectsProps {
   id: string;
@@ -43,7 +43,7 @@ const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {
           </ul>
         </div>
       </a>
-      <SlideInBorder height="4px" />
+      {/* <SlideInBorder height="4px" /> */}
     </li>
   );
 };
