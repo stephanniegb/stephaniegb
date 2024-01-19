@@ -12,7 +12,6 @@ const AnimatedBorder = ({ height }: Props) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            console.log("hiii");
           }
         });
       },

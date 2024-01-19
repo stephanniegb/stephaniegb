@@ -118,3 +118,10 @@ html.lenis {
 canvas {
   pointer-events: none;
 }
+.SlideinBorder {
+  width: 0px;
+  transition: width 1s ease-in;
+}
+.SlideinBorder.show {
+  width: 100%;
+}
