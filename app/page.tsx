@@ -12,29 +12,53 @@ import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
 import { GlobalContextProvider } from "./context/GlobalContext";
 import Wave from "@/svg/Wave";
+import PseudoLoader from "./components/loader/PseudoLoader";
 
 export default function Home() {
+  const [loader, setLoader] = useState(true);
+
   const grandParentRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: grandParentRef,
     offset: ["0 1", "1 1"],
   });
 
+  const handleBeforeUnload: () => void = () => {
+    document.body.style.display = "none";
+    window.scrollTo(0, 0);
+  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoader(false);
+    }, 3000);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <main className="relative">
       <GlobalContextProvider>
-        <Cursor />
-        <Navbar />
-        <m.div ref={grandParentRef}>
-          <Hero />
-          <About />
-          <ShaderContextProvider>
-            <Experience />
-            <Work />
-          </ShaderContextProvider>
-          <Wave />
-          <Footer scrollYProgress={scrollYProgress} />
-        </m.div>
+        {loader ? (
+          <PseudoLoader />
+        ) : (
+          <>
+            <Cursor />
+            <Navbar />
+            <m.div ref={grandParentRef}>
+              <Hero />
+              <About />
+              <ShaderContextProvider>
+                <Experience />
+                <Work />
+              </ShaderContextProvider>
+              <Wave />
+              <Footer scrollYProgress={scrollYProgress} />
+            </m.div>
+          </>
+        )}
       </GlobalContextProvider>
     </main>
   );

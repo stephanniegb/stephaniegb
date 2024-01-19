@@ -27,12 +27,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <Suspense fallback={<Loading />}> */}
       <body className="bg-[#0f0f0f] text-[#090908]">
-        {/* {children} */}
-        <SmoothScroll>{children}</SmoothScroll>
+        <Suspense fallback={<Loading />}>
+          <SmoothScroll>{children}</SmoothScroll>
+        </Suspense>
       </body>
-      {/* </Suspense> */}
     </html>
   );
 }

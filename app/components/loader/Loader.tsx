@@ -17,38 +17,36 @@ const Loader = ({
 
   return (
     <AnimatePresence mode="wait">
-      {loader && (
-        <m.div className="h-screen w-screen grid place-content-center relative z-[10] bg-black">
-          <div
-            style={{
-              width: "clamp(13rem, 20vmax, 18.7rem)",
-              height: "clamp(18rem, 22vmax, 25rem)",
-            }}
+      <m.div className="h-screen w-screen grid place-content-center relative z-[10] bg-black">
+        <div
+          style={{
+            width: "clamp(13rem, 20vmax, 18.7rem)",
+            height: "clamp(18rem, 22vmax, 25rem)",
+          }}
+        >
+          <Image
+            onClick={() => setLoader((prev) => !prev)}
+            className="h-full w-full"
+            alt="stephanie shot"
+            width={300}
+            height={400}
+            src={"/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"}
+          />
+        </div>
+        <div>
+          <m.span
+            key={"soan"}
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={transition}
+            className="text-[.75rem]"
           >
-            <Image
-              onClick={() => setLoader((prev) => !prev)}
-              className="h-full w-full"
-              alt="stephanie shot"
-              width={300}
-              height={400}
-              src={"/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"}
-            />
-          </div>
-          <div>
-            <m.span
-              key={"soan"}
-              variants={variants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              transition={transition}
-              className="text-[.75rem]"
-            >
-              stephani.egb
-            </m.span>
-          </div>
-        </m.div>
-      )}
+            stephani.egb
+          </m.span>
+        </div>
+      </m.div>
     </AnimatePresence>
   );
 };
