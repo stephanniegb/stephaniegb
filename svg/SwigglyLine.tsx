@@ -17,7 +17,6 @@ const SwigglyLine = () => {
       ref={ref}
       onAnimationComplete={() => console.log("Done")}
       width={"35vw"}
-      // width="clamp(31rem,50vw,45rem)"
       height={"100%"}
       variants={variants}
       initial="hidden"
