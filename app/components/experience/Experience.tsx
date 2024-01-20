@@ -1,7 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
 import AnimatedLines from "../animation/AnimatedLines";
-import AnimatedText from "../animation/AnimatedText";
 import Techs from "./components/Techs";
 import GlobalContext from "@/app/context/GlobalContext";
 
@@ -36,7 +34,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="min-h-[100vh] bg-noise-bg  bg-offWhite  flex flex-col  gap-4 px-4 py-16  lg;px-16 lg:py-8  z-[1] relative overflow-x-hidden">
+    <section className="min-h-[100vh] bg-noise-bg  bg-offWhite   flex flex-col  gap-4 px-4 py-16  lg;px-16 lg:py-8  z-[1] relative overflow-x-hidden">
       <AnimatedLines
         text="Experience"
         el="h2"

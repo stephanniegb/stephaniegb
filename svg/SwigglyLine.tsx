@@ -1,5 +1,5 @@
 import { motion as m, useInView } from "framer-motion";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { useRef } from "react";
 const SwigglyLine = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once: true });
