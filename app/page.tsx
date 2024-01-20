@@ -55,7 +55,7 @@ export default function Home() {
                 <Experience />
                 <Work />
               </ShaderContextProvider>
-              <Wave2 />
+              <Wave />
               <Footer scrollYProgress={scrollYProgress} />
             </m.div>
           </>
