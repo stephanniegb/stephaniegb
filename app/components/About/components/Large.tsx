@@ -113,59 +113,60 @@ const Large = () => {
             alt="stephanie smiling"
           />
         </m.div>
-        <div className="basis-[60%] relative  py-[7vw] ">
-          <m.div
-            style={{
-              opacity: lineOpacity,
-            }}
-          >
-            <div className="absolute z-10 top-[clamp(120px,20%,170px)] -left-[23%] ">
-              <SwigglyLine />
-            </div>
-            <m.div
-              ref={ref}
-              variants={variants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              transition={{
-                duration: 1,
-                ease: [0.43, 0.13, 0.23, 0.96],
-                delay: 1,
+        <div className="basis-[60%]  relative  py-[7vw] ">
+          <div className="relative">
+            <m.p
+              style={{
+                opacity: text1Opacity,
+                fontSize: fontSizeProgress,
               }}
-              className="absolute z-10 top-[42%] -left-[clamp(100px,16vw,220px)]"
+              className="w-fit h-fit font-cursive px-[5vw]"
             >
-              <DownArrowHead />
-              <m.span
-                initial={{
-                  y: 20,
-                }}
-                animate={{
-                  y: isInView ? 0 : 20,
-                }}
-                transition={{
-                  duration: 1,
-                  ease: [0.43, 0.13, 0.23, 0.96],
-                  delay: 1.1,
-                }}
-                className="inline-block"
-              >
-                <span className="block">Keep scrolling</span>
-                <span className="block">Don't stop scrolling!</span>
-              </m.span>
+              Hello There <span className="text-lemon">!</span>
+            </m.p>
+            <m.div
+              style={{
+                opacity: lineOpacity,
+              }}
+            >
+              <div className=" absolute top-[80%] h-full z-10 w-full">
+                <div className="absolute  z-10  ">
+                  <SwigglyLine />
+                </div>
+                <m.div
+                  ref={ref}
+                  variants={variants}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  transition={{
+                    duration: 1,
+                    ease: [0.43, 0.13, 0.23, 0.96],
+                    delay: 1,
+                  }}
+                  className="absolute top-[80%] left-[-2.8%] z-10 "
+                >
+                  <DownArrowHead />
+                  <m.span
+                    initial={{
+                      y: 20,
+                    }}
+                    animate={{
+                      y: isInView ? 0 : 20,
+                    }}
+                    transition={{
+                      duration: 1,
+                      ease: [0.43, 0.13, 0.23, 0.96],
+                      delay: 1.1,
+                    }}
+                    className="inline-block"
+                  >
+                    <span className="block">Keep scrolling</span>
+                    <span className="block">Don't stop scrolling!</span>
+                  </m.span>
+                </m.div>
+              </div>
             </m.div>
-          </m.div>
-
-          <m.p
-            style={{
-              // y: textYAnimation,
-              // x: textXAnimation,
-              opacity: text1Opacity,
-              fontSize: fontSizeProgress,
-            }}
-            className="w-fit h-fit font-cursive px-[5vw]"
-          >
-            Hello There <span className="text-lemon">!</span>
-          </m.p>
+          </div>
 
           <m.div
             style={{
