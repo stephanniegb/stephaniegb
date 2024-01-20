@@ -4,14 +4,12 @@ const Wave = () => {
       className="z-[1] relative "
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
-      width="200"
-      height="50"
       style={{
         width: "100%",
-        height: "100%",
+        height: "auto",
       }}
     >
-      <defs>
+      {/* <defs>
         <clipPath id="the-object">
           <path
             fill="#eae7e7"
@@ -29,7 +27,7 @@ const Wave = () => {
           <feColorMatrix type="saturate" values="0" />
           <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
         </filter>
-      </defs>
+      </defs> */}
 
       <path
         fill="#e7e5e5"

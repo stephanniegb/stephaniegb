@@ -13,6 +13,7 @@ import Work from "./components/work/Work";
 import { GlobalContextProvider } from "./context/GlobalContext";
 import Wave from "@/svg/Wave";
 import PseudoLoader from "./components/loader/PseudoLoader";
+import Wave2 from "@/svg/Wave2";
 
 export default function Home() {
   const [loader, setLoader] = useState(true);
@@ -54,7 +55,7 @@ export default function Home() {
                 <Experience />
                 <Work />
               </ShaderContextProvider>
-              <Wave />
+              <Wave2 />
               <Footer scrollYProgress={scrollYProgress} />
             </m.div>
           </>
