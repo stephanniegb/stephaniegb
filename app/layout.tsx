@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#0f0f0f] text-[#090908]">
+      <body className="bg-raven text-[#090908]">
         <Suspense fallback={<Loading />}>
           <SmoothScroll>{children}</SmoothScroll>
         </Suspense>

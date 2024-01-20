@@ -32,7 +32,7 @@ const PseudoLoader = () => {
               opacity: 0,
             }}
             transition={{ delay: 2.7, ...transition }}
-            className="text-[8vw] font-extrabold"
+            className="text-[12vw] lg:text-[8vw] font-extrabold"
           >
             {progress}
           </m.p>

@@ -53,7 +53,7 @@ export const ShaderContextProvider = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [mouse, setMouse] = useState({ x: -0.5, y: 0.5 });
   const contextValue = {
     isHovered,
     setIsHovered,

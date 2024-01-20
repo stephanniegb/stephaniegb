@@ -55,8 +55,8 @@ const config: Config = {
         black: "#000000",
         brown: "#2f1b12",
         lemon: "#03730B",
-        // lemon: "#5dcb96",
         offWhite: "#D9D9D9",
+        raven: "#050301",
       },
       transitionProperty: {
         staggeredReveal: "opacity",

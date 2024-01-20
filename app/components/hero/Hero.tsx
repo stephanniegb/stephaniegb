@@ -107,10 +107,9 @@ const Hero = () => {
             ease: [0.43, 0.13, 0.23, 0.96],
             delay: 2,
           }}
-          className="font-thin  text-[.8em] absolute bottom-0 right-0 z-10 w-[30vw] px-4 py-10 "
+          className="font-thin  text-[.8em] absolute bottom-0 right-0 z-10 sm:w-[80%] md:w-[50vw] lg:w-[30vw] px-4 py-10 "
         >
-          Currently available for freelance worldwide available for freelance
-          jobs available for freelance jobs{" "}
+          Currently available for freelance worldwide{" "}
           <span className="text-lemon pt-2 h-[25px] pr-2 inline-block">
             <World />
           </span>

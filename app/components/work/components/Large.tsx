@@ -12,7 +12,6 @@ import ProjectsData from "@/data/projects.json";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import { GlobalContext } from "@/app/context/GlobalContext";
 import { useDebounce } from "@/hooks/useDebounce";
-
 import images from "../../scene/assets/images";
 import Scene from "../../scene/Scene";
 import Archive from "./Archive";
@@ -24,7 +23,7 @@ const Large = () => {
   const { cursor } = useContext(GlobalContext);
 
   const [imageUrl, setImageUrl] = useState(
-    "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    "/Screenshot 2023-10-22 at 8.34.54 PM.png"
   );
 
   function hideImage() {

@@ -88,7 +88,7 @@ const Footer = ({
         style={{
           scaleY: scaleProgress,
         }}
-        className="w-[90%]  flex flex-col pb-4  lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]"
+        className="w-[90%] md:w-[80%]  flex flex-col pb-4  lg:grid lg:grid-cols-5 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]"
       >
         <SocialLink handler="@stephanniegb" social="Twitter">
           <X />
