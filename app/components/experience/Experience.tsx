@@ -4,7 +4,6 @@ import Techs from "./components/Techs";
 import GlobalContext from "@/app/context/GlobalContext";
 import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
 import RightArrow from "@/svg/RightArrow";
-import AnimatedLines from "../animation/AnimatedLines";
 
 const Experience = () => {
   const { setTextColor } = useContext(GlobalContext);
