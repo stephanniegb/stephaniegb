@@ -5,6 +5,7 @@ const Resume = () => {
         style={{
           width: "100vw",
           height: "100vh",
+          maxWidth: "100%",
         }}
         src="/Stephanie Egbuonu's Resume.pdf"
       ></iframe>
