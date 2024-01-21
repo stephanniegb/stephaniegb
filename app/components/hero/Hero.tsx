@@ -90,7 +90,7 @@ const Hero = () => {
               ease: [0.43, 0.13, 0.23, 0.96],
               delay: 1.9,
             }}
-            className="text-[1.1em] md:text-pFS inline-block"
+            className="text-[1.1em] font-thin md:text-pFS inline-block"
           >
             Front End Software Engineer
           </m.span>
@@ -107,10 +107,12 @@ const Hero = () => {
             ease: [0.43, 0.13, 0.23, 0.96],
             delay: 2,
           }}
-          className="font-thin  text-[.8em] absolute bottom-0 right-0 z-10 sm:w-[80%] md:w-[50vw] lg:w-[30vw] px-4 py-10 "
+          className="font-thin flex items-center justify-end gap-3  text-end text-[.8em] absolute bottom-0 right-0 z-10 sm:w-[80%] md:w-[50vw] lg:w-[30vw] px-4 py-10 "
         >
-          Currently available for freelance worldwide{" "}
-          <span className="text-lemon pt-2 h-[25px] pr-2 inline-block">
+          <span className="inline-block">
+            Currently available for freelance worldwide{" "}
+          </span>
+          <span className="text-lemon  h-[25px] pr-2 inline-block">
             <World />
           </span>
         </m.p>
