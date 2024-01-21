@@ -97,14 +97,12 @@ const Small = () => {
     const minSkew = -20;
     const maxSkew = 20;
     const skew = Math.min(Math.max(velocity * 15, minSkew), maxSkew);
-    // console.log(Math.min(Math.abs(acceleration) + 1, 1.1));
 
     //Assign skew and smooth scrolling to the scroll container
     if (scrollContainer.current) {
       (
         scrollContainer.current as HTMLElement
       ).style.transform = `skewY(${skew}deg)`;
-      // imageRef.current.style.scale = scale;
     }
 
     //loop vai raf
