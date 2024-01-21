@@ -1,12 +1,16 @@
 const Resume = () => {
   return (
-    <div className="max-w-[100vw]">
-      <iframe
-        width="100%"
-        height="100vh"
-        src="/Stephanie Egbuonu's Resume.pdf"
-      ></iframe>
-    </div>
+    // <iframe
+    //   style={{
+    //     width: "100vw",
+    //     height: "100vh",
+    //     maxWidth: "100%",
+    //   }}
+    //   src="/Stephanie Egbuonu's Resume.pdf"
+    // ></iframe>
+    <p className="text-white">
+      Open a PDF file <a href="/Stephanie Egbuonu's Resume.pdf">example</a>.
+    </p>
   );
 };
 
