@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion as m, useInView, useScroll, useTransform } from "framer-motion";
-import Loader from "./components/loader/Loader";
+import { motion as m, useScroll } from "framer-motion";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
@@ -39,7 +38,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative">
+    <main className=" relative">
       <GlobalContextProvider>
         {loader ? (
           <PseudoLoader />
@@ -48,12 +47,14 @@ export default function Home() {
             <Cursor />
             <Navbar />
             <m.div ref={grandParentRef}>
-              <Hero />
-              <About />
-              <ShaderContextProvider>
-                <Experience />
-                <Work />
-              </ShaderContextProvider>
+              <div className="bg-noise-bg  bg-offWhite">
+                <Hero />
+                <About />
+                <ShaderContextProvider>
+                  <Experience />
+                  <Work />
+                </ShaderContextProvider>
+              </div>
               <Wave />
               <Footer scrollYProgress={scrollYProgress} />
             </m.div>

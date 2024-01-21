@@ -103,7 +103,6 @@ const Small = () => {
       (
         scrollContainer.current as HTMLElement
       ).style.transform = `skewY(${skew}deg)`;
-      // imageRef.current.style.scale = scale;
     }
 
     //loop vai raf

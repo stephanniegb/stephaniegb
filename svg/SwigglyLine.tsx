@@ -1,5 +1,5 @@
 import { motion as m, useInView } from "framer-motion";
-import { Dispatch, SetStateAction, useRef } from "react";
+import { useRef } from "react";
 const SwigglyLine = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once: true });
@@ -16,8 +16,8 @@ const SwigglyLine = () => {
     <m.svg
       ref={ref}
       onAnimationComplete={() => console.log("Done")}
-      width="clamp(31rem,50vw,45rem)"
-      height="12rem"
+      width={"35vw"}
+      height={"100%"}
       variants={variants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
@@ -26,6 +26,8 @@ const SwigglyLine = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{
+        width: "100%",
+        height: "100%",
         strokeDasharray: 1200,
         strokeDashoffset: 1200,
       }}
