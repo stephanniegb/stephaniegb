@@ -38,7 +38,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative">
+    <main className=" relative">
       <GlobalContextProvider>
         {loader ? (
           <PseudoLoader />

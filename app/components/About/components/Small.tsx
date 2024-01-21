@@ -31,7 +31,7 @@ const Small = () => {
   return (
     <section
       ref={containerRef}
-      className="z-[1] text-[#d0d0c5] min-h-[50vh]   bg-black relative px-8 md:px-32 py-16 flex place-content-center flex-col gap-16"
+      className="z-[1] text-[#d0d0c5] min-h-[50vh] max-h-[600px]   bg-black relative px-8 md:px-32 py-16 flex place-content-center flex-col gap-16"
     >
       <div>
         <h3 className="uppercase">About myself</h3>

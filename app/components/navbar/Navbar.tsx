@@ -63,11 +63,11 @@ const Navbar = () => {
         </span>
       </Link>
       <nav>
-        <ul className="flex gap-6 md:gap-8">
+        <ul className="flex font-thin gap-4 md:gap-8">
           <li>
             <Link
               className="text-[.9em]  md:text-[1.17em] resumeLink"
-              href={"/resume"}
+              href={"/resume.pdf"}
             >
               Resume
             </Link>
