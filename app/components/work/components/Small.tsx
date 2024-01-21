@@ -2,7 +2,6 @@ import useWindowSize from "@/hooks/useWindowSize";
 import RightArrow from "@/svg/RightArrow";
 import { useEffect, useRef, useState } from "react";
 import Archive from "./Archive";
-// import SlideInBorder from "../../animation/SlideInBorder";
 import { motion as m, useInView } from "framer-motion";
 import AnimatedBorder from "../../animation/AnimatedBorder";
 
