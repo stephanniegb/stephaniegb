@@ -22,7 +22,7 @@ const PseudoLoader = () => {
   return (
     <AnimatePresence mode="wait">
       <section className="grid bg-black z-[1] h-screen text-[#d0d0c5] relative overflow-hidden">
-        <div className="h-screen grid justify-center w-1/5 absolute right-0">
+        <div className="h-screen grid justify-center w-2/5 lg:w-1/5 absolute right-0">
           <m.p
             variants={variants}
             initial={{
@@ -32,7 +32,7 @@ const PseudoLoader = () => {
               opacity: 0,
             }}
             transition={{ delay: 2.7, ...transition }}
-            className="text-[12vw] lg:text-[8vw] font-extrabold"
+            className="text-[20vw] lg:text-[8vw] font-extrabold"
           >
             {progress}
           </m.p>

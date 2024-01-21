@@ -63,30 +63,8 @@ const Navbar = () => {
         </span>
       </Link>
       <nav>
-        <ul className="flex gap-6 md:gap-8">
-          <li>
-            <Link
-              className="text-[.9em]  md:text-[1.17em] resumeLink"
-              href={"/resume"}
-            >
-              Resume
-            </Link>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="5em"
-              height="1.2em"
-              viewBox="0 0 200 50"
-              className="navSwiggly"
-            >
-              <path
-                d="M0 30 C 20 20, 40 40, 60 30 S 100 20, 120 30 S 160 20, 200 30"
-                fill="none"
-                stroke="#03730B"
-                strokeWidth="3"
-              />
-            </svg>
-          </li>
-          <li>
+        <ul className="flex font-thin gap-4 md:gap-8">
+          <li className="block lg:hidden">
             <button
               onClick={handleScrollToContact}
               className="text-[.9em] md:text-[1.17em] bg-none flex items-center gap-2 group"
@@ -107,6 +85,51 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
+          </li>
+
+          <li className="hidden lg:block">
+            <button
+              onClick={handleScrollToContact}
+              className="text-[.9em] md:text-[1.17em] bg-none flex items-center gap-2 group contactBtn"
+              title="contact me"
+            >
+              Contact
+            </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="5em"
+              height="1.2em"
+              viewBox="0 0 200 50"
+              className="navSwiggly"
+            >
+              <path
+                d="M0 30 C 20 20, 40 40, 60 30 S 100 20, 120 30 S 160 20, 200 30"
+                fill="none"
+                stroke="#03730B"
+                strokeWidth="3"
+              />
+            </svg>
+          </li>
+          <li className="hidden lg:block">
+            <Link
+              className="text-[.9em] md:text-[1.17em] bg-none flex items-center gap-2 group"
+              href={"/resume.pdf"}
+            >
+              Résumé
+              <span className="aria-hidden transition-[transform,color] duration-500 ease-in-out transform group-hover:text-lemon group-hover:-translate-y-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M196 64v104a4 4 0 0 1-8 0V73.66L66.83 194.83a4 4 0 0 1-5.66-5.66L182.34 68H88a4 4 0 0 1 0-8h104a4 4 0 0 1 4 4"
+                  />
+                </svg>
+              </span>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -130,6 +130,6 @@ canvas {
   stroke-dashoffset: 500;
   transition: all 0.5s ease-in-out;
 }
-.resumeLink:hover ~ .navSwiggly {
+.contactBtn:hover ~ .navSwiggly {
   stroke-dashoffset: 0;
 }

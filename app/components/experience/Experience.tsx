@@ -1,9 +1,11 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
-import AnimatedLines from "../animation/AnimatedLines";
+
 import AnimatedText from "../animation/AnimatedText";
 import Techs from "./components/Techs";
 import GlobalContext from "@/app/context/GlobalContext";
+import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
+import RightArrow from "@/svg/RightArrow";
+import AnimatedLines from "../animation/AnimatedLines";
 
 const Experience = () => {
   const { setTextColor } = useContext(GlobalContext);
@@ -42,7 +44,6 @@ const Experience = () => {
         el="h2"
         className="text-center h-fit text-brown text-[15vw]  uppercase font-semibold"
       />
-
       <div className="text-center md:mt-8 lg:mt-16">
         <AnimatedLines
           text="I have two years of experience
@@ -57,6 +58,17 @@ const Experience = () => {
       </h3>
       <div ref={ref}>
         <Techs isInView={isInView} />
+        <a
+          href={"/resume.pdf"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-[1.1em] w-fit flex gap-4 px-8 py-8 items-center  group"
+        >
+          View full Résumé{" "}
+          <span className="transition-[transform,color] duration-500 ease-in-out group-hover:text-lemon transform group-hover:-rotate-[30deg]">
+            <RightArrow />
+          </span>
+        </a>
       </div>
       {/* <StaggeredReveal /> */}
     </section>

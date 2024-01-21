@@ -94,9 +94,9 @@ const Small = () => {
     const difference = skewData.current - skewData.rounded;
     const acceleration = difference / windowSize.width;
     const velocity = +acceleration;
-    const skew = velocity * 25;
-    const scale = Math.min(Math.abs(acceleration) + 1, 1.1) - 0.3;
-    // console.log(Math.min(Math.abs(acceleration) + 1, 1.1));
+    const minSkew = -15;
+    const maxSkew = 15;
+    const skew = Math.min(Math.max(velocity * 15, minSkew), maxSkew);
 
     //Assign skew and smooth scrolling to the scroll container
     if (scrollContainer.current) {
