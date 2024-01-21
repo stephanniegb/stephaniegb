@@ -67,7 +67,7 @@ const Navbar = () => {
           <li>
             <Link
               className="text-[.9em]  md:text-[1.17em] resumeLink"
-              href={"/Stephanie Egbuonu's Resume.pdf"}
+              href={"/resume.pdf"}
             >
               Resume
             </Link>

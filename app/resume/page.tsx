@@ -9,7 +9,7 @@ const Resume = () => {
     //   src="/Stephanie Egbuonu's Resume.pdf"
     // ></iframe>
     <p className="text-white">
-      Open a PDF file <a href="/Stephanie Egbuonu's Resume.pdf">example</a>.
+      Open a PDF file <a href="/resume.pdf">example</a>.
     </p>
   );
 };
