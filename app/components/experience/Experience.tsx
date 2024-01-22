@@ -40,27 +40,25 @@ const Experience = () => {
       <AnimatedLines
         text="Experience"
         el="h2"
-        className="text-center h-fit text-brown text-[15vw]  uppercase font-semibold"
+        className="text-center h-fit text-brown text-[15vw]  lg:text-[13vw]  uppercase"
       />
-      <div className="text-center md:mt-8 lg:mt-16">
+      <div className="text-center">
         <AnimatedLines
           text="I have two years of experience
           in web development, I remain steadfast in my commitment to continuous in web development"
           className="
-            my-0 mx-auto lg:w-[60%]
+            my-0 mx-auto lg:w-[60%] font-thin
             "
         />
       </div>
-      <h3 className="text-center lg:text-3xl my-4">
+      <h3 className="text-center lg:text-3xl  my-4">
         Some technologies I have worked with:
       </h3>
       <div ref={ref}>
         <Techs isInView={isInView} />
         <a
           href={"/resume.pdf"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline text-[1.1em] w-fit flex gap-4 px-8 py-8 items-center  group"
+          className="underline text-[1.1em] w-fit flex gap-4 px-8 py-8  items-center  group"
         >
           View full Résumé{" "}
           <span className="transition-[transform,color] duration-500 ease-in-out group-hover:text-lemon transform group-hover:-rotate-[30deg]">

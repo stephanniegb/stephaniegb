@@ -84,7 +84,7 @@ const Large = () => {
     <div
       id="about"
       ref={containerRef}
-      className="h-[300vh] lg:pb-32 text-[#ececdf]  z-[1] bg-[#d9d9d9] bg-noise-bg relative"
+      className="h-[300vh]  text-[#ececdf] z-[1] bg-[#d9d9d9] bg-noise-bg relative"
     >
       <m.div
         style={{

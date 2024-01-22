@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion as m, useScroll } from "framer-motion";
+import { AnimatePresence, motion as m, useScroll } from "framer-motion";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
@@ -12,6 +12,7 @@ import Work from "./components/work/Work";
 import { GlobalContextProvider } from "./context/GlobalContext";
 import Wave from "@/svg/Wave";
 import PseudoLoader from "./components/loader/PseudoLoader";
+import PageTransition from "./components/animation/PageTransition";
 
 export default function Home() {
   const [loader, setLoader] = useState(true);
@@ -46,9 +47,11 @@ export default function Home() {
           <>
             <Cursor />
             <Navbar />
+
             <m.div ref={grandParentRef}>
               <div className="bg-noise-bg  bg-offWhite">
                 <Hero />
+
                 <About />
                 <ShaderContextProvider>
                   <Experience />
