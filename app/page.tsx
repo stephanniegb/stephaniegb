@@ -1,22 +1,21 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion as m, useScroll } from "framer-motion";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import About from "./components/About/About";
-import { ShaderContextProvider } from "./context/ShaderContext";
 import Cursor from "./components/cursor/Cursor";
 import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
-import { GlobalContextProvider } from "./context/GlobalContext";
 import Wave from "@/svg/Wave";
 import PseudoLoader from "./components/loader/PseudoLoader";
 import PageTransition from "./components/animation/PageTransition";
+import GlobalContext from "./context/GlobalContext";
 
 export default function Home() {
+  const { opaque } = useContext(GlobalContext);
   const [loader, setLoader] = useState(true);
-
   const grandParentRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: grandParentRef,
@@ -40,30 +39,30 @@ export default function Home() {
 
   return (
     <main className=" relative">
-      <GlobalContextProvider>
-        {loader ? (
-          <PseudoLoader />
-        ) : (
-          <>
-            <Cursor />
-            <Navbar />
-
-            <m.div ref={grandParentRef}>
-              <div className="bg-noise-bg  bg-offWhite">
-                <Hero />
-
-                <About />
-                <ShaderContextProvider>
-                  <Experience />
-                  <Work />
-                </ShaderContextProvider>
-              </div>
-              <Wave />
-              <Footer scrollYProgress={scrollYProgress} />
-            </m.div>
-          </>
-        )}
-      </GlobalContextProvider>
+      {loader ? (
+        <PseudoLoader />
+      ) : (
+        <>
+          <Cursor />
+          <Navbar />
+          <m.div
+            className={`${
+              opaque ? "opacity-100" : "opacity-0"
+            } transition-[opacity] duration-1000
+             `}
+            ref={grandParentRef}
+          >
+            <div className="bg-noise-bg  bg-offWhite">
+              <Hero />
+              <About />
+              <Experience />
+              <Work />
+            </div>
+            <Wave />
+            <Footer scrollYProgress={scrollYProgress} />
+          </m.div>
+        </>
+      )}
     </main>
   );
 }

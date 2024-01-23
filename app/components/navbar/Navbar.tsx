@@ -5,17 +5,17 @@ import Link from "next/link";
 import { useContext, useRef, useState } from "react";
 
 const Navbar = () => {
-  const { textColor, setTextColor } = useContext(GlobalContext);
+  const { textColor, setTextColor, setOpaque } = useContext(GlobalContext);
   const [animationKey, setAnimationKey] = useState("");
 
   const transitionRef = useRef(null);
-  const [isV, setIsV] = useState(true);
+
   // const animateScrollToBottom = () => {
   //   const scrollToBottom = () => {
   //     const currentPosition = window.scrollY || window.pageYOffset;
   //     const targetPosition = document.body.scrollHeight;
   //     const distance = targetPosition - currentPosition;
-  //     const duration = 1000; // Adjust the duration as needed
+  //     const duration = 2000; // Adjust the duration as needed
 
   //     let startTime: number;
 
@@ -46,10 +46,15 @@ const Navbar = () => {
   //   animateScrollToBottom();
   // };
   const handleScrollToContact: () => void = () => {
-    setIsV(false);
-    window.scrollTo(0, document.body.scrollHeight);
     setTextColor("text-[#090908]");
     setAnimationKey(animationKey === "emma" ? "emma-reversed" : "emma");
+    setOpaque(false);
+    setTimeout(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+    }, 800);
+    setTimeout(() => {
+      setOpaque(true);
+    }, 1500);
   };
   const variants = {
     visible: { y: 0 },

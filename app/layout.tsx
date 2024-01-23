@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import Loading from "./loading";
 import SmoothScroll from "./SmoothScroll";
+import { GlobalContextProvider } from "./context/GlobalContext";
+import { ShaderContextProvider } from "./context/ShaderContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-raven font-thin text-[#090908]">
         <Suspense fallback={<Loading />}>
-          <SmoothScroll>{children}</SmoothScroll>
+          <SmoothScroll>
+            <GlobalContextProvider>
+              <ShaderContextProvider>{children}</ShaderContextProvider>
+            </GlobalContextProvider>
+          </SmoothScroll>
         </Suspense>
       </body>
     </html>
