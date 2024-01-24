@@ -3,7 +3,7 @@ import RightArrow from "@/svg/RightArrow";
 const ArchiveLink = ({ text, url }: { text: string; url: string }) => {
   return (
     <a
-      className="underline text-[1.1em] w-fit flex gap-4 items-center group"
+      className="underline text-[1.1em] w-fit flex gap-2 items-center group"
       href={url}
       target="_blank"
       rel="noopener noreferrer"

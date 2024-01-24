@@ -10,7 +10,6 @@ import Experience from "./components/experience/Experience";
 import Work from "./components/work/Work";
 import Wave from "@/svg/Wave";
 import PseudoLoader from "./components/loader/PseudoLoader";
-import PageTransition from "./components/animation/PageTransition";
 import GlobalContext from "./context/GlobalContext";
 
 export default function Home() {

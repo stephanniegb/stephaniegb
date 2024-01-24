@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AnimatedLines from "../animation/AnimatedLines";
 import Techs from "./components/Techs";
 import GlobalContext from "@/app/context/GlobalContext";
-import StaggeredReveal from "../RevealAnimations/StaggeredReveal";
 import RightArrow from "@/svg/RightArrow";
 
 const Experience = () => {
@@ -44,8 +43,7 @@ const Experience = () => {
       />
       <div className="text-center">
         <AnimatedLines
-          text="I have two years of experience
-          in web development, I remain steadfast in my commitment to continuous in web development"
+          text="I have two years of experience in web development, and I am always eager to learn more and explore new horizons in this fast-paced industry."
           className="
             my-0 mx-auto lg:w-[60%] font-thin
             "

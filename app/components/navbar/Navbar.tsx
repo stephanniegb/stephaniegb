@@ -47,7 +47,7 @@ const Navbar = () => {
   // };
   const handleScrollToContact: () => void = () => {
     setTextColor("text-[#090908]");
-    setAnimationKey(animationKey === "emma" ? "emma-reversed" : "emma");
+    // setAnimationKey(animationKey === "emma" ? "emma-reversed" : "emma");
     setOpaque(false);
     setTimeout(() => {
       window.scrollTo(0, document.body.scrollHeight);
