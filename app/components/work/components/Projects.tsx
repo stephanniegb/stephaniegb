@@ -1,13 +1,9 @@
 import RightArrow from "@/svg/RightArrow";
 import AnimatedBorder from "../../animation/AnimatedBorder";
 interface ProjectsProps {
-  id: string;
   projTitle: string;
-  description?: string;
-  imgUrl?: string;
   techs: string[];
   projectUrl?: string;
-  images: string[];
 }
 
 const Project = ({ techs, projTitle, projectUrl }: ProjectsProps) => {

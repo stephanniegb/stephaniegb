@@ -22,9 +22,7 @@ const Large = () => {
 
   const { cursor } = useContext(GlobalContext);
 
-  const [imageUrl, setImageUrl] = useState(
-    "/Screenshot 2023-10-22 at 8.34.54 PM.png"
-  );
+  const [imageUrl, setImageUrl] = useState("/projects/image-3.png");
 
   function hideImage() {
     setShowProj(false);
@@ -44,31 +42,18 @@ const Large = () => {
           switch (idx) {
             case 0:
               setImageUrl(images.imageOne);
-
               break;
             case 1:
               setImageUrl(images.imageTwo);
-
               break;
             case 2:
               setImageUrl(images.imageThree);
-
               break;
             case 3:
               setImageUrl(images.imageFour);
-
               break;
             case 4:
               setImageUrl(images.imageFive);
-
-              break;
-            case 5:
-              setImageUrl(images.imageSix);
-
-              break;
-            case 6:
-              setImageUrl(images.imageSeven);
-
               break;
           }
         });
@@ -135,14 +120,12 @@ const Large = () => {
           className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
         >
           {ProjectsData.map((project) => {
-            const { id, images, tech, title, url } = project;
+            const { id, tech, title, url } = project;
             return (
               <Project
                 key={id}
-                id={id}
                 techs={tech}
                 projTitle={title}
-                images={images}
                 projectUrl={url}
               />
             );

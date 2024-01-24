@@ -1,21 +1,24 @@
 import useWindowSize from "@/hooks/useWindowSize";
 import RightArrow from "@/svg/RightArrow";
-import { useEffect, useRef, useState } from "react";
+import ProjectsData from "@/data/projects.json";
+import { useEffect, useRef } from "react";
 import Archive from "./Archive";
-// import SlideInBorder from "../../animation/SlideInBorder";
 import { motion as m, useInView } from "framer-motion";
 import AnimatedBorder from "../../animation/AnimatedBorder";
+import Image from "@/util/Image";
 
 const ProjectLink = ({
   alt,
   src,
   title,
   url,
+  fallback,
 }: {
   src: string;
   alt: string;
   title: string;
   url: string;
+  fallback: string;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once: false });
@@ -42,15 +45,15 @@ const ProjectLink = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <m.img
+        <m.div
           variants={imageVariants}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           transition={transition}
-          src={src}
-          alt={alt}
           className="w-full h-full object-cover"
-        />
+        >
+          <Image src={src} alt={alt} fallback={fallback} />
+        </m.div>
         <figcaption>
           <h4 className="flex gap-4  items-center text-[5vw] font-Bruno_Ace text-brown uppercase">
             {title}{" "}
@@ -115,34 +118,22 @@ const Small = () => {
     <section className="z-[1] bg-noise-bg relative px-4 bg-[#D9D9D9] ">
       <h3 className="uppercase px-8 text-brown">Recent Projects</h3>
       <div ref={scrollContainer} className="flex flex-col py-16 gap-32">
-        <ProjectLink
-          url=""
-          alt=""
-          src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
-          title="Scissors"
-        />
-        <AnimatedBorder height="4px" />
-        <ProjectLink
-          url=""
-          alt=""
-          src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
-          title="Scissors"
-        />
-        <AnimatedBorder height="4px" />
-        <ProjectLink
-          url=""
-          alt=""
-          src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
-          title="Scissors"
-        />
-        <AnimatedBorder height="4px" />
-        <ProjectLink
-          url=""
-          alt=""
-          src="/Screenshot 2023-10-22 at 8.34.54 PM.png"
-          title="Scissors"
-        />
-        <AnimatedBorder height="4px" />
+        {ProjectsData.map((proj) => {
+          const { alt, fallback, id, src, tech, title, url } = proj;
+          return (
+            <>
+              <ProjectLink
+                key={id}
+                fallback={fallback}
+                url={url}
+                alt={alt}
+                src={src}
+                title={title}
+              />
+              <AnimatedBorder height="4px" />
+            </>
+          );
+        })}
       </div>
       <Archive />
     </section>
