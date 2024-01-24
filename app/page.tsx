@@ -48,7 +48,7 @@ export default function Home() {
             className={`${
               opaque ? "opacity-100" : "opacity-0"
             } transition-[opacity] duration-1000
-             `}
+             z-[1]`}
             ref={grandParentRef}
           >
             <div className="bg-noise-bg  bg-offWhite">
