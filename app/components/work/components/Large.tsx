@@ -135,14 +135,12 @@ const Large = () => {
           className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
         >
           {ProjectsData.map((project) => {
-            const { id, images, tech, title, url } = project;
+            const { id, tech, title, url } = project;
             return (
               <Project
                 key={id}
-                id={id}
                 techs={tech}
                 projTitle={title}
-                images={images}
                 projectUrl={url}
               />
             );

@@ -2,56 +2,31 @@
   {
     "id": "project1",
     "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
-    "tech": ["React", "TypeScript", "Nodejs", "Express"],
-    "title": "Scissors",
-    "images": [
-      "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-      "/Screenshot 2023-11-10 at 4.13.47 PM.png",
-      "/Screenshot 2023-11-10 at 4.14.13 PM.png"
-    ]
+    "tech": [" Nuxt JS", "Three.js ", "Javascript"],
+    "title": "NuXT"
   },
   {
     "id": "project2",
     "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
-    "tech": ["VueJs", "Javascript", "Sass"],
-    "title": "goShop",
-    "images": [
-      "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-      "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-      "/Screenshot 2023-11-10 at 4.29.56 PM.png"
-    ]
+    "tech": ["Next Js", "TypeScript", "Tailwind"],
+    "title": "17th Apartment"
   },
   {
     "id": "project3",
     "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
-    "tech": ["VueJs", "Javascript", "Sass"],
-    "title": "goShop",
-    "images": [
-      "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-      "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-      "/Screenshot 2023-11-10 at 4.29.56 PM.png"
-    ]
+    "tech": ["React Js", "Javascript", "Sass"],
+    "title": "AVVIC Bank"
   },
   {
     "id": "project4",
     "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
-    "tech": ["React", "TypeScript", "Nodejs", "Express"],
-    "title": "Scissors",
-    "images": [
-      "/Screenshot 2023-10-22 at 8.43.49 PM.png",
-      "/Screenshot 2023-11-10 at 4.13.47 PM.png",
-      "/Screenshot 2023-11-10 at 4.14.13 PM.png"
-    ]
+    "tech": ["React JS", "Javascript", "Nodejs", "Express"],
+    "title": "Scissors"
   },
   {
     "id": "project5",
     "url": "https://www.youtube.com/watch?v=j0JMYs8rTfU",
-    "tech": ["VueJs", "Javascript", "Sass"],
-    "title": "goShop",
-    "images": [
-      "/Screenshot 2023-11-10 at 4.27.31 PM.png",
-      "/Screenshot 2023-11-10 at 4.28.55 PM.png",
-      "/Screenshot 2023-11-10 at 4.29.56 PM.png"
-    ]
+    "tech": ["React JS", "Javascript", "CSS"],
+    "title": "Campus neighbor"
   }
 ]
