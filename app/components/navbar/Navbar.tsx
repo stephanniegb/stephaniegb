@@ -54,7 +54,7 @@ const Navbar = () => {
     }, 800);
     setTimeout(() => {
       setOpaque(true);
-    }, 1500);
+    }, 1000);
   };
   const variants = {
     visible: { y: 0 },
