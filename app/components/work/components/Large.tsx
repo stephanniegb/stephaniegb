@@ -16,7 +16,6 @@ import images from "../../scene/assets/images";
 import Scene from "../../scene/Scene";
 import Archive from "./Archive";
 import Project from "./Projects";
-import Image from "@/util/Image";
 const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
@@ -112,11 +111,6 @@ const Large = () => {
         ref={containerRef}
         className="grid relative"
       >
-        {/* <Image
-          src="/projects/image-1.webp"
-          alt="proj"
-          fallback="/projects/image-1.png"
-        /> */}
         <h3 className="uppercase px-8  text-brown">Recent Projects</h3>
         <Scene showProj={showProj} imageUrl={imageUrl} />
         <ul
