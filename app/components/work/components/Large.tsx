@@ -16,15 +16,14 @@ import images from "../../scene/assets/images";
 import Scene from "../../scene/Scene";
 import Archive from "./Archive";
 import Project from "./Projects";
+import Image from "@/util/Image";
 const Large = () => {
   const { setIsHovered, setOffset, offset, setMouse, mouse } =
     useContext(ShaderContext);
 
   const { cursor } = useContext(GlobalContext);
 
-  const [imageUrl, setImageUrl] = useState(
-    "/Screenshot 2023-10-22 at 8.34.54 PM.png"
-  );
+  const [imageUrl, setImageUrl] = useState("/projects/image-3.png");
 
   function hideImage() {
     setShowProj(false);
@@ -44,31 +43,18 @@ const Large = () => {
           switch (idx) {
             case 0:
               setImageUrl(images.imageOne);
-
               break;
             case 1:
               setImageUrl(images.imageTwo);
-
               break;
             case 2:
               setImageUrl(images.imageThree);
-
               break;
             case 3:
               setImageUrl(images.imageFour);
-
               break;
             case 4:
               setImageUrl(images.imageFive);
-
-              break;
-            case 5:
-              setImageUrl(images.imageSix);
-
-              break;
-            case 6:
-              setImageUrl(images.imageSeven);
-
               break;
           }
         });
@@ -126,6 +112,11 @@ const Large = () => {
         ref={containerRef}
         className="grid relative"
       >
+        {/* <Image
+          src="/projects/image-1.webp"
+          alt="proj"
+          fallback="/projects/image-1.png"
+        /> */}
         <h3 className="uppercase px-8  text-brown">Recent Projects</h3>
         <Scene showProj={showProj} imageUrl={imageUrl} />
         <ul
