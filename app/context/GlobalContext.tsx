@@ -1,3 +1,4 @@
+"use client";
 import {
   Dispatch,
   ReactNode,
@@ -25,6 +26,8 @@ type ContextProp = {
   };
   setTextColor: Dispatch<SetStateAction<string>>;
   textColor: string;
+  opaque: boolean;
+  setOpaque: Dispatch<SetStateAction<boolean>>;
 };
 export const GlobalContext = createContext<ContextProp>({
   cursorText: "",
@@ -37,6 +40,8 @@ export const GlobalContext = createContext<ContextProp>({
   cursor: { x: 0, y: 0 },
   setTextColor: () => {},
   textColor: "",
+  opaque: true,
+  setOpaque: () => {},
 });
 
 export const GlobalContextProvider = ({
@@ -52,6 +57,7 @@ export const GlobalContextProvider = ({
     x: 0,
     y: 0,
   });
+  const [opaque, setOpaque] = useState(true);
 
   const contextValue = {
     cursorText,
@@ -64,6 +70,8 @@ export const GlobalContextProvider = ({
     setCursor,
     textColor,
     setTextColor,
+    opaque,
+    setOpaque,
   };
   return (
     <GlobalContext.Provider value={contextValue}>

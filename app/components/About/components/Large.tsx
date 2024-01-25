@@ -84,7 +84,7 @@ const Large = () => {
     <div
       id="about"
       ref={containerRef}
-      className="h-[300vh] lg:pb-32 text-[#ececdf]  z-[1] bg-[#d9d9d9] bg-noise-bg relative"
+      className="h-[300vh]  text-[#ececdf] z-[1] bg-[#d9d9d9] bg-noise-bg relative"
     >
       <m.div
         style={{
@@ -176,18 +176,21 @@ const Large = () => {
             className="absolute flex flex-col left-0 px-[5vw]"
           >
             <span>I'm</span>
-            <h2 className="text-lemon">Stephanie Egbuonu</h2>
+            <h2 className="text-lemon">Stephanie Egbuonu!</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio eos labore aliquam laborum doloribus atque quod harum,
-              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-              earum aliquid commodi atque!
+              In the not-so-distant past of 2021, I was your typical
+              biochemistry major navigating the college scene until the allure
+              of web development captured my interest. Fast forward to now, and
+              I've had the incredible privilege of building accessible,
+              user-friendly, and blazing-fast web applications.
             </p>
             <p className="mt-4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio eos labore aliquam laborum doloribus atque quod harum,
-              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-              earum aliquid commodi atque!
+              Passion is my driving force. For me, I find my stride where
+              creativity meets user-friendly interfaces… With each project, I
+              delight in the opportunity to venture into new territories while
+              maintaining a commitment to quality. I take pride in ensuring that
+              the applications I build not only look good but also operate
+              seamlessly under the hood.
             </p>
           </m.div>
           <m.div
@@ -197,12 +200,11 @@ const Large = () => {
             }}
             className="absolute left-0 px-[5vw] "
           >
-            <h2 className="text-lemon">I Also</h2>
+            <h2 className="text-lemon">Also...</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio eos labore aliquam laborum doloribus atque quod harum,
-              delectus in quisquam, animi temporibus exercitationem ut! Nemo a
-              earum aliquid commodi atque!
+              Away from my computer, you'll find me getting dressed up,
+              exploring new places, places hanging out with family and friends,
+              and attempting some dance moves.
             </p>
           </m.div>
 

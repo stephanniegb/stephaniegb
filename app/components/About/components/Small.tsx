@@ -38,9 +38,9 @@ const Small = () => {
         <SwigglyStroke />
       </div>
       <h2 className="text-pFS  uppercase">
-        I am Stephanie Egbuonu Lorem, ipsum dolor sit amet{" "}
-        <span className="text-lemon">consectetur</span> adipisicing elit.
-        Distinctio eos labore aliquam laborum doloribus atque quod harum,!
+        I am Stephanie Egbuonu. I build <br />
+        <span className="text-lemon">high-performance</span>, visually appealing
+        interfaces for the web !
       </h2>
 
       <div>
