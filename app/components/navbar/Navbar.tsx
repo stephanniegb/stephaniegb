@@ -2,49 +2,17 @@
 import { GlobalContext } from "@/app/context/GlobalContext";
 import { AnimatePresence, motion as m } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useContext, useRef, useState } from "react";
 
 const Navbar = () => {
   const { textColor, setTextColor, setOpaque } = useContext(GlobalContext);
+  const router = useRouter();
+
   const [animationKey, setAnimationKey] = useState("");
 
   const transitionRef = useRef(null);
 
-  // const animateScrollToBottom = () => {
-  //   const scrollToBottom = () => {
-  //     const currentPosition = window.scrollY || window.pageYOffset;
-  //     const targetPosition = document.body.scrollHeight;
-  //     const distance = targetPosition - currentPosition;
-  //     const duration = 2000; // Adjust the duration as needed
-
-  //     let startTime: number;
-
-  //     const animation = (currentTime: number) => {
-  //       if (!startTime) {
-  //         startTime = currentTime;
-  //       }
-
-  //       const progress = (currentTime - startTime) / duration;
-  //       const easeInOutCubic =
-  //         progress < 0.5
-  //           ? 4 * progress ** 3
-  //           : 1 - Math.pow(-2 * progress + 2, 3) / 2; // Easing function (you can use a different one)
-
-  //       window.scrollTo(0, currentPosition + distance * easeInOutCubic);
-
-  //       if (progress < 1) {
-  //         window.requestAnimationFrame(animation);
-  //       }
-  //     };
-
-  //     window.requestAnimationFrame(animation);
-  //   };
-
-  //   scrollToBottom();
-  // };
-  // const handleScrollToContact: () => void = () => {
-  //   animateScrollToBottom();
-  // };
   const handleScrollToContact: () => void = () => {
     setTextColor("text-[#090908]");
     // setAnimationKey(animationKey === "emma" ? "emma-reversed" : "emma");
@@ -56,6 +24,18 @@ const Navbar = () => {
       setOpaque(true);
     }, 1000);
   };
+
+  const navigateToHome: () => void = () => {
+    // setAnimationKey(animationKey === "emma" ? "emma-reversed" : "emma");
+    setOpaque(false);
+    setTimeout(() => {
+      router.push("/");
+    }, 800);
+    setTimeout(() => {
+      setOpaque(true);
+    }, 1000);
+  };
+
   const variants = {
     visible: { y: 0 },
     hidden: { y: "-100%" },
@@ -69,11 +49,13 @@ const Navbar = () => {
         variants={variants}
         className={`fixed bg-transparent  top-0 flex justify-between items-center w-screen z-[4] px-[.8rem]  md:px-[2rem] py-4  md:py-[.2rem] transition-[color] duration-500 ease-in-out ${textColor}`}
       >
-        <Link href={"/"}>
-          <span className="font-cursive transition-[color] duration-500 ease-in-out hover:text-lemon text-[1.5em] md:text-[2em]">
-            stephani.egb
-          </span>
-        </Link>
+        <span
+          onClick={navigateToHome}
+          className="font-cursive transition-[color] duration-500 ease-in-out hover:text-lemon text-[1.5em] md:text-[2em] cursor-pointer"
+        >
+          stephani.egb
+        </span>
+
         <nav>
           <ul className="flex font-thin gap-4 md:gap-8">
             <li className="block lg:hidden">
@@ -123,7 +105,9 @@ const Navbar = () => {
               </svg>
             </li>
             <li className="hidden lg:block">
-              <Link
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[.9em] md:text-[1.17em] bg-none flex items-center gap-2 group"
                 href={"/resume.pdf"}
               >
@@ -141,7 +125,7 @@ const Navbar = () => {
                     />
                   </svg>
                 </span>
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>
