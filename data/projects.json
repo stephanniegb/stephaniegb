@@ -41,9 +41,9 @@
     "id": "project1",
     "url": "https://nuxt-scene.vercel.app/",
     "tech": [" Nuxt JS", "Three.js ", "Javascript"],
-    "title": "NuXT",
+    "title": "Three.js scene",
     "src": "/projects/image-3.webp",
     "fallback": "/projects/image-3.png",
-    "alt": "screenshot of nuxt project"
+    "alt": "screenshot of three js scene project"
   }
 ]
