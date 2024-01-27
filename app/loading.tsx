@@ -4,7 +4,7 @@ const Loading = () => {
       <div className="h-screen grid justify-center w-1/5 absolute right-0">
         <p className="text-[8vw] font-extrabold">0</p>
       </div>
-      <div className="w-screen h-seventyVH relative grid place-content-center p-4"></div>
+      <div className="w-screen h-seventy relative grid place-content-center p-4"></div>
 
       <div className="w-full flex flex-col opacity-0 transform translate-y-[-50vh] gap-4">
         <div

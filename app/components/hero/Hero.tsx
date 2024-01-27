@@ -57,7 +57,7 @@ const Hero = () => {
       ref={containerRef}
       className="grid bg-black  z-[1] text-[#d0d0c5]   relative overflow-hidden"
     >
-      <div className="w-screen h-seventyVH relative grid place-content-center p-4">
+      <div className="w-screen h-seventy relative grid place-content-center p-4">
         <h1>
           <m.span
             initial={{

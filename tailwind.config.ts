@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
   content: [
@@ -10,16 +11,6 @@ const config: Config = {
     extend: {
       animation: {
         "spin-slow": "spin 3s linear infinite",
-      },
-      height: {
-        screen: "100vh",
-        "100dvh": "100vh",
-        seventyVH: "70vh",
-        "70dvh": "70vh",
-        fiftyVH: "50vh",
-        "50dvh": "50vh",
-        eightyVH: "80vh",
-        "80dvh": "80vh",
       },
       backgroundImage: {
         "gradient-radial":
@@ -69,6 +60,23 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }: { addUtilities: any }) {
+      addUtilities({
+        ".h-screen": {
+          height: ["100dvh", "100vh"],
+        },
+        ".h-seventy": {
+          height: ["70dvh", "70vh"],
+        },
+        ".h-eighty": {
+          height: ["80dvh", "80vh"],
+        },
+        ".h-eightyFive": {
+          height: ["85dvh", "85vh"],
+        },
+      });
+    }),
+  ],
 };
 export default config;

@@ -37,7 +37,7 @@ const PseudoLoader = () => {
             {progress}
           </m.p>
         </div>
-        <div className="w-screen h-seventyVH relative grid place-content-center p-4"></div>
+        <div className="w-screen h-seventy relative grid place-content-center p-4"></div>
 
         <div className="w-full flex flex-col transform translate-y-[-50vh] gap-4">
           <m.div
