@@ -55,7 +55,7 @@ const Footer = ({
   return (
     <m.footer
       id="footer"
-      className=" flex flex-col -z-1 text-[#d0d0c5] sticky bottom-0 justify-between  px-4 w-screen pt-16  h-[85dvh] lg:h-eightyVH"
+      className=" flex flex-col -z-1 text-[#d0d0c5] sticky bottom-0 justify-between  px-4 w-screen pt-16  h-eightyFive lg:h-eighty"
     >
       <m.div
         style={{
