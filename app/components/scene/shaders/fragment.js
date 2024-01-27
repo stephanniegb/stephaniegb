@@ -6,7 +6,8 @@ precision mediump float;
 
   void main() {
     vec3 texture = texture2D(uTexture,vUv).rgb;
-    gl_FragColor = vec4(texture, 1.0);
+    vec3 adjustedColor = texture * 1.2; 
+    gl_FragColor = vec4(adjustedColor, 1.0);
   }
 
 `;
