@@ -1,15 +1,16 @@
 [
   {
-    "id": "project1",
-    "url": "https://nuxt-scene.vercel.app/",
-    "tech": [" Nuxt JS", "Three.js ", "Javascript"],
-    "title": "NuXT",
-    "src": "/projects/image-3.webp",
-    "fallback": "/projects/image-3.png",
-    "alt": "screenshot of nuxt project"
+    "id": "project2",
+    "url": "",
+    "tech": ["Next.js", "Typescript", "Three.js"],
+    "title": "Portfolio",
+    "src": "/projects/image-7.webp",
+    "fallback": "/projects/image-7.png",
+    "alt": "screenshot of portfolio website",
+    "portfolio": true
   },
   {
-    "id": "project2",
+    "id": "project3",
     "url": "https://one7th-apartment.onrender.com/",
     "tech": ["Next Js", "TypeScript", "Tailwind"],
     "title": "17th Apartment",
@@ -18,7 +19,7 @@
     "alt": "screenshot of 17th Apartment project"
   },
   {
-    "id": "project3",
+    "id": "project4",
     "url": "https://avvic-bank.onrender.com/",
     "tech": ["React Js", "Javascript", "Sass"],
     "title": "AVVIC Bank",
@@ -26,15 +27,7 @@
     "fallback": "/projects/image-6.png",
     "alt": "screenshot of AVVIC Bank project"
   },
-  {
-    "id": "project4",
-    "url": "https://scissors-it3t.vercel.app/",
-    "tech": ["React JS", "Javascript", "Nodejs", "Express"],
-    "title": "Scissors",
-    "src": "/projects/image-2.webp",
-    "fallback": "/projects/image-2.png",
-    "alt": "screenshot of Scissors project"
-  },
+
   {
     "id": "project5",
     "url": "https://c-neighbour-v2.vercel.app/",
@@ -43,5 +36,14 @@
     "src": "/projects/image-4.webp",
     "fallback": "/projects/image-4.png",
     "alt": "screenshot of Campus neighbor project"
+  },
+  {
+    "id": "project1",
+    "url": "https://nuxt-scene.vercel.app/",
+    "tech": [" Nuxt JS", "Three.js ", "Javascript"],
+    "title": "NuXT",
+    "src": "/projects/image-3.webp",
+    "fallback": "/projects/image-3.png",
+    "alt": "screenshot of nuxt project"
   }
 ]

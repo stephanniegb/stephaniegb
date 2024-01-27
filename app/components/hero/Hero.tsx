@@ -110,7 +110,7 @@ const Hero = () => {
           className="font-thin flex items-center justify-end gap-3  text-end text-[.8em] absolute bottom-0 right-0 z-10 sm:w-[80%] md:w-[50vw] lg:w-[30vw] px-4 py-10 "
         >
           <span className="inline-block">
-            Currently available for freelance worldwide{" "}
+            Currently available for freelance jobs worldwide{" "}
           </span>
           <span className="text-lemon  h-[25px] pr-2 inline-block">
             <World />

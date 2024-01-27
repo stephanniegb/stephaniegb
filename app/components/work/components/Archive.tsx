@@ -20,6 +20,7 @@ const Archive = () => {
     <div className="w-fit px-8 py-8 my-0 mx-auto z-[1] relative">
       <h3 className="w-fit py-8 text-h3Fs uppercase">Archive</h3>
       <div className="flex flex-col gap-3 justify-center uppercase">
+        <ArchiveLink text="Scissors" url="https://scissors-it3t.vercel.app/" />
         <ArchiveLink
           text="Quiz me"
           url="https://stephegb-quizmeapp101.netlify.app/"
