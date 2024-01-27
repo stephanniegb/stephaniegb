@@ -12,13 +12,20 @@ const SocialLink = ({
   children,
   social,
   handler,
+  url,
 }: {
   children: ReactNode;
   handler: string;
   social: string;
+  url: string;
 }) => {
   return (
-    <div className="border-b-[1px] h-[50px] py-8 lg:border-[1px] border-solid border-[#2a2a28] w-full lg:p-12 lg:rounded-[10px] flex items-center justify-between lg:grid  lg:place-content-center hover:text-lemon  transition-[color] duration-300 cursor-pointer group">
+    <a
+      className=" border-b-[1px] h-[50px] py-8 lg:border-[1px] border-solid border-[#2a2a28] w-full lg:p-12 lg:rounded-[10px] flex items-center justify-between lg:grid  lg:place-content-center hover:text-lemon  transition-[color] duration-300 cursor-pointer group"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="lg:hidden">
         <p className="flex flex-col">
           <span>{social}</span>
@@ -26,7 +33,7 @@ const SocialLink = ({
         </p>
       </div>
       {children}
-    </div>
+    </a>
   );
 };
 
@@ -81,7 +88,9 @@ const Footer = ({
           >
             {EMAILADDRESS}
           </a>
-          <span className="font-cursive text-[2em]">stephani.egb</span>
+          <span className="hidden lg:inline-block font-cursive text-[2em] ">
+            stephani.egb
+          </span>
         </m.div>
       </m.div>
       <m.div
@@ -90,16 +99,32 @@ const Footer = ({
         }}
         className="w-[90%] md:w-[80%]  flex flex-col pb-4  lg:grid lg:grid-cols-4 lg:w-[70vw] lg:gap-4 my-0 mx-auto text-[#94948f]"
       >
-        <SocialLink handler="@stephanniegb" social="Twitter">
+        <SocialLink
+          url="https://twitter.com/Stephanniegb"
+          handler="@stephanniegb"
+          social="Twitter"
+        >
           <X />
         </SocialLink>
-        <SocialLink handler="Stephanie Egbuonu" social="LinkedIn">
+        <SocialLink
+          url="https://www.linkedin.com/in/stephanie-egbuonu/"
+          handler="Stephanie Egbuonu"
+          social="LinkedIn"
+        >
           <LinkedIn />
         </SocialLink>
-        <SocialLink handler="stephanniegb" social="Github">
+        <SocialLink
+          url="https://github.com/stephanniegb"
+          handler="stephanniegb"
+          social="Github"
+        >
           <Github />
         </SocialLink>
-        <SocialLink handler="@stephanieegbuonu" social="Medium">
+        <SocialLink
+          url="https://medium.com/@stephanieegbuonu"
+          handler="@stephanieegbuonu"
+          social="Medium"
+        >
           <Medium />
         </SocialLink>
       </m.div>
