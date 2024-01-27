@@ -37,8 +37,8 @@ const Small = () => {
         <h3 className="uppercase">About myself</h3>
         <SwigglyStroke />
       </div>
-      <h2 className="text-pFS  uppercase">
-        I am Stephanie Egbuonu. I build <br />
+      <h2 className="text-pFS ">
+        I am Stephanie Egbuonu. I build{" "}
         <span className="text-lemon">high-performance</span>, visually appealing
         interfaces for the web !
       </h2>

@@ -1,7 +1,6 @@
 "use client";
 import { GlobalContext } from "@/app/context/GlobalContext";
 import { AnimatePresence, motion as m } from "framer-motion";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext, useRef, useState } from "react";
 

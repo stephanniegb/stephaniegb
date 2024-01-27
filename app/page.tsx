@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion as m, useScroll } from "framer-motion";
+import { motion as m, useScroll } from "framer-motion";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
@@ -37,7 +37,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className=" relative">
+    <main className="relative">
       {loader ? (
         <PseudoLoader />
       ) : (
@@ -51,7 +51,7 @@ export default function Home() {
              relative z-[1]`}
             ref={grandParentRef}
           >
-            <div className="bg-noise-bg  bg-offWhite">
+            <div className="bg-noise-bg bg-offWhite">
               <Hero />
               <About />
               <Experience />

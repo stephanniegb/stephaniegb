@@ -22,7 +22,7 @@ const Large = () => {
 
   const { cursor } = useContext(GlobalContext);
 
-  const [imageUrl, setImageUrl] = useState("/projects/image-3.png");
+  const [imageUrl, setImageUrl] = useState("/projects/image-7.png");
 
   function hideImage() {
     setShowProj(false);
@@ -120,13 +120,14 @@ const Large = () => {
           className="flex flex-col w-full my-0 mx-auto relative transition duration-800 ease-out overflow-hidden"
         >
           {ProjectsData.map((project) => {
-            const { id, tech, title, url } = project;
+            const { id, tech, title, url, portfolio } = project;
             return (
               <Project
                 key={id}
                 techs={tech}
                 projTitle={title}
                 projectUrl={url}
+                portfolio={portfolio}
               />
             );
           })}

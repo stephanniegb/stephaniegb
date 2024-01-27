@@ -176,12 +176,12 @@ const Large = () => {
             className="absolute flex flex-col left-0 px-[5vw]"
           >
             <span>I'm</span>
-            <h2 className="text-lemon">Stephanie Egbuonu!</h2>
+            <h2 className="text-lemon">Stephanie Egbuonu</h2>
             <p>
               In the not-so-distant past of 2021, I was your typical
-              biochemistry major navigating the college scene until the allure
-              of web development captured my interest. Fast forward to now, and
-              I've had the incredible privilege of building accessible,
+              biochemistry major navigating the college scene until web
+              development captured my interest. Fast forward to now, and I've
+              had the incredible privilege of building accessible,
               user-friendly, and blazing-fast web applications.
             </p>
             <p className="mt-4">
@@ -203,8 +203,8 @@ const Large = () => {
             <h2 className="text-lemon">Also...</h2>
             <p>
               Away from my computer, you'll find me getting dressed up,
-              exploring new places, places hanging out with family and friends,
-              and attempting some dance moves.
+              exploring new places, hanging out with family and friends, and
+              attempting some sick dance moves.
             </p>
           </m.div>
 
