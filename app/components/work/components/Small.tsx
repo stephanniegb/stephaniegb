@@ -157,9 +157,8 @@ const Small = () => {
         {ProjectsData.map((proj) => {
           const { alt, fallback, id, src, tech, title, url, portfolio } = proj;
           return (
-            <>
+            <div key={id}>
               <ProjectLink
-                key={id}
                 fallback={fallback}
                 url={url}
                 alt={alt}
@@ -168,7 +167,7 @@ const Small = () => {
                 portfolio={portfolio}
               />
               <AnimatedBorder height="4px" />
-            </>
+            </div>
           );
         })}
       </div>

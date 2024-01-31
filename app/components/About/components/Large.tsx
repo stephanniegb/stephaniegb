@@ -36,11 +36,6 @@ const Large = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once: true });
-  const transition = {
-    duration: 1,
-    ease: [0.43, 0.13, 0.23, 0.96],
-    delay: 1,
-  };
 
   const variants = {
     hidden: { opacity: 0 },
@@ -109,7 +104,7 @@ const Large = () => {
               borderBottomLeftRadius: borderRadiusProgress,
             }}
             className=" object-cover w-full h-full"
-            src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
+            src="/IMG_1839.jpg"
             alt="stephanie smiling"
           />
         </m.div>

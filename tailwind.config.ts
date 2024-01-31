@@ -14,8 +14,13 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial":
-          "linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );",
-        "hero-image": "url('/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg')",
+          " radial-gradient(circle at center, rgba(165, 42, 42, 0.8) 0, rgba(255,191,0, 0) 70%);",
+        "gradient-radial2":
+          " radial-gradient(circle at center, rgba(195,88,23, 0.8) 0, rgba(255,191,0, 0) 75%);",
+        "gradient-radial3":
+          " radial-gradient(circle at center, rgba(139,0,139, 0.8) 0, rgba(255,191,0, 0) 75%);",
+
+        "hero-image": "url('/IMG_1839.jpg')",
         "noise-bg": "url('/noise.svg')",
       },
       gridAutoColumns: {
