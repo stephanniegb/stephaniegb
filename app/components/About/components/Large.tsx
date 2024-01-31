@@ -36,11 +36,6 @@ const Large = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once: true });
-  const transition = {
-    duration: 1,
-    ease: [0.43, 0.13, 0.23, 0.96],
-    delay: 1,
-  };
 
   const variants = {
     hidden: { opacity: 0 },
@@ -58,7 +53,7 @@ const Large = () => {
     [0, 1],
     ["0px", "50px"]
   );
-  const imageOpacityProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const imageOpacityProgress = useTransform(scrollYProgress, [0, 1], [0, 0.7]);
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
 
   /* Hello there animation */
@@ -109,7 +104,7 @@ const Large = () => {
               borderBottomLeftRadius: borderRadiusProgress,
             }}
             className=" object-cover w-full h-full"
-            src="/hala-al-asadi-lqb0Mqq8RSM-unsplash.jpg"
+            src="/522679D1-09C2-4703-9E46-C492485113A1.jpg"
             alt="stephanie smiling"
           />
         </m.div>

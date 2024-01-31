@@ -51,7 +51,7 @@ export default function Home() {
              relative z-[1]`}
             ref={grandParentRef}
           >
-            <div className="bg-noise-bg bg-offWhite">
+            <div className="bg-noise-bg z-[1] bg-offWhite">
               <Hero />
               <About />
               <Experience />

@@ -130,7 +130,7 @@ const Hero = () => {
             ease: [0.43, 0.13, 0.23, 0.96],
             delay: 2.1,
           }}
-          className="absolute -bottom-20 z-10 p-4 text-[#fffff] flex flex-col gap-2"
+          className="absolute -bottom-20 z-10 p-4 text-[#090908] flex flex-col gap-2"
         >
           <span className="animate-bounce inline-block">
             <DownArrow />
@@ -164,7 +164,7 @@ const Hero = () => {
             scale: scaleProgress,
             opacity: opacityProgress,
           }}
-          className="bg-hero-image  bg-cover bg-center my-0 mx-auto"
+          className="bg-hero-image  bg-cover bg-bottom my-0 mx-auto"
         ></m.div>
         <div>
           <m.span

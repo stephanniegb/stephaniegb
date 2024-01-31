@@ -138,3 +138,8 @@ iframe {
   min-width: 100%;
   *width: 100% !important;
 }
+.closing {
+  transform-origin: top center;
+  transform: rotateX(10deg);
+  transition: transform 1s ease-in-out;
+}
