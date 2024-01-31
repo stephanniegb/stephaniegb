@@ -20,7 +20,8 @@ const config: Config = {
         "gradient-radial3":
           " radial-gradient(circle at center, rgba(139,0,139, 0.8) 0, rgba(255,191,0, 0) 75%);",
 
-        "hero-image": "url('/522679D1-09C2-4703-9E46-C492485113A1.jpg')",
+        "hero-image":
+          "url('/C7A59599-DBC3-4141-8D91-6BB39ACD286F_1_201_a.jpeg')",
         "noise-bg": "url('/noise.svg')",
       },
       gridAutoColumns: {

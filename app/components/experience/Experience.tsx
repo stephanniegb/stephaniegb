@@ -36,6 +36,13 @@ const Experience = () => {
 
   return (
     <section className="min-h-screen bg-noise-bg  bg-offWhite   flex flex-col  gap-4 px-4 py-16  lg;px-16 lg:py-8  z-[1] relative overflow-x-hidden">
+      <div className="w-full h-full absolute  top-0 left-0 ">
+        <div className="w-full h-full">
+          <div className="absolute bg-gradient-radial right-[-80%] lg:right-0 h-[60vh] opacity-70 w-[60vh] mix-blend-hard-light"></div>
+          <div className="absolute bg-gradient-radial2  top-[20%] right-[-30%] md:right-[-20%] lg:right-[20%] opacity-50  h-[50vh] w-[50vh] mix-blend-hard-light"></div>
+          <div className="absolute bg-gradient-radial3 top-[30%] right-[-60%] md:right-[-20%] lg:right-0 h-[60vh] w-[60vh] opacity-30 mix-blend-hard-light"></div>
+        </div>
+      </div>
       <AnimatedLines
         text="Experience"
         el="h2"
@@ -49,7 +56,7 @@ const Experience = () => {
             "
         />
       </div>
-      <h3 className="text-center lg:text-3xl  my-4">
+      <h3 className="text-center  my-4">
         Some technologies I have worked with:
       </h3>
       <div ref={ref}>

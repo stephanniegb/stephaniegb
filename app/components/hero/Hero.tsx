@@ -164,7 +164,7 @@ const Hero = () => {
             scale: scaleProgress,
             opacity: opacityProgress,
           }}
-          className="bg-hero-image  bg-cover bg-center my-0 mx-auto"
+          className="bg-hero-image  bg-cover bg-bottom my-0 mx-auto"
         ></m.div>
         <div>
           <m.span
