@@ -53,7 +53,7 @@ const Large = () => {
     [0, 1],
     ["0px", "50px"]
   );
-  const imageOpacityProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const imageOpacityProgress = useTransform(scrollYProgress, [0, 1], [0, 0.7]);
   const topProgress = useTransform(scrollYProgress, [0, 1], ["1px", "20px"]);
 
   /* Hello there animation */
@@ -104,7 +104,7 @@ const Large = () => {
               borderBottomLeftRadius: borderRadiusProgress,
             }}
             className=" object-cover w-full h-full"
-            src="/IMG_1839.jpg"
+            src="/522679D1-09C2-4703-9E46-C492485113A1.jpg"
             alt="stephanie smiling"
           />
         </m.div>
