@@ -22,7 +22,7 @@ const Large = () => {
 
   const { cursor } = useContext(GlobalContext);
 
-  const [imageUrl, setImageUrl] = useState("/projects/image-7.png");
+  const [imageUrl, setImageUrl] = useState("/projects/image-4.png");
 
   function hideImage() {
     setShowProj(false);
@@ -41,16 +41,16 @@ const Large = () => {
 
           switch (idx) {
             case 0:
-              setImageUrl(images.imageOne);
+              setImageUrl(images.imageFour);
               break;
             case 1:
-              setImageUrl(images.imageTwo);
-              break;
-            case 2:
               setImageUrl(images.imageThree);
               break;
+            case 2:
+              setImageUrl(images.imageOne);
+              break;
             case 3:
-              setImageUrl(images.imageFour);
+              setImageUrl(images.imageTwo);
               break;
             case 4:
               setImageUrl(images.imageFive);

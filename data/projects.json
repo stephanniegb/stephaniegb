@@ -1,5 +1,23 @@
 [
   {
+    "id": "project5",
+    "url": "https://scroll-transform-recreate.vercel.app/",
+    "tech": ["Next JS", "Tailwind", "Framer motion"],
+    "title": "Scroll Transform Recreate",
+    "src": "/projects/image-4.webp",
+    "fallback": "/projects/image-4.png",
+    "alt": "screenshot of Scroll Transform Recreate project"
+  },
+  {
+    "id": "project4",
+    "url": "https://starknet-tokenbound.com/",
+    "tech": ["Next Js", "Typescript", "Tailwind"],
+    "title": "Starknet Token Bound",
+    "src": "/projects/image-6.webp",
+    "fallback": "/projects/image-6.png",
+    "alt": "screenshot of Starknet Token Bound project"
+  },
+  {
     "id": "project2",
     "url": "",
     "tech": ["Next.js", "Typescript", "Three.js"],
@@ -18,25 +36,7 @@
     "fallback": "/projects/image-1.png",
     "alt": "screenshot of 17th Apartment project"
   },
-  {
-    "id": "project4",
-    "url": "https://avvic-bank.onrender.com/",
-    "tech": ["React Js", "Javascript", "Sass"],
-    "title": "AVVIC Bank",
-    "src": "/projects/image-6.webp",
-    "fallback": "/projects/image-6.png",
-    "alt": "screenshot of AVVIC Bank project"
-  },
 
-  {
-    "id": "project5",
-    "url": "https://c-neighbour-v2.vercel.app/",
-    "tech": ["React JS", "Javascript", "CSS"],
-    "title": "Campus neighbor",
-    "src": "/projects/image-4.webp",
-    "fallback": "/projects/image-4.png",
-    "alt": "screenshot of Campus neighbor project"
-  },
   {
     "id": "project1",
     "url": "https://nuxt-scene.vercel.app/",
