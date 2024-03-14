@@ -54,7 +54,7 @@ const ProjectLink = ({
               <Image src={src} alt={alt} fallback={fallback} />
             </m.div>
             <figcaption>
-              <h4 className="flex gap-4  items-center text-[5vw] font-Bruno_Ace text-brown uppercase">
+              <h4 className="flex gap-4  items-center text-[3.5vw] font-Bruno_Ace text-brown uppercase">
                 {title}{" "}
                 <m.span
                   variants={variants}
@@ -93,7 +93,7 @@ const ProjectLink = ({
               <Image src={src} alt={alt} fallback={fallback} />
             </m.div>
             <figcaption>
-              <h4 className="flex gap-4  items-center text-[5vw] font-Bruno_Ace text-brown uppercase">
+              <h4 className="flex gap-4  items-center text-[3.5vw] font-Bruno_Ace text-brown uppercase">
                 {title}{" "}
                 <m.span
                   variants={variants}
