@@ -1,5 +1,4 @@
 const vertexShader = `
-precision mediump float;
 varying vec2 vUv;
 uniform vec2 uOffset;
 float M_PI = 3.141529;
