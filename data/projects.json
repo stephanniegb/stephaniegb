@@ -4,8 +4,8 @@
     "url": "https://scroll-transform-recreate.vercel.app/",
     "tech": ["Next JS", "Tailwind", "Framer motion"],
     "title": "Scroll Transform Recreate",
-    "src": "/projects/image-4.webp",
-    "fallback": "/projects/image-4.png",
+    "src": "/projects/image-4.jpg",
+    "fallback": "/projects/image-4.jpg",
     "alt": "screenshot of Scroll Transform Recreate project"
   },
   {
@@ -13,8 +13,8 @@
     "url": "https://starknet-tokenbound.com/",
     "tech": ["Next Js", "Typescript", "Tailwind"],
     "title": "Starknet Token Bound",
-    "src": "/projects/image-6.webp",
-    "fallback": "/projects/image-6.png",
+    "src": "/projects/image-6.jpg",
+    "fallback": "/projects/image-6.jpg",
     "alt": "screenshot of Starknet Token Bound project"
   },
   {
@@ -22,8 +22,8 @@
     "url": "",
     "tech": ["Next.js", "Typescript", "Three.js"],
     "title": "Portfolio",
-    "src": "/projects/image-7.webp",
-    "fallback": "/projects/image-7.png",
+    "src": "/projects/image-7.jpg",
+    "fallback": "/projects/image-7.jpg",
     "alt": "screenshot of portfolio website",
     "portfolio": true
   },
@@ -32,8 +32,8 @@
     "url": "https://one7th-apartment.onrender.com/",
     "tech": ["Next Js", "TypeScript", "Tailwind"],
     "title": "17th Apartment",
-    "src": "/projects/image-1.webp",
-    "fallback": "/projects/image-1.png",
+    "src": "/projects/image-1.jpg",
+    "fallback": "/projects/image-1.jpg",
     "alt": "screenshot of 17th Apartment project"
   },
 
@@ -42,8 +42,8 @@
     "url": "https://nuxt-scene.vercel.app/",
     "tech": [" Nuxt JS", "Three.js ", "Javascript"],
     "title": "Three.js scene",
-    "src": "/projects/image-3.webp",
-    "fallback": "/projects/image-3.png",
+    "src": "/projects/image-3.jpg",
+    "fallback": "/projects/image-3.jpg",
     "alt": "screenshot of three js scene project"
   }
 ]

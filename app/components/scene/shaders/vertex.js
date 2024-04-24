@@ -1,8 +1,9 @@
 const vertexShader = `
-precision mediump float;
-varying vec2 vUv;
 uniform vec2 uOffset;
+
 float M_PI = 3.141529;
+
+varying vec2 vUv;
 
 vec3 deformationCurve(vec3 position, vec2 uv, vec2 offset){
     vec3 deformedPosition = position;
