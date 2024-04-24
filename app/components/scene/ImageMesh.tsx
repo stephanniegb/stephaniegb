@@ -10,7 +10,6 @@ import { GlobalContext } from "@/app/context/GlobalContext";
 
 const ImageShader = shaderMaterial(
   {
-    uColor: new THREE.Color(1.0, 0.0, 0.0),
     uOffset: new THREE.Vector2(0.0, 0.0),
     uTexture: new THREE.Texture(),
   },
