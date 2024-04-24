@@ -45,7 +45,6 @@ function ImageMesh({ url }: { url: string }) {
       <imageShader
         ref={mesh}
         attach="material"
-        uColor={[0.0, 1.0, 0.0]}
         uOffset={[
           (cursor.x - offset.x) * 0.0005,
           -(cursor.y - offset.y) * 0.0005,
