@@ -2,7 +2,7 @@
 import { shaderMaterial } from "@react-three/drei";
 import { extend, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
-import React, { useContext, useMemo, useRef, useState } from "react";
+import { useContext, useMemo, useRef } from "react";
 import { ShaderContext } from "@/app/context/ShaderContext";
 import fragmentShader from "./shaders/fragment";
 import vertexShader from "./shaders/vertex";
