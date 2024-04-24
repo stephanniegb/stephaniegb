@@ -22,7 +22,7 @@ const Large = () => {
 
   const { cursor } = useContext(GlobalContext);
 
-  const [imageUrl, setImageUrl] = useState("/projects/image-4.png");
+  const [imageUrl, setImageUrl] = useState("/projects/image-4.jpg");
 
   function hideImage() {
     setShowProj(false);
