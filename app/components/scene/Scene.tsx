@@ -19,7 +19,6 @@ const Scene = ({
       }`}
     >
       <Canvas>
-        <ambientLight />
         <Suspense fallback={null}>
           <ImageMesh url={imageUrl} />
         </Suspense>
