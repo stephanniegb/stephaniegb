@@ -6,6 +6,8 @@
 :root {
   --primary-foreground: #e0e0e0b3;
   --secondary-foreground: #e0e0e0;
+  --accent: #00b38b;
+  --accent-hover: #5aecc010;
 }
 
 html,

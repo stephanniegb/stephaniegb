@@ -21,21 +21,23 @@ const Experience = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full focus:bg-red-800 focus:outline-none hover:bg-red-800 p-8 rounded-md grid grid-cols-10 cursor-pointer transition-[background-color] duration-500 group"
+      className="w-full focus:bg-[--accent-hover] focus:outline-none gap-4 hover:bg-[--accent-hover] p-8 rounded-md grid grid-cols-10 cursor-pointer transition-[background-color] duration-500 group"
     >
-      <div className="col-span-2">
-        <p className="text-xs uppercase text-[--primary-foreground] ">
+      <div className="col-span-2 mt-1">
+        <p className="text-xs uppercase text-[--primary-foreground] group-focus:text-[--secondary-foreground] group-hover:text-[--secondary-foreground] ">
           {start} - {end}
         </p>
       </div>
       <div className="col-span-8 flex flex-col gap-3">
         <div className="flex  items-center  gap-1">
-          <h3 className="capitalize">{title}</h3>
-          <span className="inline-block transition-all duration-500 group-hover:translate-x-[0.3rem] group-hover:translate-y-[-0.2rem]">
+          <h3 className="capitalize group-focus:text-[--accent] group-hover:text-[--accent]">
+            {title}
+          </h3>
+          <span className="inline-block transition-all duration-500  group-focus:translate-x-[0.3rem] group-focus:translate-y-[-0.2rem] group-hover:translate-x-[0.3rem] group-hover:translate-y-[-0.2rem]">
             <UpRightArrow />
           </span>
         </div>
-        <p className="first-letter:uppercase text-[--primary-foreground]">
+        <p className="first-letter:uppercase text-[--primary-foreground] group-focus:text-[--secondary-foreground] group-hover:text-[--secondary-foreground]">
           {description}
         </p>
         <div className="flex gap-2">
