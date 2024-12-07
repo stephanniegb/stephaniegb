@@ -21,23 +21,23 @@ const Experience = ({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-full md:focus:bg-[--accent-hover] focus:outline-none gap-4 md:hover:bg-[--accent-hover] flex flex-col py-8 px-0 md:p-8 rounded-md md:grid md:grid-cols-10 cursor-pointer transition-[background-color] duration-500 group"
+      className="group flex w-full cursor-pointer flex-col gap-4 rounded-md px-0 py-8 transition-[background-color] duration-500 focus:outline-none md:grid md:grid-cols-10 md:p-8 md:hover:bg-[--accent-hover] md:focus:bg-[--accent-hover]"
     >
       <div className="col-span-2 mt-1">
-        <p className="text-xs uppercase text-[--primary-foreground] group-focus:text-[--secondary-foreground] group-hover:text-[--secondary-foreground] ">
+        <p className="text-xs uppercase text-[--primary-foreground] group-hover:text-[--secondary-foreground] group-focus:text-[--secondary-foreground]">
           {start} - {end}
         </p>
       </div>
       <div className="col-span-8 flex flex-col gap-3">
-        <div className="flex  items-center  gap-1">
-          <h3 className="capitalize text-base group-focus:text-[--accent] group-hover:text-[--accent]">
+        <div className="flex items-center gap-1">
+          <h3 className="text-base capitalize group-hover:text-[--accent] group-focus:text-[--accent]">
             {title}
           </h3>
-          <span className="inline-block transition-all duration-500  group-focus:translate-x-[0.3rem] group-focus:translate-y-[-0.2rem] group-hover:translate-x-[0.3rem] group-hover:translate-y-[-0.2rem]">
+          <span className="inline-block transition-all duration-500 group-hover:translate-x-[0.3rem] group-hover:translate-y-[-0.2rem] group-focus:translate-x-[0.3rem] group-focus:translate-y-[-0.2rem]">
             <UpRightArrow />
           </span>
         </div>
-        <p className="first-letter:uppercase text-[--primary-foreground] group-focus:text-[--secondary-foreground] group-hover:text-[--secondary-foreground]">
+        <p className="text-[--primary-foreground] first-letter:uppercase group-hover:text-[--secondary-foreground] group-focus:text-[--secondary-foreground]">
           {description}
         </p>
         <div className="flex flex-wrap gap-2">

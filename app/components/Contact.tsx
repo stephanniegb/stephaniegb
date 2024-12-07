@@ -55,12 +55,12 @@ export const Link = ({
   icon: React.ReactNode;
 }) => {
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex items-center gap-1">
       <span className="text-lg">{icon}</span>
       <p className="first-letter:uppercase">
         {title}:{" "}
         <a
-          className="underline text-sm"
+          className="text-sm underline"
           href={url}
           target="_blank"
           rel="noopener noreferrer"
