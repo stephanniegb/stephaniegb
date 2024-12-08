@@ -37,7 +37,7 @@ const Experience = ({
             <UpRightArrow />
           </span>
         </div>
-        <p className="text-[--primary-foreground] first-letter:uppercase group-hover:text-[--secondary-foreground] group-focus:text-[--secondary-foreground]">
+        <p className="text-sm text-[--primary-foreground] first-letter:uppercase group-hover:text-[--secondary-foreground] group-focus:text-[--secondary-foreground]">
           {description}
         </p>
         <div className="flex flex-wrap gap-2">
