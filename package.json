@@ -10,16 +10,13 @@
     "format": "npx run prettier . --write --ignore-unknown"
   },
   "dependencies": {
-    "framer-motion": "^10.16.15",
     "next": "^15.0.3",
     "react": "latest",
-    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
-    "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "latest",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
