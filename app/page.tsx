@@ -14,8 +14,8 @@ export default function Home() {
             </h1>
             <h2 className="text-xl">Frontend Engineer</h2>
             <p className="w-[70%] text-sm">
-              Bringing ideas to life with seamless, pixel-perfect,unforgettable
-              web experiences.
+              Bringing ideas to life with seamless, pixel-perfect web
+              experiences.
             </p>
           </div>
           <Contact />
