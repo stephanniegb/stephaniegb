@@ -57,7 +57,7 @@ export default function Home() {
             <Experience
               start="2024"
               end="present"
-              description="I develop and maintain essential frontend components across our products, collaborating closely with designers, developers, and project managers to deliver high-performing, accessible, and visually engaging user interfaces."
+              description="Develop and maintain key frontend components across our products, working closely with designers, developers, and project managers to deliver high-performing and accessible user interfaces. I also integrate smart contracts into the frontend, enabling seamless interaction with the blockchain."
               title="Horus labs"
               techs={["next.js", "starknet.js", "starknet react", "typescript"]}
               url="https://www.horuslabs.co/"
@@ -108,7 +108,7 @@ export default function Home() {
               url="https://www.three-js-earth-delta.vercel.app/"
               img="./projects/3.jpg"
             />
-            <div className="my-8">
+            {/* <div className="my-8">
               <a href="" className="group flex items-center gap-[2px]">
                 <span className="group-hover:text-[--accent]">
                   View Projects Archive{" "}
@@ -117,7 +117,7 @@ export default function Home() {
                   <RightArrow />
                 </span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
