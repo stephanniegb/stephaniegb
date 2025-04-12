@@ -120,7 +120,7 @@ export default function Home() {
               title="token giver"
               techs={["next.js", "starknet.js", "tailwind"]}
               url="https://www.token-giver-7u11.vercel.app/"
-              img="./projects/1.jpg"
+              img="./projects/1.png"
             />
             <Project
               description="A fun remake of Nate Smiths's elegantly designed portfolio website (sited on Godly website), showcasing the sophistication and impact of smooth scroll animations on web pages. This weekend project was both a creative exploration and a rewarding experience."

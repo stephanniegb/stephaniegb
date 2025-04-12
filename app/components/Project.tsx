@@ -22,10 +22,10 @@ const Project = ({
       className="group flex w-full cursor-pointer flex-col-reverse gap-4 rounded-md px-0 py-8 transition-[background-color] duration-500 focus:outline-none md:grid md:grid-cols-10 md:p-8 md:hover:bg-[--accent-hover] md:focus:bg-[--accent-hover]"
     >
       <div className="col-span-3">
-        <div className="h-[100px] max-w-[200px] rounded-sm md:max-w-[150px]">
+        <div className="relative h-[80px] max-w-[200px] rounded-sm md:max-w-[150px]">
           <img
             src={img}
-            className="w-full rounded-sm object-cover"
+            className="absolute h-full w-full rounded-sm object-cover"
             alt={`screenshot of ${title}`}
           />
         </div>
