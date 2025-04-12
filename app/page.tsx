@@ -2,6 +2,9 @@ import RightArrow from "@/svg/RightArrow";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Project from "./components/Project";
+import UpRightArrow from "@/svg/UpRightArrow";
+import Link from "next/link";
+import Resources from "./components/Resources";
 
 export default function Home() {
   return (
@@ -23,16 +26,16 @@ export default function Home() {
       </section>
       <section className="col-span-4 h-full w-full lg:py-20 xl:col-span-1">
         <div className="flex w-full flex-col gap-28 lg:pr-12 xl:pr-20">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 transition-all duration-300 hover:text-[var(--secondary-foreground)]">
             <p>
-              Hey there! I’m Stephanie, a curious developer who loves bringing
+              Hey there! I'm Stephanie, a curious developer who loves bringing
               ideas to life with fun, stunning, and accessible web experiences.
-              Whether it’s about making interfaces pop or ensuring the code runs
-              like clockwork, I’m all in for the magic behind the screen!
+              Whether it's about making interfaces pop or ensuring the code runs
+              like clockwork, I'm all in for the magic behind the screen!
             </p>
 
             <p>
-              I’m currently a Frontend Developer at{" "}
+              I'm currently a Frontend Developer at{" "}
               <a href="https://www.horuslabs.co/">Horus Labs</a>, where I build
               and maintain high-performance user interfaces that not only look
               amazing but also meet web accessibility standards. My focus is on
@@ -40,17 +43,17 @@ export default function Home() {
               exciting world of Web3.
             </p>
             <p>
-              I’m passionate about learning and pushing myself beyond my current
-              limits. In the past, I’ve worked with finance companies, startups,
+              I'm passionate about learning and pushing myself beyond my current
+              limits. In the past, I've worked with finance companies, startups,
               and personal projects that have taught me invaluable lessons. Each
-              experience has fueled my growth, and I’m excited to keep
+              experience has fueled my growth, and I'm excited to keep
               exploring, experimenting, and leveling up.
             </p>
             <p>
-              When I’m not learning, you’ll find me dancing, spending quality
+              When I'm not learning, you'll find me dancing, spending quality
               time with my family, or exploring new places—I love how traveling
-              adds so much color to life. Lately, I’ve also been diving into
-              cooking, and it’s been such a fun and delicious adventure!
+              adds so much color to life. Lately, I've also been diving into
+              cooking, and it's been such a fun and delicious adventure!
             </p>
           </div>
           <div className="flex-col gap-4">
@@ -70,9 +73,34 @@ export default function Home() {
               techs={["react", "next.js", "typescript", "SCSS", "tailwind"]}
               url="https://avvicgroup.com/"
             />
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-8 flex items-center gap-[2px]"
+            >
+              <span className="group-hover:text-[--accent] group-focus:text-[--accent]">
+                View Full Resume{" "}
+              </span>
+              <UpRightArrow className="inline-block transition-all duration-500 group-hover:translate-x-[0.3rem] group-hover:translate-y-[-0.2rem] group-focus:translate-x-[0.3rem] group-focus:translate-y-[-0.2rem]" />
+            </a>
           </div>
 
           <div className="flex-col gap-4">
+            <Project
+              description="A community-building platform designed to help users create personalized, smart, and autonomous online communities. It aims to provide a comprehensive solution for building and managing online communities, focusing on personalization, autonomy, and effective engagement strategies."
+              title="Coloniz"
+              techs={[
+                "next.js",
+                "starknet.js",
+                "typescript",
+                "Apollo",
+                "graphql",
+                "tailwind",
+              ]}
+              url="https://coloniz.xyz/"
+              img="./projects/4.jpg"
+            />
             <Project
               description="Designed to explore, create, and manage Token Bound Accounts (ERC-6551) built on Starknet. The platform provides insights into Token Bound Accounts and their capabilities, showcasing what users can achieve with this innovative technology."
               title="token bound explorer"
@@ -101,24 +129,50 @@ export default function Home() {
               url="https://scroll-transform-recreate.vercel.app/"
               img="./projects/2.jpg"
             />
-            <Project
-              description="A Three.js project focused on modals and shaders, exploring the capabilities of Three.js and demonstrating the stunning, immersive websites that can be created with it. This project also highlights the breathtaking beauty of the Earth through 3D visualization."
-              title="Three.js earth"
-              techs={["Next.js", "Three.js", "javascript", "glsl", "gsap"]}
-              url="https://www.three-js-earth-delta.vercel.app/"
-              img="./projects/3.jpg"
-            />
-            {/* <div className="my-8">
-              <a href="" className="group flex items-center gap-[2px]">
+
+            <div className="my-8">
+              <Link
+                href={"/archive"}
+                className="group flex items-center gap-[2px]"
+              >
                 <span className="group-hover:text-[--accent]">
                   View Projects Archive{" "}
                 </span>
                 <span className="transition-all duration-300 group-hover:translate-x-1">
                   <RightArrow />
                 </span>
-              </a>
-            </div> */}
+              </Link>
+            </div>
           </div>
+
+          <div className="flex-col gap-4">
+            <Resources
+              url="https://stephanniegb.hashnode.dev/getting-started-with-the-claude-api-a-beginners-guide"
+              title="Getting Started with the Claude API: A Beginner's Guide"
+              img="./resources/0.png"
+              year="2025"
+            />
+            <Resources
+              url="https://www.youtube.com/live/69X4-SgBixA?si=zks6OVWU8Q0UhFEE"
+              title="Building with Irys on Starknet"
+              img="./resources/1.jpeg"
+              year="2025"
+            />
+          </div>
+
+          <footer className="mt-16 text-sm text-gray-500">
+            <p>
+              Design inspired by{" "}
+              <a
+                href="https://brittanychiang.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[--accent] focus:text-[--accent]"
+              >
+                Brittany Chiang
+              </a>
+            </p>
+          </footer>
         </div>
       </section>
     </main>

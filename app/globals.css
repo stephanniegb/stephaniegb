@@ -35,7 +35,8 @@ body {
   font-weight: 400;
   font-style: normal;
   background: #04030c;
-  background: -webkit-radial-gradient(80% 80% at 50% 50%, #0f0c2978 0%, #04030c),
+  background:
+    -webkit-radial-gradient(80% 80% at 50% 50%, #0f0c2978 0%, #04030c),
     -webkit-linear-gradient(to right, #04030c, #04030c, #04030c);
   background: radial-gradient(80% 80% at 50% 50%, #0f0c2978 0%, #04030c),
     linear-gradient(to right, #04030c, #04030c, #04030c);

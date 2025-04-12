@@ -1,49 +1,51 @@
 [
   {
-    "id": "project5",
-    "url": "https://scroll-transform-recreate.vercel.app/",
-    "tech": ["Next JS", "Tailwind", "Framer motion"],
-    "title": "Scroll Transform Recreate",
-    "src": "/projects/image-4.jpg",
-    "fallback": "/projects/image-4.jpg",
-    "alt": "screenshot of Scroll Transform Recreate project"
+    "year": 2025,
+    "name": "ChefBot",
+    "techStack": ["Python", "Claude API"],
+    "link": "https://github.com/stephanniegb/hello-claude/blob/master/ChefBot.py",
+    "where": ""
   },
   {
-    "id": "project4",
-    "url": "https://starknet-tokenbound.com/",
-    "tech": ["Next Js", "Typescript", "Tailwind"],
-    "title": "Starknet Token Bound",
-    "src": "/projects/image-6.jpg",
-    "fallback": "/projects/image-6.jpg",
-    "alt": "screenshot of Starknet Token Bound project"
+    "year": 2024,
+    "name": "Starknet Scaffold",
+    "techStack": ["React", "Next.js", "TailwindCSS", "starknet.js"],
+    "link": "https://app.starknetscaffold.xyz/",
+    "where": "Freelance Project"
   },
   {
-    "id": "project2",
-    "url": "",
-    "tech": ["Next.js", "Typescript", "Three.js"],
-    "title": "Portfolio",
-    "src": "/projects/image-7.jpg",
-    "fallback": "/projects/image-7.jpg",
-    "alt": "screenshot of portfolio website",
-    "portfolio": true
+    "year": 2024,
+    "name": "Three JS earth",
+    "techStack": ["Next.js", "Three.js", "javascript", "glsl", "gsap"],
+    "link": "https://www.three-js-earth-delta.vercel.app/",
+    "where": ""
   },
   {
-    "id": "project3",
-    "url": "https://one7th-apartment.onrender.com/",
-    "tech": ["Next Js", "TypeScript", "Tailwind"],
-    "title": "17th Apartment",
-    "src": "/projects/image-1.jpg",
-    "fallback": "/projects/image-1.jpg",
-    "alt": "screenshot of 17th Apartment project"
+    "year": 2024,
+    "name": "Raging Sea",
+    "techStack": ["Next.js", "Three.js", "javascript", "glsl", "gsap"],
+    "link": "https://codesandbox.io/p/devbox/three-js-raging-sea-6m975z?file=%2Fsrc%2Fscript.js",
+    "where": ""
   },
-
   {
-    "id": "project1",
-    "url": "https://nuxt-scene.vercel.app/",
-    "tech": [" Nuxt JS", "Three.js ", "Javascript"],
-    "title": "Three.js scene",
-    "src": "/projects/image-3.jpg",
-    "fallback": "/projects/image-3.jpg",
-    "alt": "screenshot of three js scene project"
+    "year": 2024,
+    "name": "3D coffee",
+    "techStack": ["Next.js", "Three.js", "javascript", "glsl", "gsap"],
+    "link": "https://codesandbox.io/p/devbox/three-js-coffee-ztmnf7?file=%2Fsrc%2Fscript.js",
+    "where": ""
+  },
+  {
+    "year": 2024,
+    "name": "Fireworks",
+    "techStack": ["Next.js", "Three.js", "javascript", "glsl", "gsap"],
+    "link": "https://codesandbox.io/p/devbox/three-js-fireworks-dfc58p?file=%2Fsrc%2Findex.html",
+    "where": ""
+  },
+  {
+    "year": 2024,
+    "name": "Hologram",
+    "techStack": ["Next.js", "Three.js", "javascript", "glsl", "gsap"],
+    "link": "https://codesandbox.io/p/devbox/three-js-hologram-v48kw6?file=%2Fsrc%2Fscript.js",
+    "where": ""
   }
 ]
