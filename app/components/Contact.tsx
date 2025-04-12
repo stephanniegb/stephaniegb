@@ -6,7 +6,7 @@ import X from "@/svg/X";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 transition-all duration-300 hover:text-[var(--secondary-foreground)]">
       <Link
         title="Github"
         label="@stephanniegb"

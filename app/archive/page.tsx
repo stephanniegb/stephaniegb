@@ -56,11 +56,11 @@ const ProjectRow = ({ project }: { project: Project }) => {
 
 const page = () => {
   return (
-    <div className="mx-auto max-w-[1200px] px-4 py-20 md:px-8">
+    <div className="relative z-10 mx-auto max-w-[1200px] px-4 py-20 md:px-8">
       <div className="mb-8">
         <Link
           href={"/"}
-          className="group flex items-center gap-1 text-[var(--accent)] text-white"
+          className="group flex items-center gap-1 text-[var(--accent)]"
         >
           <RightArrow className="inline-block rotate-180 transition-all duration-300 group-hover:-translate-x-1" />
           Stephanie Egbuonu
