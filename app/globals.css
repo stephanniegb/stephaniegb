@@ -77,3 +77,23 @@ a {
 img {
   width: 100%;
 }
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+}
+.animate-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+.about-section:hover .animate-wave {
+  animation: wave 0.5s ease-in-out infinite;
+}
