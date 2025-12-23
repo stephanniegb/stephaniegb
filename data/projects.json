@@ -8,6 +8,13 @@
   },
   {
     "year": 2024,
+    "name": "Token Giver",
+    "techStack": ["Next.js", "starknet.js", "typescript", "tailwind"],
+    "link": "https://www.token-giver-7u11.vercel.app/",
+    "where": ""
+  },
+  {
+    "year": 2024,
     "name": "Starknet Scaffold",
     "techStack": ["React", "Next.js", "TailwindCSS", "starknet.js"],
     "link": "https://app.starknetscaffold.xyz/",
