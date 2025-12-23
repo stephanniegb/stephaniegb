@@ -32,7 +32,7 @@ const Contact = () => {
         icon={<LinkedIn />}
       />
       <Link
-        title="X"
+        title="X(Twitter)"
         label="@stephanniegb"
         url="https://x.com/Stephanniegb"
         icon={<X />}
