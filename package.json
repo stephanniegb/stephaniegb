@@ -10,7 +10,7 @@
     "format": "npx run prettier . --write --ignore-unknown"
   },
   "dependencies": {
-    "next": "^15.0.3",
+    "next": "15.0.7",
     "react": "latest",
     "react-dom": "latest"
   },
