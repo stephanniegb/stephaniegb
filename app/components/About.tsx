@@ -9,7 +9,8 @@ const About = () => {
       </p>
       <p>
         I’m a web3 girl, and a fintech girl (yes, you can trust me with your
-        assets). I currently work at{" "}
+        assets).
+        {/* I currently work at{" "}
         <a
           href="https://www.moniepoint.com/ng/business"
           target="_blank"
@@ -18,7 +19,7 @@ const About = () => {
           Moniepoint MFB
         </a>{" "}
         as a frontend engineer, where my days are spent building and maintaining
-        high-performance, reliable dashboards for fintech products.
+        high-performance, reliable dashboards for fintech products. */}
       </p>
       I care deeply about user experience, performance, and reliability, and I
       love combining that with creative, well-designed interfaces that actually

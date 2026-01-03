@@ -4,7 +4,7 @@ import UpRightArrow from "@/svg/UpRightArrow";
 const ExperienceSection = () => {
   return (
     <div className="flex-col gap-4">
-      <Experience
+      {/* <Experience
         start="2025"
         end="present"
         description="Develop and maintain core frontend components for Moniepoint MFB's fintech products, building reliable and scalable dashboards that support high-volume financial operations. Contribute to design discussions, documentation, and code reviews while working within a regulated financial environment."
@@ -17,10 +17,10 @@ const ExperienceSection = () => {
           "Next.js",
         ]}
         url="https://www.moniepoint.com/ng/business"
-      />
+      /> */}
       <Experience
         start="2024"
-        end="2025"
+        end="Present"
         description="Develop and maintain key frontend components across our products, working closely with designers, developers, and project managers to deliver high-performing and accessible user interfaces. I also integrate smart contracts into the frontend, enabling seamless interaction with the blockchain."
         title="Horus labs"
         techs={["next.js", "starknet.js", "starknet react", "typescript"]}
@@ -50,4 +50,3 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
-
