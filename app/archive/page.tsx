@@ -15,14 +15,14 @@ type Project = {
 // ProjectRow component
 const ProjectRow = ({ project }: { project: Project }) => {
   return (
-    <div className="lg:grid-cols-15 grid grid-cols-11 border-b-[.5px] border-[#e0e0e0b3] py-4 md:grid-cols-10 md:text-sm">
+    <div className="lg:grid-cols-15 grid grid-cols-11 border-b-[.5px] border-[var(--border)] py-4 md:grid-cols-10 md:text-sm">
       <p className="col-span-2 px-4 md:col-span-1">{project.year}</p>
       <div className="col-span-9 px-4 md:col-span-4">
-        <p className="hidden font-semibold text-[#e0e0e0] md:block md:text-base">
+        <p className="hidden font-semibold text-[var(--secondary-foreground)] md:block md:text-base">
           {project.name}
         </p>
         <a
-          className="group flex items-center gap-[2px] text-[#e0e0e0] text-[var(--primary-foreground)] md:hidden"
+          className="group flex items-center gap-[2px] text-[var(--primary-foreground)] md:hidden"
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +41,7 @@ const ProjectRow = ({ project }: { project: Project }) => {
       </div>
       <div className="col-span-5 hidden px-4 md:block lg:col-span-4">
         <a
-          className="group flex items-center gap-[2px] text-[var(--primary-foreground)] hover:text-white"
+          className="group flex items-center gap-[2px] text-[var(--primary-foreground)] hover:text-[var(--accent)]"
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const page = () => {
       </div>
 
       {/* Table Header */}
-      <div className="lg:grid-cols-15 grid grid-cols-11 border-b-[.5px] border-[#e0e0e0b3] py-3 text-white md:grid-cols-10">
+      <div className="lg:grid-cols-15 grid grid-cols-11 border-b-[.5px] border-[var(--border)] py-3 text-[var(--secondary-foreground)] md:grid-cols-10">
         <div className="col-span-2 px-4 md:col-span-1">Year</div>
         <div className="col-span-9 px-4 md:col-span-4">Project</div>
         <div className="col-span-2 hidden px-4 lg:block">Made at</div>

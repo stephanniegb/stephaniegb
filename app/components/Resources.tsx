@@ -26,7 +26,7 @@ const Resources = ({
           />
         </div>
       </div>
-      <div className="col-span-8 flex flex-col gap-1 md:col-span-9">
+      <div className="col-span-8 flex flex-col gap-1 self-start md:col-span-9">
         <p className="text-sm text-[var(--primary-foreground)]">{year}</p>
         <p className="group-hover:text-[--accent] group-focus:text-[--accent]">
           {title}
