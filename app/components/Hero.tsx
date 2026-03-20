@@ -8,9 +8,9 @@ const Hero = () => {
           <h1 className="mb-4 text-[clamp(1.5rem,8vw,2.5rem)] leading-[2.5rem] md:text-5xl lg:text-4xl xl:text-6xl">
             Stephanie Egbuonu
           </h1>
-          <h2 className="text-xl">Frontend Engineer</h2>
-          <p className="w-[70%] text-sm">
-            Bringing ideas to life with seamless, pixel-perfect web experiences.
+          <h2 className="text-xl italic">Software Engineer</h2>
+          <p className="w-[70%] text-sm italic">
+            Building things that work and keep working.
           </p>
         </div>
         <Contact />
@@ -20,4 +20,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
